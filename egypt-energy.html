@@ -155,6 +155,12 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(139,47,201,.15);pad
 .related-card-body h4{color:var(--white);font-size:.92rem;margin:0 0 4px;font-weight:700}
 .related-card-body p{color:var(--gray);font-size:.78rem;margin:0;line-height:1.6}
 .highlight-box a{color:inherit;text-decoration:none}
+
+.share-fab{position:fixed;bottom:172px;left:28px;z-index:200;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--purple-bright));display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(139,47,201,.5);border:none;cursor:pointer;font-size:1.25rem;transition:transform .2s}
+.share-fab:hover{transform:scale(1.08)}
+.share-fab-tooltip{position:absolute;left:66px;background:var(--purple-bright);color:#fff;font-family:"IBM Plex Sans Arabic",sans-serif;font-size:.82rem;font-weight:700;white-space:nowrap;padding:6px 14px;border-radius:20px;pointer-events:none;opacity:0;transition:opacity .2s}
+.share-fab:hover .share-fab-tooltip{opacity:1}
+@media(max-width:900px){.share-fab{bottom:172px}}
 </style>
 </head>
 <body>
@@ -202,6 +208,7 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(139,47,201,.15);pad
 <footer><div class="footer-inner"><div class="footer-logo"><a href="https://www.newsouladv.com" target="_blank" rel="noopener"><img src="images/logo.png" alt="نيو سول للدعاية والإعلان" /></a></div><nav class="footer-links"><a href="#services">خدماتنا</a><a href="#related">مقالات مرتبطة</a><a href="#contact">تواصل معنا</a><a href="https://newsouladv.com/service-areas.html">خدماتنا</a></nav><div class="footer-social"><a href="https://www.facebook.com/newsouladv/" class="social-btn" target="_blank" rel="noopener">f</a><a href="https://www.instagram.com/newsouladv/" class="social-btn" target="_blank" rel="noopener">📷</a><a href="https://www.tiktok.com/@newsouladv" class="social-btn" target="_blank" rel="noopener">▶</a></div></div><div class="footer-inner"><p class="footer-copy">© 2026 نيو سول للدعاية والإعلان · فيصل، الجيزة · جميع الحقوق محفوظة<br/><span style="color:rgba(139,47,201,.6)">دليل معرض Egypt Energy</span></p></div></footer>
 <a href="https://wa.me/201090235208?text=أريد الاستفسار عن تنفيذ جناح في Egypt Energy" class="wa-fab" target="_blank" rel="noopener" aria-label="واتساب"><span class="wa-fab-tooltip">تواصل معنا</span><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="16" fill="#25D366"/><path d="M22.5 9.5A9 9 0 0 0 7.1 20.3L6 26l5.8-1.5a9 9 0 0 0 4.3 1.1 9 9 0 0 0 6.4-15.1z" fill="#fff"/><path d="M20.4 18.8c-.3-.1-1.6-.8-1.8-.9-.2-.1-.4-.1-.6.1-.2.2-.6.9-.8 1-.1.2-.3.2-.6.1-.3-.2-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.3-.5 0-.2 0-.4-.1-.5-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3 1 2.5c.1.2 1.6 2.4 3.8 3.4.5.2 1 .4 1.3.5.5.2 1 .1 1.4.1.4-.1 1.3-.5 1.5-1 .2-.5.2-.9.1-1-.1-.1-.2-.1-.4-.2z" fill="#25D366"/></svg></a>
 <a href="https://www.newsouladv.com" class="site-fab" target="_blank" rel="noopener">🏠 العودة للرئيسية</a>
+<button onclick="shareThisPage()" class="share-fab" aria-label="مشاركة الصفحة"><span class="share-fab-tooltip">مشاركة</span>📤</button>
 <script>
 const canvas=document.getElementById("stars-canvas"),ctx=canvas.getContext("2d");let stars=[];
 function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight}
@@ -212,6 +219,23 @@ window.addEventListener("resize",function(){resize();initStars()});
 const tocLinks=document.querySelectorAll("#tocList a");const headings=Array.from(tocLinks).map(function(a){return document.querySelector(a.getAttribute("href"))});
 function updateToc(){let idx=0;headings.forEach(function(h,i){if(h&&h.getBoundingClientRect().top<140)idx=i});tocLinks.forEach(function(a,i){a.classList.toggle("active",i===idx)})}
 window.addEventListener("scroll",updateToc,{passive:true});updateToc();
+
+function shareThisPage(){
+  const shareData = {
+    title: document.title,
+    text: (document.querySelector('meta[name="description"]') || {}).content || document.title,
+    url: window.location.href
+  };
+  if (navigator.share) {
+    navigator.share(shareData).catch(function(){});
+  } else if (navigator.clipboard) {
+    navigator.clipboard.writeText(window.location.href).then(function(){
+      alert('تم نسخ رابط الصفحة');
+    });
+  } else {
+    prompt('انسخ رابط الصفحة:', window.location.href);
+  }
+}
 </script>
 </body>
 </html>

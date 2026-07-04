@@ -952,6 +952,7 @@
   </div>
   <ul class="nav-links">
     <li><a href="https://newsouladv.com/">🏠 الرئيسية</a></li>
+    <li><a href="https://newsouladv.com/about-us.html">ℹ️ من نحن</a></li>
     <li><a href="https://newsouladv.com/#projects">🖼️ أعمالنا</a></li>
     <li><a href="https://newsouladv.com/new-soul-exhibitions.html">🔧 أجنحة المعارض</a></li>
     <li><a href="https://newsouladv.com/service-areas.html">📍 خدماتنا ومناطق الخدمة</a></li>
@@ -1245,7 +1246,7 @@
       <a href="#gallery">أعمالنا</a>
       <a href="#contact">تواصل معنا</a>
       <a href="https://maps.app.goo.gl/HF5hB9kLqJLMdqGS6" target="_blank" rel="noopener">الموقع</a>
-    </nav>
+    <a href="https://newsouladv.com/privacy-policy.html">سياسة الخصوصية</a></nav>
     <div class="footer-social" aria-label="وسائل التواصل الاجتماعي">
       <a href="https://www.facebook.com/newsouladv/" class="social-btn" target="_blank" rel="noopener" aria-label="فيسبوك">f</a>
       <a href="https://www.instagram.com/newsouladv/" class="social-btn" target="_blank" rel="noopener" aria-label="انستاجرام">📷</a>
@@ -1290,6 +1291,14 @@ function toggleMobileNav(){
   if (nav) { nav.classList.toggle('active'); }
   if (ham) { ham.classList.toggle('active'); }
 }
+document.querySelectorAll('.nav-links a').forEach(function(link){
+  link.addEventListener('click', function(){
+    var nav = document.querySelector('.nav-links');
+    var ham = document.querySelector('.hamburger');
+    if (nav) { nav.classList.remove('active'); }
+    if (ham) { ham.classList.remove('active'); }
+  });
+});
 function shareThisPage(){
   if (navigator.share) {
     navigator.share({title: document.title, url: window.location.href}).catch(function(){});

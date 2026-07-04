@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N0XH15776K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-N0XH15776K');
+</script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
@@ -183,11 +191,26 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(139,47,201,.15);pad
 .niso-fab:hover{transform:scale(1.08)}
 .niso-fab-tooltip{position:absolute;left:72px;background:rgba(14,6,28,.95);color:#fff;font-family:"IBM Plex Sans Arabic",sans-serif;font-size:.82rem;font-weight:700;white-space:nowrap;padding:6px 14px;border-radius:20px;pointer-events:none;opacity:0;transition:opacity .2s}
 .niso-fab:hover .niso-fab-tooltip{opacity:1}
+.search-toggle{background:none;border:none;color:var(--gray);cursor:pointer;padding:8px;display:flex;align-items:center;justify-content:center;transition:color .2s}
+.search-toggle:hover{color:var(--purple-glow)}
+.site-search-overlay{position:fixed;inset:0;background:rgba(6,3,13,.92);backdrop-filter:blur(6px);z-index:300;display:none;align-items:flex-start;justify-content:center;padding:100px 20px}
+.site-search-overlay.open{display:flex}
+.site-search-box{width:100%;max-width:600px;background:var(--surface2);border:1px solid rgba(139,47,201,.35);border-radius:16px;padding:24px;position:relative;max-height:70vh;overflow-y:auto}
+.site-search-box input{width:100%;background:rgba(22,13,46,.6);border:1px solid rgba(139,47,201,.3);border-radius:12px;padding:14px 16px;color:#fff;font-family:"IBM Plex Sans Arabic",sans-serif;font-size:1rem}
+.site-search-box input:focus{outline:none;border-color:var(--purple-glow)}
+.site-search-close{position:absolute;top:20px;left:20px;background:none;border:none;color:var(--gray);font-size:1.8rem;cursor:pointer;line-height:1}
+.site-search-close:hover{color:var(--purple-glow)}
+.site-search-results{margin-top:16px;display:flex;flex-direction:column;gap:8px}
+.site-search-result{display:block;padding:12px 14px;border-radius:10px;background:rgba(139,47,201,.08);text-decoration:none;transition:background .2s}
+.site-search-result:hover{background:rgba(139,47,201,.2)}
+.site-search-result strong{display:block;color:#fff;font-size:.92rem;margin-bottom:4px}
+.site-search-result span{display:block;color:var(--gray);font-size:.8rem;line-height:1.5}
+.site-search-empty{color:var(--gray);text-align:center;padding:20px;font-size:.9rem}
 </style>
 </head>
 <body>
 <canvas id="stars-canvas"></canvas>
-<nav><div class="nav-logo"><a href="https://www.newsouladv.com" target="_blank" rel="noopener"><img src="images/logo.png" alt="نيو سول للدعاية والإعلان" /></a></div><button class="hamburger" onclick="toggleMobileNav()" aria-label="القائمة"><span></span><span></span><span></span></button></nav><ul class="nav-links">
+<nav><div class="nav-logo"><a href="https://www.newsouladv.com"><img src="images/logo.png" alt="نيو سول للدعاية والإعلان" /></a></div><button class="search-toggle" onclick="toggleSiteSearch()" aria-label="بحث في الموقع"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button><button class="hamburger" onclick="toggleMobileNav()" aria-label="القائمة"><span></span><span></span><span></span></button></nav><ul class="nav-links">
     <li><a href="https://newsouladv.com/">🏠 الرئيسية</a></li>
     <li><a href="https://newsouladv.com/about-us.html">ℹ️ من نحن</a></li>
     <li><a href="https://newsouladv.com/niso-ai-assistant.html">🤖 نيسو المساعد الذكي</a></li>
@@ -236,7 +259,7 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(139,47,201,.15);pad
 <div class="highlight-box"><p><a href="https://wa.me/201090235208?text=مرحباً، أريد الاستفسار عن سياسة الخصوصية" target="_blank" rel="noopener">لو عندك أي سؤال عن سياسة الخصوصية دي، تواصل معنا مباشرة.</a></p></div>
 </article></div>
 <section class="cta-section" id="contact"><div class="section-inner"><div class="cta-box"><h2>عندك سؤال عن الخصوصية؟</h2><p>تواصل معنا مباشرة وهنرد على استفسارك في أقرب وقت.</p><div class="cta-contacts"><a href="https://wa.me/201090235208?text=مرحباً، أريد الاستفسار عن سياسة الخصوصية" class="btn-primary" target="_blank" rel="noopener">📲 واتساب: 01090235208</a><a href="tel:+201090235208" class="btn-secondary">📞 اتصل بنا</a><a href="https://newsouladv.com/about-us.html" class="btn-secondary">ℹ️ من نحن</a></div></div></div></section>
-<footer><div class="footer-inner" style="justify-content:center;flex-direction:column;align-items:center;text-align:center"><div class="footer-logo"><a href="https://www.newsouladv.com" target="_blank" rel="noopener"><img src="images/logo.png" alt="نيو سول للدعاية والإعلان" /></a></div><nav class="footer-links" style="justify-content:center"><a href="https://newsouladv.com/about-us.html">من نحن</a><a href="#contact">تواصل معنا</a><a href="https://newsouladv.com/service-areas.html">خدماتنا</a><a href="https://newsouladv.com/privacy-policy.html">سياسة الخصوصية</a></nav></div><div class="footer-inner"><p class="footer-copy">© 2026 نيو سول للدعاية والإعلان · فيصل، الجيزة · جميع الحقوق محفوظة<br/><span style="color:rgba(139,47,201,.6)">سياسة الخصوصية</span></p></div></footer>
+<footer><div class="footer-inner" style="justify-content:center;flex-direction:column;align-items:center;text-align:center"><div class="footer-logo"><a href="https://www.newsouladv.com"><img src="images/logo.png" alt="نيو سول للدعاية والإعلان" /></a></div><nav class="footer-links" style="justify-content:center"><a href="https://newsouladv.com/about-us.html">من نحن</a><a href="#contact">تواصل معنا</a><a href="https://newsouladv.com/service-areas.html">خدماتنا</a><a href="https://newsouladv.com/privacy-policy.html">سياسة الخصوصية</a></nav></div><div class="footer-inner"><p class="footer-copy">© 2026 نيو سول للدعاية والإعلان · فيصل، الجيزة · جميع الحقوق محفوظة<br/><span style="color:rgba(139,47,201,.6)">سياسة الخصوصية</span></p></div></footer>
 <a href="https://wa.me/201090235208?text=مرحباً، أريد الاستفسار عن خدماتكم" class="wa-fab" target="_blank" rel="noopener" aria-label="واتساب"><span class="wa-fab-tooltip">تواصل معنا</span><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="16" fill="#25D366"/><path d="M22.5 9.5A9 9 0 0 0 7.1 20.3L6 26l5.8-1.5a9 9 0 0 0 4.3 1.1 9 9 0 0 0 6.4-15.1z" fill="#fff"/><path d="M20.4 18.8c-.3-.1-1.6-.8-1.8-.9-.2-.1-.4-.1-.6.1-.2.2-.6.9-.8 1-.1.2-.3.2-.6.1-.3-.2-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.3-.5 0-.2 0-.4-.1-.5-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3 1 2.5c.1.2 1.6 2.4 3.8 3.4.5.2 1 .4 1.3.5.5.2 1 .1 1.4.1.4-.1 1.3-.5 1.5-1 .2-.5.2-.9.1-1-.1-.1-.2-.1-.4-.2z" fill="#25D366"/></svg></a>
 <button onclick="shareThisPage()" class="share-fab" aria-label="مشاركة الصفحة"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
 <a href="https://wa.me/201090235208?text=مرحباً نيسو، أريد الاستفسار عن خدمات نيو سول" class="niso-fab" target="_blank" rel="noopener" aria-label="تحدث مع نيسو عبر واتساب"><span class="niso-fab-tooltip">تحدث مع نيسو</span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></a>
@@ -265,6 +288,38 @@ document.querySelectorAll('.nav-links a').forEach(function(link){
     if (ham) { ham.classList.remove('active'); }
   });
 });
+var siteSearchIndex = [{"t": "من نحن | نيو سول للدعاية والإعلان", "d": "تعرف على قصة نيو سول للدعاية والإعلان، رؤيتنا ورسالتنا، وخبرتنا في تنظيم المعارض وتجهيز الفعاليات في", "u": "https://newsouladv.com/about-us.html"}, {"t": "لوحات الأكريليك المطبوعة Iso Board في مصر | نيو سول", "d": "تصميم وطباعة وتركيب لوحات الأكريليك المطبوعة (Iso Board) بجودة طباعة عالية وتثبيت احترافي بالمسامير ", "u": "https://newsouladv.com/acrylic-iso-board.html"}, {"t": "لافتات أكريليك وستانلس مضيئة LED في مصر | نيو سول", "d": "تصميم وتنفيذ لافتات أكريليك وستانلس مضيئة بـ LED لكبرى الشركات والمطاعم في مصر. نيو سول للدعاية: 010", "u": "https://newsouladv.com/acrylic-stainless-signs.html"}, {"t": "مجسمات ديكورية ودعائية مخصصة في مصر | نيو سول", "d": "تصميم وتنفيذ مجسمات ديكورية ودعائية مخصصة بالكامل — كرتونية، مدارس، منتجات، ومناسبات خاصة في مصر.", "u": "https://newsouladv.com/advertising-mascots.html"}, {"t": "فعالية Fruit Karnaval - المسافر | نيو سول", "d": "نفذت نيو سول ديكور فعالية Fruit Karnaval لشركة المسافر (Almosafer) — جدارية عشب صناعي، تغليف طاولات،", "u": "https://newsouladv.com/almosafer-fruit-karnaval.html"}, {"t": "معرض Automech Formula | دليل معرض السيارات في مصر", "d": "تعرف على معرض Automech Formula، أكبر معرض لصناعة السيارات وقطع الغيار في مصر، ومكان إقامته، وأهم الق", "u": "https://newsouladv.com/automech-formula-egypt.html"}, {"t": "أفضل شركة تنظيم معارض في مصر | نيو سول", "d": "دليل عملي لاختيار أفضل شركة تنظيم معارض في مصر — معايير تقييم واضحة وأين تتفوق نيو سول للدعاية والإع", "u": "https://newsouladv.com/best-exhibition-companies-egypt-newsoul.html"}, {"t": "شركة تنظيم معارض في مصر | تصميم وتنفيذ أجنحة - نيو سول", "d": "نيو سول شركة تنظيم معارض في مصر متخصصة في تصميم وتنفيذ أجنحة وبوثات المعارض وتجهيز الفعاليات باستخدا", "u": "https://newsouladv.com/best-exhibition-companies-egypt.html"}, {"t": "معرض القاهرة الدولي للكتاب | مواعيد ومكان الإقامة", "d": "تعرف على معرض القاهرة الدولي للكتاب، أكبر معرض للكتاب في مصر والعالم العربي، ومكان إقامته، وأهم الأن", "u": "https://newsouladv.com/cairo-book-fair.html"}, {"t": "معرض Cairo ICT | دليل الزوار والعارضين", "d": "تعرف على معرض Cairo ICT، مكان إقامته، القطاعات المشاركة، ومواعيده، وخدمات نيو سول في تنفيذ أجنحة الم", "u": "https://newsouladv.com/cairo-ict.html"}, {"t": "معرض Cityscape Egypt | دليل معرض العقارات في مصر", "d": "تعرف على معرض Cityscape Egypt، أكبر معرض للعقارات والتطوير العمراني في مصر، ومكان إقامته، وأهم الشرك", "u": "https://newsouladv.com/cityscape-egypt.html"}, {"t": "ستاندات ورول أب ووسائل العرض السريع | نيو سول", "d": "تصميم وتنفيذ ستاندات رول أب وترابيزات عرض ترويجي وستاندات معارض وفعاليات، بتجهيز سريع خلال 48 ساعة ف", "u": "https://newsouladv.com/display-stands.html"}, {"t": "معرض EDEX مصر | دليل الصناعات الدفاعية والعسكرية", "d": "تعرف على معرض EDEX Egypt Defence Expo، أكبر معرض للصناعات الدفاعية في مصر وأفريقيا، ومكان إقامته وأه", "u": "https://newsouladv.com/edex.html"}, {"t": "تجهيز فعالية EGBank AI Academy | نيو سول", "d": "نفذت نيو سول التجهيز الكامل لفعالية EGBank AI Academy مع Emeritus — خلفية إعلانية، علب فاخرة، وتجهيز", "u": "https://newsouladv.com/egbank-ai-academy.html"}, {"t": "معرض EGYPES | دليل معرض الطاقة والبترول في مصر", "d": "تعرف على معرض EGYPES (Egypt Energy Show)، أكبر معرض لقطاع الطاقة والبترول في مصر، وكيف تساعدك نيو سو", "u": "https://newsouladv.com/egypes.html"}, {"t": "معرض Egypt Energy | دليل الزوار والعارضين", "d": "تعرف على معرض Egypt Energy، أكبر معرض للطاقة والكهرباء في مصر، ومكان إقامته، وكيف تنفذ نيو سول جناحك", "u": "https://newsouladv.com/egypt-energy.html"}, {"t": "مركز مصر للمعارض الدولية EIEC | الدليل الشامل", "d": "تعرف على مركز مصر للمعارض الدولية (EIEC)، موقعه، قاعاته، أهم المعارض التي تُقام به، ولماذا يعد الوجه", "u": "https://newsouladv.com/egypt-international-exhibition-center.html"}, {"t": "سعر تصميم وتنفيذ جناح معرض في مصر 2026", "d": "تعرف على العوامل المؤثرة في سعر تصميم وتنفيذ جناح المعرض في مصر، ونطاقات تقريبية حسب المساحة والخاما", "u": "https://newsouladv.com/exhibition-booth-price-egypt.html"}, {"t": "شركة تنظيم معارض وفعاليات في الإسكندرية", "d": "نيو سول للدعاية والإعلان تقدم خدمات تصميم وتنفيذ أجنحة المعارض وتجهيز الفعاليات في الإسكندرية، بنفس ", "u": "https://newsouladv.com/exhibition-company-alexandria.html"}, {"t": "شركة تنظيم معارض وفعاليات في العاصمة الإدارية", "d": "نيو سول للدعاية والإعلان تقدم خدمات تصميم وتنفيذ أجنحة المعارض وتجهيز الفعاليات في العاصمة الإدارية ", "u": "https://newsouladv.com/exhibition-company-new-capital.html"}, {"t": "قاموس مصطلحات تنظيم المعارض بالعربي", "d": "دليل شامل لأهم مصطلحات تنظيم المعارض وتصميم الأجنحة بالعربي والإنجليزي، زي Shell Scheme وSpace Only ", "u": "https://newsouladv.com/exhibition-terms-glossary.html"}, {"t": "دليل المعارض والمؤتمرات في مصر | نيو سول", "d": "دليل شامل للمعارض والمؤتمرات في مصر — أهم مراكز المعارض، وأشهر المعارض السنوية، وكيف تختار شركة تنظي", "u": "https://newsouladv.com/exhibitions-guide-egypt.html"}, {"t": "معرض Food Africa | دليل الزوار والعارضين", "d": "تعرف على معرض Food Africa، أكبر معرض للأغذية والمشروبات في أفريقيا، ومكان إقامته، وكيف تنفذ نيو سول ", "u": "https://newsouladv.com/food-africa.html"}, {"t": "نيو سول للدعاية والإعلان | أجنحة معارض وفعاليات", "d": "نيو سول للدعاية والإعلان — تصميم وتنفيذ أجنحة المعارض، تجهيز الفعاليات، اللافتات المضيئة، والطباعة ا", "u": "https://newsouladv.com/"}, {"t": "معرض Big 5 Construct Egypt | دليل الزوار والعارضين", "d": "تعرف على معرض Big 5 Construct Egypt، أهم معرض للبناء والتشييد في مصر، مواعيده، وكيف تنفذ نيو سول جنا", "u": "https://newsouladv.com/new-soul-big5-construct-egypt.html"}, {"t": "ايفنت توظيف Enpal Egypt | تنفيذ نيو سول", "d": "تجهيز ايفنت التوظيف لشركة Enpal Egypt الألمانية — باك دروب، مجسم ليزر خشبي، ستاندات تفاعلية، وإطار ت", "u": "https://newsouladv.com/new-soul-enpal-egypt.html"}, {"t": "AJP Tour Egypt | تنظيم فعاليات رياضية | نيو سول", "d": "نيو سول نفذت تجهيزات وتنظيم بطولة AJP Tour Egypt باحترافية عالية. خدمات تنظيم الفعاليات الرياضية وال", "u": "https://newsouladv.com/new-soul-events-Ajp-tour-egypt.html"}, {"t": "تصميم أجنحة المعارض | جناح Fischer Egypt - نيو سول", "d": "نيو سول نفذت جناح Fischer Egypt الكامل في Big 5 Construct Egypt 2026 — تصميم وتنفيذ أجنحة معارض احتر", "u": "https://newsouladv.com/new-soul-exhibitions.html"}, {"t": "فعالية OC Academy Hubs - أوراسكوم | نيو سول", "d": "تصميم وتنفيذ ديكور فعالية OC Academy Hubs لأوراسكوم — باك دروب ضخم وحروف 3D. تنفيذ نيو سول للدعاية و", "u": "https://newsouladv.com/new-soul-orascom-academy.html"}, {"t": "جناح Royal Ceramica في سوق السيراميك 2025 | نيو سول", "d": "نيو سول نفذت جناح Royal Ceramica الكامل في معرض سوق السيراميك 2025 — جدران عرض منحنية وحروف مضيئة ثل", "u": "https://newsouladv.com/new-soul-royal-ceramica.html"}, {"t": "نيسو | مساعد نيو سول الذكي بالذكاء الاصطناعي", "d": "تعرف على نيسو، مساعد نيو سول الذكي بالذكاء الاصطناعي، لاختيار خدمات الدعاية والإعلان وتنفيذ المعارض ", "u": "https://newsouladv.com/niso-ai-assistant.html"}, {"t": "سياسة الخصوصية | نيو سول للدعاية والإعلان", "d": "سياسة الخصوصية الخاصة بموقع نيو سول للدعاية والإعلان، وكيفية جمع واستخدام وحماية بياناتك عند استخدام", "u": "https://newsouladv.com/privacy-policy.html"}, {"t": "ديكور احتفالية اليوم الوطني السعودي | نيو سول", "d": "نفذت نيو سول ديكور احتفالية اليوم الوطني السعودي في أشهر الأماكن الترفيهية بالقاهرة — مجسمات وجداريا", "u": "https://newsouladv.com/saudi-national-day.html"}, {"t": "ديكورات المدارس والمؤسسات التعليمية | نيو سول", "d": "تصميم وتنفيذ ديكورات المدارس والحضانات — أبواب فصول بعوالم كرتونية، ديكورات ممرات، ومجسمات مقصوصة في", "u": "https://newsouladv.com/school-decorations.html"}, {"t": "خدمات تنظيم المعارض والإيفنتات في مصر | نيو سول", "d": "خدمات تصميم وتنفيذ أجنحة المعارض وتنظيم الإيفنتات في القاهرة والجيزة ومختلف محافظات مصر مع نيو سول.", "u": "https://newsouladv.com/service-areas.html"}, {"t": "تجهيز الشوروم والمعارض في مصر | نيو سول", "d": "تجهيز الشوروم والمعارض التجارية والصناعية بالكامل — أرفف عرض احترافية، مكاتب استقبال مخصصة، ولوحات أ", "u": "https://newsouladv.com/showroom-display.html"}];
+function toggleSiteSearch(){
+  var overlay = document.getElementById('siteSearchOverlay');
+  overlay.classList.toggle('open');
+  if(overlay.classList.contains('open')){
+    document.getElementById('siteSearchInput').focus();
+  } else {
+    document.getElementById('siteSearchInput').value = '';
+    document.getElementById('siteSearchResults').innerHTML = '';
+  }
+}
+function runSiteSearch(){
+  var q = document.getElementById('siteSearchInput').value.trim().toLowerCase();
+  var results = document.getElementById('siteSearchResults');
+  if(q.length < 2){ results.innerHTML = ''; return; }
+  var matches = siteSearchIndex.filter(function(item){
+    return item.t.toLowerCase().indexOf(q) !== -1 || item.d.toLowerCase().indexOf(q) !== -1;
+  }).slice(0, 8);
+  if(matches.length === 0){
+    results.innerHTML = '<p class="site-search-empty">مفيش نتائج، جرب كلمة تانية</p>';
+    return;
+  }
+  results.innerHTML = matches.map(function(m){
+    return '<a href="'+m.u+'" class="site-search-result"><strong>'+m.t+'</strong><span>'+m.d+'</span></a>';
+  }).join('');
+}
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){
+    var overlay = document.getElementById('siteSearchOverlay');
+    if(overlay && overlay.classList.contains('open')) toggleSiteSearch();
+  }
+});
 function shareThisPage(){
   if (navigator.share) {
     navigator.share({title: document.title, url: window.location.href}).catch(function(){});
@@ -276,5 +331,12 @@ function shareThisPage(){
 }
 
 </script>
+<div class="site-search-overlay" id="siteSearchOverlay">
+  <div class="site-search-box">
+    <button class="site-search-close" onclick="toggleSiteSearch()" aria-label="إغلاق">×</button>
+    <input type="text" id="siteSearchInput" placeholder="ابحث في الموقع... (مثلاً: أجنحة معارض، الإسكندرية)" autocomplete="off" oninput="runSiteSearch()" />
+    <div id="siteSearchResults" class="site-search-results"></div>
+  </div>
+</div>
 </body>
 </html>

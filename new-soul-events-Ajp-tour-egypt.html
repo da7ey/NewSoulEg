@@ -911,60 +911,6 @@
 /* old mobile gallery slider removed */
     }
 
-    /* ── LIGHTBOX ── */
-    .lightbox {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 999;
-      background: rgba(0,0,0,0.92);
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-    }
-    .lightbox.open { display: flex; }
-    .lightbox img {
-      max-width: 92vw;
-      max-height: 82vh;
-      border-radius: 12px;
-      box-shadow: 0 0 60px rgba(139,47,201,0.4);
-      object-fit: contain;
-    }
-    .lightbox-caption {
-      color: var(--purple-glow);
-      font-family: 'Cairo', sans-serif;
-      font-size: 0.95rem;
-      margin-top: 16px;
-      text-align: center;
-    }
-    .lightbox-close {
-      position: absolute;
-      top: 20px; left: 24px;
-      background: none;
-      border: none;
-      color: #fff;
-      font-size: 2rem;
-      cursor: pointer;
-      line-height: 1;
-    }
-    .lightbox-prev, .lightbox-next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(139,47,201,0.3);
-      border: 1px solid rgba(170,68,240,0.4);
-      color: #fff;
-      font-size: 1.8rem;
-      width: 52px; height: 52px;
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      transition: background 0.2s;
-    }
-    .lightbox-prev:hover, .lightbox-next:hover { background: rgba(139,47,201,0.6); }
-    .lightbox-prev { right: 20px; }
-    .lightbox-next { left: 20px; }
-
     /* ── WHATSAPP FAB ── */
     .wa-fab {
       position: fixed;
@@ -1029,12 +975,12 @@
   </nav>
 <ul class="nav-links">
     <li><a href="https://newsouladv.com/">🏠 الرئيسية</a></li>
-    <li><a href="https://newsouladv.com/#projects">أعمالنا</a></li>
+    <li><a href="https://newsouladv.com/#projects">🖼️ أعمالنا</a></li>
     <li><a href="https://newsouladv.com/new-soul-exhibitions.html">🔧 أجنحة المعارض</a></li>
     <li><a href="https://newsouladv.com/service-areas.html">📍 خدماتنا ومناطق الخدمة</a></li>
     <li><a href="https://newsouladv.com/exhibitions-guide-egypt.html">🏛️ دليل المعارض</a></li>
     <li><a href="https://newsouladv.com/acrylic-stainless-signs.html">💡 لافتات مضيئة</a></li>
-    <li><a href="#contact">تواصل معنا</a></li>
+    <li><a href="#contact">📞 تواصل معنا</a></li>
     <li><a href="https://wa.me/201090235208?text=أريد الاستفسار عن تصميم جناح معرض" class="nav-wa-btn" target="_blank" rel="noopener">📲 واتساب: 01090235208</a></li>
   </ul>
 
@@ -1421,14 +1367,7 @@
   revealEls.forEach(el => observer.observe(el));
 </script>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="عرض الصورة">
-  <button class="lightbox-close" onclick="closeLightbox()" aria-label="إغلاق">×</button>
-  <button class="lightbox-prev" onclick="shiftLight(1)" aria-label="السابق">&#8250;</button>
-  <img id="lb-img" src="" alt="" />
-  <p class="lightbox-caption" id="lb-caption"></p>
-  <button class="lightbox-next" onclick="shiftLight(-1)" aria-label="التالي">&#8249;</button>
-</div>
+
 
 <!-- WHATSAPP FAB -->
 <a href="https://wa.me/201090235208?text=أريد الاستفسار عن تصميم جناح معرض" class="wa-fab" target="_blank" rel="noopener" aria-label="تواصل واتساب">
@@ -1526,13 +1465,7 @@
     });
   }
 }
-  document.addEventListener('click', function(e){
-    const menu = document.getElementById('shareMenu');
-    const btn = document.querySelector('.share-fab');
-    if (menu && menu.classList.contains('active') && !menu.contains(e.target) && e.target !== btn) {
-      menu.classList.remove('active');
-    }
-  });
+  
 </script>
 
 </body>

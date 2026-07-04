@@ -246,12 +246,12 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(139,47,201,.15);pad
 <canvas id="stars-canvas"></canvas>
 <nav><div class="nav-logo"><a href="https://newsouladv.com" target="_blank" rel="noopener"><img src="images/logo.png" alt="نيو سول للدعاية والإعلان" /></a></div><ul class="nav-links">
     <li><a href="https://newsouladv.com/">🏠 الرئيسية</a></li>
-    <li><a href="https://newsouladv.com/#projects">أعمالنا</a></li>
+    <li><a href="https://newsouladv.com/#projects">🖼️ أعمالنا</a></li>
     <li><a href="https://newsouladv.com/new-soul-exhibitions.html">🔧 أجنحة المعارض</a></li>
     <li><a href="https://newsouladv.com/service-areas.html">📍 خدماتنا ومناطق الخدمة</a></li>
     <li><a href="https://newsouladv.com/exhibitions-guide-egypt.html">🏛️ دليل المعارض</a></li>
     <li><a href="https://newsouladv.com/acrylic-stainless-signs.html">💡 لافتات مضيئة</a></li>
-    <li><a href="#contact">تواصل معنا</a></li>
+    <li><a href="#contact">📞 تواصل معنا</a></li>
     <li><a href="https://wa.me/201090235208?text=مرحباً، أريد الاستفسار عن خدماتكم" class="nav-wa-btn" target="_blank" rel="noopener">📲 واتساب: 01090235208</a></li>
   </ul><button class="hamburger" id="hamburger" onclick="toggleMobileNav()" aria-label="القائمة"><span></span><span></span><span></span></button></nav>
 
@@ -301,6 +301,78 @@ function shareThisPage(){
   }
 }
 
+</script>
+<script>
+var lightboxData = {
+  fischer: {client:'Fischer', items:[
+    {src:'images/extracted-service-areas-43.jpg', caption:'جناح Fischer FireStop - منطقة عرض المنتجات'},
+    {src:'images/extracted-service-areas-44.jpg', caption:'جناح Fischer الكامل - Big 5 Construct Egypt 2026'},
+    {src:'images/extracted-service-areas-45.jpg', caption:'الجناح الكامل Pillars Fischer - Big 5 Construct'}
+  ]},
+  royal: {client:'Royal Ceramica', items:[
+    {src:'images/extracted-service-areas-46.jpg', caption:'جناح Royal Ceramica - تفاصيل الجدار الداخلي'},
+    {src:'images/extracted-service-areas-47.jpg', caption:'مدخل جناح Royal Ceramica'},
+    {src:'images/extracted-service-areas-48.jpg', caption:'جناح Royal Ceramica - الجزء الداخلي'},
+    {src:'images/extracted-service-areas-49.jpg', caption:'واجهة جناح Royal Ceramica في المعرض'}
+  ]},
+  enpal: {client:'Enpal Egypt', items:[
+    {src:'images/extracted-service-areas-50.jpg', caption:'جناح Enpal Egypt - تنفيذ الباك دروب والأرضية'},
+    {src:'images/extracted-service-areas-51.jpg', caption:'تصميم 3D جناح Enpal Egypt قبل التنفيذ'}
+  ]},
+  ajp: {client:'AJP Tour Egypt', items:[
+    {src:'images/extracted-service-areas-52.jpg', caption:'منصة التتويج - بطولة AJP Tour Egypt'},
+    {src:'images/extracted-service-areas-53.jpg', caption:'قاعة بطولة AJP Tour Egypt - الإعداد الكامل'}
+  ]},
+  academy: {client:'Orascom - OC Academy Hubs', items:[
+    {src:'images/extracted-service-areas-54.jpg', caption:'فعالية Academy Hubs - تنفيذ الستاند والطباعة'},
+    {src:'images/extracted-service-areas-55.jpg', caption:'إنفوجرافيك Academy Hubs - نيو سول'}
+  ]}
+};
+var currentGallery = null, currentIndex = 0;
+function updateLightboxImage(){
+  var g = lightboxData[currentGallery];
+  var item = g.items[currentIndex];
+  var img = document.getElementById('lb-img');
+  var cap = document.getElementById('lb-caption');
+  var cli = document.getElementById('lb-client');
+  if(img){ img.src = item.src; img.alt = item.caption; }
+  if(cap){ cap.textContent = item.caption; }
+  if(cli){ cli.textContent = g.client; }
+}
+function openLightbox(gallery, index){
+  if(!lightboxData[gallery]) return;
+  currentGallery = gallery; currentIndex = index;
+  updateLightboxImage();
+  var lb = document.getElementById('lightbox');
+  if(lb){ lb.classList.add('open'); document.body.style.overflow = 'hidden'; }
+}
+function closeLightbox(){
+  var lb = document.getElementById('lightbox');
+  if(lb){ lb.classList.remove('open'); document.body.style.overflow = ''; }
+}
+function shiftLb(dir){
+  if(!currentGallery) return;
+  var arr = lightboxData[currentGallery].items;
+  currentIndex = (currentIndex + dir + arr.length) % arr.length;
+  updateLightboxImage();
+}
+
+function toggleFaq(btn){
+  var item = btn.closest('.faq-item');
+  var answer = item ? item.querySelector('.faq-a') : null;
+  var isOpen = btn.classList.contains('open');
+  btn.classList.toggle('open');
+  if(answer){
+    answer.style.maxHeight = isOpen ? '0' : (answer.scrollHeight + 'px');
+  }
+}
+document.addEventListener('keydown', function(e){
+  var lb = document.getElementById('lightbox');
+  if(!lb || !lb.classList.contains('open')) return;
+  if(e.key === 'Escape') closeLightbox();
+  if(e.key === 'ArrowRight') shiftLb(1);
+  if(e.key === 'ArrowLeft') shiftLb(-1);
+});
 </script>
 </body>
 </html>

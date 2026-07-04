@@ -190,7 +190,7 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(139,47,201,.15);pad
 .nav-links li{width:100%;list-style:none;border-bottom:1px solid rgba(139,47,201,.15)}
 .nav-links li:last-child{border-bottom:none;margin-top:16px}
 .nav-links li a{display:block;padding:16px 0;font-size:1.3rem;font-family:"Tajawal",sans-serif;font-weight:700}
-.share-fab{position:fixed;bottom:92px;left:24px;z-index:200;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--purple-bright));display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(139,47,201,.5);text-decoration:none;border:none;cursor:pointer;font-size:1.5rem;transition:transform .2s}
+.share-fab{position:fixed;bottom:92px;left:24px;z-index:200;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--purple-bright));color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(139,47,201,.5);text-decoration:none;border:none;cursor:pointer;font-size:1.5rem;transition:transform .2s}
 .share-fab:hover{transform:scale(1.08)}
 }
 .niso-fab{position:fixed;bottom:160px;left:24px;z-index:200;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#8B2FC9,#AA44F0);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(139,47,201,.5);text-decoration:none;transition:transform .2s}
@@ -214,12 +214,12 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(139,47,201,.15);pad
 .site-search-empty{color:var(--gray);text-align:center;padding:20px;font-size:.9rem}
 /* DESKTOP NAV UNIFIED */
 @media (min-width:901px){
-  nav{flex-wrap:wrap;align-items:center;row-gap:8px}
+  nav{flex-wrap:nowrap;align-items:center}
   .nav-logo{order:1;flex-shrink:0}
-  .search-toggle{order:2;flex-shrink:0;margin-inline-start:auto}
-  .nav-links{order:3;flex-basis:100%;width:100%;display:flex!important;flex-wrap:wrap;gap:12px;list-style:none;align-items:center;justify-content:flex-end}
+  .nav-links{order:2;flex:1 1 auto;min-width:0;display:flex!important;flex-wrap:wrap;gap:10px;list-style:none;align-items:center;justify-content:center}
+  .search-toggle{order:3;flex-shrink:0}
   .nav-links li{list-style:none}
-  .nav-links li a{font-family:"Tajawal",sans-serif;font-size:.82rem;font-weight:700;color:#fff;text-decoration:none;transition:color .2s;white-space:nowrap;padding:4px 0;display:inline-block}
+  .nav-links li a{font-family:"Tajawal",sans-serif;font-size:.78rem;font-weight:700;color:#fff;text-decoration:none;transition:color .2s;white-space:nowrap;padding:4px 0;display:inline-block}
   .nav-links li a:hover{color:#C66EFF}
   }
 </style>

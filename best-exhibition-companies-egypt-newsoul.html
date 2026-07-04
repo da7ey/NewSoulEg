@@ -501,6 +501,7 @@
       margin: 28px 0;
     }
     .highlight-box p { margin-bottom: 0; color: var(--white); }
+.highlight-box a { color: var(--purple-glow); text-decoration: none; }
     .highlight-box p + p { margin-top: 12px; }
 
     /* Project showcase callout (Fischer project) */
@@ -808,12 +809,12 @@
 .site-search-empty{color:var(--gray);text-align:center;padding:20px;font-size:.9rem}
 /* DESKTOP NAV UNIFIED */
 @media (min-width:901px){
-  nav{flex-wrap:wrap;align-items:center;row-gap:8px}
+  nav{flex-wrap:nowrap;align-items:center}
   .nav-logo{order:1;flex-shrink:0}
-  .search-toggle{order:2;flex-shrink:0;margin-inline-start:auto}
-  .nav-links{order:3;flex-basis:100%;width:100%;display:flex!important;flex-wrap:wrap;gap:12px;list-style:none;align-items:center;justify-content:flex-end}
+  .nav-links{order:2;flex:1 1 auto;min-width:0;display:flex!important;flex-wrap:wrap;gap:10px;list-style:none;align-items:center;justify-content:center}
+  .search-toggle{order:3;flex-shrink:0}
   .nav-links li{list-style:none}
-  .nav-links li a{font-family:"Tajawal",sans-serif;font-size:.82rem;font-weight:700;color:#fff;text-decoration:none;transition:color .2s;white-space:nowrap;padding:4px 0;display:inline-block}
+  .nav-links li a{font-family:"Tajawal",sans-serif;font-size:.78rem;font-weight:700;color:#fff;text-decoration:none;transition:color .2s;white-space:nowrap;padding:4px 0;display:inline-block}
   .nav-links li a:hover{color:#C66EFF}
   }
 </style>

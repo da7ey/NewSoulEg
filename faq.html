@@ -99,6 +99,11 @@ picture{display:contents}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
 .faq-a p{padding:0 18px 16px;color:var(--gray);font-size:.92rem;line-height:1.8}
 .faq-a a{color:var(--purple-glow)}
+.quiz-niso-callout{display:flex;align-items:center;gap:16px;background:rgba(139,47,201,.08);border:1px solid rgba(139,47,201,.25);border-radius:14px;padding:16px 20px;text-align:right}
+.quiz-niso-callout img{width:52px;height:52px;border-radius:50%;object-fit:cover;flex-shrink:0}
+.quiz-niso-callout p{margin:0;font-size:.88rem;color:var(--gray);line-height:1.6}
+.quiz-niso-callout a{color:var(--purple-glow);font-weight:700}
+@media(max-width:600px){.quiz-niso-callout{flex-direction:column;text-align:center;padding:20px 16px}}
 :root{--purple:#8B2FC9;--purple-bright:#AA44F0;--purple-glow:#C66EFF;--purple-dark:#3D1066;--black:#06030D;--surface:#0E0820;--surface2:#160D2E;--white:#F5F0FF;--gray:#A89FC0}
 html{scroll-behavior:smooth}
 body{font-family:"IBM Plex Sans Arabic","Tajawal",sans-serif;background:var(--black);color:var(--white);overflow-x:hidden}

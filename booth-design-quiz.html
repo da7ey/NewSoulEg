@@ -72,6 +72,19 @@ picture{display:contents}
 .quiz-result-features li::before{content:"✓";position:absolute;right:0;color:var(--purple-glow);font-weight:900}
 .quiz-restart{display:block;width:100%;background:none;border:1px solid rgba(139,47,201,.3);color:var(--gray);padding:12px;border-radius:50px;font-family:inherit;font-size:.85rem;cursor:pointer;margin-top:14px;transition:.2s}
 .quiz-restart:hover{color:#fff;border-color:var(--purple-bright)}
+.quiz-option-img{padding:10px;gap:16px}
+.quiz-option-img picture{flex-shrink:0;width:64px;height:64px;border-radius:10px;overflow:hidden;display:block}
+.quiz-option-img img{width:100%;height:100%;object-fit:cover;display:block}
+.quiz-option-text{font-size:1rem;font-weight:600}
+.quiz-share-row{display:flex;gap:10px;margin-top:12px}
+.quiz-copy-btn{flex:1;background:rgba(139,47,201,.12);border:1px solid rgba(139,47,201,.3);color:#fff;padding:12px;border-radius:50px;font-family:inherit;font-size:.85rem;font-weight:600;cursor:pointer;transition:.2s}
+.quiz-copy-btn:hover{background:rgba(139,47,201,.25)}
+.quiz-copy-btn.copied{background:rgba(37,211,102,.2);border-color:#25D366;color:#25D366}
+.quiz-fb-btn:hover{background:rgba(24,119,242,.2);border-color:#1877F2;color:#fff}
+.quiz-niso-callout{display:flex;align-items:center;gap:16px;background:rgba(139,47,201,.08);border:1px solid rgba(139,47,201,.25);border-radius:14px;padding:16px 20px;margin-top:24px;text-align:right}
+.quiz-niso-callout img{width:52px;height:52px;border-radius:50%;object-fit:cover;flex-shrink:0}
+.quiz-niso-callout p{margin:0;font-size:.88rem;color:var(--gray);line-height:1.6}
+.quiz-niso-callout a{color:var(--purple-glow);font-weight:700}
 :root{--purple:#8B2FC9;--purple-bright:#AA44F0;--purple-glow:#C66EFF;--purple-dark:#3D1066;--black:#06030D;--surface:#0E0820;--surface2:#160D2E;--white:#F5F0FF;--gray:#A89FC0}
 html{scroll-behavior:smooth}
 body{font-family:"IBM Plex Sans Arabic","Tajawal",sans-serif;background:var(--black);color:var(--white);overflow-x:hidden}
@@ -287,10 +300,10 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(139,47,201,.15);pad
     <p class="quiz-step-label">السؤال 2 من 4</p>
     <h2 class="quiz-question">إيه الأسلوب اللي بيعبر عن علامتك؟</h2>
     <div class="quiz-options">
-      <button class="quiz-option" onclick="selectAnswer('style','minimal','⬜ عصري وبسيط')"><span class="quiz-option-icon">⬜</span>عصري وبسيط (Minimal)</button>
-      <button class="quiz-option" onclick="selectAnswer('style','premium','💎 فخم وراقي')"><span class="quiz-option-icon">💎</span>فخم وراقي (Premium)</button>
-      <button class="quiz-option" onclick="selectAnswer('style','bold','⚡ جريء وملفت')"><span class="quiz-option-icon">⚡</span>جريء وملفت (Bold)</button>
-      <button class="quiz-option" onclick="selectAnswer('style','tech','🖥️ تفاعلي بالتكنولوجيا')"><span class="quiz-option-icon">🖥️</span>تفاعلي بالتكنولوجيا</button>
+      <button class="quiz-option quiz-option-img" onclick="selectAnswer('style','minimal','⬜ عصري وبسيط')"><picture><source srcset="images/fischer-booth-entrance.webp" type="image/webp" /><img src="images/fischer-booth-entrance.jpg" alt="أسلوب عصري وبسيط" loading="lazy" /></picture><span class="quiz-option-text">عصري وبسيط (Minimal)</span></button>
+      <button class="quiz-option quiz-option-img" onclick="selectAnswer('style','premium','💎 فخم وراقي')"><picture><source srcset="images/royal-ceramica-entrance.webp" type="image/webp" /><img src="images/royal-ceramica-entrance.jpg" alt="أسلوب فخم وراقي" loading="lazy" /></picture><span class="quiz-option-text">فخم وراقي (Premium)</span></button>
+      <button class="quiz-option quiz-option-img" onclick="selectAnswer('style','bold','⚡ جريء وملفت')"><picture><source srcset="images/backdrop-fruitkarnaval-full.webp" type="image/webp" /><img src="images/backdrop-fruitkarnaval-full.jpg" alt="أسلوب جريء وملفت" loading="lazy" /></picture><span class="quiz-option-text">جريء وملفت (Bold)</span></button>
+      <button class="quiz-option quiz-option-img" onclick="selectAnswer('style','tech','🖥️ تفاعلي بالتكنولوجيا')"><picture><source srcset="images/extracted-new-soul-enpal-egypt-16.webp" type="image/webp" /><img src="images/extracted-new-soul-enpal-egypt-16.jpg" alt="أسلوب تفاعلي بالتكنولوجيا" loading="lazy" /></picture><span class="quiz-option-text">تفاعلي بالتكنولوجيا</span></button>
     </div>
   </div>
 
@@ -336,6 +349,14 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(139,47,201,.15);pad
         <ul id="resultFeatures"></ul>
       </div>
       <a id="quizWaLink" href="#" target="_blank" rel="noopener" class="btn-primary" style="width:100%;justify-content:center;margin-top:20px">📲 احصل على هذا التصميم مع عرض سعر</a>
+      <div class="quiz-share-row">
+        <button class="quiz-copy-btn" id="quizCopyBtn" onclick="copyQuizLink()">🔗 انسخ رابط النتيجة</button>
+        <button class="quiz-copy-btn quiz-fb-btn" onclick="shareQuizToFacebook()">📘 شارك على فيسبوك</button>
+      </div>
+      <div class="quiz-niso-callout">
+        <img src="images/extracted-index-36.jpg" alt="نيسو - المساعد الذكي" loading="lazy" />
+        <p>عايز توضّح تفاصيل أكتر عن التصميم ده؟ <a href="https://wa.me/201090235208?text=مرحباً نيسو، عندي سؤال عن نتيجة كويز تصميم الجناح" target="_blank" rel="noopener">اسأل نيسو، مساعد نيو سول الذكي</a> — متاح على مدار الساعة.</p>
+      </div>
       <button onclick="restartQuiz()" class="quiz-restart">🔄 جرب اختيارات تانية</button>
     </div>
   </div>
@@ -507,7 +528,82 @@ function buildQuizResult(){
     'الهدف: ' + (quizLabels.goal || '') + '\n' +
     'حابب أعرف أكتر عن التصميم ده وعرض السعر.';
   document.getElementById('quizWaLink').href = 'https://wa.me/201090235208?text=' + encodeURIComponent(msg);
+
+  updateQuizUrl();
 }
+
+function updateQuizUrl(){
+  var params = new URLSearchParams();
+  params.set('sector', quizAnswers.sector || '');
+  params.set('style', quizAnswers.style || '');
+  params.set('size', quizAnswers.size || '');
+  params.set('goal', quizAnswers.goal || '');
+  var newUrl = window.location.pathname + '?' + params.toString();
+  window.history.replaceState({}, '', newUrl);
+}
+
+function copyQuizLink(){
+  var url = window.location.href;
+  var btn = document.getElementById('quizCopyBtn');
+  function showCopied(){
+    btn.textContent = '✓ اتنسخ الرابط!';
+    btn.classList.add('copied');
+    setTimeout(function(){
+      btn.textContent = '🔗 انسخ رابط النتيجة';
+      btn.classList.remove('copied');
+    }, 2000);
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(url).then(showCopied).catch(function(){
+      window.prompt('انسخ الرابط ده يدويًا:', url);
+    });
+  } else {
+    window.prompt('انسخ الرابط ده يدويًا:', url);
+  }
+}
+
+function shareQuizToFacebook(){
+  var url = window.location.href;
+  var fbShareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url);
+  window.open(fbShareUrl, 'facebookShare', 'width=580,height=520,noopener,noreferrer');
+}
+
+var quizAnswerLabels = {
+  sector: {tech:'💻 تكنولوجيا واتصالات', realestate:'🏗️ عقارات وإنشاءات', food:'🍽️ أغذية ومشروبات', industrial:'⚙️ صناعي وهندسي', general:'🎯 خدمات عامة / تانية'},
+  style: {minimal:'⬜ عصري وبسيط', premium:'💎 فخم وراقي', bold:'⚡ جريء وملفت', tech:'🖥️ تفاعلي بالتكنولوجيا'},
+  size: {small:'📐 صغيرة (حتى 20 م²)', medium:'📏 متوسطة (20-50 م²)', large:'🏛️ كبيرة (50 م² فأكتر)'},
+  goal: {traffic:'👥 جذب أكبر عدد من الزوار', prestige:'✨ إبراز فخامة المنتج', deals:'🤝 تسهيل عقد الصفقات', experience:'🎮 تجربة تفاعلية مميزة'}
+};
+
+function tryRestoreFromUrl(){
+  var params = new URLSearchParams(window.location.search);
+  var sector = params.get('sector');
+  var style = params.get('style');
+  var size = params.get('size');
+  var goal = params.get('goal');
+  if (sector && style && size && goal &&
+      quizAnswerLabels.sector[sector] && quizAnswerLabels.style[style] &&
+      quizAnswerLabels.size[size] && quizAnswerLabels.goal[goal]) {
+    quizAnswers = {sector:sector, style:style, size:size, goal:goal};
+    quizLabels = {
+      sector: quizAnswerLabels.sector[sector],
+      style: quizAnswerLabels.style[style],
+      size: quizAnswerLabels.size[size],
+      goal: quizAnswerLabels.goal[goal]
+    };
+    quizCurrentIndex = 4;
+    updateQuizProgress();
+    buildQuizResult();
+    showQuizStep('result');
+    return true;
+  }
+  return false;
+}
+document.addEventListener('DOMContentLoaded', function(){
+  if (!tryRestoreFromUrl()) {
+    showQuizStep('1');
+  }
+});
 
 function restartQuiz(){
   quizAnswers = {};

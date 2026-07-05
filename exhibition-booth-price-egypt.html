@@ -46,6 +46,16 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 picture{display:contents}
+.price-calc-box{background:rgba(139,47,201,.08);border:1px solid rgba(139,47,201,.3);border-radius:16px;padding:28px;margin:32px 0}
+.price-calc-box h3{margin-bottom:8px;color:#fff;font-family:"Tajawal",sans-serif}
+.price-calc-field{margin:20px 0}
+.price-calc-field label{display:block;margin-bottom:10px;font-weight:600;color:var(--gray);font-size:.9rem}
+.price-calc-field input[type=range]{width:100%;accent-color:var(--purple-bright);height:6px}
+.price-calc-field select{width:100%;background:rgba(22,13,46,.6);border:1px solid rgba(139,47,201,.3);border-radius:10px;padding:12px 14px;color:#fff;font-family:inherit;font-size:.92rem}
+.price-calc-field select:focus{outline:none;border-color:var(--purple-glow)}
+.price-calc-result{text-align:center;padding:22px;background:rgba(139,47,201,.15);border-radius:12px;margin-top:22px}
+.price-calc-amount{font-size:1.9rem;font-weight:900;color:var(--purple-glow);margin:6px 0;font-family:"Tajawal",sans-serif}
+.price-calc-disclaimer{font-size:.76rem;color:var(--gray);line-height:1.6;margin-top:8px}
 :root{--purple:#8B2FC9;--purple-bright:#AA44F0;--purple-glow:#C66EFF;--purple-dark:#3D1066;--black:#06030D;--surface:#0E0820;--surface2:#160D2E;--white:#F5F0FF;--gray:#A89FC0}
 html{scroll-behavior:smooth}
 body{font-family:"IBM Plex Sans Arabic","Tajawal",sans-serif;background:var(--black);color:var(--white);overflow-x:hidden}
@@ -183,6 +193,8 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(139,47,201,.15);pad
 .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
 .hamburger.active span:nth-child(2){opacity:0}
 .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.share-fab{position:fixed;bottom:92px;left:24px;z-index:200;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--purple-bright));color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(139,47,201,.5);text-decoration:none;border:none;cursor:pointer;font-size:1.5rem;transition:transform .2s}
+.share-fab:hover{transform:scale(1.08)}
 @media(max-width:900px){
 .hamburger{display:flex}
 .nav-links{display:none!important;position:fixed!important;top:64px!important;right:0!important;left:0!important;bottom:0!important;background:#06030D!important;flex-direction:column!important;padding:28px 24px!important;gap:0!important;border-top:1px solid rgba(139,47,201,.25);text-align:center;overflow-y:auto;justify-content:flex-start!important;z-index:180!important;margin:0!important;list-style:none!important}
@@ -190,8 +202,7 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(139,47,201,.15);pad
 .nav-links li{width:100%;list-style:none;border-bottom:1px solid rgba(139,47,201,.15)}
 .nav-links li:last-child{border-bottom:none;margin-top:16px}
 .nav-links li a{display:block;padding:16px 0;font-size:1.3rem;font-family:"Tajawal",sans-serif;font-weight:700}
-.share-fab{position:fixed;bottom:92px;left:24px;z-index:200;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--purple-bright));color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(139,47,201,.5);text-decoration:none;border:none;cursor:pointer;font-size:1.5rem;transition:transform .2s}
-.share-fab:hover{transform:scale(1.08)}
+
 }
 .niso-fab{position:fixed;bottom:160px;left:24px;z-index:200;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#8B2FC9,#AA44F0);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(139,47,201,.5);text-decoration:none;transition:transform .2s}
 .niso-fab:hover{transform:scale(1.08)}
@@ -260,6 +271,36 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(139,47,201,.15);pad
 </ul>
 <p>الأرقام دي للتوجيه العام بس — <a href="https://wa.me/201090235208?text=أريد الاستفسار عن سعر تصميم وتنفيذ جناح معرض" target="_blank" rel="noopener">تواصل معنا</a> عشان تاخد تقدير دقيق يناسب مشروعك بالظبط.</p>
 <figure class="article-figure"><a href="https://newsouladv.com/new-soul-royal-ceramica.html"><picture><source srcset="images/fischer-firestop-station.webp" type="image/webp" /><img src="images/fischer-firestop-station.jpg" alt="محطة عرض منتجات داخل جناح معرض بإضاءة مخفية أنيقة" loading="lazy" /></picture></a><figcaption>محطة عرض بتفاصيل دقيقة - نموذج من أعمال نيو سول</figcaption></figure>
+
+<div class="price-calc-box">
+  <h3>🧮 احسب تقدير سعر جناحك دلوقتي</h3>
+  <p style="color:var(--gray);font-size:.9rem;margin-bottom:0">حرّك المؤشر واختار التفاصيل، وهتشوف تقدير فوري (تقريبي، مش نهائي)</p>
+  <div class="price-calc-field">
+    <label>مساحة الجناح: <strong id="calcAreaValue" style="color:var(--purple-glow)">20 م²</strong></label>
+    <input type="range" id="calcArea" min="9" max="100" step="1" value="20" oninput="updatePriceCalc()" />
+  </div>
+  <div class="price-calc-field">
+    <label>نوع الجناح</label>
+    <select id="calcType" onchange="updatePriceCalc()">
+      <option value="shell">جناح جاهز (Shell Scheme)</option>
+      <option value="space">مساحة مفتوحة (Space Only)</option>
+    </select>
+  </div>
+  <div class="price-calc-field">
+    <label>مستوى الخامات</label>
+    <select id="calcMaterial" onchange="updatePriceCalc()">
+      <option value="standard">قياسي</option>
+      <option value="premium">فاخر</option>
+    </select>
+  </div>
+  <div class="price-calc-result">
+    <p style="color:var(--gray);font-size:.85rem;margin-bottom:4px">التقدير التقريبي</p>
+    <p id="calcResult" class="price-calc-amount">-- جنيه</p>
+    <p class="price-calc-disclaimer">* رقم تقريبي للتوجيه فقط ومش عرض سعر ملزم — السعر النهائي بيتحدد بعد دراسة تفاصيل مشروعك الفعلية.</p>
+  </div>
+  <a id="calcWaLink" href="https://wa.me/201090235208" target="_blank" rel="noopener" class="btn-primary" style="width:100%;justify-content:center;margin-top:14px;text-align:center">📲 اطلب عرض سعر دقيق بناءً على التقدير ده</a>
+</div>
+<p style="text-align:center;margin-top:20px"><a href="https://newsouladv.com/booth-design-quiz.html" style="color:var(--purple-glow);font-size:.9rem">مش متأكد من الشكل اللي يناسبك؟ جرب كويز "صمم جناحك" ←</a></p>
 <h2 id="materials">تأثير الخامات على السعر</h2>
 <p>اختيار الخامة بيأثر بشكل مباشر على السعر والمظهر النهائي:</p>
 <ul>
@@ -360,6 +401,27 @@ document.addEventListener('keydown', function(e){
     if(overlay && overlay.classList.contains('open')) toggleSiteSearch();
   }
 });
+function updatePriceCalc(){
+  var area = parseInt(document.getElementById('calcArea').value, 10);
+  var type = document.getElementById('calcType').value;
+  var material = document.getElementById('calcMaterial').value;
+  document.getElementById('calcAreaValue').textContent = area + ' م²';
+
+  var baseRate = (type === 'shell') ? 3000 : 5500;
+  var materialMultiplier = (material === 'premium') ? 1.4 : 1.0;
+  var estimate = area * baseRate * materialMultiplier;
+  var low = Math.round((estimate * 0.85) / 500) * 500;
+  var high = Math.round((estimate * 1.15) / 500) * 500;
+
+  function fmt(n){ return n.toLocaleString('en-US'); }
+  document.getElementById('calcResult').textContent = fmt(low) + ' - ' + fmt(high) + ' جنيه تقريبًا';
+
+  var typeText = (type === 'shell') ? 'جناح جاهز (Shell Scheme)' : 'مساحة مفتوحة (Space Only)';
+  var materialText = (material === 'premium') ? 'خامات فاخرة' : 'خامات قياسية';
+  var msg = 'مرحباً، أريد عرض سعر لجناح مساحته ' + area + ' م²، ' + typeText + '، ' + materialText + '. التقدير التقريبي من الحاسبة كان ' + fmt(low) + '-' + fmt(high) + ' جنيه، وحابب أعرف السعر الدقيق.';
+  document.getElementById('calcWaLink').href = 'https://wa.me/201090235208?text=' + encodeURIComponent(msg);
+}
+document.addEventListener('DOMContentLoaded', updatePriceCalc);
 function shareThisPage(){
   if (navigator.share) {
     navigator.share({title: document.title, url: window.location.href}).catch(function(){});

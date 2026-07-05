@@ -178,6 +178,8 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(139,47,201,.15);pad
 .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
 .hamburger.active span:nth-child(2){opacity:0}
 .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.share-fab{position:fixed;bottom:92px;left:24px;z-index:200;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--purple-bright));color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(139,47,201,.5);text-decoration:none;border:none;cursor:pointer;font-size:1.5rem;transition:transform .2s}
+.share-fab:hover{transform:scale(1.08)}
 @media(max-width:900px){
 .hamburger{display:flex}
 .nav-links{display:none!important;position:fixed!important;top:64px!important;right:0!important;left:0!important;bottom:0!important;background:#06030D!important;flex-direction:column!important;padding:28px 24px!important;gap:0!important;border-top:1px solid rgba(139,47,201,.25);text-align:center;overflow-y:auto;justify-content:flex-start!important;z-index:180!important;margin:0!important;list-style:none!important}
@@ -185,8 +187,7 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(139,47,201,.15);pad
 .nav-links li{width:100%;list-style:none;border-bottom:1px solid rgba(139,47,201,.15)}
 .nav-links li:last-child{border-bottom:none;margin-top:16px}
 .nav-links li a{display:block;padding:16px 0;font-size:1.3rem;font-family:"Tajawal",sans-serif;font-weight:700}
-.share-fab{position:fixed;bottom:92px;left:24px;z-index:200;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--purple-bright));color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(139,47,201,.5);text-decoration:none;border:none;cursor:pointer;font-size:1.5rem;transition:transform .2s}
-.share-fab:hover{transform:scale(1.08)}
+
 }
 .niso-fab{position:fixed;bottom:160px;left:24px;z-index:200;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#8B2FC9,#AA44F0);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(139,47,201,.5);text-decoration:none;transition:transform .2s}
 .niso-fab:hover{transform:scale(1.08)}

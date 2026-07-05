@@ -46,6 +46,10 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 picture{display:contents}
+.quiz-niso-callout{display:flex;align-items:center;gap:16px;background:rgba(139,47,201,.08);border:1px solid rgba(139,47,201,.25);border-radius:14px;padding:16px 20px;text-align:right}
+.quiz-niso-callout img{width:52px;height:52px;border-radius:50%;object-fit:cover;flex-shrink:0}
+.quiz-niso-callout p{margin:0;font-size:.88rem;color:var(--gray);line-height:1.6}
+.quiz-niso-callout a{color:var(--purple-glow);font-weight:700}
 .price-calc-box{background:rgba(139,47,201,.08);border:1px solid rgba(139,47,201,.3);border-radius:16px;padding:28px;margin:32px 0}
 .price-calc-box h3{margin-bottom:8px;color:#fff;font-family:"Tajawal",sans-serif}
 .price-calc-field{margin:20px 0}
@@ -289,7 +293,8 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(139,47,201,.15);pad
   <div class="price-calc-field">
     <label>مستوى الخامات</label>
     <select id="calcMaterial" onchange="updatePriceCalc()">
-      <option value="standard">قياسي</option>
+      <option value="economy">اقتصادي</option>
+      <option value="standard" selected>قياسي</option>
       <option value="premium">فاخر</option>
     </select>
   </div>
@@ -301,6 +306,10 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(139,47,201,.15);pad
   <a id="calcWaLink" href="https://wa.me/201090235208" target="_blank" rel="noopener" class="btn-primary" style="width:100%;justify-content:center;margin-top:14px;text-align:center">📲 اطلب عرض سعر دقيق بناءً على التقدير ده</a>
 </div>
 <p style="text-align:center;margin-top:20px"><a href="https://newsouladv.com/booth-design-quiz.html" style="color:var(--purple-glow);font-size:.9rem">مش متأكد من الشكل اللي يناسبك؟ جرب كويز "صمم جناحك" ←</a></p>
+<div class="quiz-niso-callout" style="margin-top:20px">
+  <img src="images/extracted-index-36.jpg" alt="نيسو - المساعد الذكي" loading="lazy" />
+  <p>عايز توضّح تفاصيل أكتر عن السعر أو مشروعك؟ <a href="https://wa.me/201090235208?text=مرحباً نيسو، عندي سؤال عن سعر تصميم جناح معرض" target="_blank" rel="noopener">اسأل نيسو، مساعد نيو سول الذكي</a> — متاح على مدار الساعة.</p>
+</div>
 <h2 id="materials">تأثير الخامات على السعر</h2>
 <p>اختيار الخامة بيأثر بشكل مباشر على السعر والمظهر النهائي:</p>
 <ul>
@@ -408,7 +417,7 @@ function updatePriceCalc(){
   document.getElementById('calcAreaValue').textContent = area + ' م²';
 
   var baseRate = (type === 'shell') ? 3000 : 5500;
-  var materialMultiplier = (material === 'premium') ? 1.4 : 1.0;
+  var materialMultiplier = (material === 'premium') ? 1.4 : (material === 'economy') ? 0.75 : 1.0;
   var estimate = area * baseRate * materialMultiplier;
   var low = Math.round((estimate * 0.85) / 500) * 500;
   var high = Math.round((estimate * 1.15) / 500) * 500;
@@ -417,7 +426,7 @@ function updatePriceCalc(){
   document.getElementById('calcResult').textContent = fmt(low) + ' - ' + fmt(high) + ' جنيه تقريبًا';
 
   var typeText = (type === 'shell') ? 'جناح جاهز (Shell Scheme)' : 'مساحة مفتوحة (Space Only)';
-  var materialText = (material === 'premium') ? 'خامات فاخرة' : 'خامات قياسية';
+  var materialText = (material === 'premium') ? 'خامات فاخرة' : (material === 'economy') ? 'خامات اقتصادية' : 'خامات قياسية';
   var msg = 'مرحباً، أريد عرض سعر لجناح مساحته ' + area + ' م²، ' + typeText + '، ' + materialText + '. التقدير التقريبي من الحاسبة كان ' + fmt(low) + '-' + fmt(high) + ' جنيه، وحابب أعرف السعر الدقيق.';
   document.getElementById('calcWaLink').href = 'https://wa.me/201090235208?text=' + encodeURIComponent(msg);
 }

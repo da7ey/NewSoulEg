@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function(){
 picture{display:contents}
 .video-gallery-wrap{max-width:1000px;margin:0 auto;padding:0 24px 100px;position:relative;z-index:1}
 .video-gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px;margin-bottom:32px}
-.video-card{position:relative;aspect-ratio:9/16;border-radius:16px;overflow:hidden;background:var(--surface);border:1px solid rgba(139,47,201,.2);cursor:pointer}
+.video-card{display:block;position:relative;aspect-ratio:9/16;border-radius:16px;overflow:hidden;background:var(--surface);border:1px solid rgba(139,47,201,.2);cursor:pointer;text-decoration:none}
 .video-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
 .video-card:hover img{transform:scale(1.05)}
 .video-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,3,13,.85) 0%,rgba(6,3,13,.1) 45%,transparent 70%);display:flex;flex-direction:column;justify-content:flex-end;padding:16px}
@@ -82,13 +82,6 @@ picture{display:contents}
 .video-card:hover .video-card-play{transform:translate(-50%,-50%) scale(1.1)}
 .video-card-play svg{margin-right:-3px}
 .video-card-title{color:#fff;font-size:.88rem;font-weight:700;line-height:1.4}
-.video-modal-overlay{display:none;position:fixed;inset:0;background:rgba(6,3,13,.92);z-index:500;align-items:center;justify-content:center;padding:20px}
-.video-modal-overlay.active{display:flex}
-.video-modal-box{position:relative;width:100%;max-width:340px}
-.video-modal-close{position:absolute;top:-44px;left:0;background:rgba(139,47,201,.2);border:1px solid rgba(139,47,201,.4);color:#fff;width:36px;height:36px;border-radius:50%;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s}
-.video-modal-close:hover{background:rgba(139,47,201,.4)}
-#videoModalContent{min-height:200px;display:flex;align-items:center;justify-content:center}
-#videoModalContent .video-modal-loading{color:var(--gray);font-size:.9rem}
 .quiz-niso-callout{display:flex;align-items:center;gap:16px;background:rgba(139,47,201,.08);border:1px solid rgba(139,47,201,.25);border-radius:14px;padding:16px 20px;margin-top:24px;text-align:right}
 .quiz-niso-callout img{width:52px;height:52px;border-radius:50%;object-fit:cover;flex-shrink:0}
 .quiz-niso-callout p{margin:0;font-size:.88rem;color:var(--gray);line-height:1.6}
@@ -298,17 +291,11 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(139,47,201,.15);pad
     <li><a href="https://newsouladv.com/acrylic-stainless-signs.html">💡 لافتات مضيئة</a></li>
     <li><a href="https://wa.me/201090235208?text=أريد الاستفسار عن خدماتكم" target="_blank" rel="noopener">📞 تواصل معنا</a></li>
   </ul><button class="search-toggle" onclick="toggleSiteSearch()" aria-label="بحث في الموقع"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button><a href="https://newsouladv.com/faq.html" class="faq-nav-icon" aria-label="الأسئلة الشائعة"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></a><button class="hamburger" onclick="toggleMobileNav()" aria-label="القائمة"><span></span><span></span><span></span></button></nav>
-<header class="article-header" style="text-align:center"><p class="article-breadcrumb" style="justify-content:center;display:flex"><a href="https://www.newsouladv.com">نيو سول</a> ٫ مكتبة الفيديو</p><p class="article-eyebrow">شاهد أعمالنا</p><h1>مكتبة الفيديو<br/><span>لحظات من مشاريعنا الحقيقية</span></h1><p class="article-lead" style="max-width:640px;margin-left:auto;margin-right:auto">فيديوهات قصيرة من تنفيذ أجنحة المعارض والفعاليات — اضغط على أي فيديو عشان يشتغل.</p></header>
+<header class="article-header" style="text-align:center"><p class="article-breadcrumb" style="justify-content:center;display:flex"><a href="https://www.newsouladv.com">نيو سول</a> ٫ مكتبة الفيديو</p><p class="article-eyebrow">شاهد أعمالنا</p><h1>مكتبة الفيديو<br/><span>لحظات من مشاريعنا الحقيقية</span></h1><p class="article-lead" style="max-width:640px;margin-left:auto;margin-right:auto">فيديوهات قصيرة من تنفيذ أجنحة المعارض والفعاليات — اضغط على أي فيديو وهيفتحلك على تيك توك في تاب جديد.</p></header>
 
 <div class="video-gallery-wrap">
   <div class="video-gallery-grid" id="videoGalleryGrid"></div>
 
-  <div class="video-modal-overlay" id="videoModalOverlay" onclick="if(event.target===this)closeVideoModal()">
-    <div class="video-modal-box">
-      <button class="video-modal-close" onclick="closeVideoModal()" aria-label="إغلاق">✕</button>
-      <div id="videoModalContent"></div>
-    </div>
-  </div>
   <div class="quiz-niso-callout" style="max-width:min(700px,90vw);margin:32px auto 0">
     <img src="images/extracted-index-36.jpg" alt="نيسو - المساعد الذكي" loading="lazy" />
     <p>عجبك اللي شفته؟ <a href="https://wa.me/201090235208?text=مرحباً نيسو، شفت مكتبة الفيديو وحابب أعرف أكتر عن خدماتكم" target="_blank" rel="noopener">اسأل نيسو، مساعد نيو سول الذكي</a> — متاح على مدار الساعة.</p>
@@ -387,61 +374,17 @@ var videoGalleryData = [
   { id: '7649528370279058708', title: 'من أعمال نيو سول', thumbnail: 'images/showroom-fischer-acrylic-panel.jpg' }
 ];
 
-var tiktokScriptLoaded = false;
-
-function loadTikTokScript(callback){
-  if (tiktokScriptLoaded) {
-    if (window.tiktokEmbed && window.tiktokEmbed.lib && window.tiktokEmbed.lib.render) {
-      window.tiktokEmbed.lib.render(document.getElementById('videoModalContent'));
-    }
-    if (callback) callback();
-    return;
-  }
-  var script = document.createElement('script');
-  script.src = 'https://www.tiktok.com/embed.js';
-  script.async = true;
-  script.onload = function(){
-    tiktokScriptLoaded = true;
-    if (callback) callback();
-  };
-  document.body.appendChild(script);
-}
-
-function openVideoModal(index){
-  var video = videoGalleryData[index];
-  var overlay = document.getElementById('videoModalOverlay');
-  var content = document.getElementById('videoModalContent');
-  // Always clear first so any previous embed is fully removed before the new one loads
-  content.innerHTML = '<p class="video-modal-loading">جاري تحميل الفيديو...</p>';
-  overlay.classList.add('active');
-  document.body.style.overflow = 'hidden';
-
-  content.innerHTML = '<blockquote class="tiktok-embed" cite="https://www.tiktok.com/@newsouladv/video/' + video.id + '" data-video-id="' + video.id + '" style="max-width:100%;min-width:280px;margin:0"><section></section></blockquote>';
-  loadTikTokScript();
-}
-
-function closeVideoModal(){
-  var overlay = document.getElementById('videoModalOverlay');
-  var content = document.getElementById('videoModalContent');
-  overlay.classList.remove('active');
-  content.innerHTML = '';
-  document.body.style.overflow = '';
-}
-
-document.addEventListener('keydown', function(e){
-  if (e.key === 'Escape') closeVideoModal();
-});
-
 function renderVideoGallery(){
   var grid = document.getElementById('videoGalleryGrid');
   if (!grid) return;
   var html = '';
-  videoGalleryData.forEach(function(video, i){
-    html += '<div class="video-card" data-index="' + i + '" onclick="openVideoModal(' + i + ')">' +
+  videoGalleryData.forEach(function(video){
+    var url = 'https://www.tiktok.com/@newsouladv/video/' + video.id;
+    html += '<a class="video-card" href="' + url + '" target="_blank" rel="noopener">' +
       '<img src="' + video.thumbnail + '" alt="' + video.title + '" loading="lazy" />' +
       '<div class="video-card-play"><svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>' +
       '<div class="video-card-overlay"><span class="video-card-title">' + video.title + '</span></div>' +
-      '</div>';
+      '</a>';
   });
   grid.innerHTML = html;
 }

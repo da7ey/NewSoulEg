@@ -72,6 +72,13 @@ document.addEventListener('DOMContentLoaded', function(){
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 picture{display:contents}
+.exhibit-countdown{display:flex;align-items:center;justify-content:center;gap:12px 20px;background:rgba(139,47,201,.08);border:1px solid rgba(139,47,201,.25);border-radius:14px;padding:16px 20px;margin:24px auto 0;max-width:min(520px,92vw);width:fit-content;box-sizing:border-box;flex-wrap:wrap;overflow-wrap:break-word}
+.exhibit-countdown-info{display:flex;flex-direction:column;align-items:center}
+.exhibit-countdown-info .countdown-days{font-family:"Tajawal",sans-serif;font-weight:900;font-size:1.6rem;color:var(--purple-glow)}
+.exhibit-countdown-sub{color:var(--gray);font-size:.78rem;margin-top:2px}
+.exhibit-countdown-btns{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.exhibit-countdown-btns .btn-secondary{padding:10px 16px;font-size:.82rem}
+
 :root{--purple:#8B2FC9;--purple-bright:#AA44F0;--purple-glow:#C66EFF;--purple-dark:#3D1066;--black:#06030D;--surface:#0E0820;--surface2:#160D2E;--white:#F5F0FF;--gray:#A89FC0}
 html{scroll-behavior:smooth}
 body{font-family:"IBM Plex Sans Arabic","Tajawal",sans-serif;background:var(--black);color:var(--white);overflow-x:hidden}
@@ -272,6 +279,8 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(139,47,201,.15);pad
     <li><a href="https://wa.me/201090235208?text=أريد الاستفسار عن تنفيذ جناح في معرض الكتاب" target="_blank" rel="noopener">📞 تواصل معنا</a></li>
   </ul><button class="search-toggle" onclick="toggleSiteSearch()" aria-label="بحث في الموقع"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button><a href="https://newsouladv.com/faq.html" class="faq-nav-icon" aria-label="الأسئلة الشائعة"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></a><button class="hamburger" onclick="toggleMobileNav()" aria-label="القائمة"><span></span><span></span><span></span></button></nav>
 <header class="article-header"><p class="article-breadcrumb"><a href="https://www.newsouladv.com">نيو سول</a> ٫ <a href="https://newsouladv.com/service-areas.html">خدماتنا</a> ٫ <a href="https://newsouladv.com/exhibitions-guide-egypt.html">دليل المعارض والمؤتمرات</a> ٫ معرض الضيافة والفنادق</p><p class="article-eyebrow">دليل معرض · مصر</p><h1>معرض الضيافة والفنادق<br/><span>في مصر</span></h1><p class="article-lead">كل ما تحتاج معرفته عن قطاع معارض الضيافة والفنادق في مصر — أبرز الفعاليات، مكان الإقامة، وكيف تختار شركة تنظيم معارض احترافية لتنفيذ جناح يعكس هوية علامتك التجارية.</p><div class="article-meta"><span>📍 القاهرة</span><span>🏨 قطاع الضيافة والفنادق</span><span>✍️ نيو سول للدعاية والإعلان</span></div></header>
+<div class="exhibit-countdown"><div class="exhibit-countdown-info"><span class="countdown-days" data-date="2026-11-10">--</span><span class="exhibit-countdown-sub">يوم متبقي على المعرض</span></div><div class="exhibit-countdown-btns"><button type="button" class="btn-secondary" onclick="addToGoogleCalendar('20261110','20261112','معرض الضيافة والفنادق FHS Egypt','سوفيتيل داون تاون القاهرة نايل')">📅 Google Calendar</button><button type="button" class="btn-secondary" onclick="addToCalendar('20261110','20261112','معرض الضيافة والفنادق FHS Egypt','سوفيتيل داون تاون القاهرة نايل')">📥 تحميل ملف (.ics)</button></div></div>
+
 
 <div class="article-layout"><aside class="toc-wrap"><div class="toc-card"><p class="toc-title">محتويات الصفحة</p><ul class="toc-list" id="tocList"><li><a href="#intro">نبذة عن المعرض</a></li><li><a href="#location">الموعد والمكان</a></li><li><a href="#visitors">من يحضر الفعالية؟</a></li><li><a href="#services">خدمات نيو سول</a></li><li><a href="#faq">الأسئلة الشائعة</a></li></ul><div class="toc-cta"><a href="https://wa.me/201090235208?text=أريد الاستفسار عن تنفيذ جناح في معرض الضيافة والفنادق" target="_blank" rel="noopener">📲 اطلب عرض سعر</a></div></div></aside>
 <article class="article-content">
@@ -356,6 +365,49 @@ document.addEventListener('keydown', function(e){
     if(overlay && overlay.classList.contains('open')) toggleSiteSearch();
   }
 });
+
+function addToGoogleCalendar(startDate, endDate, title, location){
+  var url = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+    + '&text=' + encodeURIComponent(title)
+    + '&dates=' + startDate + '/' + endDate
+    + '&details=' + encodeURIComponent('أضيف من موقع نيو سول للدعاية والإعلان (newsouladv.com)')
+    + '&location=' + encodeURIComponent(location);
+  window.open(url, '_blank');
+}
+
+function addToCalendar(startDate, endDate, title, location){
+  var icsContent = [
+    'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//New Soul Advertising//Exhibitions Calendar//AR',
+    'BEGIN:VEVENT','DTSTART;VALUE=DATE:' + startDate,'DTEND;VALUE=DATE:' + endDate,
+    'SUMMARY:' + title,'LOCATION:' + location,
+    'DESCRIPTION:أضيف من موقع نيو سول للدعاية والإعلان (newsouladv.com)',
+    'BEGIN:VALARM','TRIGGER:-P7D','ACTION:DISPLAY','DESCRIPTION:تذكير: ' + title + ' بعد أسبوع','END:VALARM',
+    'END:VEVENT','END:VCALENDAR'
+  ].join('\r\n');
+  var blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = title.replace(/[^a-zA-Z0-9\u0600-\u06FF]/g, '-') + '.ics';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+function updateExhibitCountdown(){
+  var el = document.querySelector('.exhibit-countdown .countdown-days');
+  if (!el) return;
+  var now = new Date();
+  var target = new Date(el.getAttribute('data-date') + 'T00:00:00');
+  var diffMs = target - now;
+  var days = Math.ceil(diffMs / (1000*60*60*24));
+  if (days > 0) { el.textContent = days; }
+  else if (days === 0) { el.textContent = '0'; document.querySelector('.exhibit-countdown-sub').textContent = 'المعرض يبدأ اليوم!'; }
+  else { el.textContent = '—'; document.querySelector('.exhibit-countdown-sub').textContent = 'انتهى المعرض'; }
+}
+document.addEventListener('DOMContentLoaded', updateExhibitCountdown);
+
 function shareThisPage(){
   if (navigator.share) {
     navigator.share({title: document.title, url: window.location.href}).catch(function(){});

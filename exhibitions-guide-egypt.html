@@ -71,6 +71,16 @@ document.addEventListener('DOMContentLoaded', function(){
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 picture{display:contents}
+.calendar-banner{display:flex;align-items:center;gap:20px;background:linear-gradient(135deg,rgba(139,47,201,.15),rgba(170,68,240,.05));border:1px solid rgba(170,68,240,.35);border-radius:16px;padding:20px 24px;margin:20px 0 28px;text-decoration:none;transition:.2s}
+.calendar-banner:hover{border-color:rgba(170,68,240,.6);background:linear-gradient(135deg,rgba(139,47,201,.22),rgba(170,68,240,.08))}
+.calendar-banner-icon{width:56px;height:56px;flex-shrink:0}
+.calendar-banner-text{flex:1;display:flex;flex-direction:column;gap:4px}
+.calendar-banner-text strong{color:#fff;font-size:1.05rem}
+.calendar-banner-text span{color:var(--gray);font-size:.85rem}
+.calendar-banner-arrow{color:var(--purple-glow);font-size:1.3rem;flex-shrink:0}
+@media(max-width:600px){.calendar-banner{padding:16px 18px;gap:14px}.calendar-banner-icon{width:44px;height:44px}.calendar-banner-text strong{font-size:.92rem}.calendar-banner-text span{font-size:.78rem}}
+@media(min-width:901px){.cta-contacts{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin}}
+
 .exam-search-box{margin:20px 0}
 .exam-search-box input{width:100%;background:rgba(22,13,46,.6);border:1px solid rgba(139,47,201,.3);border-radius:12px;padding:14px 18px;color:#fff;font-family:"IBM Plex Sans Arabic",sans-serif;font-size:.95rem;box-sizing:border-box}
 .exam-search-box input:focus{outline:none;border-color:var(--purple-glow)}
@@ -284,7 +294,20 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(139,47,201,.15);pad
 <p>يُعد <a href="https://www.newsouladv.com/egypt-international-exhibition-center.html">مركز مصر للمعارض الدولية (EIEC)</a> الوجهة الأولى لإقامة المعارض والمؤتمرات الكبرى في مصر، بفضل موقعه المتميز على محور المشير طنطاوي بالقاهرة، ومساحاته الواسعة التي تتجاوز 40 ألف متر مربع، وتجهيزاته الحديثة التي تستوعب أكبر الفعاليات الدولية.</p>
 <p>وهناك أيضًا <a href="https://newsouladv.com/cairo-convention-center.html">مركز القاهرة الدولي للمؤتمرات (CICC)</a>، الذي تديره هيئة مصر للمعارض والمؤتمرات (EECA) في مدينة نصر، ويستضيف معارض الأزياء والنسيج والعديد من المؤتمرات الحكومية والدولية.</p>
 <h2 id="shows">أشهر المعارض السنوية في مصر</h2>
-<p>من أبرز المعارض التي تُقام سنويًا في مصر (تقدر تشوف <a href="https://newsouladv.com/exhibitions-calendar.html">أجندة المعارض الكاملة مرتبة بالتاريخ من هنا ←</a>):</p>
+<p>من أبرز المعارض التي تُقام سنويًا في مصر:</p>
+<a href="https://newsouladv.com/exhibitions-calendar.html" class="calendar-banner">
+  <svg class="calendar-banner-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <rect x="12" y="18" width="76" height="70" rx="10" fill="#160D2E" stroke="#AA44F0" stroke-width="2.5"/>
+    <rect x="12" y="18" width="76" height="22" rx="10" fill="#8B2FC9"/>
+    <rect x="12" y="30" width="76" height="10" fill="#8B2FC9"/>
+    <rect x="28" y="8" width="7" height="20" rx="3.5" fill="#C66EFF"/>
+    <rect x="65" y="8" width="7" height="20" rx="3.5" fill="#C66EFF"/>
+    <circle cx="28" cy="54" r="4" fill="#AA44F0"/><circle cx="43" cy="54" r="4" fill="#AA44F0"/><circle cx="58" cy="54" r="4" fill="#AA44F0"/><circle cx="73" cy="54" r="4" fill="rgba(170,68,240,.35)"/>
+    <circle cx="28" cy="70" r="4" fill="rgba(170,68,240,.35)"/><circle cx="43" cy="70" r="4" fill="#C66EFF"/><circle cx="58" cy="70" r="4" fill="rgba(170,68,240,.35)"/><circle cx="73" cy="70" r="4" fill="rgba(170,68,240,.35)"/>
+  </svg>
+  <span class="calendar-banner-text"><strong>أجندة المعارض الكاملة</strong><span>كل المواعيد مرتبة زمنيًا، وتقدر تضيفها لتقويمك الشخصي</span></span>
+  <span class="calendar-banner-arrow">←</span>
+</a>
 <div class="exam-search-box">
   <input type="text" id="examSearchInput" placeholder="ابحث هنا عن المعارض القادمة" autocomplete="off" oninput="filterExhibitionsList()" />
 </div>

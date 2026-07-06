@@ -126,9 +126,9 @@ document.addEventListener('DOMContentLoaded', function(){
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" />
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-<noscript><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet" /></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Tajawal:wght@400;500;700;800;900&family=Cairo:wght@600;700;800;900&display=swap" />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Tajawal:wght@400;500;700;800;900&family=Cairo:wght@600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Tajawal:wght@400;500;700;800;900&family=Cairo:wght@600;700;800;900&display=swap" rel="stylesheet" /></noscript>
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1288,7 +1288,7 @@ document.addEventListener('DOMContentLoaded', function(){
     <div class="footer-logo">
       <img src="images/logo.png" alt="نيو سول للدعاية والإعلان" />
     </div>
-    <div class="footer-links" style="justify-content:center"><a href="https://newsouladv.com/">🏠 الرئيسية</a><a href="https://newsouladv.com/about-us.html">ℹ️ من نحن</a><a href="https://newsouladv.com/service-areas.html">🔧 خدماتنا</a><a href="https://newsouladv.com/#projects">🖼️ أعمالنا</a><a href="https://newsouladv.com/faq.html">❓ الأسئلة الشائعة</a><a href="https://newsouladv.com/company-brochure.html">📄 بروشور الشركة</a><a href="https://newsouladv.com/booth-design-quiz.html">✨ صمم جناحك مجانًا</a><a href="https://wa.me/201090235208?text=مرحباً، أريد الاستفسار عن خدماتكم" target="_blank" rel="noopener">📞 تواصل معنا</a><a href="https://newsouladv.com/privacy-policy.html">🔒 سياسة الخصوصية</a></div>
+    <div class="footer-links" style="justify-content:center"><a href="https://newsouladv.com/">🏠 الرئيسية</a><a href="https://newsouladv.com/about-us.html">ℹ️ من نحن</a><a href="https://newsouladv.com/service-areas.html">🔧 خدماتنا</a><a href="https://newsouladv.com/#projects">🖼️ أعمالنا</a><a href="https://newsouladv.com/faq.html">❓ الأسئلة الشائعة</a><a href="https://newsouladv.com/files/newsoul-company-brochure.pdf" target="_blank" rel="noopener">📄 بروشور الشركة</a><a href="https://newsouladv.com/booth-design-quiz.html">✨ صمم جناحك مجانًا</a><a href="https://wa.me/201090235208?text=مرحباً، أريد الاستفسار عن خدماتكم" target="_blank" rel="noopener">📞 تواصل معنا</a><a href="https://newsouladv.com/privacy-policy.html">🔒 سياسة الخصوصية</a></div>
     
   </div>
   <div class="footer-inner">
@@ -1435,11 +1435,7 @@ document.addEventListener('DOMContentLoaded', function(){
     if (e.key === 'ArrowLeft') slideHero(1);
   });
 
-  function copyPageLink(){
-    navigator.clipboard.writeText(window.location.href).then(function(){
-      alert('تم نسخ رابط الصفحة');
-    });
-  }
+  
   function toggleMobileNav(){
     var nav = document.querySelector('.nav-links');
     var ham = document.querySelector('.hamburger');

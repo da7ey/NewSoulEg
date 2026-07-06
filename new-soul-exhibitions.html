@@ -84,6 +84,25 @@ document.addEventListener('DOMContentLoaded', function(){
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     picture { display: contents; }
+    .article-layout{max-width:1280px;margin:0 auto;padding:0 24px 0;display:grid;grid-template-columns:240px 1fr;gap:40px;position:relative;z-index:1}
+    .toc-wrap{position:sticky;top:100px;align-self:start}
+    .toc-card{background:rgba(22,13,46,.6);border:1px solid rgba(139,47,201,.2);border-radius:16px;padding:24px 20px}
+    .toc-title{font-size:.82rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--purple-glow);margin-bottom:16px}
+    .toc-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+    .toc-list a{color:var(--gray);text-decoration:none;font-size:.88rem;line-height:1.5;display:block;padding:4px 0;border-right:2px solid transparent;padding-right:12px;transition:color .2s,border-color .2s}
+    .toc-list a:hover,.toc-list a.active{color:var(--purple-glow);border-right-color:var(--purple-bright)}
+    .toc-cta{margin-top:20px;padding-top:20px;border-top:1px solid rgba(139,47,201,.2)}
+    .toc-cta a{display:block;text-align:center;background:linear-gradient(135deg,var(--purple),var(--purple-bright));color:#fff;text-decoration:none;padding:12px;border-radius:10px;font-weight:700;font-size:.85rem}
+    .article-full-content{min-width:0}
+    @media(max-width:900px){.article-layout{grid-template-columns:1fr;gap:32px;padding:0}.toc-wrap{position:static}}
+    .article-header{position:relative;z-index:1;padding:140px 24px 60px;text-align:center;max-width:900px;margin:0 auto}
+    .article-breadcrumb{font-size:.82rem;color:var(--gray);margin-bottom:20px}
+    .article-breadcrumb a{color:var(--purple-glow);text-decoration:none}
+    .article-eyebrow{font-size:.75rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--purple-glow);margin-bottom:18px}
+    .article-header h1{font-family:"Tajawal",sans-serif;font-size:clamp(1.8rem,4.5vw,3.2rem);font-weight:900;line-height:1.3;margin-bottom:24px}
+    .article-header h1 span{background:linear-gradient(135deg,var(--purple-glow),#fff 60%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .article-lead{font-size:1.05rem;color:var(--gray);line-height:1.9;margin-bottom:28px}
+    .article-meta{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;font-size:.85rem;color:var(--gray);padding-top:20px;border-top:1px solid rgba(139,47,201,.2)}
 
     :root {
       --purple: #8B2FC9;
@@ -962,27 +981,10 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 <!-- HERO -->
-<header class="hero" role="banner">
-  <p class="hero-breadcrumb"><a href="https://newsouladv.com/">نيو سول</a> ٫ أجنحة المعارض</p><p class="hero-eyebrow">نيو سول للدعاية والإعلان · فيصل، الجيزة</p>
-  <h1>
-    نصمم أجنحة معارض<br/>
-    <span>تصنع الفارق</span>
-  </h1>
-  <p class="hero-sub">
-    من التصميم إلى التنفيذ والتركيب — نحوّل مساحتك في المعرض إلى تجربة لا تُنسى تعكس هوية علامتك التجارية. جناح فيشر في Big 5 Construct Egypt 2026 نموذجاً.
-  </p>
-  <div class="hero-buttons">
-    <a href="https://wa.me/201090235208?text=أريد الاستفسار عن تصميم جناح معرض" class="btn-primary" target="_blank" rel="noopener">
-      📲 احصل على عرض سعر مجاني
-    </a>
-    <a href="#gallery" class="btn-secondary">
-      🖼️ شاهد أعمالنا
-    </a>
-  </div>
-  <div class="scroll-hint" aria-hidden="true">اكتشف المزيد</div>
-</header>
+<header class="article-header"><p class="article-breadcrumb"><a href="https://newsouladv.com/">نيو سول</a> ٫ <a href="https://newsouladv.com/service-areas.html">خدماتنا</a> ٫ أجنحة المعارض</p><p class="article-eyebrow">تصميم وتنفيذ أجنحة معارض · مصر</p><h1>نصمم أجنحة معارض<br/><span>تصنع الفارق</span></h1><p class="article-lead">من التصميم إلى التنفيذ والتركيب — نحوّل مساحتك في المعرض إلى تجربة لا تُنسى تعكس هوية علامتك التجارية. جناح فيشر في Big 5 Construct Egypt 2026 نموذجاً.</p><div class="article-meta"><span>🏗️ تصميم وتصنيع كامل</span><span>📍 فيصل، الجيزة</span><span>✍️ نيو سول للدعاية والإعلان</span></div></header>
 
 <!-- GALLERY -->
+<div class="article-layout"><aside class="toc-wrap"><div class="toc-card"><p class="toc-title">محتويات الصفحة</p><ul class="toc-list" id="tocList"><li><a href="#gallery">المعرض المصوّر</a></li><li><a href="#services">خدماتنا</a></li><li><a href="#process">طريقة عملنا</a></li><li><a href="#why-us">ليه نيو سول؟</a></li><li><a href="https://wa.me/201090235208?text=أريد الاستفسار عن تصميم جناح معرض" target="_blank" rel="noopener">📞 تواصل معنا</a></li></ul><div class="toc-cta"><a href="https://wa.me/201090235208?text=أريد الاستفسار عن تصميم جناح معرض" target="_blank" rel="noopener">📲 احصل على عرض سعر</a></div></div></aside><div class="article-full-content">
 <section id="gallery" aria-labelledby="gallery-heading">
   <div class="gallery-showcase-wrap">
 
@@ -1201,6 +1203,7 @@ document.addEventListener('DOMContentLoaded', function(){
     </div>
   </div>
 </section>
+</div></div>
 
 <!-- CTA -->
 
@@ -1228,6 +1231,9 @@ document.addEventListener('DOMContentLoaded', function(){
         </a>
         <a href="https://www.instagram.com/newsouladv/" class="btn-secondary" target="_blank" rel="noopener">
           📷 انستاجرام
+        </a>
+        <a href="https://whatsapp.com/channel/0029VbCXRU8545uvfCtWPl2W" class="btn-secondary" target="_blank" rel="noopener">
+          📣 قناة واتساب
         </a>
       </div>
     </div>

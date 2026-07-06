@@ -82,18 +82,13 @@ picture{display:contents}
 .video-card:hover .video-card-play{transform:translate(-50%,-50%) scale(1.1)}
 .video-card-play svg{margin-right:-3px}
 .video-card-title{color:#fff;font-size:.88rem;font-weight:700;line-height:1.4}
-.video-card.loaded{cursor:default}
-.video-card.loaded .video-card-overlay,.video-card.loaded .video-card-play{display:none}
-.video-embed-container{width:100%;height:100%}
-.quiz-option-img{padding:10px;gap:16px}
-.quiz-option-img picture{flex-shrink:0;width:64px;height:64px;border-radius:10px;overflow:hidden;display:block}
-.quiz-option-img img{width:100%;height:100%;object-fit:cover;display:block}
-.quiz-option-text{font-size:1rem;font-weight:600}
-.quiz-share-row{display:flex;gap:10px;margin-top:12px}
-.quiz-copy-btn{flex:1;background:rgba(139,47,201,.12);border:1px solid rgba(139,47,201,.3);color:#fff;padding:12px;border-radius:50px;font-family:inherit;font-size:.85rem;font-weight:600;cursor:pointer;transition:.2s}
-.quiz-copy-btn:hover{background:rgba(139,47,201,.25)}
-.quiz-copy-btn.copied{background:rgba(37,211,102,.2);border-color:#25D366;color:#25D366}
-.quiz-fb-btn:hover{background:rgba(24,119,242,.2);border-color:#1877F2;color:#fff}
+.video-modal-overlay{display:none;position:fixed;inset:0;background:rgba(6,3,13,.92);z-index:500;align-items:center;justify-content:center;padding:20px}
+.video-modal-overlay.active{display:flex}
+.video-modal-box{position:relative;width:100%;max-width:340px}
+.video-modal-close{position:absolute;top:-44px;left:0;background:rgba(139,47,201,.2);border:1px solid rgba(139,47,201,.4);color:#fff;width:36px;height:36px;border-radius:50%;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s}
+.video-modal-close:hover{background:rgba(139,47,201,.4)}
+#videoModalContent{min-height:200px;display:flex;align-items:center;justify-content:center}
+#videoModalContent .video-modal-loading{color:var(--gray);font-size:.9rem}
 .quiz-niso-callout{display:flex;align-items:center;gap:16px;background:rgba(139,47,201,.08);border:1px solid rgba(139,47,201,.25);border-radius:14px;padding:16px 20px;margin-top:24px;text-align:right}
 .quiz-niso-callout img{width:52px;height:52px;border-radius:50%;object-fit:cover;flex-shrink:0}
 .quiz-niso-callout p{margin:0;font-size:.88rem;color:var(--gray);line-height:1.6}
@@ -307,6 +302,13 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(139,47,201,.15);pad
 
 <div class="video-gallery-wrap">
   <div class="video-gallery-grid" id="videoGalleryGrid"></div>
+
+  <div class="video-modal-overlay" id="videoModalOverlay" onclick="if(event.target===this)closeVideoModal()">
+    <div class="video-modal-box">
+      <button class="video-modal-close" onclick="closeVideoModal()" aria-label="إغلاق">✕</button>
+      <div id="videoModalContent"></div>
+    </div>
+  </div>
   <div class="quiz-niso-callout" style="max-width:min(700px,90vw);margin:32px auto 0">
     <img src="images/extracted-index-36.jpg" alt="نيسو - المساعد الذكي" loading="lazy" />
     <p>عجبك اللي شفته؟ <a href="https://wa.me/201090235208?text=مرحباً نيسو، شفت مكتبة الفيديو وحابب أعرف أكتر عن خدماتكم" target="_blank" rel="noopener">اسأل نيسو، مساعد نيو سول الذكي</a> — متاح على مدار الساعة.</p>
@@ -389,6 +391,9 @@ var tiktokScriptLoaded = false;
 
 function loadTikTokScript(callback){
   if (tiktokScriptLoaded) {
+    if (window.tiktokEmbed && window.tiktokEmbed.lib && window.tiktokEmbed.lib.render) {
+      window.tiktokEmbed.lib.render(document.getElementById('videoModalContent'));
+    }
     if (callback) callback();
     return;
   }
@@ -402,25 +407,37 @@ function loadTikTokScript(callback){
   document.body.appendChild(script);
 }
 
-function playVideoCard(index){
-  var card = document.querySelector('.video-card[data-index="' + index + '"]');
-  if (!card || card.classList.contains('loaded')) return;
+function openVideoModal(index){
   var video = videoGalleryData[index];
-  card.classList.add('loaded');
-  card.innerHTML = '<div class="video-embed-container"><blockquote class="tiktok-embed" cite="https://www.tiktok.com/@newsouladv/video/' + video.id + '" data-video-id="' + video.id + '" style="max-width:100%;min-width:100%;margin:0"><section></section></blockquote></div>';
-  loadTikTokScript(function(){
-    if (window.tiktokEmbed && window.tiktokEmbed.lib && window.tiktokEmbed.lib.render) {
-      window.tiktokEmbed.lib.render(card);
-    }
-  });
+  var overlay = document.getElementById('videoModalOverlay');
+  var content = document.getElementById('videoModalContent');
+  // Always clear first so any previous embed is fully removed before the new one loads
+  content.innerHTML = '<p class="video-modal-loading">جاري تحميل الفيديو...</p>';
+  overlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+
+  content.innerHTML = '<blockquote class="tiktok-embed" cite="https://www.tiktok.com/@newsouladv/video/' + video.id + '" data-video-id="' + video.id + '" style="max-width:100%;min-width:280px;margin:0"><section></section></blockquote>';
+  loadTikTokScript();
 }
+
+function closeVideoModal(){
+  var overlay = document.getElementById('videoModalOverlay');
+  var content = document.getElementById('videoModalContent');
+  overlay.classList.remove('active');
+  content.innerHTML = '';
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape') closeVideoModal();
+});
 
 function renderVideoGallery(){
   var grid = document.getElementById('videoGalleryGrid');
   if (!grid) return;
   var html = '';
   videoGalleryData.forEach(function(video, i){
-    html += '<div class="video-card" data-index="' + i + '" onclick="playVideoCard(' + i + ')">' +
+    html += '<div class="video-card" data-index="' + i + '" onclick="openVideoModal(' + i + ')">' +
       '<img src="' + video.thumbnail + '" alt="' + video.title + '" loading="lazy" />' +
       '<div class="video-card-play"><svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>' +
       '<div class="video-card-overlay"><span class="video-card-title">' + video.title + '</span></div>' +

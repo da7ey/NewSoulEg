@@ -55,13 +55,13 @@ document.addEventListener('DOMContentLoaded', function(){
 <meta property="og:title" content="أجندة المعارض في مصر 2026-2027 | نيو سول" />
 <meta property="og:description" content="أجندة كاملة بمواعيد أهم المعارض والمؤتمرات في مصر، مرتبة زمنيًا." />
 <meta property="og:url" content="https://newsouladv.com/exhibitions-calendar.html" />
-<meta property="og:image" content="https://www.newsouladv.com/images/og-image-calendar.jpg" />
+<meta property="og:image" content="https://www.newsouladv.com/images/promo-exhibitions-calendar-og.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:locale" content="ar_EG" />
 <meta property="og:site_name" content="نيو سول للدعاية والإعلان" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://www.newsouladv.com/images/og-image-calendar.jpg" />
+<meta name="twitter:image" content="https://www.newsouladv.com/images/promo-exhibitions-calendar-og.jpg" />
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"أجندة المعارض في مصر","description":"أجندة كاملة بمواعيد أهم المعارض والمؤتمرات في مصر مرتبة زمنيًا.","publisher":{"@type":"Organization","name":"نيو سول للدعاية والإعلان","url":"https://newsouladv.com/"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://newsouladv.com/exhibitions-calendar.html"},"inLanguage":"ar-EG"}</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -70,6 +70,7 @@ document.addEventListener('DOMContentLoaded', function(){
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Tajawal:wght@400;500;700;800;900&family=Cairo:wght@600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
 <noscript><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Tajawal:wght@400;500;700;800;900&family=Cairo:wght@600;700;800;900&display=swap" rel="stylesheet" /></noscript>
 <style>
+.featured-image-wrap{max-width:1100px;margin:0 auto 60px;padding:0 24px;position:relative;z-index:1}.featured-image{width:100%;max-height:600px;border-radius:20px;border:1px solid rgba(139,47,201,0.25);box-shadow:0 20px 60px rgba(139,47,201,0.25);display:block;object-fit:contain;background:var(--surface2)}@media(max-width:900px){.featured-image{height:260px}}
 
 
 .related-links-row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
@@ -146,6 +147,10 @@ section{position:relative;z-index:1}
 .section-inner{max-width:1100px;margin:0 auto;padding:80px 24px}
 .section-label{font-size:.75rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--purple-glow);margin-bottom:12px}
 .section-title{font-family:"Tajawal",sans-serif;font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:900;margin-bottom:20px}
+.exam-search-box{margin:20px 0}
+.exam-search-box input{width:100%;background:rgba(22,13,46,.6);border:1px solid rgba(139,47,201,.3);border-radius:12px;padding:14px 18px;color:#fff;font-family:"IBM Plex Sans Arabic",sans-serif;font-size:.95rem;box-sizing:border-box}
+.exam-search-box input:focus{outline:none;border-color:var(--purple-glow)}
+.exam-search-box input::placeholder{color:var(--gray)}
 .article-layout{max-width:1100px;margin:0 auto;padding:0 24px 80px;display:grid;grid-template-columns:240px 1fr;gap:56px;position:relative;z-index:1}
 .toc-wrap{position:sticky;top:100px;align-self:start}
 .toc-card{background:rgba(22,13,46,.6);border:1px solid rgba(139,47,201,.2);border-radius:16px;padding:24px 20px}
@@ -299,9 +304,38 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(139,47,201,.15);pad
 <p class="article-eyebrow">أجندة 2026 - 2027</p><h1>أجندة المعارض<br/><span>في مصر</span></h1><p class="article-lead" style="max-width:640px;margin-left:auto;margin-right:auto">كل مواعيد المعارض الكبرى في مصر مرتبة زمنيًا في مكان واحد. اضغط على أي معرض لتقرأ دليله الكامل، أو أضفه لتقويمك عشان تتذكره في وقته.</p>
 <button type="button" class="btn-secondary" onclick="emailCalendarLink()" style="margin-top:8px">✉️ ابعت الأجندة على إيميلك</button>
 </header>
+<!-- FEATURED IMAGE -->
+<div class="featured-image-wrap">
+  <picture><source srcset="images/promo-exhibitions-calendar-full.webp" type="image/webp" /><img class="featured-image" src="images/promo-exhibitions-calendar-full.jpg" alt="أجندة المعارض في مصر - نيو سول للدعاية والإعلان" loading="eager" fetchpriority="high" /></picture>
+</div>
 
-<div class="calendar-wrap">
-  <div class="calendar-month-label">سبتمبر 2026</div>
+
+<div class="article-layout"><aside class="toc-wrap"><div class="toc-card"><p class="toc-title">محتويات الصفحة</p><ul class="toc-list" id="tocList"><li><a href="#month-sep-2026">سبتمبر 2026</a></li><li><a href="#month-oct-2026">أكتوبر 2026</a></li><li><a href="#month-nov-2026">نوفمبر 2026</a></li><li><a href="#month-dec-2026">ديسمبر 2026</a></li><li><a href="#month-mar-2027">مارس 2027</a></li><li><a href="#month-dec-2027">ديسمبر 2027</a></li></ul><div class="toc-cta"><a href="https://wa.me/201090235208?text=أريد الاستفسار عن تنفيذ جناح معرض" target="_blank" rel="noopener">📲 احصل على عرض سعر لجناحك</a></div></div></aside>
+<div style="max-width:none">
+<div class="exam-search-box">
+  <input type="text" id="calendarSearchInput" placeholder="ابحث هنا عن أي معرض في الأجندة" autocomplete="off" oninput="filterCalendarList()" />
+</div>
+<p id="calendarSearchEmpty" style="display:none;color:var(--gray);text-align:center;padding:20px 0">مفيش معارض مطابقة، جرب كلمة تانية</p>
+<div class="calendar-wrap" style="max-width:none;margin:0;padding:0">
+  <div class="calendar-month-label" id="month-sep-2026">سبتمبر 2026</div>
+  <div class="calendar-item">
+    <a href="https://newsouladv.com/paper-me-print2pack-egypt.html" class="calendar-link">
+      <div class="calendar-date"><span class="calendar-day">15</span><span class="calendar-mon">سبتمبر</span></div>
+      <div class="calendar-info"><h3>Paper ME - Tissue ME - Print2Pack 2026</h3><p>15-17 سبتمبر 2026 · مركز مصر للمعارض الدولية · معارض متلازمة للورق والمناديل والطباعة والتغليف</p></div>
+      <span class="calendar-arrow">←</span>
+    </a>
+    <div class="calendar-btn-row"><button type="button" class="calendar-ics-btn" onclick="addToGoogleCalendar('20260915','20260918','Paper ME - Tissue ME - Print2Pack Egypt 2026','مركز مصر للمعارض الدولية، القاهرة')">📅 Google Calendar</button><button type="button" class="calendar-ics-btn" onclick="addToCalendar('20260915','20260918','Paper ME - Tissue ME - Print2Pack Egypt 2026','مركز مصر للمعارض الدولية، القاهرة')">📥 تحميل ملف (.ics)</button></div>
+  </div>
+
+  <div class="calendar-item">
+    <a href="https://newsouladv.com/sahara-expo-egypt.html" class="calendar-link">
+      <div class="calendar-date"><span class="calendar-day">22</span><span class="calendar-mon">سبتمبر</span></div>
+      <div class="calendar-info"><h3>Sahara Expo 2026</h3><p>22-24 سبتمبر 2026 · مركز مصر للمعارض الدولية · أكبر معرض للزراعة والميكنة الزراعية في أفريقيا</p></div>
+      <span class="calendar-arrow">←</span>
+    </a>
+    <div class="calendar-btn-row"><button type="button" class="calendar-ics-btn" onclick="addToGoogleCalendar('20260922','20260925','Sahara Expo 2026','مركز مصر للمعارض الدولية، القاهرة')">📅 Google Calendar</button><button type="button" class="calendar-ics-btn" onclick="addToCalendar('20260922','20260925','Sahara Expo 2026','مركز مصر للمعارض الدولية، القاهرة')">📥 تحميل ملف (.ics)</button></div>
+  </div>
+
   <div class="calendar-item">
     <a href="https://newsouladv.com/cityscape-egypt.html" class="calendar-link">
       <div class="calendar-date"><span class="calendar-day">30</span><span class="calendar-mon">سبتمبر</span></div>
@@ -311,7 +345,17 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(139,47,201,.15);pad
     <div class="calendar-btn-row"><button type="button" class="calendar-ics-btn" onclick="addToGoogleCalendar('20260930','20261004','Cityscape Egypt 2026','مركز القاهرة الدولي للمؤتمرات، القاهرة')">📅 Google Calendar</button><button type="button" class="calendar-ics-btn" onclick="addToCalendar('20260930','20261004','Cityscape Egypt 2026','مركز القاهرة الدولي للمؤتمرات، القاهرة')">📥 تحميل ملف (.ics)</button></div>
   </div>
 
-  <div class="calendar-month-label">نوفمبر 2026</div>
+  <div class="calendar-month-label" id="month-oct-2026">أكتوبر 2026</div>
+  <div class="calendar-item">
+    <a href="https://newsouladv.com/hace-hotel-expo-egypt.html" class="calendar-link">
+      <div class="calendar-date"><span class="calendar-day">19</span><span class="calendar-mon">أكتوبر</span></div>
+      <div class="calendar-info"><h3>HACE Hotel Expo 2026</h3><p>19-21 أكتوبر 2026 · مركز مصر للمعارض الدولية · أكبر معرض للفنادق والضيافة في أفريقيا</p></div>
+      <span class="calendar-arrow">←</span>
+    </a>
+    <div class="calendar-btn-row"><button type="button" class="calendar-ics-btn" onclick="addToGoogleCalendar('20261019','20261022','HACE Hotel Expo 2026','مركز مصر للمعارض الدولية، القاهرة')">📅 Google Calendar</button><button type="button" class="calendar-ics-btn" onclick="addToCalendar('20261019','20261022','HACE Hotel Expo 2026','مركز مصر للمعارض الدولية، القاهرة')">📥 تحميل ملف (.ics)</button></div>
+  </div>
+
+  <div class="calendar-month-label" id="month-nov-2026">نوفمبر 2026</div>
   <div class="calendar-item">
     <a href="https://newsouladv.com/cairo-ict.html" class="calendar-link">
       <div class="calendar-date"><span class="calendar-day">8</span><span class="calendar-mon">نوفمبر</span></div>
@@ -337,7 +381,7 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(139,47,201,.15);pad
     <div class="calendar-btn-row"><button type="button" class="calendar-ics-btn" onclick="addToGoogleCalendar('20261126','20261130','معرض الأثاث الدولي IFAC Cairo','مركز القاهرة الدولي للمؤتمرات، القاهرة')">📅 Google Calendar</button><button type="button" class="calendar-ics-btn" onclick="addToCalendar('20261126','20261130','معرض الأثاث الدولي IFAC Cairo','مركز القاهرة الدولي للمؤتمرات، القاهرة')">📥 تحميل ملف (.ics)</button></div>
   </div>
 
-  <div class="calendar-month-label">ديسمبر 2026</div>
+  <div class="calendar-month-label" id="month-dec-2026">ديسمبر 2026</div>
   <div class="calendar-item">
     <a href="https://newsouladv.com/food-africa.html" class="calendar-link">
       <div class="calendar-date"><span class="calendar-day">7</span><span class="calendar-mon">ديسمبر</span></div>
@@ -347,7 +391,7 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(139,47,201,.15);pad
     <div class="calendar-btn-row"><button type="button" class="calendar-ics-btn" onclick="addToGoogleCalendar('20261207','20261211','Food Africa 2026','مركز مصر للمعارض الدولية، القاهرة')">📅 Google Calendar</button><button type="button" class="calendar-ics-btn" onclick="addToCalendar('20261207','20261211','Food Africa 2026','مركز مصر للمعارض الدولية، القاهرة')">📥 تحميل ملف (.ics)</button></div>
   </div>
 
-  <div class="calendar-month-label">مارس 2027</div>
+  <div class="calendar-month-label" id="month-mar-2027">مارس 2027</div>
   <div class="calendar-item">
     <a href="https://newsouladv.com/egypes.html" class="calendar-link">
       <div class="calendar-date"><span class="calendar-day">29</span><span class="calendar-mon">مارس</span></div>
@@ -357,7 +401,7 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(139,47,201,.15);pad
     <div class="calendar-btn-row"><button type="button" class="calendar-ics-btn" onclick="addToGoogleCalendar('20270329','20270401','EGYPES 2027','مركز مصر للمعارض الدولية، القاهرة')">📅 Google Calendar</button><button type="button" class="calendar-ics-btn" onclick="addToCalendar('20270329','20270401','EGYPES 2027','مركز مصر للمعارض الدولية، القاهرة')">📥 تحميل ملف (.ics)</button></div>
   </div>
 
-  <div class="calendar-month-label">ديسمبر 2027</div>
+  <div class="calendar-month-label" id="month-dec-2027">ديسمبر 2027</div>
   <div class="calendar-item">
     <a href="https://newsouladv.com/edex.html" class="calendar-link">
       <div class="calendar-date"><span class="calendar-day">6</span><span class="calendar-mon">ديسمبر</span></div>
@@ -391,6 +435,8 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(139,47,201,.15);pad
     <picture><source srcset="images/niso-mascot.webp" type="image/webp" /><img src="images/niso-mascot.png" alt="نيسو - المساعد الذكي" loading="lazy" /></picture>
     <p>عايز تجهز جناحك لأي معرض من دول؟ <a href="https://wa.me/201090235208?text=مرحباً نيسو، شفت أجندة المعارض وحابب أعرف أكتر عن تجهيز جناحي" target="_blank" rel="noopener">اسأل نيسو، مساعد نيو سول الذكي</a> — متاح على مدار الساعة.</p>
   </div>
+</div>
+</div>
 </div>
 <section class="related-internal" style="background:var(--surface2,#160D2E);position:relative;z-index:1"><div style="max-width:1100px;margin:0 auto;padding:40px 24px"><p style="font-size:.75rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#C66EFF;margin-bottom:12px">ثقة كبرى الشركات</p><div class="related-links-row"><a href="https://newsouladv.com/new-soul-exhibitions.html" title="جناح Fischer Egypt" style="background:rgba(139,47,201,.12);border:1px solid rgba(139,47,201,.3);border-radius:50px;padding:10px 20px;font-size:.88rem;font-weight:600;color:#F5F0FF;text-decoration:none;transition:background .2s;white-space:nowrap">🔧 Fischer Egypt</a><a href="https://newsouladv.com/new-soul-enpal-egypt.html" title="ايفنت Enpal Egypt" style="background:rgba(139,47,201,.12);border:1px solid rgba(139,47,201,.3);border-radius:50px;padding:10px 20px;font-size:.88rem;font-weight:600;color:#F5F0FF;text-decoration:none;transition:background .2s;white-space:nowrap">⚡ Enpal Egypt</a><a href="https://newsouladv.com/new-soul-orascom-academy.html" title="فعالية OC Academy Hubs" style="background:rgba(139,47,201,.12);border:1px solid rgba(139,47,201,.3);border-radius:50px;padding:10px 20px;font-size:.88rem;font-weight:600;color:#F5F0FF;text-decoration:none;transition:background .2s;white-space:nowrap">🏛️ Orascom Academy</a><a href="https://newsouladv.com/egbank-ai-academy.html" title="فعالية EGBank AI Academy" style="background:rgba(139,47,201,.12);border:1px solid rgba(139,47,201,.3);border-radius:50px;padding:10px 20px;font-size:.88rem;font-weight:600;color:#F5F0FF;text-decoration:none;transition:background .2s;white-space:nowrap">🏦 EGBank AI Academy</a><a href="https://newsouladv.com/new-soul-events-Ajp-tour-egypt.html" title="بطولة AJP Tour Egypt" style="background:rgba(139,47,201,.12);border:1px solid rgba(139,47,201,.3);border-radius:50px;padding:10px 20px;font-size:.88rem;font-weight:600;color:#F5F0FF;text-decoration:none;transition:background .2s;white-space:nowrap">🎾 AJP Tour Egypt</a><a href="https://newsouladv.com/new-soul-royal-ceramica.html" title="جناح Royal Ceramica" style="background:rgba(139,47,201,.12);border:1px solid rgba(139,47,201,.3);border-radius:50px;padding:10px 20px;font-size:.88rem;font-weight:600;color:#F5F0FF;text-decoration:none;transition:background .2s;white-space:nowrap">🏛️ Royal Ceramica</a></div></div></section>
 <footer><div class="footer-inner" style="justify-content:center;flex-direction:column;align-items:center;text-align:center"><div class="footer-logo"><a href="https://www.newsouladv.com"><img src="images/logo.png" alt="نيو سول للدعاية والإعلان" /></a></div><div class="footer-links" style="justify-content:center"><a href="https://newsouladv.com/">🏠 الرئيسية</a><a href="https://newsouladv.com/about-us.html">ℹ️ من نحن</a><a href="https://newsouladv.com/service-areas.html">🔧 خدماتنا</a><a href="https://newsouladv.com/#projects">🖼️ أعمالنا</a><a href="https://newsouladv.com/faq.html">❓ الأسئلة الشائعة</a><a href="https://newsouladv.com/company-brochure.html">📄 بروشور الشركة</a><a href="https://newsouladv.com/booth-design-quiz.html">✨ صمم جناحك مجانًا</a><a href="https://newsouladv.com/exhibition-checklist.html">📋 استعد لمعرضك</a><a href="https://newsouladv.com/video-gallery.html">🎬 مكتبة الفيديو</a><a href="https://wa.me/201090235208?text=مرحباً، أريد الاستفسار عن خدماتكم" target="_blank" rel="noopener">📞 تواصل معنا</a><a href="https://newsouladv.com/privacy-policy.html">🔒 سياسة الخصوصية</a></div></div><div class="footer-inner"><p class="footer-copy">© 2026 نيو سول للدعاية والإعلان · فيصل، الجيزة · جميع الحقوق محفوظة<br/><span style="color:rgba(139,47,201,.6)">أجندة المعارض</span></p></div></footer>
@@ -502,6 +548,29 @@ function emailCalendarLink(){
   var body = 'أهلاً،\n\nده رابط أجندة المعارض الكاملة في مصر لعامي 2026 و2027:\n\nhttps://newsouladv.com/exhibitions-calendar.html\n\nتقدر تفتحه في أي وقت تشوف فيه كل مواعيد المعارض مرتبة، وتضيف أي معرض لتقويمك الشخصي مباشرة من الصفحة.\n\n— نيو سول للدعاية والإعلان';
   var mailtoUrl = 'mailto:?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
   window.location.href = mailtoUrl;
+}
+
+function filterCalendarList(){
+  var q = document.getElementById('calendarSearchInput').value.trim().toLowerCase();
+  var wrap = document.querySelector('.calendar-wrap');
+  var children = Array.prototype.slice.call(wrap.children);
+  var currentLabel = null;
+  var labelHasVisible = false;
+  var totalVisible = 0;
+  children.forEach(function(el){
+    if (el.classList.contains('calendar-month-label')) {
+      if (currentLabel) currentLabel.style.display = labelHasVisible ? '' : 'none';
+      currentLabel = el;
+      labelHasVisible = false;
+    } else if (el.classList.contains('calendar-item')) {
+      var match = el.textContent.toLowerCase().indexOf(q) !== -1;
+      el.style.display = match ? '' : 'none';
+      if (match) { labelHasVisible = true; totalVisible++; }
+    }
+  });
+  if (currentLabel) currentLabel.style.display = labelHasVisible ? '' : 'none';
+  var emptyMsg = document.getElementById('calendarSearchEmpty');
+  if (emptyMsg) emptyMsg.style.display = (totalVisible === 0) ? 'block' : 'none';
 }
 
 function submitLeadForm(e){

@@ -55,13 +55,13 @@ document.addEventListener('DOMContentLoaded', function(){
 <meta property="og:title" content="الأسئلة الشائعة | نيو سول للدعاية والإعلان" />
 <meta property="og:description" content="كل إجابات أسئلتك عن خدماتنا في صفحة واحدة." />
 <meta property="og:url" content="https://newsouladv.com/faq.html" />
-<meta property="og:image" content="https://www.newsouladv.com/images/og-image-home.jpg" />
+<meta property="og:image" content="https://www.newsouladv.com/images/promo-faq-og.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:locale" content="ar_EG" />
 <meta property="og:site_name" content="نيو سول للدعاية والإعلان" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://www.newsouladv.com/images/og-image-home.jpg" />
+<meta name="twitter:image" content="https://www.newsouladv.com/images/promo-faq-og.jpg" />
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"إمتى اتأسست نيو سول؟","acceptedAnswer":{"@type":"Answer","text":"نيو سول للدعاية والإعلان بتشتغل في السوق المصري منذ أكتر من 7 سنوات، ونفّذنا خلالها أكتر من 50 مشروع."}},
 {"@type":"Question","name":"هل بتشتغلوا مع شركات عالمية؟","acceptedAnswer":{"@type":"Answer","text":"نعم، من ضمن عملائنا شركات عالمية زي Fischer، بالإضافة لعلامات تجارية محلية كبرى."}},
@@ -82,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function(){
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Tajawal:wght@400;500;700;800;900&family=Cairo:wght@600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
 <noscript><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Tajawal:wght@400;500;700;800;900&family=Cairo:wght@600;700;800;900&display=swap" rel="stylesheet" /></noscript>
 <style>
+.featured-image-wrap{max-width:1100px;margin:0 auto 60px;padding:0 24px;position:relative;z-index:1}.featured-image{width:100%;max-height:600px;border-radius:20px;border:1px solid rgba(139,47,201,0.25);box-shadow:0 20px 60px rgba(139,47,201,0.25);display:block;object-fit:contain;background:var(--surface2)}@media(max-width:900px){.featured-image{height:260px}}
 
 
 .related-links-row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
@@ -281,8 +282,15 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(139,47,201,.15);pad
     <li><a href="https://wa.me/201090235208?text=أريد الاستفسار عن خدماتكم" target="_blank" rel="noopener">📞 تواصل معنا</a></li>
   </ul><button class="search-toggle" onclick="toggleSiteSearch()" aria-label="بحث في الموقع"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button><a href="https://newsouladv.com/faq.html" class="faq-nav-icon" aria-label="الأسئلة الشائعة"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></a><button class="hamburger" onclick="toggleMobileNav()" aria-label="القائمة"><span></span><span></span><span></span></button></nav>
 <header class="article-header" style="text-align:center"><p class="article-breadcrumb" style="justify-content:center;display:flex"><a href="https://www.newsouladv.com">نيو سول</a> ٫ الأسئلة الشائعة</p><p class="article-eyebrow">مركز المساعدة</p><h1>الأسئلة الشائعة<br/><span>كل إجاباتك في مكان واحد</span></h1><p class="article-lead" style="max-width:640px;margin-left:auto;margin-right:auto">مجمّعين هنا أكتر الأسئلة اللي بتوصلنا عن خدماتنا، أسعارنا، ومناطق تغطيتنا. مش لاقي إجابتك؟ اسأل نيسو أو تواصل معنا مباشرة.</p></header>
+<!-- FEATURED IMAGE -->
+<div class="featured-image-wrap">
+  <picture><source srcset="images/promo-faq-full.webp" type="image/webp" /><img class="featured-image" src="images/promo-faq-full.jpg" alt="الأسئلة الشائعة - نيو سول للدعاية والإعلان" loading="eager" fetchpriority="high" /></picture>
+</div>
 
-<div class="faq-hub-wrap">
+
+<div class="article-layout"><aside class="toc-wrap"><div class="toc-card"><p class="toc-title">محتويات الصفحة</p><ul class="toc-list" id="tocList"><li><a href="#" onclick="showFaqCategory('company');return false;">🏢 عن الشركة</a></li><li><a href="#" onclick="showFaqCategory('pricing');return false;">💰 الأسعار</a></li><li><a href="#" onclick="showFaqCategory('execution');return false;">🏗️ التنفيذ والخدمات</a></li><li><a href="#" onclick="showFaqCategory('areas');return false;">📍 المناطق</a></li><li><a href="#" onclick="showFaqCategory('niso');return false;">🤖 نيسو</a></li></ul><div class="toc-cta"><a href="https://wa.me/201090235208?text=مرحباً، أريد الاستفسار عن خدماتكم" target="_blank" rel="noopener">📲 اسأل سؤالك مباشرة</a></div></div></aside>
+<div style="max-width:none">
+<div class="faq-hub-wrap" style="max-width:none;margin:0;padding:0">
   <div class="faq-hub-tabs">
     <button class="faq-tab active" onclick="showFaqCategory('company')">🏢 عن الشركة</button>
     <button class="faq-tab" onclick="showFaqCategory('pricing')">💰 الأسعار</button>
@@ -330,6 +338,8 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(139,47,201,.15);pad
     <picture><source srcset="images/niso-mascot.webp" type="image/webp" /><img src="images/niso-mascot.png" alt="نيسو - المساعد الذكي" loading="lazy" /></picture>
     <p>لسه محتاج إجابة؟ <a href="https://wa.me/201090235208?text=مرحباً نيسو، عندي سؤال مش لاقي إجابته" target="_blank" rel="noopener">اسأل نيسو، مساعد نيو سول الذكي</a> — متاح على مدار الساعة.</p>
   </div>
+</div>
+</div>
 </div>
 <section class="related-internal" style="background:var(--surface2,#160D2E);position:relative;z-index:1"><div style="max-width:1100px;margin:0 auto;padding:40px 24px"><p style="font-size:.75rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#C66EFF;margin-bottom:12px">ثقة كبرى الشركات</p><div class="related-links-row"><a href="https://newsouladv.com/new-soul-exhibitions.html" title="جناح Fischer Egypt" style="background:rgba(139,47,201,.12);border:1px solid rgba(139,47,201,.3);border-radius:50px;padding:10px 20px;font-size:.88rem;font-weight:600;color:#F5F0FF;text-decoration:none;transition:background .2s;white-space:nowrap">🔧 Fischer Egypt</a><a href="https://newsouladv.com/new-soul-enpal-egypt.html" title="ايفنت Enpal Egypt" style="background:rgba(139,47,201,.12);border:1px solid rgba(139,47,201,.3);border-radius:50px;padding:10px 20px;font-size:.88rem;font-weight:600;color:#F5F0FF;text-decoration:none;transition:background .2s;white-space:nowrap">⚡ Enpal Egypt</a><a href="https://newsouladv.com/new-soul-orascom-academy.html" title="فعالية OC Academy Hubs" style="background:rgba(139,47,201,.12);border:1px solid rgba(139,47,201,.3);border-radius:50px;padding:10px 20px;font-size:.88rem;font-weight:600;color:#F5F0FF;text-decoration:none;transition:background .2s;white-space:nowrap">🏛️ Orascom Academy</a><a href="https://newsouladv.com/egbank-ai-academy.html" title="فعالية EGBank AI Academy" style="background:rgba(139,47,201,.12);border:1px solid rgba(139,47,201,.3);border-radius:50px;padding:10px 20px;font-size:.88rem;font-weight:600;color:#F5F0FF;text-decoration:none;transition:background .2s;white-space:nowrap">🏦 EGBank AI Academy</a><a href="https://newsouladv.com/new-soul-events-Ajp-tour-egypt.html" title="بطولة AJP Tour Egypt" style="background:rgba(139,47,201,.12);border:1px solid rgba(139,47,201,.3);border-radius:50px;padding:10px 20px;font-size:.88rem;font-weight:600;color:#F5F0FF;text-decoration:none;transition:background .2s;white-space:nowrap">🎾 AJP Tour Egypt</a><a href="https://newsouladv.com/new-soul-royal-ceramica.html" title="جناح Royal Ceramica" style="background:rgba(139,47,201,.12);border:1px solid rgba(139,47,201,.3);border-radius:50px;padding:10px 20px;font-size:.88rem;font-weight:600;color:#F5F0FF;text-decoration:none;transition:background .2s;white-space:nowrap">🏛️ Royal Ceramica</a></div></div></section>
 <footer><div class="footer-inner" style="justify-content:center;flex-direction:column;align-items:center;text-align:center"><div class="footer-logo"><a href="https://www.newsouladv.com"><img src="images/logo.png" alt="نيو سول للدعاية والإعلان" /></a></div><div class="footer-links" style="justify-content:center"><a href="https://newsouladv.com/">🏠 الرئيسية</a><a href="https://newsouladv.com/about-us.html">ℹ️ من نحن</a><a href="https://newsouladv.com/service-areas.html">🔧 خدماتنا</a><a href="https://newsouladv.com/#projects">🖼️ أعمالنا</a><a href="https://newsouladv.com/faq.html">❓ الأسئلة الشائعة</a><a href="https://newsouladv.com/company-brochure.html">📄 بروشور الشركة</a><a href="https://newsouladv.com/booth-design-quiz.html">✨ صمم جناحك مجانًا</a><a href="https://newsouladv.com/exhibition-checklist.html">📋 استعد لمعرضك</a><a href="https://newsouladv.com/video-gallery.html">🎬 مكتبة الفيديو</a><a href="https://newsouladv.com/exhibitions-calendar.html">📅 أجندة المعارض</a><a href="https://wa.me/201090235208?text=مرحباً، أريد الاستفسار عن خدماتكم" target="_blank" rel="noopener">📞 تواصل معنا</a><a href="https://newsouladv.com/privacy-policy.html">🔒 سياسة الخصوصية</a></div></div><div class="footer-inner"><p class="footer-copy">© 2026 نيو سول للدعاية والإعلان · فيصل، الجيزة · جميع الحقوق محفوظة<br/><span style="color:rgba(139,47,201,.6)">الأسئلة الشائعة</span></p></div></footer>

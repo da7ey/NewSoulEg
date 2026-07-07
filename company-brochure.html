@@ -312,6 +312,8 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(139,47,201,.15);pad
 }
 
 .brochure-page-wrap{max-width:700px;margin:0 auto;padding:0 24px 100px;position:relative;z-index:1}
+.brochure-grid{display:block}
+@media(min-width:801px){.brochure-page-wrap{max-width:1100px}.brochure-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}.brochure-preview,.brochure-form-box{margin-bottom:0}}
 .brochure-preview{background:rgba(139,47,201,.06);border:1px solid rgba(139,47,201,.2);border-radius:18px;padding:24px;margin-bottom:24px}
 .brochure-cover-mock{background:linear-gradient(160deg,#0d0620,#2b1147);border-radius:14px;padding:32px 20px;text-align:right;margin-bottom:22px}
 .brochure-cover-mock img{width:70px;margin-bottom:14px}
@@ -341,6 +343,7 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(139,47,201,.15);pad
 <header class="article-header" style="text-align:center"><p class="article-breadcrumb" style="justify-content:center;display:flex"><a href="https://www.newsouladv.com">نيو سول</a> ٫ بروشور الشركة</p><p class="article-eyebrow">تحميل مجاني · PDF</p><h1>بروشور نيو سول<br/><span>للدعاية والإعلان</span></h1><p class="article-lead" style="max-width:640px;margin-left:auto;margin-right:auto">كل حاجة عن شركتنا في ملف واحد — خدماتنا، أعمالنا، ولماذا نيو سول هي الشريك المناسب لمشروعك القادم. حمّله مجانًا دلوقتي.</p></header>
 
 <div class="brochure-page-wrap">
+  <div class="brochure-grid">
   <div class="brochure-preview">
     <div class="brochure-cover-mock">
       <img src="images/logo.png" alt="نيو سول للدعاية والإعلان" />
@@ -371,6 +374,7 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(139,47,201,.15);pad
       <p id="brochureStatus" class="contact-form-status"></p>
     </form>
     <p class="brochure-privacy-note">بياناتك بتتستخدم بس عشان نتواصل معاك بخصوص مشروعك، ومتتشاركش مع أي طرف تالت.</p>
+  </div>
   </div>
 
   <div class="quiz-niso-callout" style="max-width:min(700px,90vw);margin:32px auto 0">

@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function(){
 @media(max-width:900px){.cta-contacts{flex-wrap:wrap!important}.cta-contacts a:first-child{flex:0 0 100%!important;justify-content:center!important}.cta-contacts a:not(:first-child){flex:0 0 calc(50% - 7px)!important;min-width:0!important;text-align:center;box-sizing:border-box;justify-content:center!important;white-space:normal}}
 
 
-.related-links-row{display:flex;flex-wrap:wrap;gap:18px 14px}
+.related-links-row{display:flex;flex-wrap:wrap;gap:18px 14px;justify-content:center}
 @media(min-width:901px){.related-links-row{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin}}
 @media(max-width:900px){.related-links-row a{flex:0 0 calc(50% - 7px);text-align:center;box-sizing:border-box}}
 
@@ -680,6 +680,8 @@ document.addEventListener('DOMContentLoaded', function(){
     .client-badge {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
+      white-space: nowrap;
       gap: 10px;
       background: rgba(139,47,201,0.1);
       border: 1px solid rgba(139,47,201,0.25);
@@ -688,15 +690,19 @@ document.addEventListener('DOMContentLoaded', function(){
       font-size: 0.85rem;
       font-weight: 600;
       color: var(--purple-glow);
-      margin: 6px;
+      box-sizing: border-box;
     }
 
     .clients-wrap {
       display: flex;
       flex-wrap: wrap;
+      gap: 12px;
       margin-top: 40px;
+      justify-content: center;
     }
-
+    @media(max-width:900px){.client-badge{font-size:0.78rem;padding:8px 14px}}
+    @media(min-width:901px){.client-badge{flex:0 0 calc(25% - 9px);box-sizing:border-box;justify-content:center}}
+    
     /* ── CTA SECTION ── */
     .cta-section {
       background: radial-gradient(ellipse at center, rgba(139,47,201,0.2) 0%, transparent 70%);
@@ -810,8 +816,6 @@ document.addEventListener('DOMContentLoaded', function(){
     .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
     .hamburger.active span:nth-child(2){opacity:0}
     .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-                .share-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:20px;background:rgba(170,68,240,.12);border:1px solid rgba(170,68,240,.3);color:var(--gray);text-decoration:none;font-size:.82rem;font-weight:600;cursor:pointer;transition:.2s;font-family:inherit}
-    .share-btn:hover{background:rgba(170,68,240,.25);color:var(--white)}
     @media (max-width: 900px) {
       .nav-logo img { height: 72px; }
       nav { padding: 12px 20px; }
@@ -822,8 +826,8 @@ document.addEventListener('DOMContentLoaded', function(){
       .nav-links li:last-child { border-bottom: none; margin-top: 16px; }
       .nav-links li a { display: block; padding: 16px 0; font-size: 1.3rem; font-family: "Tajawal", sans-serif; font-weight: 700; }
             
-      .share-fab { position: fixed; bottom: 92px; left: 24px; z-index: 200; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--purple), var(--purple-bright)); color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(139,47,201,.5); text-decoration: none; border: none; cursor: pointer; font-size: 1.5rem; transition: transform .2s; }
-      .share-fab:hover { transform: scale(1.08); }
+      .ns-share-btn { position: fixed; bottom: 92px; left: 24px; z-index: 200; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--purple), var(--purple-bright)); color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(139,47,201,.5); text-decoration: none; border: none; cursor: pointer; font-size: 1.5rem; transition: transform .2s; }
+      .ns-share-btn:hover { transform: scale(1.08); }
                               .gallery-grid {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;
@@ -1398,7 +1402,7 @@ document.addEventListener('DOMContentLoaded', function(){
   </svg>
 </a>
 
-<button onclick="shareThisPage()" class="share-fab" aria-label="مشاركة الصفحة"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+<button onclick="shareThisPage()" class="ns-share-btn" aria-label="مشاركة الصفحة"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
 <a href="https://wa.me/201090235208?text=مرحباً نيسو، أريد الاستفسار عن خدمات نيو سول" class="niso-fab" target="_blank" rel="noopener" aria-label="تحدث مع نيسو عبر واتساب"><span class="niso-fab-tooltip">تحدث مع نيسو</span><picture><source srcset="images/niso-mascot.webp" type="image/webp" /><img src="images/niso-mascot.png" alt="نيسو" width="56" height="56" loading="lazy" /></picture></a>
 <button type="button" id="backToTopBtn" class="back-to-top-fab" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="ارجع لأعلى الصفحة" style="display:none">
 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>

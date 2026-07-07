@@ -236,7 +236,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 .related-links-row{display:flex;flex-wrap:wrap;gap:18px 14px;justify-content:center}
-@media(min-width:901px){.related-links-row{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin}}
+@media(min-width:901px){.related-links-row{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;scrollbar-color:rgba(139,47,201,.4) transparent}.related-links-row::-webkit-scrollbar{height:4px}.related-links-row::-webkit-scrollbar-thumb{background:rgba(139,47,201,.4);border-radius:2px}}
 @media(max-width:900px){.related-links-row a{flex:0 0 calc(50% - 7px);text-align:center;box-sizing:border-box}}
 
 
@@ -1286,5 +1286,27 @@ function shareThisPage(){
     <div id="siteSearchResults" class="site-search-results"></div>
   </div>
 </div>
+<script>
+(function(){
+  var rows = document.querySelectorAll('.related-links-row');
+  rows.forEach(function(row){
+    var dir = 1, paused = false, resumeTimer;
+    function pause(){ paused = true; clearTimeout(resumeTimer); }
+    function resumeSoon(){ clearTimeout(resumeTimer); resumeTimer = setTimeout(function(){ paused = false; }, 1500); }
+    row.addEventListener('mouseenter', pause);
+    row.addEventListener('mouseleave', function(){ paused = false; });
+    row.addEventListener('touchstart', pause, {passive:true});
+    row.addEventListener('touchend', resumeSoon, {passive:true});
+    setInterval(function(){
+      if (paused) return;
+      var max = row.scrollWidth - row.clientWidth;
+      if (max <= 1) return;
+      row.scrollLeft += dir * 0.6;
+      if (row.scrollLeft >= max) dir = -1;
+      else if (row.scrollLeft <= 0) dir = 1;
+    }, 16);
+  });
+})();
+</script>
 </body>
 </html>

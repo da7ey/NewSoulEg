@@ -310,13 +310,19 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(139,47,201,.15);pad
 </div>
 
 
-<div class="article-layout"><aside class="toc-wrap"><div class="toc-card"><p class="toc-title">محتويات الصفحة</p><ul class="toc-list" id="tocList"><li><a href="#month-sep-2026">سبتمبر 2026</a></li><li><a href="#month-oct-2026">أكتوبر 2026</a></li><li><a href="#month-nov-2026">نوفمبر 2026</a></li><li><a href="#month-dec-2026">ديسمبر 2026</a></li><li><a href="#month-mar-2027">مارس 2027</a></li><li><a href="#month-dec-2027">ديسمبر 2027</a></li></ul><div class="toc-cta"><a href="https://wa.me/201090235208?text=أريد الاستفسار عن تنفيذ جناح معرض" target="_blank" rel="noopener">📲 احصل على عرض سعر لجناحك</a></div></div></aside>
+<div class="article-layout"><aside class="toc-wrap"><div class="toc-card"><p class="toc-title">محتويات الصفحة</p><ul class="toc-list" id="tocList"><li><a href="#month-tbd">يناير</a></li><li><a href="#month-tbd">فبراير</a></li><li><a href="#month-mar-2027">مارس</a></li><li><a href="#month-tbd">أبريل</a></li><li><a href="#month-tbd">مايو</a></li><li><a href="#month-tbd">يونيو</a></li><li><a href="#month-tbd">يوليو</a></li><li><a href="#month-tbd">أغسطس</a></li><li><a href="#month-sep-2026">سبتمبر</a></li><li><a href="#month-oct-2026">أكتوبر</a></li><li><a href="#month-nov-2026">نوفمبر</a></li><li><a href="#month-dec-2026">ديسمبر</a></li></ul><div class="toc-cta"><a href="https://wa.me/201090235208?text=أريد الاستفسار عن تنفيذ جناح معرض" target="_blank" rel="noopener">📲 احصل على عرض سعر لجناحك</a></div></div></aside>
 <div style="max-width:none">
 <div class="exam-search-box">
   <input type="text" id="calendarSearchInput" placeholder="ابحث هنا عن أي معرض في الأجندة" autocomplete="off" oninput="filterCalendarList()" />
 </div>
 <p id="calendarSearchEmpty" style="display:none;color:var(--gray);text-align:center;padding:20px 0">مفيش معارض مطابقة، جرب كلمة تانية</p>
 <div class="calendar-wrap" style="max-width:none;margin:0;padding:0">
+  <div class="calendar-month-label" id="month-tbd">شهور من غير معارض معلنة حاليًا</div>
+  <div class="calendar-item" style="text-align:center;padding:24px 16px">
+    <p style="color:var(--gray);line-height:1.9;margin-bottom:14px">لا توجد معارض لهذا الشهر في الوقت الحالي، يرجى متابعتنا للتحديثات القادمة.</p>
+    <a href="#notifyFormBox" class="btn-primary" style="display:inline-flex">🔔 أعلمني فور ظهور تحديثات جديدة</a>
+  </div>
+
   <div class="calendar-month-label" id="month-sep-2026">سبتمبر 2026</div>
   <div class="calendar-item">
     <a href="https://newsouladv.com/paper-me-print2pack-egypt.html" class="calendar-link">
@@ -415,7 +421,7 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(139,47,201,.15);pad
     <p>📌 معارض زي <strong>Big 5 Construct Egypt</strong> و<strong>PLASTEX</strong> و<strong>Automech Formula</strong> و<strong>معرض القاهرة الدولي للكتاب</strong> بتتقام سنويًا بس مواعيدها القادمة لسه معلنة رسميًا — تقدر تطّلع على تفاصيلها في <a href="https://newsouladv.com/exhibitions-guide-egypt.html">دليل المعارض الكامل</a>.</p>
   </div>
 
-  <div class="brochure-form-box" style="margin-bottom:24px">
+  <div class="brochure-form-box" id="notifyFormBox" style="margin-bottom:24px">
     <h3 style="text-align:center">عايز مساعدة تجهز جناحك لأي معرض من دول؟</h3>
     <p class="brochure-form-sub" style="text-align:center">اكتب بياناتك وهيتواصل معاك فريق نيو سول</p>
     <form id="leadForm" onsubmit="submitLeadForm(event)">
@@ -550,6 +556,8 @@ function emailCalendarLink(){
   window.location.href = mailtoUrl;
 }
 
+var monthNames = ['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
+
 function filterCalendarList(){
   var q = document.getElementById('calendarSearchInput').value.trim().toLowerCase();
   var wrap = document.querySelector('.calendar-wrap');
@@ -557,20 +565,38 @@ function filterCalendarList(){
   var currentLabel = null;
   var labelHasVisible = false;
   var totalVisible = 0;
+  var tbdLabel = document.getElementById('month-tbd');
   children.forEach(function(el){
     if (el.classList.contains('calendar-month-label')) {
       if (currentLabel) currentLabel.style.display = labelHasVisible ? '' : 'none';
       currentLabel = el;
       labelHasVisible = false;
+      if (el === tbdLabel) { el.style.display = q ? 'none' : ''; }
     } else if (el.classList.contains('calendar-item')) {
+      if (currentLabel === tbdLabel) {
+        el.style.display = q ? 'none' : '';
+        return;
+      }
       var match = el.textContent.toLowerCase().indexOf(q) !== -1;
       el.style.display = match ? '' : 'none';
       if (match) { labelHasVisible = true; totalVisible++; }
     }
   });
-  if (currentLabel) currentLabel.style.display = labelHasVisible ? '' : 'none';
+  if (currentLabel) currentLabel.style.display = (currentLabel === tbdLabel) ? (q ? 'none' : '') : (labelHasVisible ? '' : 'none');
+
+  var isMonthSearch = q && monthNames.some(function(m){ return m.toLowerCase().indexOf(q) !== -1 || q.indexOf(m.toLowerCase()) !== -1; });
   var emptyMsg = document.getElementById('calendarSearchEmpty');
-  if (emptyMsg) emptyMsg.style.display = (totalVisible === 0) ? 'block' : 'none';
+  if (emptyMsg) {
+    if (totalVisible === 0 && isMonthSearch) {
+      emptyMsg.innerHTML = 'لا توجد معارض لهذا الشهر في الوقت الحالي، يرجى متابعتنا للتحديثات القادمة. <a href="#notifyFormBox" style="color:var(--purple-glow);font-weight:700">🔔 أعلمني فور ظهور تحديثات جديدة</a>';
+      emptyMsg.style.display = 'block';
+    } else if (totalVisible === 0) {
+      emptyMsg.innerHTML = 'مفيش معارض مطابقة، جرب كلمة تانية';
+      emptyMsg.style.display = 'block';
+    } else {
+      emptyMsg.style.display = 'none';
+    }
+  }
 }
 
 function submitLeadForm(e){

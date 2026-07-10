@@ -300,6 +300,7 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(139,47,201,.15);pad
   <input type="text" id="examSearchInput" placeholder="ابحث هنا عن المعارض القادمة" autocomplete="off" oninput="filterExhibitionsList()" />
 </div>
 <div id="examSearchList"><div class="faq-item"><button class="faq-q" onclick="toggleFaqItem(this)">Big 5 Construct Egypt<span class="faq-arrow">⌄</span></button><div class="faq-a"><p>أكبر معرض للبناء والتشييد والبنية التحتية. <a href="https://www.newsouladv.com/new-soul-big5-construct-egypt.html">شاهد الدليل الكامل ←</a></p></div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaqItem(this)">Cairo ICT<span class="faq-arrow">⌄</span></button><div class="faq-a"><p>أكبر معرض للتكنولوجيا والاتصالات والتحول الرقمي. <a href="https://www.newsouladv.com/cairo-ict.html">شاهد الدليل الكامل ←</a></p></div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaqItem(this)">Egypt Energy<span class="faq-arrow">⌄</span></button><div class="faq-a"><p>معرض متخصص في قطاع الطاقة. <a href="https://newsouladv.com/egypt-energy.html">شاهد الدليل الكامل ←</a></p></div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaqItem(this)">Food Africa<span class="faq-arrow">⌄</span></button><div class="faq-a"><p>معرض الأغذية والصناعات الغذائية. <a href="https://newsouladv.com/food-africa.html">شاهد الدليل الكامل ←</a></p></div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaqItem(this)">EDEX<span class="faq-arrow">⌄</span></button><div class="faq-a"><p>معرض الدفاع والصناعات العسكرية. <a href="https://newsouladv.com/edex.html">شاهد الدليل الكامل ←</a></p></div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaqItem(this)">EGYPES<span class="faq-arrow">⌄</span></button><div class="faq-a"><p>معرض البترول والغاز. <a href="https://www.newsouladv.com/egypes.html">شاهد الدليل الكامل ←</a></p></div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaqItem(this)">معرض القاهرة الدولي للكتاب<span class="faq-arrow">⌄</span></button><div class="faq-a"><p>أكبر معرض للكتاب في مصر والعالم العربي. <a href="https://newsouladv.com/cairo-book-fair.html">شاهد الدليل الكامل ←</a></p></div></div></div><div style="display:flex;align-items:center;gap:14px;margin:24px 0"><div style="flex:1;height:1px;background:rgba(139,47,201,.25)"></div><span style="color:var(--purple-glow);font-size:.78rem;font-weight:700;white-space:nowrap">المزيد من المعارض</span><div style="flex:1;height:1px;background:rgba(139,47,201,.25)"></div></div><a href="https://newsouladv.com/exhibitions-guide-more-egypt.html" style="display:block;text-align:center;background:linear-gradient(135deg,var(--purple),var(--purple-bright));color:#fff;text-decoration:none;padding:14px;border-radius:12px;font-weight:700;font-size:.92rem">📋 للاطلاع على المزيد من المعارض ←</a><p id="examSearchEmpty" style="display:none;color:var(--gray);text-align:center;padding:16px">مفيش معرض بهذا الاسم، جرب كلمة تانية.</p>
+<div id="examSearchAllResults" style="display:none;margin-top:16px"></div>
 <figure class="article-figure"><a href="https://newsouladv.com/new-soul-royal-ceramica.html"><picture><source srcset="images/royal-ceramica-entrance.webp" type="image/webp" /><img src="images/royal-ceramica-entrance.jpg" alt="جناح معرض بواجهة عرض مضاءة نفذته نيو سول" loading="lazy" /></picture></a><figcaption>واجهة جناح معرض بإضاءة احترافية - نموذج من أعمال نيو سول</figcaption></figure>
 <h2 id="choose">كيف تختار شركة تنظيم معارض احترافية؟</h2>
 <p>نجاح مشاركتك في أي معرض يعتمد بشكل كبير على جودة الجناح وتنفيذه. عند اختيار شركة لتصميم وتنفيذ جناحك، يُنصح بالتركيز على:</p>
@@ -377,18 +378,50 @@ document.addEventListener('keydown', function(e){
     if(overlay && overlay.classList.contains('open')) toggleSiteSearch();
   }
 });
+var allExhibitionsIndex = [{"n":"Big 5 Construct Egypt","d":"أكبر معرض للبناء والتشييد والبنية التحتية.","u":"https://www.newsouladv.com/new-soul-big5-construct-egypt.html"},{"n":"Cairo ICT","d":"أكبر معرض للتكنولوجيا والاتصالات والتحول الرقمي.","u":"https://www.newsouladv.com/cairo-ict.html"},{"n":"Egypt Energy","d":"معرض متخصص في قطاع الطاقة.","u":"https://newsouladv.com/egypt-energy.html"},{"n":"Food Africa","d":"معرض الأغذية والصناعات الغذائية.","u":"https://newsouladv.com/food-africa.html"},{"n":"EDEX","d":"معرض الدفاع والصناعات العسكرية.","u":"https://newsouladv.com/edex.html"},{"n":"EGYPES","d":"معرض البترول والغاز.","u":"https://www.newsouladv.com/egypes.html"},{"n":"معرض القاهرة الدولي للكتاب","d":"أكبر معرض للكتاب في مصر والعالم العربي.","u":"https://newsouladv.com/cairo-book-fair.html"},{"n":"Cityscape Egypt","d":"أكبر معرض للعقارات والتطوير العمراني.","u":"https://newsouladv.com/cityscape-egypt.html"},{"n":"Automech Formula","d":"أكبر معرض للسيارات وقطع الغيار.","u":"https://newsouladv.com/automech-formula-egypt.html"},{"n":"معرض الضيافة والفنادق","d":"Future Hospitality Summit Egypt وقطاع الاستثمار الفندقي.","u":"https://newsouladv.com/hospitality-hotel-show-egypt.html"},{"n":"معرض PLASTEX","d":"أكبر معرض للبلاستيك والمطاط في الشرق الأوسط وأفريقيا.","u":"https://newsouladv.com/plastex-egypt.html"},{"n":"معرض الأثاث الدولي (IFAC Cairo)","d":"قطاع تصنيع الأثاث والديكور.","u":"https://newsouladv.com/egypt-furniture-show.html"},{"n":"Sahara Expo","d":"أكبر معرض للزراعة والميكنة الزراعية في أفريقيا.","u":"https://newsouladv.com/sahara-expo-egypt.html"},{"n":"HACE Hotel Expo","d":"أكبر معرض لمستلزمات الفنادق والضيافة في أفريقيا.","u":"https://newsouladv.com/hace-hotel-expo-egypt.html"},{"n":"Paper ME - Tissue ME - Print2Pack","d":"معارض متلازمة للورق والمناديل والطباعة والتغليف.","u":"https://newsouladv.com/paper-me-print2pack-egypt.html"},{"n":"Cairo Fashion & Tex","d":"أكبر معرض للأزياء والمنسوجات في مصر.","u":"https://newsouladv.com/cairo-fashion-tex.html"},{"n":"Cairo WoodShow","d":"أهم معرض للأخشاب وصناعة الأثاث.","u":"https://newsouladv.com/cairo-woodshow-egypt.html"},{"n":"pacprocess MEA","d":"معرض تصنيع الأغذية والتعبئة والتغليف.","u":"https://newsouladv.com/pacprocess-mea-egypt.html"},{"n":"Agrena","d":"أكبر معرض للدواجن والثروة الحيوانية والسمكية.","u":"https://newsouladv.com/agrena-egypt.html"},{"n":"FIREX Egypt","d":"المعرض الوحيد المتخصص في السلامة من الحريق.","u":"https://newsouladv.com/firex-egypt.html"},{"n":"EDUGATE","d":"أكبر معرض للجامعات والتعليم العالي.","u":"https://newsouladv.com/edugate-egypt.html"},{"n":"Cairo Inter Leather","d":"المعرض الوحيد المتخصص في صناعات الجلود.","u":"https://newsouladv.com/cairo-inter-leather.html"},{"n":"Egypt Fabric & Yarn","d":"معرض دولي للأقمشة والخيوط.","u":"https://newsouladv.com/egypt-fabric-yarn.html"},{"n":"Le Marché","d":"أول وأكبر معرض متكامل للأثاث والديكور في المنطقة.","u":"https://newsouladv.com/le-marche-egypt.html"},{"n":"EgyMedica","d":"أكبر وأقدم معرض طبي في مصر وأفريقيا.","u":"https://newsouladv.com/egymedica-egypt.html"},{"n":"Pharmaconex","d":"أكبر معرض للتصنيع الدوائي في أفريقيا.","u":"https://newsouladv.com/pharmaconex-egypt.html"},{"n":"Autotech Egypt","d":"المعرض الرائد لقطاع ما بعد بيع السيارات في أفريقيا.","u":"https://newsouladv.com/autotech-egypt.html"},{"n":"Egypt Projects","d":"المعرض الدولي لمواد البناء والتشييد.","u":"https://newsouladv.com/egypt-projects-exhibition.html"}];
+
 function filterExhibitionsList(){
   var q = document.getElementById('examSearchInput').value.trim().toLowerCase();
   var items = document.querySelectorAll('#examSearchList .faq-item');
   var emptyMsg = document.getElementById('examSearchEmpty');
+  var allResultsBox = document.getElementById('examSearchAllResults');
   var visibleCount = 0;
   items.forEach(function(item){
     var text = item.textContent.toLowerCase();
-    var match = text.indexOf(q) !== -1;
-    item.style.display = match ? '' : 'none';
+    var match = q !== '' && text.indexOf(q) !== -1;
+    item.style.display = match ? '' : (q === '' ? '' : 'none');
     if (match) visibleCount++;
   });
-  emptyMsg.style.display = (visibleCount === 0) ? 'block' : 'none';
+
+  if (q === '') {
+    emptyMsg.style.display = 'none';
+    allResultsBox.style.display = 'none';
+    allResultsBox.innerHTML = '';
+    return;
+  }
+
+  var visibleNames = Array.prototype.map.call(items, function(item){
+    return item.querySelector('.faq-q').textContent.trim().toLowerCase();
+  });
+
+  var extraMatches = allExhibitionsIndex.filter(function(ex){
+    var already = visibleNames.indexOf(ex.n.toLowerCase()) !== -1;
+    var match = (ex.n.toLowerCase().indexOf(q) !== -1) || (ex.d.toLowerCase().indexOf(q) !== -1);
+    return match && !already;
+  });
+
+  if (extraMatches.length > 0) {
+    allResultsBox.style.display = 'block';
+    allResultsBox.innerHTML = '<p style="color:var(--purple-glow);font-size:.8rem;font-weight:700;margin-bottom:10px">معارض تانية من دليلنا الكامل</p>' +
+      extraMatches.map(function(ex){
+        return '<a href="' + ex.u + '" style="display:block;background:rgba(139,47,201,.08);border:1px solid rgba(139,47,201,.2);border-radius:12px;padding:14px 18px;margin-bottom:10px;text-decoration:none"><strong style="display:block;color:#fff;font-size:.95rem;margin-bottom:4px">' + ex.n + '</strong><span style="display:block;color:var(--gray);font-size:.82rem">' + ex.d + '</span></a>';
+      }).join('');
+  } else {
+    allResultsBox.style.display = 'none';
+    allResultsBox.innerHTML = '';
+  }
+
+  emptyMsg.style.display = (visibleCount === 0 && extraMatches.length === 0) ? 'block' : 'none';
 }
 
 function toggleFaqItem(btn){

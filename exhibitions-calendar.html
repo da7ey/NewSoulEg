@@ -74,7 +74,8 @@ document.addEventListener('DOMContentLoaded', function(){
 .brochure-form-box{background:rgba(139,47,201,.1);border:1px solid rgba(139,47,201,.3);border-radius:18px;padding:32px 26px}
 .brochure-form-box h3{font-family:"Tajawal",sans-serif;font-size:1.3rem;color:#fff;margin-bottom:6px}
 .brochure-form-box form{display:flex;flex-direction:column;gap:14px}
-.brochure-form-box input{background:rgba(22,13,46,.6);border:1px solid rgba(139,47,201,.3);border-radius:10px;padding:13px 16px;color:#fff;font-family:inherit;font-size:.92rem}
+.brochure-form-box input{background:rgba(255,255,255,.09);border:1px solid rgba(198,110,255,.45);border-radius:10px;padding:13px 16px;color:#fff;font-family:inherit;font-size:.92rem;transition:background .2s,border-color .2s}
+.brochure-form-box input:focus{background:rgba(255,255,255,.14);border-color:var(--purple-glow);outline:none}
 .brochure-form-box input:focus{outline:none;border-color:var(--purple-glow)}
 .brochure-form-sub{color:var(--gray);font-size:.88rem;margin-bottom:22px}
 .brochure-privacy-note{color:var(--gray);font-size:.74rem;line-height:1.6;margin-top:16px;text-align:center}
@@ -108,7 +109,8 @@ document.addEventListener('DOMContentLoaded', function(){
 .calendar-note p{color:var(--gray);font-size:.85rem;line-height:1.8;overflow-wrap:break-word}
 .calendar-note a{color:var(--purple-glow)}
 .exam-search-box{margin:20px 0}
-.exam-search-box input{width:100%;background:rgba(22,13,46,.6);border:1px solid rgba(139,47,201,.3);border-radius:12px;padding:14px 18px;color:#fff;font-family:"IBM Plex Sans Arabic",sans-serif;font-size:.95rem;box-sizing:border-box}
+.exam-search-box input{width:100%;background:rgba(255,255,255,.09);border:1px solid rgba(198,110,255,.45);border-radius:12px;padding:14px 18px;color:#fff;font-family:"IBM Plex Sans Arabic",sans-serif;font-size:.95rem;box-sizing:border-box;transition:background .2s,border-color .2s}
+.exam-search-box input:focus{background:rgba(255,255,255,.14);border-color:var(--purple-glow);outline:none}
 .exam-search-box input:focus{outline:none;border-color:var(--purple-glow)}
 .exam-search-box input::placeholder{color:var(--gray)}
 @media(max-width:600px){.calendar-item{padding:14px}
@@ -257,7 +259,7 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(139,47,201,.15);pad
 .site-search-overlay{position:fixed;inset:0;background:rgba(6,3,13,.92);backdrop-filter:blur(6px);z-index:300;display:none;align-items:flex-start;justify-content:center;padding:100px 20px}
 .site-search-overlay.open{display:flex}
 .site-search-box{width:100%;max-width:600px;background:var(--surface2);border:1px solid rgba(139,47,201,.35);border-radius:16px;padding:24px;position:relative;max-height:70vh;overflow-y:auto}
-.site-search-box input{width:100%;background:rgba(22,13,46,.6);border:1px solid rgba(139,47,201,.3);border-radius:12px;padding:14px 16px;color:#fff;font-family:"IBM Plex Sans Arabic",sans-serif;font-size:1rem}
+.site-search-box input{width:100%;background:rgba(255,255,255,.09);border:1px solid rgba(198,110,255,.45);border-radius:12px;padding:14px 16px;color:#fff;font-family:"IBM Plex Sans Arabic",sans-serif;font-size:1rem}
 .site-search-box input:focus{outline:none;border-color:var(--purple-glow)}
 .site-search-close{position:absolute;top:20px;left:20px;background:none;border:none;color:var(--gray);font-size:1.8rem;cursor:pointer;line-height:1}
 .site-search-close:hover{color:var(--purple-glow)}

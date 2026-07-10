@@ -76,6 +76,7 @@ document.addEventListener('DOMContentLoaded', function(){
 .related-links-row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+img,svg,video,picture{max-width:100%}
 picture{display:contents}
 .back-to-top-fab{position:fixed;bottom:24px;right:24px;z-index:200;width:52px;height:52px;border-radius:50%;background:rgba(139,47,201,.9);border:1px solid rgba(170,68,240,.5);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(139,47,201,.4);cursor:pointer;transition:transform .2s,opacity .2s}
 .back-to-top-fab:hover{transform:translateY(-3px)}
@@ -137,9 +138,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-links a{color:var(--gray);text-decoration:none;font-size:.88rem;font-weight:600;transition:color .2s}
 .nav-links a:hover{color:var(--purple-glow)}
 .nav-cta{background:linear-gradient(135deg,var(--purple),var(--purple-bright));color:#fff!important;padding:8px 18px;border-radius:50px;font-size:.82rem!important}
-.btn-primary{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--purple),var(--purple-bright));color:#fff;text-decoration:none;padding:14px 28px;border-radius:50px;font-weight:700;font-size:.95rem;font-family:"IBM Plex Sans Arabic",sans-serif;box-shadow:0 0 28px rgba(170,68,240,.5);transition:transform .2s}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--purple),var(--purple-bright));color:#fff;text-decoration:none;padding:14px 28px;border-radius:50px;font-weight:700;font-size:.95rem;font-family:"IBM Plex Sans Arabic",sans-serif;box-shadow:0 0 28px rgba(170,68,240,.5);transition:transform .2s;max-width:100%;box-sizing:border-box}
 .btn-primary:hover{transform:translateY(-2px)}
-.btn-secondary{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--purple-glow);text-decoration:none;padding:14px 28px;border-radius:50px;font-weight:700;font-size:.95rem;font-family:"IBM Plex Sans Arabic",sans-serif;border:1.5px solid var(--purple);transition:background .2s}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--purple-glow);text-decoration:none;padding:14px 28px;border-radius:50px;font-weight:700;font-size:.95rem;font-family:"IBM Plex Sans Arabic",sans-serif;border:1.5px solid var(--purple);transition:background .2s;max-width:100%;box-sizing:border-box}
 .btn-secondary:hover{background:rgba(139,47,201,.15)}
 .article-header{position:relative;z-index:1;padding:140px 24px 60px;text-align:center;max-width:900px;margin:0 auto}
 .article-breadcrumb{font-size:.82rem;color:var(--gray);margin-bottom:20px}
@@ -154,6 +155,7 @@ section{position:relative;z-index:1}
 .section-label{font-size:.75rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--purple-glow);margin-bottom:12px}
 .section-title{font-family:"Tajawal",sans-serif;font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:900;margin-bottom:20px}
 .article-layout{max-width:1100px;margin:0 auto;padding:0 24px 80px;display:grid;grid-template-columns:240px 1fr;gap:56px;position:relative;z-index:1}
+.article-layout>*{min-width:0}
 .toc-wrap{position:sticky;top:100px;align-self:start}
 .toc-card{background:rgba(22,13,46,.6);border:1px solid rgba(139,47,201,.2);border-radius:16px;padding:24px 20px}
 .toc-title{font-size:.82rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--purple-glow);margin-bottom:16px}

@@ -349,7 +349,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <form id="mstepForm" onsubmit="submitMstepForm(event)">
     <input type="hidden" name="access_key" value="6e7d793e-45ae-4f37-879d-184f5fedb92d" />
     <input type="hidden" name="subject" value="طلب عرض سعر جديد - نيو سول" />
-    <input type="hidden" id="mstepHiddenSummary" name="تفاصيل الطلب" value="" />
+    <input type="hidden" id="mstepHiddenSummary" name="request_details" value="" />
     <div class="mstep-field">
       <label>الاسم بالكامل</label>
       <input type="text" name="name" id="mstepName" placeholder="اسمك" required />
@@ -455,7 +455,10 @@ function mstepGoTo(stepName){
     document.getElementById(id).classList.toggle('active', mstepOrder[i] === stepName);
   });
 
-  window.scrollTo({top: document.querySelector('.quiz-wrap').offsetTop - 100, behavior: 'smooth'});
+  var wrapEl = document.querySelector('.quiz-wrap');
+  var rect = wrapEl.getBoundingClientRect();
+  var scrollTarget = rect.top + window.scrollY - 100;
+  window.scrollTo({top: scrollTarget, behavior: 'smooth'});
 }
 
 function buildMstepSummary(){

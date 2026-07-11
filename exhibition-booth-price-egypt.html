@@ -327,12 +327,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </select>
   </div>
   <div class="price-calc-field">
-    <label>مستوى الخامات</label>
+    <label>مستوى التشطيب</label>
     <select id="calcMaterial" onchange="updatePriceCalc()">
-      <option value="economy">اقتصادي</option>
-      <option value="standard" selected>قياسي</option>
-      <option value="premium">فاخر</option>
+      <option value="economy">اقتصادي — دهانات وتشطيبات بسيطة</option>
+      <option value="standard" selected>قياسي — دهانات + لمسات أكريليك</option>
+      <option value="premium">فاخر — دهانات + أكريليك وستانلس ستيل</option>
     </select>
+    <p style="color:var(--gray);font-size:.78rem;margin-top:8px">الهيكل الأساسي بيكون خشب ودهانات في كل المستويات، والفرق في نوع وكمية الإضافات زي <a href="https://newsouladv.com/materials-guide-signs-egypt.html" style="color:var(--purple-glow)">الأكريليك والستانلس ستيل</a> فوقيه.</p>
   </div>
   <div class="price-calc-result">
     <p style="color:var(--gray);font-size:.85rem;margin-bottom:4px">التقدير التقريبي</p>
@@ -466,7 +467,7 @@ function updatePriceCalc(){
   document.getElementById('calcResult').textContent = fmt(low) + ' - ' + fmt(high) + ' جنيه تقريبًا';
 
   var typeText = (type === 'shell') ? 'جناح جاهز (Shell Scheme)' : 'مساحة مفتوحة (Space Only)';
-  var materialText = (material === 'premium') ? 'خامات فاخرة' : (material === 'economy') ? 'خامات اقتصادية' : 'خامات قياسية';
+  var materialText = (material === 'premium') ? 'تشطيب فاخر (دهانات + أكريليك وستانلس)' : (material === 'economy') ? 'تشطيب اقتصادي' : 'تشطيب قياسي (دهانات + لمسات أكريليك)';
   var msg = 'مرحباً، أريد عرض سعر لجناح مساحته ' + area + ' م²، ' + typeText + '، ' + materialText + '. التقدير التقريبي من الحاسبة كان ' + fmt(low) + '-' + fmt(high) + ' جنيه، وحابب أعرف السعر الدقيق.';
   document.getElementById('calcWaLink').href = 'https://wa.me/201090235208?text=' + encodeURIComponent(msg);
 }

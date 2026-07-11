@@ -354,7 +354,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="calendar-month-label" id="month-tbd">شهور من غير معارض معلنة حاليًا</div>
   <div class="calendar-item" style="text-align:center;padding:24px 16px">
     <p style="color:var(--gray);line-height:1.9;margin-bottom:14px">لا توجد معارض لهذا الشهر في الوقت الحالي، يرجى متابعتنا للتحديثات القادمة.</p>
-    <a href="#notifyFormBox" class="btn-primary" style="display:block;max-width:100%;box-sizing:border-box;text-align:center">🔔 أعلمني فور ظهور تحديثات جديدة</a>
+    <a href="#notifyFormBox" class="btn-primary" style="display:block;max-width:100%;box-sizing:border-box;text-align:center">🔔 أعلمني بالتحديثات</a>
   </div>
 
   <div class="calendar-month-label" id="month-jul-2026">يوليو 2026</div>
@@ -772,7 +772,7 @@ function filterCalendarList(){
   var emptyMsg = document.getElementById('calendarSearchEmpty');
   if (emptyMsg) {
     if (totalVisible === 0 && isMonthSearch) {
-      emptyMsg.innerHTML = 'لا توجد معارض لهذا الشهر في الوقت الحالي، يرجى متابعتنا للتحديثات القادمة. <a href="#notifyFormBox" style="color:var(--purple-glow);font-weight:700">🔔 أعلمني فور ظهور تحديثات جديدة</a>';
+      emptyMsg.innerHTML = 'لا توجد معارض لهذا الشهر في الوقت الحالي، يرجى متابعتنا للتحديثات القادمة. <a href="#notifyFormBox" style="color:var(--purple-glow);font-weight:700">🔔 أعلمني بالتحديثات</a>';
       emptyMsg.style.display = 'block';
     } else if (totalVisible === 0) {
       emptyMsg.innerHTML = 'مفيش معارض مطابقة، جرب كلمة تانية';

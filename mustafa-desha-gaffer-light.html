@@ -51,18 +51,18 @@
   <meta property="og:url" content="https://www.newsouladv.com/mustafa-desha-gaffer-light.html">
   <meta property="og:title" content="Desha Gaffer Light — Professional Gaffer & Lighting Services">
   <meta property="og:description" content="Professional gaffer and lighting execution for film, advertising, TV series, and fashion production in Cairo and Giza. Expert services for your production needs.">
-  <meta property="og:image" content="IMG_0834.PNG">
+  <meta property="og:image" content="og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Desha Gaffer Light Logo - Professional Lighting Services">
+  <meta property="og:image:alt" content="Desha Gaffer Light - Professional Gaffer & Lighting Services">
   <meta property="og:locale" content="en_US">
   
   <!-- Twitter / X Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Desha Gaffer Light — Professional Gaffer & Lighting Services">
   <meta name="twitter:description" content="Professional gaffer and lighting execution for film, advertising, and production. Expert lighting services in Cairo and Giza.">
-  <meta name="twitter:image" content="IMG_0834.PNG">
-  <meta name="twitter:image:alt" content="Desha Gaffer Light Logo">
+  <meta name="twitter:image" content="og-image.png">
+  <meta name="twitter:image:alt" content="Desha Gaffer Light - Professional Gaffer & Lighting Services">
   
   <!-- Canonical URL -->
   <meta rel="canonical" href="https://www.newsouladv.com/mustafa-desha-gaffer-light.html">
@@ -78,7 +78,7 @@
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Desha Gaffer Light",
-    "image": "IMG_0834.PNG",
+    "image": "og-image.png",
     "description": "Professional gaffer and lighting execution services for film, advertising, TV series, and fashion production",
     "url": "https://www.newsouladv.com/mustafa-desha-gaffer-light.html",
     "telephone": "+201111106453",
@@ -465,20 +465,41 @@
   </footer>
 
   <script>
-    // Load the logo image with proper fallback
+    // Load the logo image with fallback paths
     document.addEventListener('DOMContentLoaded', function() {
       const logoImg = document.getElementById('logoImg');
       if (logoImg) {
-        logoImg.src = 'IMG_0834.PNG';
-        logoImg.loading = 'eager'; // Prioritize loading
+        // Try multiple image paths
+        const imagePaths = [
+          'IMG_0834.PNG',           // Root directory
+          './IMG_0834.PNG',         // Root with ./
+          'images/IMG_0834.PNG',    // Images folder
+          './images/IMG_0834.PNG'   // Images folder with ./
+        ];
+        
+        // Try first path
+        logoImg.src = imagePaths[0];
+        logoImg.loading = 'eager';
         logoImg.decoding = 'async';
+        
+        // If first path fails, try next paths
+        logoImg.onerror = function() {
+          let pathIndex = 1;
+          function tryNextPath() {
+            if (pathIndex < imagePaths.length) {
+              logoImg.src = imagePaths[pathIndex];
+              pathIndex++;
+            } else {
+              console.error('Could not load logo from paths:', imagePaths);
+              // Show a fallback message
+              logoImg.style.display = 'none';
+            }
+          }
+          logoImg.onerror = tryNextPath;
+          tryNextPath();
+        };
       }
     });
-    
-    // Log analytics
-    if(typeof gtag === 'undefined') {
-      console.log('Google Analytics not loaded - add GTM tag to head');
-    }
   </script>
 
 </body>

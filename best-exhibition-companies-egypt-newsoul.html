@@ -280,7 +280,7 @@ document.addEventListener('DOMContentLoaded', function(){
     .nav-links a {
       color: var(--gray);
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: 600;
       transition: color 0.2s;
     }
@@ -823,11 +823,11 @@ document.addEventListener('DOMContentLoaded', function(){
     }
   
     .hamburger{display:none;flex-direction:column;gap:6px;background:none;border:none;cursor:pointer;padding:8px;z-index:250;position:relative}
-    .hamburger span{width:24px;height:2px;background:#fff;border-radius:2px;transition:.3s}
+    .hamburger span{width:24px;height:2px;background:var(--white);border-radius:2px;transition:.3s}
     .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
     .hamburger.active span:nth-child(2){opacity:0}
     .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-    .nav-links{display:flex;gap:24px;list-style:none;align-items:center}
+    .nav-links{display:flex;gap:24px;list-style:none}
     .nav-links li a{font-size:.95rem;font-weight:600;color:#fff;text-decoration:none;transition:color .2s}
     .nav-links li a:hover{color:#C66EFF}
         @media screen and (max-width:900px){

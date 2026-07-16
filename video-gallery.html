@@ -358,7 +358,7 @@ document.addEventListener('keydown', function(e){
 });
 var videoGalleryData = [
   { id: 'jHKYSmQYa10', title: 'من أعمال نيو سول', type: 'short' },
-  { id: 'xmZd_Z7gf0M', title: 'من أعمال نيو سول', type: 'video' },
+  { id: 'xmZd_Z7gf0M', title: 'من أعمال نيو سول', type: 'short' },
   { id: '2gK_ZwjlQWM', title: 'من أعمال نيو سول', type: 'short' },
   { id: 'Up0sJPTu0IA', title: 'من أعمال نيو سول', type: 'short' },
   { id: 'zg0A02qMdto', title: 'من أعمال نيو سول', type: 'short' },
@@ -366,12 +366,27 @@ var videoGalleryData = [
   { id: 'WdtjHFqCCA8', title: 'من أعمال نيو سول', type: 'video' }
 ];
 
+var currentPlayingCard = null;
+
 function playYoutubeVideo(el, videoId){
+  if (currentPlayingCard && currentPlayingCard !== el) {
+    var oldIframe = currentPlayingCard.querySelector('iframe');
+    if (oldIframe) { oldIframe.src = ''; }
+    var oldIdx = currentPlayingCard.id.replace('ytcard-', '');
+    var oldVideo = videoGalleryData[oldIdx];
+    if (oldVideo) {
+      var thumb = 'https://img.youtube.com/vi/' + oldVideo.id + '/hqdefault.jpg';
+      currentPlayingCard.innerHTML =
+        '<img src="' + thumb + '" alt="' + oldVideo.title + '" loading="lazy" />' +
+        '<div class="video-card-play"><svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>' +
+        '<div class="video-card-overlay"><span class="video-card-title">' + oldVideo.title + '</span></div>';
+    }
+  }
   var iframe = document.createElement('iframe');
   iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
   iframe.setAttribute('frameborder', '0');
-  iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-  iframe.setAttribute('allowfullscreen', '');
+  iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen');
+  iframe.setAttribute('allowfullscreen', 'true');
   iframe.style.width = '100%';
   iframe.style.height = '100%';
   iframe.style.position = 'absolute';
@@ -380,6 +395,7 @@ function playYoutubeVideo(el, videoId){
   iframe.style.border = '0';
   el.innerHTML = '';
   el.appendChild(iframe);
+  currentPlayingCard = el;
 }
 
 function renderVideoGallery(){

@@ -422,7 +422,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p id="filterEmptyState" style="text-align:center;padding:60px 20px;color:#fff;font-size:.95rem;font-weight:600;margin:0">ارفع صورة الأول عشان تقدر تجرب الفلاتر ↑</p>
   </div>
   <button type="button" id="downloadFilterBtn" class="btn-primary" style="display:none;justify-content:center;width:100%;margin-top:16px" onclick="downloadFilteredImage()">⬇️ تحميل الصورة</button>
-  <button type="button" id="enhanceFilterBtn" class="btn-secondary" style="display:none;justify-content:center;width:100%;margin-top:10px" onclick="enhanceAndUpscale()">🔍 تحسين الجودة وتكبير 2x</button>
+  <button type="button" id="enhanceFilterBtn" class="btn-secondary" disabled style="justify-content:center;width:100%;margin-top:10px;opacity:.4;cursor:not-allowed" onclick="enhanceAndUpscale()">🔍 تحسين الجودة وتكبير 2x</button>
 </div>
 
 <div class="note-box">💡 صورتك ما بترفعش لأي سيرفر — كل التعديل بيحصل جوه متصفحك مباشرة باستخدام Canvas API. <br/>ملحوظة عن "تحسين الجودة": الأداة بتكبّر الصورة وتشحذ التفاصيل رياضيًا (مش AI حقيقي)، فبتحسّن الوضوح شوية بس معندهاش القدرة على اختراع تفاصيل مش موجودة أصلًا في الصورة الأصلية.</div>
@@ -599,7 +599,7 @@ function loadFilterImage(e){
       document.getElementById('filterEmptyState').style.display = 'none';
       document.getElementById('filterCanvas').style.display = 'block';
       document.getElementById('downloadFilterBtn').style.display = 'flex';
-      document.getElementById('enhanceFilterBtn').style.display = 'flex';
+      var enhBtn = document.getElementById('enhanceFilterBtn'); enhBtn.disabled = false; enhBtn.style.opacity = '1'; enhBtn.style.cursor = 'pointer';
       applyFilter('none', document.getElementById('filterBtnNone'));
     };
     img.src = ev.target.result;
@@ -720,8 +720,11 @@ function enhanceAndUpscale(){
   var ctx = canvas.getContext('2d');
   ctx.drawImage(upCanvas, 0, 0);
 
-  document.getElementById('enhanceFilterBtn').disabled = true;
-  document.getElementById('enhanceFilterBtn').textContent = '✓ تم التحسين والتكبير';
+  var doneBtn = document.getElementById('enhanceFilterBtn');
+  doneBtn.disabled = true;
+  doneBtn.style.opacity = '.6';
+  doneBtn.style.cursor = 'not-allowed';
+  doneBtn.textContent = '✓ تم التحسين والتكبير';
 }
 </script>
 

@@ -243,7 +243,14 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(139,47,201,.15);pad
 @media(max-width:900px){
   .search-toggle{margin-inline-start:auto}
 }
-a:not([class]):not(nav a):not(footer a):not(.toc-list a):not(.related-links-row a):not(.toc-cta a){color:var(--purple-glow);text-decoration:none}.icon-circle-btn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,var(--purple),var(--purple-bright));border:none;color:#fff;box-shadow:0 4px 16px rgba(139,47,201,.4);transition:transform .2s,box-shadow .2s}.icon-circle-btn:hover{transform:translateY(-3px);box-shadow:0 8px 26px rgba(170,68,240,.6)}.icon-circle-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:center}.nav-links a svg,.footer-links a svg{vertical-align:-3px;margin-inline-end:2px}</style>
+a:not([class]):not(nav a):not(footer a):not(.toc-list a):not(.related-links-row a):not(.toc-cta a){color:var(--purple-glow);text-decoration:none}.icon-circle-btn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,var(--purple),var(--purple-bright));border:none;color:#fff;box-shadow:0 4px 16px rgba(139,47,201,.4);transition:transform .2s,box-shadow .2s}.icon-circle-btn:hover{transform:translateY(-3px);box-shadow:0 8px 26px rgba(170,68,240,.6)}.icon-circle-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:center}.nav-links a svg,.footer-links a svg{vertical-align:-3px;margin-inline-end:2px}.calendar-banner{display:flex;align-items:center;gap:20px;background:linear-gradient(135deg,rgba(139,47,201,.15),rgba(170,68,240,.05));border:1px solid rgba(170,68,240,.35);border-radius:16px;padding:20px 24px;margin-top:28px;text-decoration:none;transition:.2s}
+.calendar-banner:hover{border-color:rgba(170,68,240,.6);background:linear-gradient(135deg,rgba(139,47,201,.22),rgba(170,68,240,.08))}
+.calendar-banner-icon{width:56px;height:56px;flex-shrink:0}
+.calendar-banner-text{flex:1;display:flex;flex-direction:column;gap:4px}
+.calendar-banner-text strong{color:#fff;font-size:1.05rem}
+.calendar-banner-text span{color:var(--gray);font-size:.85rem}
+.calendar-banner-arrow{color:var(--purple-glow);font-size:1.3rem;flex-shrink:0}
+</style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "نيو سول", "item": "https://newsouladv.com"}, {"@type": "ListItem", "position": 2, "name": "المدونة", "item": "https://newsouladv.com/blog.html"}, {"@type": "ListItem", "position": 3, "name": "المدونة", "item": "https://newsouladv.com/blog.html"}]}</script>
 </head>
 <body>
@@ -280,11 +287,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <h2 class="section-title" style="text-align:center;color:#39FF14">🛠️ أدوات المصممين</h2>
   <a href="https://newsouladv.com/color-palette-tool.html" class="calendar-banner">
     <svg class="calendar-banner-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <path d="M50 10c-24 0-40 16-40 36 0 14 9 22 20 22 5 0 8-3 8-7 0-3-2-5-2-9 0-8 7-14 16-14 13 0 22-9 22-20 0-13-11-24-24-24z" fill="#160D2E" stroke="#AA44F0" stroke-width="2.5"/>
-  <circle cx="33" cy="34" r="7" fill="#C66EFF"/>
-  <circle cx="52" cy="24" r="7" fill="#8B2FC9"/>
-  <circle cx="70" cy="34" r="7" fill="#AA44F0"/>
-  <circle cx="33" cy="55" r="6" fill="rgba(170,68,240,.35)"/>
+  <path d="M50 8C26 8 8 24 8 46c0 16 10 22 20 22 6 0 9-3 9-7s-3-5-3-10c0-6 5-10 12-10h13c14 0 23-9 23-20C88 12 71 8 50 8z" fill="#160D2E" stroke="#AA44F0" stroke-width="3"/>
+  <ellipse cx="41" cy="59" rx="7" ry="6" fill="#0E0820"/>
+  <circle cx="30" cy="30" r="7" fill="#E94F8A"/>
+  <circle cx="50" cy="22" r="7" fill="#F2C230"/>
+  <circle cx="70" cy="28" r="7" fill="#2FC9A8"/>
+  <circle cx="78" cy="46" r="7" fill="#8B2FC9"/>
+  <circle cx="60" cy="52" r="6" fill="#C66EFF"/>
+  <rect x="60" y="66" width="26" height="5" rx="2.5" fill="#AA44F0" transform="rotate(28 60 66)"/>
 </svg>
     <span class="calendar-banner-text"><strong>مولّد لوحات الألوان</strong><span>لوحة احترافية حسب مجالك، أو استخرجها من صورة</span></span>
     <span class="calendar-banner-arrow">←</span>

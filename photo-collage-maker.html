@@ -361,11 +361,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header class="article-header"><p class="article-breadcrumb"><a href="https://www.newsouladv.com">نيو سول</a> / <a href="https://newsouladv.com/blog.html">المدونة</a> / أدوات مجانية</p><p class="article-eyebrow">أداة تصميم مجانية</p><h1>أداة عمل كولاج صور<br/><span>دمج صورك في تصميم واحد</span></h1><p class="article-lead">اختار شكل التقسيم، ارفع صورك في كل خانة، واضبط المسافات واللون، وحمّل الكولاج النهائي بجودة عالية.</p><div class="article-meta"><span>🧩 8 تقسيمات</span><span>🎨 تحكم كامل</span><span>⬇️ تحميل مباشر</span></div></header>
 
 <div class="article-layout">
-<aside class="toc-wrap"><div class="toc-card"><p class="toc-title">محتويات الصفحة</p><ul class="toc-list" id="tocList"><li><a href="#layout">اختيار التقسيم</a></li><li><a href="#upload-slots">رفع الصور</a></li><li><a href="#controls">الضبط</a></li><li><a href="https://newsouladv.com/image-resizer-tool.html">قص وتغيير الأبعاد</a></li><li><a href="https://newsouladv.com/image-filters-tool.html">فلاتر الصور</a></li><li><a href="https://newsouladv.com/ad-budget-calculator.html">حاسبة تكلفة الإعلانات</a></li><li><a href="https://wa.me/201090235208?text=مرحباً، عندي سؤال عن أدوات التصميم" target="_blank" rel="noopener">تواصل معنا</a></li></ul><div class="toc-cta"><a href="https://wa.me/201090235208?text=مرحباً، عايز مساعدة في تصميم بصري" target="_blank" rel="noopener">📲 احصل على استشارة مجانية</a></div></div></aside>
+<aside class="toc-wrap"><div class="toc-card"><p class="toc-title">محتويات الصفحة</p><ul class="toc-list" id="tocList"><li><a href="#canvas-shape">شكل الكولاج</a></li><li><a href="#layout">اختيار التقسيم</a></li><li><a href="#upload-slots">رفع الصور</a></li><li><a href="#controls">الضبط</a></li><li><a href="https://newsouladv.com/image-resizer-tool.html">قص وتغيير الأبعاد</a></li><li><a href="https://newsouladv.com/image-filters-tool.html">فلاتر الصور</a></li><li><a href="https://newsouladv.com/ad-budget-calculator.html">حاسبة تكلفة الإعلانات</a></li><li><a href="https://wa.me/201090235208?text=مرحباً، عندي سؤال عن أدوات التصميم" target="_blank" rel="noopener">تواصل معنا</a></li></ul><div class="toc-cta"><a href="https://wa.me/201090235208?text=مرحباً، عايز مساعدة في تصميم بصري" target="_blank" rel="noopener">📲 احصل على استشارة مجانية</a></div></div></aside>
 <div class="article-full-content">
 <article class="article-content">
 
-<h2 id="layout">1. اختار شكل التقسيم</h2>
+<h2 id="canvas-shape">1. اختار شكل الكولاج العام</h2>
+<div class="tool-box">
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+    <button type="button" id="shapeBtnSquare" class="filter-icon-btn active" onclick="selectCanvasShape('square', this)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="4" width="16" height="16" rx="1"/></svg>
+      <span>مربع</span>
+    </button>
+    <button type="button" id="shapeBtnPortrait" class="filter-icon-btn" onclick="selectCanvasShape('portrait', this)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="2" width="12" height="20" rx="1"/></svg>
+      <span>بورتريت</span>
+    </button>
+    <button type="button" id="shapeBtnLandscape" class="filter-icon-btn" onclick="selectCanvasShape('landscape', this)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="6" width="20" height="12" rx="1"/></svg>
+      <span>لاندسكيب</span>
+    </button>
+  </div>
+</div>
+
+<h2 id="layout">2. اختار شكل التقسيم</h2>
 <div class="tool-box">
   <div id="layoutButtons" class="filter-btn-row">
     <button type="button" id="layoutBtn2h" class="filter-icon-btn active" onclick="selectLayout('2h', this)">
@@ -403,7 +421,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </div>
 
-<h2 id="upload-slots">2. ارفع صورك</h2>
+<h2 id="upload-slots">3. ارفع صورك</h2>
 <p>دوس على أي خانة فاضية عشان ترفع صورة ليها. تقدر تغيّر أي صورة برفع صورة جديدة مكانها.</p>
 <div class="tool-box">
   <div class="filter-canvas-wrap" style="min-height:300px">
@@ -412,7 +430,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <input type="file" id="collageFileInput" accept="image/*" style="display:none" onchange="onCollageFileSelected(event)" />
 </div>
 
-<h2 id="controls">3. اضبط الشكل</h2>
+<h2 id="controls">4. اضبط الشكل</h2>
 <div class="tool-box">
   <div id="ratioControls"></div>
 
@@ -436,12 +454,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px">
     <button type="button" class="collage-bg-swatch active" style="background:#06030D" onclick="updateBgColor('#06030D', this)"></button>
     <button type="button" class="collage-bg-swatch" style="background:#FFFFFF" onclick="updateBgColor('#FFFFFF', this)"></button>
-    <button type="button" class="collage-bg-swatch" style="background:#8B2FC9" onclick="updateBgColor('#8B2FC9', this)"></button>
-    <button type="button" class="collage-bg-swatch" style="background:#AA44F0" onclick="updateBgColor('#AA44F0', this)"></button>
-    <button type="button" class="collage-bg-swatch" style="background:#C66EFF" onclick="updateBgColor('#C66EFF', this)"></button>
-    <button type="button" class="collage-bg-swatch" style="background:#39FF14" onclick="updateBgColor('#39FF14', this)"></button>
-    <button type="button" class="collage-bg-swatch" style="background:#FF6B35" onclick="updateBgColor('#FF6B35', this)"></button>
     <button type="button" class="collage-bg-swatch" style="background:#000000" onclick="updateBgColor('#000000', this)"></button>
+    <button type="button" class="collage-bg-swatch" style="background:#757575" onclick="updateBgColor('#757575', this)"></button>
+    <button type="button" class="collage-bg-swatch" style="background:#E53935" onclick="updateBgColor('#E53935', this)"></button>
+    <button type="button" class="collage-bg-swatch" style="background:#FB8C00" onclick="updateBgColor('#FB8C00', this)"></button>
+    <button type="button" class="collage-bg-swatch" style="background:#FDD835" onclick="updateBgColor('#FDD835', this)"></button>
+    <button type="button" class="collage-bg-swatch" style="background:#43A047" onclick="updateBgColor('#43A047', this)"></button>
+    <button type="button" class="collage-bg-swatch" style="background:#00ACC1" onclick="updateBgColor('#00ACC1', this)"></button>
+    <button type="button" class="collage-bg-swatch" style="background:#1E88E5" onclick="updateBgColor('#1E88E5', this)"></button>
+    <button type="button" class="collage-bg-swatch" style="background:#8B2FC9" onclick="updateBgColor('#8B2FC9', this)"></button>
+    <button type="button" class="collage-bg-swatch" style="background:#C66EFF" onclick="updateBgColor('#C66EFF', this)"></button>
+    <button type="button" class="collage-bg-swatch" style="background:#E91E63" onclick="updateBgColor('#E91E63', this)"></button>
+    <button type="button" class="collage-bg-swatch" style="background:#6D4C41" onclick="updateBgColor('#6D4C41', this)"></button>
+    <button type="button" class="collage-bg-swatch" style="background:#39FF14" onclick="updateBgColor('#39FF14', this)"></button>
     <button type="button" class="collage-bg-swatch" style="background:transparent;border:1.5px dashed rgba(139,47,201,.5)" onclick="updateBgColor('transparent', this)" title="شفاف"></button>
   </div>
 
@@ -634,8 +659,29 @@ var collageBgColor = '#06030D';
 var collageBgOpacity = 100;
 var collageActiveSlotIndex = 0;
 var collageBaseSize = 500;
+var collageCanvasShape = 'square';
+var canvasShapeRatios = { square: {w:1, h:1}, portrait: {w:4, h:5}, landscape: {w:16, h:9} };
+var collageBaseWidth = 500;
+var collageBaseHeight = 500;
 var collageFormat = 'png';
 var collageQuality = 90;
+
+function selectCanvasShape(shape, btnEl){
+  collageCanvasShape = shape;
+  document.querySelectorAll('#shapeBtnSquare, #shapeBtnPortrait, #shapeBtnLandscape').forEach(function(b){ b.classList.remove('active'); });
+  if (btnEl) btnEl.classList.add('active');
+
+  var ratio = canvasShapeRatios[shape];
+  var maxDim = 500;
+  if (ratio.w >= ratio.h) {
+    collageBaseWidth = maxDim;
+    collageBaseHeight = Math.round(maxDim * (ratio.h / ratio.w));
+  } else {
+    collageBaseHeight = maxDim;
+    collageBaseWidth = Math.round(maxDim * (ratio.w / ratio.h));
+  }
+  renderCollage();
+}
 
 function getCurrentSlots(){
   return collageLayoutBuilders[collageCurrentLayout](collageRatios);
@@ -764,64 +810,65 @@ function drawImageCover(ctx, img, x, y, w, h){
   ctx.drawImage(img, sx, sy, sw, sh, x, y, w, h);
 }
 
-function renderCollageOnCanvas(canvas, size){
+function renderCollageOnCanvas(canvas, w, h){
   var ctx = canvas.getContext('2d');
-  canvas.width = size;
-  canvas.height = size;
+  canvas.width = w;
+  canvas.height = h;
+  var refDim = Math.min(w, h);
 
   if (collageBgColor === 'transparent'){
-    ctx.clearRect(0, 0, size, size);
+    ctx.clearRect(0, 0, w, h);
   } else {
     ctx.fillStyle = hexToRgba(collageBgColor, collageBgOpacity);
-    ctx.fillRect(0, 0, size, size);
+    ctx.fillRect(0, 0, w, h);
   }
 
   var slots = getCurrentSlots();
-  var gapScaled = collageGap * (size / collageBaseSize);
-  var radiusScaled = collageRadius * (size / collageBaseSize);
+  var gapScaled = collageGap * (refDim / collageBaseSize);
+  var radiusScaled = collageRadius * (refDim / collageBaseSize);
 
   slots.forEach(function(slot, i){
-    var x = slot.x * size + gapScaled/2;
-    var y = slot.y * size + gapScaled/2;
-    var w = slot.w * size - gapScaled;
-    var h = slot.h * size - gapScaled;
+    var x = slot.x * w + gapScaled/2;
+    var y = slot.y * h + gapScaled/2;
+    var sw = slot.w * w - gapScaled;
+    var sh = slot.h * h - gapScaled;
 
     var img = collageSlotImages[i];
     if (img){
       ctx.save();
-      roundRectPath(ctx, x, y, w, h, radiusScaled);
+      roundRectPath(ctx, x, y, sw, sh, radiusScaled);
       ctx.clip();
-      drawImageCover(ctx, img, x, y, w, h);
+      drawImageCover(ctx, img, x, y, sw, sh);
       ctx.restore();
     } else {
       ctx.save();
       ctx.strokeStyle = 'rgba(139,47,201,.5)';
       ctx.lineWidth = 2;
       ctx.setLineDash([8, 6]);
-      roundRectPath(ctx, x, y, w, h, radiusScaled);
+      roundRectPath(ctx, x, y, sw, sh, radiusScaled);
       ctx.stroke();
       ctx.setLineDash([]);
       ctx.restore();
       ctx.fillStyle = 'rgba(198,110,255,.7)';
-      ctx.font = (24 * (size/collageBaseSize)) + 'px sans-serif';
+      ctx.font = (24 * (refDim/collageBaseSize)) + 'px sans-serif';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-      ctx.fillText('+', x + w/2, y + h/2);
+      ctx.fillText('+', x + sw/2, y + sh/2);
     }
   });
 }
 
 function renderCollage(){
   var canvas = document.getElementById('collageCanvas');
-  renderCollageOnCanvas(canvas, collageBaseSize);
+  renderCollageOnCanvas(canvas, collageBaseWidth, collageBaseHeight);
 }
 
-function getClickedSlotIndex(px, py, size){
+function getClickedSlotIndex(px, py, w, h){
   var slots = getCurrentSlots();
   for (var i = 0; i < slots.length; i++){
     var s = slots[i];
-    var x = s.x * size, y = s.y * size, w = s.w * size, h = s.h * size;
-    if (px >= x && px <= x+w && py >= y && py <= y+h) return i;
+    var x = s.x * w, y = s.y * h, sw = s.w * w, sh = s.h * h;
+    if (px >= x && px <= x+sw && py >= y && py <= y+sh) return i;
   }
   return -1;
 }
@@ -834,7 +881,7 @@ document.addEventListener('DOMContentLoaded', function(){
     var scaleY = canvas.height / rect.height;
     var px = (e.clientX - rect.left) * scaleX;
     var py = (e.clientY - rect.top) * scaleY;
-    var idx = getClickedSlotIndex(px, py, collageBaseSize);
+    var idx = getClickedSlotIndex(px, py, collageBaseWidth, collageBaseHeight);
     if (idx > -1){
       collageActiveSlotIndex = idx;
       document.getElementById('collageFileInput').click();
@@ -862,7 +909,16 @@ function onCollageFileSelected(e){
 
 function downloadCollage(){
   var exportCanvas = document.createElement('canvas');
-  renderCollageOnCanvas(exportCanvas, 1500);
+  var exportMaxDim = 1500;
+  var exportW, exportH;
+  if (collageBaseWidth >= collageBaseHeight) {
+    exportW = exportMaxDim;
+    exportH = Math.round(exportMaxDim * (collageBaseHeight / collageBaseWidth));
+  } else {
+    exportH = exportMaxDim;
+    exportW = Math.round(exportMaxDim * (collageBaseWidth / collageBaseHeight));
+  }
+  renderCollageOnCanvas(exportCanvas, exportW, exportH);
 
   if (collageFormat === 'jpg' && collageBgColor === 'transparent'){
     var ctx = exportCanvas.getContext('2d');

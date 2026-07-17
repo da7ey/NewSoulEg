@@ -414,24 +414,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <h2 id="controls">3. اضبط الشكل</h2>
 <div class="tool-box">
+  <div id="ratioControls"></div>
+
   <label class="tool-hint" style="display:block;margin-bottom:8px">المسافة بين الصور: <span id="gapValue">8</span>px</label>
   <input type="range" id="gapSlider" min="0" max="40" value="8" style="width:100%;margin-bottom:20px" oninput="updateGap(this.value)" />
 
   <label class="tool-hint" style="display:block;margin-bottom:8px">تدوير حواف الصور: <span id="radiusValue">0</span>px</label>
   <input type="range" id="radiusSlider" min="0" max="60" value="0" style="width:100%;margin-bottom:20px" oninput="updateRadius(this.value)" />
 
-  <label class="tool-hint" style="display:block;margin-bottom:8px">لون الخلفية</label>
+  <label class="tool-hint" style="display:block;margin-bottom:8px">لون الخلفية — اختار أي لون تحبه</label>
+  <div style="display:flex;align-items:center;gap:14px;background:rgba(139,47,201,.06);border:1.5px solid rgba(139,47,201,.3);border-radius:14px;padding:14px 16px;margin-bottom:16px">
+    <label style="position:relative;width:54px;height:54px;border-radius:12px;overflow:hidden;cursor:pointer;flex-shrink:0;border:2px solid rgba(255,255,255,.2)">
+      <input type="color" id="customColorPicker" value="#06030D" style="position:absolute;top:-8px;left:-8px;width:80px;height:80px;cursor:pointer;border:none;padding:0" oninput="updateBgColor(this.value, null)" />
+    </label>
+    <div style="flex:1">
+      <input type="text" id="hexColorInput" class="tool-text-input" style="margin-bottom:0;font-family:monospace;text-transform:uppercase" value="#06030D" placeholder="#RRGGBB" oninput="updateBgColorFromHex(this.value)" />
+    </div>
+  </div>
+
+  <label class="tool-hint" style="display:block;margin-bottom:8px">ألوان سريعة</label>
   <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px">
     <button type="button" class="collage-bg-swatch active" style="background:#06030D" onclick="updateBgColor('#06030D', this)"></button>
     <button type="button" class="collage-bg-swatch" style="background:#FFFFFF" onclick="updateBgColor('#FFFFFF', this)"></button>
     <button type="button" class="collage-bg-swatch" style="background:#8B2FC9" onclick="updateBgColor('#8B2FC9', this)"></button>
     <button type="button" class="collage-bg-swatch" style="background:#AA44F0" onclick="updateBgColor('#AA44F0', this)"></button>
     <button type="button" class="collage-bg-swatch" style="background:#C66EFF" onclick="updateBgColor('#C66EFF', this)"></button>
+    <button type="button" class="collage-bg-swatch" style="background:#39FF14" onclick="updateBgColor('#39FF14', this)"></button>
+    <button type="button" class="collage-bg-swatch" style="background:#FF6B35" onclick="updateBgColor('#FF6B35', this)"></button>
     <button type="button" class="collage-bg-swatch" style="background:#000000" onclick="updateBgColor('#000000', this)"></button>
     <button type="button" class="collage-bg-swatch" style="background:transparent;border:1.5px dashed rgba(139,47,201,.5)" onclick="updateBgColor('transparent', this)" title="شفاف"></button>
-    <label class="collage-bg-swatch" style="display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;overflow:hidden;background:conic-gradient(red,yellow,lime,cyan,blue,magenta,red)">
-      <input type="color" id="customColorPicker" value="#8B2FC9" style="position:absolute;opacity:0;width:100%;height:100%;cursor:pointer" onchange="updateBgColor(this.value, this.parentElement)" />
-    </label>
   </div>
 
   <label class="tool-hint" style="display:block;margin-bottom:8px">شفافية لون الخلفية: <span id="opacityValue">100</span>%</label>
@@ -590,18 +601,32 @@ document.addEventListener('DOMContentLoaded', function(){
 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
 </button>
 <script>
-var collageLayouts = {
-  '2h': [{x:0,y:0,w:0.5,h:1}, {x:0.5,y:0,w:0.5,h:1}],
-  '2v': [{x:0,y:0,w:1,h:0.5}, {x:0,y:0.5,w:1,h:0.5}],
-  '3':  [{x:0,y:0,w:0.6,h:1}, {x:0.6,y:0,w:0.4,h:0.5}, {x:0.6,y:0.5,w:0.4,h:0.5}],
-  '3v': [{x:0,y:0,w:1/3,h:1}, {x:1/3,y:0,w:1/3,h:1}, {x:2/3,y:0,w:1/3,h:1}],
-  '3h': [{x:0,y:0,w:1,h:1/3}, {x:0,y:1/3,w:1,h:1/3}, {x:0,y:2/3,w:1,h:1/3}],
-  '4':  [{x:0,y:0,w:0.5,h:0.5}, {x:0.5,y:0,w:0.5,h:0.5}, {x:0,y:0.5,w:0.5,h:0.5}, {x:0.5,y:0.5,w:0.5,h:0.5}],
-  '5':  [{x:0,y:0,w:0.6,h:1}, {x:0.6,y:0,w:0.4,h:1/3}, {x:0.6,y:1/3,w:0.4,h:1/3}, {x:0.6,y:2/3,w:0.4,h:1/3}],
-  '6':  [{x:0,y:0,w:1/3,h:0.5}, {x:1/3,y:0,w:1/3,h:0.5}, {x:2/3,y:0,w:1/3,h:0.5}, {x:0,y:0.5,w:1/3,h:0.5}, {x:1/3,y:0.5,w:1/3,h:0.5}, {x:2/3,y:0.5,w:1/3,h:0.5}]
+// كل تقسيم بيرجع دالة بتاخد النسب الحالية وترجع مواقع الخانات
+var collageLayoutBuilders = {
+  '2h': function(r){ return [{x:0,y:0,w:r.a,h:1}, {x:r.a,y:0,w:1-r.a,h:1}]; },
+  '2v': function(r){ return [{x:0,y:0,w:1,h:r.a}, {x:0,y:r.a,w:1,h:1-r.a}]; },
+  '3':  function(r){ return [{x:0,y:0,w:r.a,h:1}, {x:r.a,y:0,w:1-r.a,h:r.b}, {x:r.a,y:r.b,w:1-r.a,h:1-r.b}]; },
+  '3v': function(r){ var rest=(1-r.a)/2; return [{x:0,y:0,w:r.a,h:1}, {x:r.a,y:0,w:rest,h:1}, {x:r.a+rest,y:0,w:rest,h:1}]; },
+  '3h': function(r){ var rest=(1-r.a)/2; return [{x:0,y:0,w:1,h:r.a}, {x:0,y:r.a,w:1,h:rest}, {x:0,y:r.a+rest,w:1,h:rest}]; },
+  '4':  function(r){ return [{x:0,y:0,w:r.a,h:r.b}, {x:r.a,y:0,w:1-r.a,h:r.b}, {x:0,y:r.b,w:r.a,h:1-r.b}, {x:r.a,y:r.b,w:1-r.a,h:1-r.b}]; },
+  '5':  function(r){ var s=1/3; return [{x:0,y:0,w:r.a,h:1}, {x:r.a,y:0,w:1-r.a,h:s}, {x:r.a,y:s,w:1-r.a,h:s}, {x:r.a,y:2*s,w:1-r.a,h:s}]; },
+  '6':  function(r){ var s=1/3; return [{x:0,y:0,w:s,h:r.a}, {x:s,y:0,w:s,h:r.a}, {x:2*s,y:0,w:s,h:r.a}, {x:0,y:r.a,w:s,h:1-r.a}, {x:s,y:r.a,w:s,h:1-r.a}, {x:2*s,y:r.a,w:s,h:1-r.a}]; }
+};
+
+// كام خانة نسبة لكل تقسيم، وأسماء عرضها للمستخدم
+var collageLayoutRatioConfig = {
+  '2h': [{key:'a', label:'عرض العمود الأول', min:20, max:80, def:50}],
+  '2v': [{key:'a', label:'ارتفاع الصف الأول', min:20, max:80, def:50}],
+  '3':  [{key:'a', label:'عرض الصورة الكبيرة', min:35, max:80, def:60}, {key:'b', label:'توزيع الصورتين الصغار', min:20, max:80, def:50}],
+  '3v': [{key:'a', label:'عرض العمود الأول', min:15, max:70, def:33}],
+  '3h': [{key:'a', label:'ارتفاع الصف الأول', min:15, max:70, def:33}],
+  '4':  [{key:'a', label:'عرض العمود الأول', min:20, max:80, def:50}, {key:'b', label:'ارتفاع الصف الأول', min:20, max:80, def:50}],
+  '5':  [{key:'a', label:'عرض الصورة الكبيرة', min:35, max:80, def:60}],
+  '6':  [{key:'a', label:'ارتفاع الصف الأول', min:20, max:80, def:50}]
 };
 
 var collageCurrentLayout = '2h';
+var collageRatios = {a: 0.5};
 var collageSlotImages = [null, null];
 var collageGap = 8;
 var collageRadius = 0;
@@ -612,11 +637,39 @@ var collageBaseSize = 500;
 var collageFormat = 'png';
 var collageQuality = 90;
 
+function getCurrentSlots(){
+  return collageLayoutBuilders[collageCurrentLayout](collageRatios);
+}
+
+function buildRatioControls(){
+  var container = document.getElementById('ratioControls');
+  var config = collageLayoutRatioConfig[collageCurrentLayout];
+  container.innerHTML = '';
+  config.forEach(function(cfg){
+    var wrap = document.createElement('div');
+    var valId = 'ratioVal_' + cfg.key;
+    wrap.innerHTML = '<label class="tool-hint" style="display:block;margin-bottom:8px">' + cfg.label + ': <span id="' + valId + '">' + cfg.def + '</span>%</label>' +
+      '<input type="range" min="' + cfg.min + '" max="' + cfg.max + '" value="' + cfg.def + '" style="width:100%;margin-bottom:16px" oninput="updateRatio(\'' + cfg.key + '\', this.value)" />';
+    container.appendChild(wrap);
+  });
+}
+
+function updateRatio(key, val){
+  collageRatios[key] = parseInt(val) / 100;
+  document.getElementById('ratioVal_' + key).textContent = val;
+  renderCollage();
+}
+
 function selectLayout(name, btnEl){
   collageCurrentLayout = name;
   document.querySelectorAll('#layoutButtons .filter-icon-btn').forEach(function(b){ b.classList.remove('active'); });
   if (btnEl) btnEl.classList.add('active');
-  var slotCount = collageLayouts[name].length;
+
+  collageRatios = {};
+  collageLayoutRatioConfig[name].forEach(function(cfg){ collageRatios[cfg.key] = cfg.def / 100; });
+  buildRatioControls();
+
+  var slotCount = collageLayoutBuilders[name](collageRatios).length;
   var newSlots = [];
   for (var i = 0; i < slotCount; i++){
     newSlots.push(collageSlotImages[i] || null);
@@ -635,6 +688,19 @@ function updateBgColor(color, btnEl){
   collageBgColor = color;
   document.querySelectorAll('.collage-bg-swatch').forEach(function(b){ b.classList.remove('active'); });
   if (btnEl) btnEl.classList.add('active');
+  if (color !== 'transparent') {
+    document.getElementById('customColorPicker').value = color;
+    document.getElementById('hexColorInput').value = color.toUpperCase();
+  }
+  renderCollage();
+}
+
+function updateBgColorFromHex(val){
+  var hex = val.trim();
+  if (!/^#[0-9A-Fa-f]{6}$/.test(hex)) return;
+  collageBgColor = hex;
+  document.querySelectorAll('.collage-bg-swatch').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById('customColorPicker').value = hex;
   renderCollage();
 }
 
@@ -710,7 +776,7 @@ function renderCollageOnCanvas(canvas, size){
     ctx.fillRect(0, 0, size, size);
   }
 
-  var slots = collageLayouts[collageCurrentLayout];
+  var slots = getCurrentSlots();
   var gapScaled = collageGap * (size / collageBaseSize);
   var radiusScaled = collageRadius * (size / collageBaseSize);
 
@@ -751,7 +817,7 @@ function renderCollage(){
 }
 
 function getClickedSlotIndex(px, py, size){
-  var slots = collageLayouts[collageCurrentLayout];
+  var slots = getCurrentSlots();
   for (var i = 0; i < slots.length; i++){
     var s = slots[i];
     var x = s.x * size, y = s.y * size, w = s.w * size, h = s.h * size;
@@ -774,6 +840,7 @@ document.addEventListener('DOMContentLoaded', function(){
       document.getElementById('collageFileInput').click();
     }
   });
+  buildRatioControls();
   renderCollage();
 });
 

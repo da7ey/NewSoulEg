@@ -1,4 +1,31 @@
-<!DOCTYPE html>
+<
+
+function runSiteSearch(){
+  var q = document.getElementById('siteSearchInput').value.trim().toLowerCase();
+  var results = document.getElementById('siteSearchResults');
+  if(q.length < 2){ results.innerHTML = ''; return; }
+  var matches = siteSearchIndex.filter(function(item){
+    return item.t.toLowerCase().indexOf(q) !== -1 || item.d.toLowerCase().indexOf(q) !== -1;
+  }).slice(0, 8);
+  if(matches.length === 0){
+    results.innerHTML = '<p class="site-search-empty">مفيش نتائج، جرب كلمة تانية</p>';
+    return;
+  }
+  results.innerHTML = matches.map(function(m){
+    return '<a href="'+m.u+'" class="site-search-result"><strong>'+m.t+'</strong><span>'+m.d+'</span></a>';
+  }).join('');
+}
+function toggleSiteSearch(){
+  var overlay = document.getElementById('siteSearchOverlay');
+  overlay.classList.toggle('open');
+  if(overlay.classList.contains('open')){
+    document.getElementById('siteSearchInput').focus();
+  } else {
+    document.getElementById('siteSearchInput').value = '';
+    document.getElementById('siteSearchResults').innerHTML = '';
+  }
+}
+!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <!-- Google Tag Manager -->

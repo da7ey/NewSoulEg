@@ -322,8 +322,8 @@ a:not([class]):not(nav a):not(footer a):not(.toc-list a):not(.related-links-row 
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@800&family=Almarai:wght@700&family=Amiri:wght@700&family=Reem+Kufi:wght@600&display=swap" rel="stylesheet" />
 <style>
-.filter-btn-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
-.filter-icon-btn{display:flex;flex-direction:column;align-items:center;gap:6px;background:linear-gradient(135deg,rgba(139,47,201,.12),rgba(170,68,240,.05));border:1.5px solid rgba(139,47,201,.3);color:var(--gray);padding:14px 10px;border-radius:16px;font-family:"Tajawal",sans-serif;font-size:.75rem;font-weight:600;cursor:pointer;transition:.2s;width:84px}
+.filter-btn-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px}
+.filter-icon-btn{display:flex;flex-direction:column;align-items:center;gap:6px;background:linear-gradient(135deg,rgba(139,47,201,.12),rgba(170,68,240,.05));border:1.5px solid rgba(139,47,201,.3);color:var(--gray);padding:14px 10px;border-radius:16px;font-family:"Tajawal",sans-serif;font-size:.75rem;font-weight:600;cursor:pointer;transition:.2s;width:100%;box-sizing:border-box}
 .filter-icon-btn svg{width:22px;height:22px;color:var(--purple-glow);transition:.2s}
 .filter-icon-btn:hover{transform:translateY(-2px);border-color:var(--purple-bright)}
 .filter-icon-btn.active{background:linear-gradient(135deg,var(--purple),var(--purple-bright));border-color:transparent;color:#fff;box-shadow:0 4px 16px rgba(139,47,201,.4)}
@@ -354,6 +354,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header class="article-header"><p class="article-breadcrumb"><a href="https://www.newsouladv.com">نيو سول</a> / <a href="https://newsouladv.com/blog.html">المدونة</a> / أدوات مجانية</p><p class="article-eyebrow">أداة تصميم مجانية</p><h1>فلاتر الصور المجانية<br/><span>Duotone، Pop Art، وأكتر</span></h1><p class="article-lead">ارفع أي صورة، جرّب فلاتر احترافية بضغطة واحدة، وحمّل النتيجة فورًا — كل ده جوه متصفحك من غير رفع الصورة لأي سيرفر.</p><div class="article-meta"><span>🎨 8 فلاتر</span><span>⚡ نتيجة فورية</span><span>⬇️ تحميل مباشر</span></div></header>
 
 <div class="article-layout">
+<aside class="toc-wrap"><div class="toc-card"><p class="toc-title">محتويات الصفحة</p><ul class="toc-list" id="tocList"><li><a href="#upload">رفع الصورة</a></li><li><a href="#filters">اختيار الفلتر</a></li><li><a href="https://newsouladv.com/color-palette-tool.html">مولّد لوحات الألوان</a></li><li><a href="https://newsouladv.com/font-library.html">مكتبة الخطوط</a></li><li><a href="https://wa.me/201090235208?text=مرحباً، عندي سؤال عن أدوات التصميم" target="_blank" rel="noopener">تواصل معنا</a></li></ul><div class="toc-cta"><a href="https://wa.me/201090235208?text=مرحباً، عايز مساعدة في تصميم بصري" target="_blank" rel="noopener">📲 احصل على استشارة مجانية</a></div></div></aside>
 <div class="article-full-content">
 <article class="article-content">
 
@@ -417,7 +418,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </button>
   </div>
   <div class="filter-canvas-wrap">
-    <canvas id="filterCanvas"></canvas>
+    <canvas id="filterCanvas" style="display:none"></canvas>
     <p id="filterEmptyState" style="text-align:center;padding:60px 20px;color:#fff;font-size:.95rem;font-weight:600;margin:0">ارفع صورة الأول عشان تقدر تجرب الفلاتر ↑</p>
   </div>
   <button type="button" id="downloadFilterBtn" class="btn-primary" style="display:none;justify-content:center;width:100%;margin-top:16px" onclick="downloadFilteredImage()">⬇️ تحميل الصورة</button>
@@ -436,7 +437,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </article>
 </div>
 
-<aside class="toc-wrap"><div class="toc-card"><p class="toc-title">محتويات الصفحة</p><ul class="toc-list" id="tocList"><li><a href="#upload">رفع الصورة</a></li><li><a href="#filters">اختيار الفلتر</a></li><li><a href="https://newsouladv.com/color-palette-tool.html">مولّد لوحات الألوان</a></li><li><a href="https://newsouladv.com/font-library.html">مكتبة الخطوط</a></li><li><a href="https://wa.me/201090235208?text=مرحباً، عندي سؤال عن أدوات التصميم" target="_blank" rel="noopener">تواصل معنا</a></li></ul><div class="toc-cta"><a href="https://wa.me/201090235208?text=مرحباً، عايز مساعدة في تصميم بصري" target="_blank" rel="noopener">📲 احصل على استشارة مجانية</a></div></div></aside>
+
 </div>
 
 <section id="related" style="background:var(--surface)"><div class="section-inner"><p class="section-label">أدوات وخدمات ذات صلة</p><h2 class="section-title">أكمل تصميمك</h2><div class="related-grid"><a class="related-card" href="https://newsouladv.com/color-palette-tool.html"><picture><source srcset="images/extracted-acrylic-stainless-signs-9.webp" type="image/webp" /><img src="images/extracted-acrylic-stainless-signs-9.jpg" alt="مولّد لوحات الألوان" loading="lazy" /></picture><div class="related-card-body"><h4>مولّد لوحات الألوان</h4><p>لوحة تكمّل تأثير الفلتر</p></div></a><a class="related-card" href="https://newsouladv.com/font-library.html"><picture><source srcset="images/extracted-acrylic-stainless-signs-13.webp" type="image/webp" /><img src="images/extracted-acrylic-stainless-signs-13.jpg" alt="مكتبة الخطوط" loading="lazy" /></picture><div class="related-card-body"><h4>مكتبة الخطوط</h4><p>اختار خط يناسب هويتك</p></div></a><a class="related-card" href="https://newsouladv.com/acrylic-stainless-signs.html"><picture><source srcset="images/extracted-acrylic-stainless-signs-2.webp" type="image/webp" /><img src="images/extracted-acrylic-stainless-signs-2.jpg" alt="لافتات مضيئة" loading="lazy" /></picture><div class="related-card-body"><h4>لافتات مضيئة</h4><p>حوّل تصميمك للافتة حقيقية</p></div></a><a class="related-card" href="https://newsouladv.com/blog.html"><picture><source srcset="images/exhibitions-guide-cover.webp" type="image/webp" /><img src="images/exhibitions-guide-cover.jpg" alt="مدونة نيو سول" loading="lazy" /></picture><div class="related-card-body"><h4>مدونة نيو سول</h4><p>مقالات ودلائل تفيدك في مشروعك</p></div></a></div></div></section>
@@ -596,6 +597,7 @@ function loadFilterImage(e){
     img.onload = function(){
       filterOriginalImage = img;
       document.getElementById('filterEmptyState').style.display = 'none';
+      document.getElementById('filterCanvas').style.display = 'block';
       document.getElementById('downloadFilterBtn').style.display = 'flex';
       document.getElementById('enhanceFilterBtn').style.display = 'flex';
       applyFilter('none', document.getElementById('filterBtnNone'));

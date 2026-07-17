@@ -377,10 +377,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </select>
 
   <label class="tool-hint" style="display:block;margin-bottom:6px">هدف الحملة</label>
-  <select id="roiGoal" class="tool-select" style="width:100%" onchange="calculateROI()">
+  <select id="roiGoal" class="tool-select" style="width:100%;margin-bottom:16px" onchange="calculateROI()">
     <option value="sales">زيادة المبيعات</option>
     <option value="leads">جلب اتصالات ورسائل</option>
     <option value="awareness">زيادة الوعي بالعلامة التجارية</option>
+  </select>
+
+  <label class="tool-hint" style="display:block;margin-bottom:6px">مدة الحملة (أيام)</label>
+  <select id="roiDuration" class="tool-select" style="width:100%;margin-bottom:16px" onchange="calculateROI()">
+    <option value="3">1-3 أيام</option>
+    <option value="7" selected>أسبوع (4-7 أيام)</option>
+    <option value="14">أسبوعين (8-14 يوم)</option>
+    <option value="30">شهر (15-30 يوم)</option>
+    <option value="60">أكتر من شهر</option>
+  </select>
+
+  <label class="tool-hint" style="display:block;margin-bottom:6px">نوع المحتوى الإعلاني</label>
+  <select id="roiAdType" class="tool-select" style="width:100%" onchange="calculateROI()">
+    <option value="image">صورة ثابتة</option>
+    <option value="video">فيديو</option>
+    <option value="reel">ريلز / محتوى قصير</option>
   </select>
 </div>
 
@@ -548,17 +564,46 @@ document.addEventListener('DOMContentLoaded', function(){
 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
 </button>
 <script>
-var platformMetrics = {
-  meta:   { type: 'cpm', cpm: 120, ctr: 0.015 },
-  google: { type: 'cpc', cpc: 8,   ctr: 0.03  },
-  tiktok: { type: 'cpm', cpm: 90,  ctr: 0.02  }
+// تكلفة النتيجة الواحدة (رسالة/ليد) بالجنيه المصري — مبنية على متوسطات سوق مصر الفعلية لحملات الرسائل والليدز
+var baseCostPerResult = {
+  meta: {
+    ecommerce:   20,
+    realestate:  28,
+    clinics:     16,
+    restaurants: 12
+  },
+  google: {
+    ecommerce:   35,
+    realestate:  50,
+    clinics:     28,
+    restaurants: 22
+  },
+  tiktok: {
+    ecommerce:   16,
+    realestate:  24,
+    clinics:     14,
+    restaurants: 10
+  }
 };
 
-var industryConversionRates = {
-  ecommerce:   0.025,
-  realestate:  0.015,
-  clinics:     0.04,
-  restaurants: 0.035
+var platformCPM = {
+  meta:   45,
+  google: 60,
+  tiktok: 35
+};
+
+var adTypeMultiplier = {
+  image: 1,
+  video: 0.88,
+  reel:  0.78
+};
+
+var durationMultiplier = {
+  3:  1.15,
+  7:  1,
+  14: 0.93,
+  30: 0.87,
+  60: 0.82
 };
 
 function formatNumber(n){
@@ -569,38 +614,37 @@ function calculateROI(){
   var budget = parseFloat(document.getElementById('roiBudget').value) || 0;
   var industry = document.getElementById('roiIndustry').value;
   var platform = document.getElementById('roiPlatform').value;
+  var adType = document.getElementById('roiAdType').value;
+  var duration = parseInt(document.getElementById('roiDuration').value);
 
-  var pm = platformMetrics[platform];
-  var convRate = industryConversionRates[industry];
+  var costPerResult = baseCostPerResult[platform][industry] * adTypeMultiplier[adType] * durationMultiplier[duration];
+  var conversions = budget / costPerResult;
 
-  var reach, clicks;
-  if (pm.type === 'cpm') {
-    reach = (budget / pm.cpm) * 1000;
-    clicks = reach * pm.ctr;
-  } else {
-    clicks = budget / pm.cpc;
-    reach = clicks / pm.ctr;
-  }
-  var conversions = clicks * convRate;
-  var costPerConversion = conversions > 0 ? budget / conversions : 0;
+  var cpm = platformCPM[platform] * adTypeMultiplier[adType];
+  var reach = (budget / cpm) * 1000;
+  var clicks = reach * 0.02;
 
   document.getElementById('roiReach').textContent = formatNumber(reach);
   document.getElementById('roiClicks').textContent = formatNumber(clicks);
   document.getElementById('roiConversions').textContent = formatNumber(conversions);
-  document.getElementById('roiCostPer').textContent = costPerConversion > 0 ? formatNumber(costPerConversion) + ' ج.م' : '-';
+  document.getElementById('roiCostPer').textContent = formatNumber(costPerResult) + ' ج.م';
 
   var industryLabels = {ecommerce:'تجارة إلكترونية', realestate:'عقارات', clinics:'عيادات ورعاية صحية', restaurants:'مطاعم وكافيهات'};
   var platformLabels = {meta:'فيسبوك/إنستغرام', google:'إعلانات جوجل', tiktok:'تيك توك'};
+  var adTypeLabels = {image:'صورة ثابتة', video:'فيديو', reel:'ريلز'};
+  var durationLabels = {3:'1-3 أيام', 7:'أسبوع', 14:'أسبوعين', 30:'شهر', 60:'أكتر من شهر'};
 
   var msg = 'تقدير حاسبة الحملات الإعلانية:\\n' +
     'الميزانية: ' + formatNumber(budget) + ' ج.م\\n' +
     'المجال: ' + industryLabels[industry] + '\\n' +
     'المنصة: ' + platformLabels[platform] + '\\n' +
+    'مدة الحملة: ' + durationLabels[duration] + '\\n' +
+    'نوع المحتوى: ' + adTypeLabels[adType] + '\\n' +
     '---\\n' +
     'الوصول التقديري: ' + formatNumber(reach) + '\\n' +
     'النقرات التقديرية: ' + formatNumber(clicks) + '\\n' +
     'النتائج التقديرية: ' + formatNumber(conversions) + '\\n' +
-    'التكلفة التقديرية لكل نتيجة: ' + formatNumber(costPerConversion) + ' ج.م';
+    'التكلفة التقديرية لكل نتيجة: ' + formatNumber(costPerResult) + ' ج.م';
   document.getElementById('roiMessageField').value = msg;
 }
 

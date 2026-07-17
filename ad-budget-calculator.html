@@ -367,6 +367,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <option value="realestate">عقارات</option>
     <option value="clinics">عيادات ورعاية صحية</option>
     <option value="restaurants">مطاعم وكافيهات</option>
+    <option value="education">تعليم وتدريب</option>
+    <option value="automotive">سيارات وقطع غيار</option>
+    <option value="tourism">سياحة وسفر</option>
+    <option value="fashion">أزياء وموضة</option>
+    <option value="tech">تكنولوجيا وبرمجيات</option>
+    <option value="finance">خدمات مالية</option>
+    <option value="beauty">تجميل وعناية</option>
+    <option value="construction">مقاولات وإنشاءات</option>
+    <option value="manufacturing">صناعة وتصنيع</option>
+    <option value="fitness">رياضة ولياقة</option>
   </select>
 
   <label class="tool-hint" style="display:block;margin-bottom:6px">المنصة الإعلانية</label>
@@ -405,8 +415,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div id="roiResultsGrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin-bottom:16px">
     <div class="roi-result-card"><span class="roi-result-value" id="roiReach">-</span><span class="roi-result-label">الوصول التقديري</span></div>
     <div class="roi-result-card"><span class="roi-result-value" id="roiClicks">-</span><span class="roi-result-label">النقرات التقديرية</span></div>
-    <div class="roi-result-card"><span class="roi-result-value" id="roiConversions">-</span><span class="roi-result-label">النتائج التقديرية</span></div>
-    <div class="roi-result-card"><span class="roi-result-value" id="roiCostPer">-</span><span class="roi-result-label">التكلفة لكل نتيجة</span></div>
+    <div class="roi-result-card"><span class="roi-result-value" id="roiConversions">-</span><span class="roi-result-label" id="roiConversionsLabel">النتائج التقديرية</span></div>
+    <div class="roi-result-card"><span class="roi-result-value" id="roiCostPer">-</span><span class="roi-result-label" id="roiCostPerLabel">التكلفة لكل نتيجة</span></div>
   </div>
 </div>
 
@@ -567,22 +577,52 @@ document.addEventListener('DOMContentLoaded', function(){
 // تكلفة النتيجة الواحدة (رسالة/ليد) بالجنيه المصري — مبنية على متوسطات سوق مصر الفعلية لحملات الرسائل والليدز
 var baseCostPerResult = {
   meta: {
-    ecommerce:   20,
-    realestate:  28,
-    clinics:     16,
-    restaurants: 12
+    ecommerce:    20,
+    realestate:   28,
+    clinics:      16,
+    restaurants:  12,
+    education:    18,
+    automotive:   26,
+    tourism:      19,
+    fashion:      14,
+    tech:         30,
+    finance:      32,
+    beauty:       13,
+    construction: 27,
+    manufacturing:24,
+    fitness:      15
   },
   google: {
-    ecommerce:   35,
-    realestate:  50,
-    clinics:     28,
-    restaurants: 22
+    ecommerce:    35,
+    realestate:   50,
+    clinics:      28,
+    restaurants:  22,
+    education:    32,
+    automotive:   46,
+    tourism:      34,
+    fashion:      25,
+    tech:         53,
+    finance:      57,
+    beauty:       23,
+    construction: 48,
+    manufacturing:43,
+    fitness:      27
   },
   tiktok: {
-    ecommerce:   16,
-    realestate:  24,
-    clinics:     14,
-    restaurants: 10
+    ecommerce:    16,
+    realestate:   24,
+    clinics:      14,
+    restaurants:  10,
+    education:    15,
+    automotive:   22,
+    tourism:      16,
+    fashion:      12,
+    tech:         25,
+    finance:      27,
+    beauty:       11,
+    construction: 22,
+    manufacturing:20,
+    fitness:      13
   }
 };
 
@@ -610,41 +650,78 @@ function formatNumber(n){
   return Math.round(n).toLocaleString('en-US');
 }
 
+// معدل تحويل الليد لعملية بيع فعلية — بيختلف حسب القطاع (متوسط عام للسوق المصري)
+var leadToSaleRate = {
+  ecommerce: 0.30, realestate: 0.08, clinics: 0.35, restaurants: 0.40,
+  education: 0.25, automotive: 0.15, tourism: 0.28, fashion: 0.35,
+  tech: 0.12, finance: 0.10, beauty: 0.38, construction: 0.10,
+  manufacturing: 0.15, fitness: 0.30
+};
+
+// نسبة الناس اللي بتتفاعل (لايك/كومنت/متابعة) من إجمالي الوصول
+var engagementRate = 0.03;
+
 function calculateROI(){
   var budget = parseFloat(document.getElementById('roiBudget').value) || 0;
   var industry = document.getElementById('roiIndustry').value;
   var platform = document.getElementById('roiPlatform').value;
   var adType = document.getElementById('roiAdType').value;
   var duration = parseInt(document.getElementById('roiDuration').value);
-
-  var costPerResult = baseCostPerResult[platform][industry] * adTypeMultiplier[adType] * durationMultiplier[duration];
-  var conversions = budget / costPerResult;
+  var goal = document.getElementById('roiGoal').value;
 
   var cpm = platformCPM[platform] * adTypeMultiplier[adType];
   var reach = (budget / cpm) * 1000;
   var clicks = reach * 0.02;
 
+  var costPerLead = baseCostPerResult[platform][industry] * adTypeMultiplier[adType] * durationMultiplier[duration];
+  var leads = budget / costPerLead;
+
+  var resultCount, costPerResult, resultLabel, costLabel;
+
+  if (goal === 'awareness') {
+    resultCount = reach * engagementRate;
+    costPerResult = budget / resultCount;
+    resultLabel = 'التفاعلات التقديرية (لايك/متابعة)';
+    costLabel = 'التكلفة لكل تفاعل';
+  } else if (goal === 'sales') {
+    resultCount = leads * leadToSaleRate[industry];
+    costPerResult = budget / resultCount;
+    resultLabel = 'المبيعات التقديرية';
+    costLabel = 'التكلفة لكل عملية بيع';
+  } else {
+    resultCount = leads;
+    costPerResult = costPerLead;
+    resultLabel = 'النتائج التقديرية (رسائل/ليدز)';
+    costLabel = 'التكلفة لكل نتيجة';
+  }
+
   document.getElementById('roiReach').textContent = formatNumber(reach);
   document.getElementById('roiClicks').textContent = formatNumber(clicks);
-  document.getElementById('roiConversions').textContent = formatNumber(conversions);
+  document.getElementById('roiConversions').textContent = formatNumber(resultCount);
   document.getElementById('roiCostPer').textContent = formatNumber(costPerResult) + ' ج.م';
+  document.getElementById('roiConversionsLabel').textContent = resultLabel;
+  document.getElementById('roiCostPerLabel').textContent = costLabel;
 
-  var industryLabels = {ecommerce:'تجارة إلكترونية', realestate:'عقارات', clinics:'عيادات ورعاية صحية', restaurants:'مطاعم وكافيهات'};
+  var conversions = resultCount;
+
+  var industryLabels = {ecommerce:'تجارة إلكترونية', realestate:'عقارات', clinics:'عيادات ورعاية صحية', restaurants:'مطاعم وكافيهات', education:'تعليم وتدريب', automotive:'سيارات وقطع غيار', tourism:'سياحة وسفر', fashion:'أزياء وموضة', tech:'تكنولوجيا وبرمجيات', finance:'خدمات مالية', beauty:'تجميل وعناية', construction:'مقاولات وإنشاءات', manufacturing:'صناعة وتصنيع', fitness:'رياضة ولياقة'};
   var platformLabels = {meta:'فيسبوك/إنستغرام', google:'إعلانات جوجل', tiktok:'تيك توك'};
   var adTypeLabels = {image:'صورة ثابتة', video:'فيديو', reel:'ريلز'};
   var durationLabels = {3:'1-3 أيام', 7:'أسبوع', 14:'أسبوعين', 30:'شهر', 60:'أكتر من شهر'};
+  var goalLabels = {sales:'زيادة المبيعات', leads:'جلب اتصالات ورسائل', awareness:'زيادة الوعي بالعلامة التجارية'};
 
   var msg = 'تقدير حاسبة الحملات الإعلانية:\\n' +
     'الميزانية: ' + formatNumber(budget) + ' ج.م\\n' +
     'المجال: ' + industryLabels[industry] + '\\n' +
     'المنصة: ' + platformLabels[platform] + '\\n' +
+    'الهدف: ' + goalLabels[goal] + '\\n' +
     'مدة الحملة: ' + durationLabels[duration] + '\\n' +
     'نوع المحتوى: ' + adTypeLabels[adType] + '\\n' +
     '---\\n' +
     'الوصول التقديري: ' + formatNumber(reach) + '\\n' +
     'النقرات التقديرية: ' + formatNumber(clicks) + '\\n' +
-    'النتائج التقديرية: ' + formatNumber(conversions) + '\\n' +
-    'التكلفة التقديرية لكل نتيجة: ' + formatNumber(costPerResult) + ' ج.م';
+    resultLabel + ': ' + formatNumber(conversions) + '\\n' +
+    costLabel + ': ' + formatNumber(costPerResult) + ' ج.م';
   document.getElementById('roiMessageField').value = msg;
 }
 

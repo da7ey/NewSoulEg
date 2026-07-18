@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function(){
 <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192x192.png" />
 
 <title>مولّد لوحات الألوان للتصميم | أداة مجانية - نيو سول</title>
-<meta name="description" content="أداة مجانية لتوليد لوحات ألوان احترافية حسب مجال نشاطك، استخراج الألوان من أي صورة، ومعاينة الخطوط العربية مباشرة — من نيو سول للدعاية والإعلان." />
+<meta name="description" content="أداة مجانية لتوليد لوحات ألوان احترافية، صانع تدرجات (ذهبي وفضي ونحاسي وأساسية)، واستخراج الألوان من أي صورة — من نيو سول للدعاية والإعلان." />
 <meta name="keywords" content="لوحة ألوان, مولد ألوان مجاني, استخراج ألوان من صورة, أكواد الألوان hex, color palette generator, مولد هوية بصرية, ألوان تصميم مصر, أداة تصميم مجانية اونلاين" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
 <link rel="canonical" href="https://newsouladv.com/color-palette-tool.html" />
@@ -297,6 +297,11 @@ a:not([class]):not(nav a):not(footer a):not(.toc-list a):not(.related-links-row 
 .icon-circle-btn svg{fill:#FFFFFF!important;color:#FFFFFF!important}
 .icon-circle-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:center}
 .note-box{background:rgba(57,255,20,.06);border:1px solid rgba(57,255,20,.25);border-radius:12px;padding:14px 18px;color:var(--gray);font-size:.85rem;line-height:1.8;margin:20px 0}
+.gradient-swatch-row{display:flex;gap:10px;flex-wrap:wrap}
+.gradient-swatch{width:60px;height:60px;border-radius:12px;border:2px solid rgba(255,255,255,.15);cursor:pointer;transition:.2s;padding:0}
+.gradient-swatch:hover{transform:scale(1.06)}
+.gradient-swatch.active{border-color:var(--purple-glow);box-shadow:0 0 0 2px rgba(198,110,255,.4)}
+.gradient-color-input{width:52px;height:52px;border-radius:12px;border:2px solid rgba(255,255,255,.2);cursor:pointer;padding:0;background:none}
 </style>
 <style>
 .tool-box{background:rgba(139,47,201,.06);border:1px solid rgba(139,47,201,.2);border-radius:16px;padding:24px;margin:20px 0}
@@ -347,10 +352,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li><a href="https://newsouladv.com/acrylic-stainless-signs.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 00-4 12.74V17a1 1 0 001 1h6a1 1 0 001-1v-2.26A7 7 0 0012 2zM9 21a1 1 0 001 1h4a1 1 0 001-1v-1H9v1z"/></svg> لافتات مضيئة</a></li>
     <li><a href="https://wa.me/201090235208?text=أريد الاستفسار عن خدماتكم" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2z"/></svg> تواصل معنا</a></li>
   </ul><button class="search-toggle" onclick="toggleSiteSearch()" aria-label="بحث في الموقع"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button><a href="https://newsouladv.com/faq.html" class="faq-nav-icon" aria-label="الأسئلة الشائعة"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></a><button class="hamburger" onclick="toggleMobileNav()" aria-label="القائمة"><span></span><span></span><span></span></button></nav>
-<header class="article-header"><p class="article-breadcrumb"><a href="https://www.newsouladv.com">نيو سول</a> / <a href="https://newsouladv.com/blog.html">المدونة</a> / أدوات مجانية</p><p class="article-eyebrow">أداة تصميم مجانية</p><h1>مولّد لوحات الألوان<br/><span>للمصممين وأصحاب المشاريع</span></h1><p class="article-lead">اختار مجال نشاطك واحصل على لوحة ألوان احترافية فورًا، أو ارفع صورة تعجبك واستخرج ألوانها، وجرّب اسم شركتك بخطوط عربية مختلفة — كل ده مجانًا ومن غير تسجيل.</p><div class="article-meta"><span>🎨 لوحات ألوان</span><span>🖼️ استخراج من صورة</span><span>🔤 معاينة خطوط</span></div></header>
+<header class="article-header"><p class="article-breadcrumb"><a href="https://www.newsouladv.com">نيو سول</a> / <a href="https://newsouladv.com/blog.html">المدونة</a> / أدوات مجانية</p><p class="article-eyebrow">أداة تصميم مجانية</p><h1>مولّد لوحات الألوان<br/><span>للمصممين وأصحاب المشاريع</span></h1><p class="article-lead">اختار مجال نشاطك واحصل على لوحة ألوان احترافية فورًا، أو ارفع صورة تعجبك واستخرج ألوانها، وجرّب اسم شركتك بخطوط عربية مختلفة — كل ده مجانًا ومن غير تسجيل.</p><div class="article-meta"><span>🎨 لوحات ألوان</span><span>🔩 صانع تدرجات</span><span>🖼️ استخراج من صورة</span></div></header>
 
 <div class="article-layout">
-<aside class="toc-wrap"><div class="toc-card"><p class="toc-title">محتويات الصفحة</p><ul class="toc-list" id="tocList"><li><a href="#industry-palette">لوحة حسب المجال</a></li><li><a href="#live-preview">معاينة حية</a></li><li><a href="#image-extractor">استخراج من صورة</a></li><li><a href="https://newsouladv.com/font-library.html">مكتبة الخطوط</a></li><li><a href="https://newsouladv.com/image-filters-tool.html">فلاتر الصور</a></li><li><a href="https://newsouladv.com/image-resizer-tool.html">قص وتغيير الأبعاد</a></li><li><a href="https://newsouladv.com/photo-collage-maker.html">عمل كولاج صور</a></li><li><a href="https://newsouladv.com/ad-budget-calculator.html">حاسبة تكلفة الإعلانات</a></li><li><a href="https://newsouladv.com/qr-code-generator.html">مولّد QR Code</a></li><li><a href="https://newsouladv.com/tools.html">كل الأدوات</a></li><li><a href="https://wa.me/201090235208?text=مرحباً، عندي سؤال عن أدوات التصميم" target="_blank" rel="noopener">تواصل معنا</a></li></ul><div class="toc-cta"><a href="https://wa.me/201090235208?text=مرحباً، عايز مساعدة في تصميم هوية بصرية" target="_blank" rel="noopener">📲 احصل على استشارة مجانية</a></div></div></aside>
+<aside class="toc-wrap"><div class="toc-card"><p class="toc-title">محتويات الصفحة</p><ul class="toc-list" id="tocList"><li><a href="#industry-palette">لوحة حسب المجال</a></li><li><a href="#live-preview">معاينة حية</a></li><li><a href="#gradient-maker">صانع التدرجات</a></li><li><a href="#image-extractor">استخراج من صورة</a></li><li><a href="https://newsouladv.com/font-library.html">مكتبة الخطوط</a></li><li><a href="https://newsouladv.com/image-filters-tool.html">فلاتر الصور</a></li><li><a href="https://newsouladv.com/image-resizer-tool.html">قص وتغيير الأبعاد</a></li><li><a href="https://newsouladv.com/photo-collage-maker.html">عمل كولاج صور</a></li><li><a href="https://newsouladv.com/ad-budget-calculator.html">حاسبة تكلفة الإعلانات</a></li><li><a href="https://newsouladv.com/qr-code-generator.html">مولّد QR Code</a></li><li><a href="https://newsouladv.com/tools.html">كل الأدوات</a></li><li><a href="https://wa.me/201090235208?text=مرحباً، عندي سؤال عن أدوات التصميم" target="_blank" rel="noopener">تواصل معنا</a></li></ul><div class="toc-cta"><a href="https://wa.me/201090235208?text=مرحباً، عايز مساعدة في تصميم هوية بصرية" target="_blank" rel="noopener">📲 احصل على استشارة مجانية</a></div></div></aside>
 <div class="article-full-content">
 <article class="article-content">
 
@@ -399,7 +404,67 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </div>
 
-<h2 id="image-extractor">2. استخراج الألوان من صورة</h2>
+<h2 id="gradient-maker">2. صانع التدرجات</h2>
+<p>اختار تدرج جاهز (ميتاليك أو أساسي) أو اعمل تدرجك الخاص، وانسخ الكود أو حمّل الصورة لاستخدامها في أي برنامج تصميم.</p>
+<div class="tool-box">
+  <div id="gradientPreview" style="width:100%;height:140px;border-radius:14px;margin-bottom:20px;border:1px solid rgba(255,255,255,.15)"></div>
+
+  <label class="tool-hint" style="display:block;margin-bottom:8px">🔩 تدرجات ميتاليك</label>
+  <div class="gradient-swatch-row">
+    <button type="button" class="gradient-swatch active" style="background:linear-gradient(135deg,#BF953F,#FCF6BA,#B38728,#FBF5B7,#AA771C)" onclick="applyGradientPreset(['#BF953F','#FCF6BA','#B38728','#FBF5B7','#AA771C'], this)" title="ذهبي"></button>
+    <button type="button" class="gradient-swatch" style="background:linear-gradient(135deg,#71797E,#BCC6CC,#E7ECE9,#99A3A4,#71797E)" onclick="applyGradientPreset(['#71797E','#BCC6CC','#E7ECE9','#99A3A4','#71797E'], this)" title="فضي"></button>
+    <button type="button" class="gradient-swatch" style="background:linear-gradient(135deg,#8B5A2B,#DA9F5B,#B87333,#DA9F5B,#8B5A2B)" onclick="applyGradientPreset(['#8B5A2B','#DA9F5B','#B87333','#DA9F5B','#8B5A2B'], this)" title="نحاسي"></button>
+    <button type="button" class="gradient-swatch" style="background:linear-gradient(135deg,#3A3A3A,#8A8A8A,#D4D4D4,#8A8A8A,#3A3A3A)" onclick="applyGradientPreset(['#3A3A3A','#8A8A8A','#D4D4D4','#8A8A8A','#3A3A3A'], this)" title="معدني (Steel)"></button>
+    <button type="button" class="gradient-swatch" style="background:linear-gradient(135deg,#4A3728,#C9A876,#4A3728)" onclick="applyGradientPreset(['#4A3728','#C9A876','#4A3728'], this)" title="برونزي"></button>
+    <button type="button" class="gradient-swatch" style="background:linear-gradient(135deg,#8B2FC9,#C66EFF,#AA44F0)" onclick="applyGradientPreset(['#8B2FC9','#C66EFF','#AA44F0'], this)" title="بنفسجي نيو سول"></button>
+  </div>
+
+  <label class="tool-hint" style="display:block;margin:20px 0 8px">🎨 تدرجات أساسية</label>
+  <div class="gradient-swatch-row">
+    <button type="button" class="gradient-swatch" style="background:linear-gradient(135deg,#FF512F,#F09819)" onclick="applyGradientPreset(['#FF512F','#F09819'], this)" title="غروب"></button>
+    <button type="button" class="gradient-swatch" style="background:linear-gradient(135deg,#2193b0,#6dd5ed)" onclick="applyGradientPreset(['#2193b0','#6dd5ed'], this)" title="محيط"></button>
+    <button type="button" class="gradient-swatch" style="background:linear-gradient(135deg,#cc2b5e,#753a88)" onclick="applyGradientPreset(['#cc2b5e','#753a88'], this)" title="عنابي"></button>
+    <button type="button" class="gradient-swatch" style="background:linear-gradient(135deg,#11998e,#38ef7d)" onclick="applyGradientPreset(['#11998e','#38ef7d'], this)" title="أخضر نعناعي"></button>
+    <button type="button" class="gradient-swatch" style="background:linear-gradient(135deg,#4facfe,#00f2fe)" onclick="applyGradientPreset(['#4facfe','#00f2fe'], this)" title="أزرق سماوي"></button>
+    <button type="button" class="gradient-swatch" style="background:linear-gradient(135deg,#ed4264,#ffedbc)" onclick="applyGradientPreset(['#ed4264','#ffedbc'], this)" title="خوخي"></button>
+    <button type="button" class="gradient-swatch" style="background:linear-gradient(135deg,#0f0c29,#302b63,#24243e)" onclick="applyGradientPreset(['#0f0c29','#302b63','#24243e'], this)" title="ليلي داكن"></button>
+    <button type="button" class="gradient-swatch" style="background:linear-gradient(135deg,#000000,#434343)" onclick="applyGradientPreset(['#000000','#434343'], this)" title="أسود كلاسيك"></button>
+  </div>
+
+  <label class="tool-hint" style="display:block;margin:20px 0 8px">🖌️ اعمل تدرجك الخاص</label>
+  <div style="display:flex;gap:10px;align-items:center;margin-bottom:12px" id="gradientCustomStops">
+    <input type="color" class="gradient-color-input" value="#8B2FC9" oninput="updateCustomGradient()" />
+    <input type="color" class="gradient-color-input" value="#C66EFF" oninput="updateCustomGradient()" />
+  </div>
+  <div style="display:flex;gap:10px;margin-bottom:16px">
+    <button type="button" class="btn-secondary" style="flex:1;justify-content:center" onclick="addGradientStop()">+ ضيف لون</button>
+    <button type="button" class="btn-secondary" style="flex:1;justify-content:center" onclick="removeGradientStop()">- شيل لون</button>
+  </div>
+
+  <label class="tool-hint" style="display:block;margin-bottom:8px">اتجاه التدرج</label>
+  <select id="gradientAngle" class="tool-select" style="width:100%;margin-bottom:20px" onchange="updateCustomGradient()">
+    <option value="135deg">قطري ↘ (135°)</option>
+    <option value="90deg">لأسفل ↓ (90°)</option>
+    <option value="0deg">لليمين → (0°)</option>
+    <option value="45deg">قطري ↗ (45°)</option>
+    <option value="180deg">لليسار ← (180°)</option>
+  </select>
+
+  <label class="tool-hint" style="display:block;margin-bottom:8px">كود CSS (للمواقع)</label>
+  <div style="display:flex;gap:8px;margin-bottom:16px">
+    <input type="text" id="gradientCssCode" class="tool-text-input" style="margin-bottom:0;font-family:monospace;font-size:.8rem" readonly />
+    <button type="button" class="btn-secondary" onclick="copyGradientCss()" style="white-space:nowrap">نسخ</button>
+  </div>
+
+  <label class="tool-hint" style="display:block;margin-bottom:8px">أكواد الألوان (لأي برنامج تصميم)</label>
+  <div id="gradientHexList" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px"></div>
+
+  <button type="button" class="btn-primary" style="justify-content:center;width:100%" onclick="downloadGradientImage()">⬇️ حمّل التدرج كصورة PNG</button>
+</div>
+
+<div class="note-box">💡 صورة التدرج بتتحمّل بمقاس 1200×400 بكسل بجودة عالية، تقدر تفتحها في فوتوشوب أو إليستريتور وتستخدمها كخامة أو خلفية مباشرة.</div>
+
+<h2 id="image-extractor">3. استخراج الألوان من صورة</h2>
 <p>ارفع أي صورة (لوجو، بوستر، صورة منتج) وهنستخرجلك أهم 6 ألوان فيها مع أكواد Hex جاهزة للنسخ.</p>
 <div class="tool-box">
   <input type="file" id="imageUpload" accept="image/*" class="tool-file-input" onchange="extractColorsFromImage(event)" />
@@ -459,6 +524,127 @@ var industryPalettes = {
   luxury: { colors: ['#1A1A1A', '#C9A96E', '#4A4A4A', '#F5F0E8', '#8B2FC9'], reason: 'الأسود والذهبي هما رمز الفخامة العالمي، والتباين العالي بيدي إحساس بالتميز والحصرية.' },
   kids: { colors: ['#FF6B9D', '#FFC93C', '#4ECDC4', '#95E1D3', '#FFFFFF'], reason: 'ألوان زاهية ومبهجة بتناسب عالم الأطفال وبتلفت انتباه الأهل والصغار في نفس الوقت.' }
 };
+
+var gradientStops = ['#8B2FC9', '#C66EFF'];
+var gradientDirection = '135deg';
+
+function buildGradientCss(){
+  return 'linear-gradient(' + gradientDirection + ', ' + gradientStops.join(', ') + ')';
+}
+
+function renderGradientPreview(){
+  var css = buildGradientCss();
+  document.getElementById('gradientPreview').style.background = css;
+  document.getElementById('gradientCssCode').value = 'background: ' + css + ';';
+
+  var hexList = document.getElementById('gradientHexList');
+  hexList.innerHTML = '';
+  gradientStops.forEach(function(hex){
+    var chip = document.createElement('button');
+    chip.type = 'button';
+    chip.className = 'btn-secondary';
+    chip.style.cssText = 'padding:8px 14px;font-family:monospace;font-size:.85rem';
+    chip.textContent = hex.toUpperCase();
+    chip.onclick = function(){ copyToClipboard(hex.toUpperCase(), chip); };
+    hexList.appendChild(chip);
+  });
+}
+
+function applyGradientPreset(colors, btnEl){
+  gradientStops = colors.slice();
+  document.querySelectorAll('.gradient-swatch').forEach(function(b){ b.classList.remove('active'); });
+  if (btnEl) btnEl.classList.add('active');
+
+  var container = document.getElementById('gradientCustomStops');
+  container.innerHTML = '';
+  gradientStops.forEach(function(hex){
+    var input = document.createElement('input');
+    input.type = 'color';
+    input.className = 'gradient-color-input';
+    input.value = hex;
+    input.oninput = updateCustomGradient;
+    container.appendChild(input);
+  });
+
+  renderGradientPreview();
+}
+
+function updateCustomGradient(){
+  var inputs = document.querySelectorAll('#gradientCustomStops .gradient-color-input');
+  gradientStops = Array.prototype.map.call(inputs, function(i){ return i.value; });
+  gradientDirection = document.getElementById('gradientAngle').value;
+  document.querySelectorAll('.gradient-swatch').forEach(function(b){ b.classList.remove('active'); });
+  renderGradientPreview();
+}
+
+function addGradientStop(){
+  var container = document.getElementById('gradientCustomStops');
+  if (container.children.length >= 6) return;
+  var input = document.createElement('input');
+  input.type = 'color';
+  input.className = 'gradient-color-input';
+  input.value = '#FFFFFF';
+  input.oninput = updateCustomGradient;
+  container.appendChild(input);
+  updateCustomGradient();
+}
+
+function removeGradientStop(){
+  var container = document.getElementById('gradientCustomStops');
+  if (container.children.length <= 2) return;
+  container.removeChild(container.lastElementChild);
+  updateCustomGradient();
+}
+
+function copyToClipboard(text, btnEl){
+  navigator.clipboard.writeText(text).then(function(){
+    if (btnEl){
+      var original = btnEl.textContent;
+      btnEl.textContent = '✓ اتنسخ';
+      setTimeout(function(){ btnEl.textContent = original; }, 1200);
+    }
+  });
+}
+
+function copyGradientCss(){
+  var btn = event.target;
+  var original = btn.textContent;
+  navigator.clipboard.writeText(document.getElementById('gradientCssCode').value).then(function(){
+    btn.textContent = '✓ اتنسخ';
+    setTimeout(function(){ btn.textContent = original; }, 1200);
+  });
+}
+
+function downloadGradientImage(){
+  var canvas = document.createElement('canvas');
+  canvas.width = 1200;
+  canvas.height = 400;
+  var ctx = canvas.getContext('2d');
+
+  var angleRad = (parseInt(gradientDirection) || 135) * Math.PI / 180;
+  var x1 = canvas.width/2 - Math.cos(angleRad) * canvas.width/2;
+  var y1 = canvas.height/2 - Math.sin(angleRad) * canvas.height/2;
+  var x2 = canvas.width/2 + Math.cos(angleRad) * canvas.width/2;
+  var y2 = canvas.height/2 + Math.sin(angleRad) * canvas.height/2;
+
+  var grad = ctx.createLinearGradient(x1, y1, x2, y2);
+  var step = gradientStops.length > 1 ? 1 / (gradientStops.length - 1) : 0;
+  gradientStops.forEach(function(hex, i){
+    grad.addColorStop(i * step, hex);
+  });
+
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  var link = document.createElement('a');
+  link.download = 'newsouladv-gradient.png';
+  link.href = canvas.toDataURL('image/png');
+  link.click();
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  renderGradientPreview();
+});
 
 function generateIndustryPalette(){
   var industry = document.getElementById('industrySelect').value;

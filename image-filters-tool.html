@@ -452,10 +452,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p id="filterEmptyState" style="text-align:center;padding:60px 20px;color:#fff;font-size:.95rem;font-weight:600;margin:0">ارفع صورة الأول عشان تقدر تجرب الفلاتر ↑</p>
   </div>
   <button type="button" id="downloadFilterBtn" class="btn-primary" style="display:none;justify-content:center;width:100%;margin-top:16px" onclick="downloadFilteredImage()">⬇️ تحميل الصورة</button>
-  <button type="button" id="enhanceFilterBtn" class="btn-secondary" disabled style="justify-content:center;width:100%;margin-top:10px;opacity:.4;cursor:not-allowed" onclick="enhanceAndUpscale()">🔍 تحسين الجودة وتكبير 2x</button>
+
 </div>
 
-<div class="note-box">💡 صورتك ما بترفعش لأي سيرفر — كل التعديل بيحصل جوه متصفحك مباشرة باستخدام Canvas API. <br/>ملحوظة عن "تحسين الجودة": الأداة بتكبّر الصورة وتشحذ التفاصيل رياضيًا (مش AI حقيقي)، فبتحسّن الوضوح شوية بس معندهاش القدرة على اختراع تفاصيل مش موجودة أصلًا في الصورة الأصلية.</div>
+<div class="note-box">💡 صورتك ما بترفعش لأي سيرفر — كل التعديل بيحصل جوه متصفحك مباشرة باستخدام Canvas API.</div>
 
 <div class="project-callout">
   <span class="project-callout-badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> عايز تصميم احترافي كامل؟</span>
@@ -641,7 +641,6 @@ function loadFilterImage(e){
       document.getElementById('filterEmptyState').style.display = 'none';
       document.getElementById('filterCanvas').style.display = 'block';
       document.getElementById('downloadFilterBtn').style.display = 'flex';
-      var enhBtn = document.getElementById('enhanceFilterBtn'); enhBtn.disabled = false; enhBtn.style.opacity = '1'; enhBtn.style.cursor = 'pointer';
       applyFilter('none', document.getElementById('filterBtnNone'));
     };
     img.src = ev.target.result;
@@ -728,52 +727,6 @@ function downloadFilteredImage(){
   link.click();
 }
 
-function enhanceAndUpscale(){
-  var canvas = document.getElementById('filterCanvas');
-  var w = canvas.width, h = canvas.height;
-  var newW = w * 2, newH = h * 2;
-
-  var upCanvas = document.createElement('canvas');
-  upCanvas.width = newW;
-  upCanvas.height = newH;
-  var upCtx = upCanvas.getContext('2d');
-  upCtx.imageSmoothingEnabled = true;
-  upCtx.imageSmoothingQuality = 'high';
-  upCtx.drawImage(canvas, 0, 0, newW, newH);
-
-  var imgData = upCtx.getImageData(0, 0, newW, newH);
-  var src = imgData.data;
-  var out = new Uint8ClampedArray(src);
-  var kernel = [0,-1,0,-1,5,-1,0,-1,0];
-  for (var y = 1; y < newH - 1; y++){
-    for (var x = 1; x < newW - 1; x++){
-      for (var c = 0; c < 3; c++){
-        var sum = 0, k = 0;
-        for (var ky = -1; ky <= 1; ky++){
-          for (var kx = -1; kx <= 1; kx++){
-            var idx = ((y+ky)*newW + (x+kx))*4 + c;
-            sum += src[idx] * kernel[k];
-            k++;
-          }
-        }
-        out[(y*newW+x)*4 + c] = sum;
-      }
-    }
-  }
-  imgData.data.set(out);
-  upCtx.putImageData(imgData, 0, 0);
-
-  canvas.width = newW;
-  canvas.height = newH;
-  var ctx = canvas.getContext('2d');
-  ctx.drawImage(upCanvas, 0, 0);
-
-  var doneBtn = document.getElementById('enhanceFilterBtn');
-  doneBtn.disabled = true;
-  doneBtn.style.opacity = '.6';
-  doneBtn.style.cursor = 'not-allowed';
-  doneBtn.textContent = '✓ تم التحسين والتكبير';
-}
 </script>
 
 <script>

@@ -443,6 +443,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="filter-canvas-wrap" style="min-height:200px;background:#fff">
     <div id="qrPreview"></div>
   </div>
+
+  <label class="tool-hint" style="display:block;margin-bottom:8px">صيغة الملف</label>
+  <div style="display:flex;gap:10px;margin-bottom:16px">
+    <button type="button" id="qrFormatBtnPng" class="filter-icon-btn active" style="flex:1" onclick="setQrFormat('png', this)"><span>PNG (جودة أعلى)</span></button>
+    <button type="button" id="qrFormatBtnJpg" class="filter-icon-btn" style="flex:1" onclick="setQrFormat('jpg', this)"><span>JPG (حجم أصغر)</span></button>
+  </div>
+
+  <div id="qrJpgQualityRow" style="display:none">
+    <label class="tool-hint" style="display:block;margin-bottom:8px">جودة JPG: <span id="qrQualityValue">90</span>%</label>
+    <input type="range" id="qrQualitySlider" min="30" max="100" value="90" style="width:100%;margin-bottom:16px" oninput="updateQrQuality(this.value)" />
+  </div>
+
   <button type="button" id="downloadQrBtn" class="btn-primary" style="justify-content:center;width:100%;margin-top:16px" onclick="downloadQr()">⬇️ تحميل QR Code</button>
 </div>
 
@@ -499,6 +511,20 @@ document.addEventListener('DOMContentLoaded', function(){
 <script>
 var qrCurrentType = 'link';
 var qrInstance = null;
+var qrFormat = 'png';
+var qrQuality = 90;
+
+function setQrFormat(fmt, btnEl){
+  qrFormat = fmt;
+  document.querySelectorAll('#qrFormatBtnPng, #qrFormatBtnJpg').forEach(function(b){ b.classList.remove('active'); });
+  if (btnEl) btnEl.classList.add('active');
+  document.getElementById('qrJpgQualityRow').style.display = fmt === 'jpg' ? 'block' : 'none';
+}
+
+function updateQrQuality(val){
+  qrQuality = parseInt(val);
+  document.getElementById('qrQualityValue').textContent = val;
+}
 
 function setQrType(type, btnEl){
   qrCurrentType = type;
@@ -579,9 +605,16 @@ function downloadQr(){
   var container = document.getElementById('qrPreview');
   var canvas = container.querySelector('canvas');
   if (!canvas) return;
+
+  var mime = qrFormat === 'jpg' ? 'image/jpeg' : 'image/png';
+  var ext = qrFormat === 'jpg' ? 'jpg' : 'png';
+  var dataUrl = qrFormat === 'jpg'
+    ? canvas.toDataURL(mime, qrQuality/100)
+    : canvas.toDataURL(mime);
+
   var link = document.createElement('a');
-  link.download = 'newsouladv-qrcode.png';
-  link.href = canvas.toDataURL('image/png');
+  link.download = 'newsouladv-qrcode.' + ext;
+  link.href = dataUrl;
   link.click();
 }
 

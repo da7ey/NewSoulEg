@@ -390,6 +390,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16a1 1 0 011 1v14a1 1 0 01-1 1H4a1 1 0 01-1-1V5a1 1 0 011-1zm1 3.5V18h14V7.5l-7 5-7-5zm.8-1.5L12 10 18.2 6H5.8z"/></svg>
       <span>إيميل</span>
     </button>
+    <button type="button" id="qrTypeFacebook" class="filter-icon-btn" onclick="setQrType('facebook', this)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94z"/></svg>
+      <span>فيسبوك</span>
+    </button>
+    <button type="button" id="qrTypeInstagram" class="filter-icon-btn" onclick="setQrType('instagram', this)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c2.72 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.21.6 1.76 1.15.55.55.89 1.1 1.15 1.76.25.64.42 1.37.47 2.43.05 1.06.06 1.4.06 4.12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.47 2.43-.26.66-.6 1.21-1.15 1.76-.55.55-1.1.89-1.76 1.15-.64.25-1.37.42-2.43.47-1.06.05-1.4.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.47-.66-.26-1.21-.6-1.76-1.15-.55-.55-.89-1.1-1.15-1.76-.25-.64-.42-1.37-.47-2.43C2.01 15.06 2 14.72 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.21 1.15-1.76.55-.55 1.1-.89 1.76-1.15.64-.25 1.37-.42 2.43-.47C8.94 2.01 9.28 2 12 2zm0 5.35a4.65 4.65 0 100 9.3 4.65 4.65 0 000-9.3zm0 7.65a3 3 0 110-6 3 3 0 010 6zm5.5-7.85a1.1 1.1 0 11-2.2 0 1.1 1.1 0 012.2 0z"/></svg>
+      <span>إنستغرام</span>
+    </button>
+    <button type="button" id="qrTypeTiktok" class="filter-icon-btn" onclick="setQrType('tiktok', this)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82c-1.01-.88-1.65-2.15-1.65-3.57h-3.09v12.4c0 1.4-1.13 2.55-2.54 2.55-1.4 0-2.55-1.15-2.55-2.55 0-1.68 1.62-2.96 3.3-2.44V9.13c-3.39-.45-6.35 2.18-6.35 5.53 0 3.27 2.71 5.59 5.58 5.59 3.08 0 5.58-2.5 5.58-5.59V9.4a7.2 7.2 0 0 0 4.22 1.35V7.68a4.19 4.19 0 0 1-2.5-1.86z"/></svg>
+      <span>تيك توك</span>
+    </button>
   </div>
 </div>
 
@@ -399,6 +411,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <textarea id="qrInputText" class="tool-text-input" style="display:none;min-height:100px" placeholder="اكتب أي نص هنا..." oninput="generateQr()"></textarea>
   <input type="tel" id="qrInputWhatsapp" class="tool-text-input" style="display:none" placeholder="رقم واتساب بالكود الدولي (مثال: 201090235208)" oninput="generateQr()" />
   <input type="email" id="qrInputEmail" class="tool-text-input" style="display:none" placeholder="example@email.com" oninput="generateQr()" />
+  <input type="text" id="qrInputFacebook" class="tool-text-input" style="display:none" placeholder="اسم صفحتك على فيسبوك (مثال: newsouladv)" oninput="generateQr()" />
+  <input type="text" id="qrInputInstagram" class="tool-text-input" style="display:none" placeholder="اسم حسابك على إنستغرام (مثال: newsouladv)" oninput="generateQr()" />
+  <input type="text" id="qrInputTiktok" class="tool-text-input" style="display:none" placeholder="اسم حسابك على تيك توك (مثال: newsouladv)" oninput="generateQr()" />
 </div>
 
 <h2 id="style">3. اضبط الشكل</h2>
@@ -487,15 +502,22 @@ var qrInstance = null;
 
 function setQrType(type, btnEl){
   qrCurrentType = type;
-  document.querySelectorAll('#qrTypeLink, #qrTypeText, #qrTypeWhatsapp, #qrTypeEmail').forEach(function(b){ b.classList.remove('active'); });
+  document.querySelectorAll('#qrTypeLink, #qrTypeText, #qrTypeWhatsapp, #qrTypeEmail, #qrTypeFacebook, #qrTypeInstagram, #qrTypeTiktok').forEach(function(b){ b.classList.remove('active'); });
   if (btnEl) btnEl.classList.add('active');
 
   document.getElementById('qrInputLink').style.display = type === 'link' ? 'block' : 'none';
   document.getElementById('qrInputText').style.display = type === 'text' ? 'block' : 'none';
   document.getElementById('qrInputWhatsapp').style.display = type === 'whatsapp' ? 'block' : 'none';
   document.getElementById('qrInputEmail').style.display = type === 'email' ? 'block' : 'none';
+  document.getElementById('qrInputFacebook').style.display = type === 'facebook' ? 'block' : 'none';
+  document.getElementById('qrInputInstagram').style.display = type === 'instagram' ? 'block' : 'none';
+  document.getElementById('qrInputTiktok').style.display = type === 'tiktok' ? 'block' : 'none';
 
   generateQr();
+}
+
+function cleanSocialHandle(val){
+  return val.trim().replace(/^@/, '').replace(/^https?:\/\/(www\.)?(facebook|instagram|tiktok)\.com\//i, '').replace(/^@/, '').replace(/\/$/, '');
 }
 
 function getQrContent(){
@@ -513,6 +535,18 @@ function getQrContent(){
   if (qrCurrentType === 'email') {
     var email = document.getElementById('qrInputEmail').value.trim();
     return email ? 'mailto:' + email : 'mailto:info@newsouladv.com';
+  }
+  if (qrCurrentType === 'facebook') {
+    var fb = cleanSocialHandle(document.getElementById('qrInputFacebook').value);
+    return fb ? 'https://facebook.com/' + fb : 'https://facebook.com/newsouladv';
+  }
+  if (qrCurrentType === 'instagram') {
+    var ig = cleanSocialHandle(document.getElementById('qrInputInstagram').value);
+    return ig ? 'https://instagram.com/' + ig : 'https://instagram.com/newsouladv';
+  }
+  if (qrCurrentType === 'tiktok') {
+    var tk = cleanSocialHandle(document.getElementById('qrInputTiktok').value);
+    return tk ? 'https://tiktok.com/@' + tk : 'https://tiktok.com/@newsouladv';
   }
   return ' ';
 }

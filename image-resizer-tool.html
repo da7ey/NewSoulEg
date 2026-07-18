@@ -390,7 +390,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="6" width="20" height="12" rx="2"/></svg>
       <span>فيسبوك بوست</span>
     </button>
-    <button type="button" class="filter-icon-btn" onclick="applyPreset(820,312,this)">
+    <button type="button" class="filter-icon-btn" onclick="applyPreset(820,312,this,'fb-cover')">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="8" width="20" height="8" rx="2"/></svg>
       <span>غلاف فيسبوك</span>
     </button>
@@ -426,7 +426,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><rect x="1" y="8" width="22" height="8" rx="1"/></svg>
       <span>غلاف X</span>
     </button>
-    <button type="button" class="filter-icon-btn" onclick="applyPreset(1584,396,this)">
+    <button type="button" class="filter-icon-btn" onclick="applyPreset(1584,396,this,'li-cover')">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><rect x="1" y="9" width="22" height="6" rx="1"/></svg>
       <span>غلاف لينكدإن</span>
     </button>
@@ -436,6 +436,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </button>
   </div>
   <p id="resizerDimensionLabel" class="tool-hint" style="text-align:center">المقاس الحالي: 1080 × 1080 بكسل</p>
+  <p id="resizerGuideIndicator" style="display:none;text-align:center;color:#39FF14;font-size:.85rem;font-weight:700;margin-bottom:12px">✅ القالب الفاضي لهذا المقاس هيتحمّل برسومات توضح المنطقة الآمنة ومكان صورة البروفايل</p>
 
   <div style="display:flex;align-items:center;gap:10px;justify-content:center;margin:16px 0">
     <div style="flex:1;height:1px;background:rgba(139,47,201,.25)"></div>
@@ -451,7 +452,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <button type="button" id="downloadResizerBtn" class="btn-primary" disabled style="justify-content:center;width:100%;margin-top:16px;opacity:.4;cursor:not-allowed" onclick="downloadResizedImage()">⬇️ تحميل الصورة المقصوصة</button>
 </div>
 
-<div class="note-box">💡 صورتك ما بترفعش لأي سيرفر — القص بيحصل جوه متصفحك مباشرة. الأداة بتقص من نص الصورة تلقائيًا (Smart Center Crop) عشان تحافظ على أهم جزء فيها. ولو لسه مبدأتش التصميم، حمّل قالب فاضي بالمقاس اللي محتاجه وابدأ عليه من الصفر.</div>
+<div class="note-box">💡 صورتك ما بترفعش لأي سيرفر — القص بيحصل جوه متصفحك مباشرة. الأداة بتقص من نص الصورة تلقائيًا (Smart Center Crop) عشان تحافظ على أهم جزء فيها. ولو لسه مبدأتش التصميم، حمّل قالب فاضي بالمقاس اللي محتاجه وابدأ عليه من الصفر. لمقاسات أغلفة فيسبوك ولينكدإن، القالب بييجي برسومات إرشادية توضح المنطقة الآمنة (اللي بتظهر في الموبايل والديسكتوب) ومكان صورة البروفايل — مبنية على أحدث بيانات المنصتين، وممكن تختلف بنسبة بسيطة حسب تحديثات كل منصة.</div>
 
 <div class="project-callout">
   <span class="project-callout-badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> عايز محتوى بصري احترافي؟</span>
@@ -631,11 +632,15 @@ function setActivePresetButton(el){
   if (el) el.classList.add('active');
 }
 
-function applyPreset(w, h, btnEl){
+var resizerCurrentPresetKey = null;
+
+function applyPreset(w, h, btnEl, presetKey){
   resizerCurrentW = w;
   resizerCurrentH = h;
+  resizerCurrentPresetKey = presetKey || null;
   if (btnEl) setActivePresetButton(btnEl);
   document.getElementById('resizerDimensionLabel').textContent = 'المقاس الحالي: ' + w + ' × ' + h + ' بكسل';
+  document.getElementById('resizerGuideIndicator').style.display = (presetKey === 'fb-cover' || presetKey === 'li-cover') ? 'block' : 'none';
   if (resizerOriginalImage) renderResizerCrop();
 }
 
@@ -698,11 +703,71 @@ function downloadResizedImage(){
   link.click();
 }
 
+function drawGuideOverlay(ctx, w, h, presetKey){
+  ctx.save();
+  ctx.strokeStyle = 'rgba(198,110,255,.9)';
+  ctx.lineWidth = 3;
+  ctx.setLineDash([12, 8]);
+  ctx.font = 'bold 20px Tajawal, sans-serif';
+  ctx.direction = 'rtl';
+
+  if (presetKey === 'fb-cover'){
+    // Safe zone: centered 640x312 (visible on both desktop 820x312 and mobile 640x360)
+    var safeX = (w - 640) / 2;
+    ctx.strokeRect(safeX, 0, 640, h);
+    ctx.fillStyle = 'rgba(198,110,255,.95)';
+    ctx.textAlign = 'center';
+    ctx.fillText('المنطقة الآمنة (تظهر في الموبايل والديسكتوب)', w/2, 30);
+
+    // Profile picture overlap zone: bottom-left ~170x170
+    ctx.setLineDash([]);
+    ctx.fillStyle = 'rgba(255,80,80,.25)';
+    ctx.beginPath();
+    ctx.arc(85, h - 20, 85, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(255,80,80,.8)';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    ctx.fillStyle = '#fff';
+    ctx.font = 'bold 14px Tajawal, sans-serif';
+    ctx.textAlign = 'right';
+    ctx.fillText('صورة البروفايل هتغطي هنا', w - 20, h - 15);
+  }
+
+  if (presetKey === 'li-cover'){
+    // Conservative safe zone: avoid left 300px and bottom 150px (profile picture + mobile crop risk)
+    var safeX = 300, safeY = 20, safeW = w - 350, safeH = h - 170;
+    ctx.strokeRect(safeX, safeY, safeW, safeH);
+    ctx.fillStyle = 'rgba(198,110,255,.95)';
+    ctx.textAlign = 'center';
+    ctx.fillText('المنطقة الآمنة (النص واللوجو هنا)', safeX + safeW/2, safeY - 10);
+
+    // Profile picture overlap zone: bottom-left
+    ctx.setLineDash([]);
+    ctx.fillStyle = 'rgba(255,80,80,.25)';
+    ctx.fillRect(0, h - 150, 300, 150);
+    ctx.strokeStyle = 'rgba(255,80,80,.8)';
+    ctx.lineWidth = 2;
+    ctx.strokeRect(0, h - 150, 300, 150);
+    ctx.fillStyle = '#fff';
+    ctx.font = 'bold 14px Tajawal, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('صورة البروفايل هتغطي هنا', 150, h - 70);
+  }
+
+  ctx.restore();
+}
+
 function downloadBlankTemplate(){
   var blankCanvas = document.createElement('canvas');
   blankCanvas.width = resizerCurrentW;
   blankCanvas.height = resizerCurrentH;
   // Canvas starts transparent by default — a blank starting artboard for designers
+
+  if (resizerCurrentPresetKey === 'fb-cover' || resizerCurrentPresetKey === 'li-cover'){
+    var ctx = blankCanvas.getContext('2d');
+    drawGuideOverlay(ctx, resizerCurrentW, resizerCurrentH, resizerCurrentPresetKey);
+  }
 
   var link = document.createElement('a');
   link.download = 'newsouladv-blank-template-' + resizerCurrentW + 'x' + resizerCurrentH + '.png';

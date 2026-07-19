@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://newsouladv.com/sitemap.xml
+Sitemap: https://newsouladv.com/sitemap-index.xml

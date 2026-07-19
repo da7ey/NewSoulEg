@@ -368,11 +368,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header class="article-header"><p class="article-breadcrumb"><a href="https://www.newsouladv.com">نيو سول</a> / <a href="https://newsouladv.com/tools.html">أدوات المصممين</a></p><p class="article-eyebrow">أداة مجانية</p><h1>مولّد البطاقة الرقمية (مجانًا)<br/><span>بطاقة عمل احترافية بـ QR يحفظ بياناتك مباشرة</span></h1><p class="article-lead">مقدّمة خصوصًا لأصحاب الأنشطة الصغيرة والمتوسطة. العميل يمسح الكود، وبياناتك بتتحفظ في جهات اتصاله من غير ما يكتب حرف.</p><div class="article-meta"><span>📇 بطاقة + QR</span><span>💾 حفظ مباشر للجهات</span><span>🆓 مجانية بالكامل</span></div></header>
 
 <div class="article-layout">
-<aside class="toc-wrap"><div class="toc-card"><p class="toc-title">محتويات الصفحة</p><ul class="toc-list" id="tocList"><li><a href="#basics">البيانات الأساسية</a></li><li><a href="#contact">التواصل</a></li><li><a href="#social">سوشيال ميديا</a></li><li><a href="#preview">المعاينة</a></li><li><a href="#download">التحميل</a></li><li><a href="#hosting">طلب استضافة</a></li><li><a href="https://newsouladv.com/tools.html">كل الأدوات</a></li><li><a href="https://wa.me/201090235208?text=مرحباً، عندي سؤال عن أدوات التصميم" target="_blank" rel="noopener">تواصل معنا</a></li></ul><div class="toc-cta"><a href="https://wa.me/201090235208?text=مرحباً، عايز مساعدة في تصميم بصري" target="_blank" rel="noopener">📲 احصل على استشارة مجانية</a></div></div></aside>
+<aside class="toc-wrap"><div class="toc-card"><p class="toc-title">محتويات الصفحة</p><ul class="toc-list" id="tocList"><li><a href="#industry-select">نشاطك</a></li><li><a href="#basics">البيانات الأساسية</a></li><li><a href="#contact">التواصل</a></li><li><a href="#social">سوشيال ميديا</a></li><li><a href="#preview">المعاينة</a></li><li><a href="#download">التحميل</a></li><li><a href="#hosting">طلب استضافة</a></li><li><a href="https://newsouladv.com/tools.html">كل الأدوات</a></li><li><a href="https://wa.me/201090235208?text=مرحباً، عندي سؤال عن أدوات التصميم" target="_blank" rel="noopener">تواصل معنا</a></li></ul><div class="toc-cta"><a href="https://wa.me/201090235208?text=مرحباً، عايز مساعدة في تصميم بصري" target="_blank" rel="noopener">📲 احصل على استشارة مجانية</a></div></div></aside>
 <div class="article-full-content">
 <article class="article-content">
 
-<h2 id="basics">1. بياناتك الأساسية</h2>
+<h2 id="industry-select">1. نشاطك التجاري</h2>
+<div class="tool-box">
+  <select id="vcardIndustry" class="tool-select" style="width:100%" onchange="onVcardIndustryChange()">
+    <option value="ecommerce">تجارة إلكترونية</option>
+    <option value="realestate">عقارات</option>
+    <option value="clinics">عيادات ورعاية صحية</option>
+    <option value="restaurants">مطاعم وكافيهات</option>
+    <option value="education">تعليم وتدريب</option>
+    <option value="automotive">سيارات وقطع غيار</option>
+    <option value="tourism">سياحة وسفر</option>
+    <option value="fashion">أزياء وموضة</option>
+    <option value="tech">تكنولوجيا وبرمجيات</option>
+    <option value="finance">خدمات مالية</option>
+    <option value="beauty">تجميل وعناية</option>
+    <option value="construction">مقاولات وإنشاءات</option>
+    <option value="manufacturing">صناعة وتصنيع</option>
+    <option value="fitness">رياضة ولياقة</option>
+    <option value="luxury">فخامة</option>
+    <option value="kids">منتجات أطفال</option>
+    <option value="general">عام / خدمات أخرى</option>
+  </select>
+  <p class="tool-hint" style="margin-top:10px;margin-bottom:0">لون بطاقتك هيتحدد تلقائيًا حسب نشاطك، وتقدر تغيّره بنفسك بعد كده لو حابب.</p>
+</div>
+
+<h2 id="basics">2. بياناتك الأساسية</h2>
 <div class="tool-box">
   <label class="tool-hint" style="display:block;margin-bottom:6px">الاسم بالكامل</label>
   <input type="text" id="vcardName" class="tool-text-input" placeholder="مثال: أحمد محمد" oninput="updateVcardPreview()" />
@@ -396,7 +420,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </div>
 
-<h2 id="contact">2. بيانات التواصل</h2>
+<h2 id="contact">3. بيانات التواصل</h2>
 <div class="tool-box">
   <label class="tool-hint" style="display:block;margin-bottom:6px">رقم الموبايل (بالكود الدولي)</label>
   <input type="tel" id="vcardPhone" class="tool-text-input" placeholder="201001234567" oninput="updateVcardPreview()" />
@@ -411,7 +435,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <input type="text" id="vcardAddress" class="tool-text-input" style="margin-bottom:0" placeholder="مثال: القاهرة، مصر" oninput="updateVcardPreview()" />
 </div>
 
-<h2 id="social">3. وسائل التواصل الاجتماعي (اختياري)</h2>
+<h2 id="social">4. وسائل التواصل الاجتماعي (اختياري)</h2>
 <div class="tool-box">
   <label class="tool-hint" style="display:block;margin-bottom:6px">فيسبوك</label>
   <input type="text" id="vcardFacebook" class="tool-text-input" placeholder="اسم صفحتك على فيسبوك" oninput="updateVcardPreview()" />
@@ -420,14 +444,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <input type="text" id="vcardInstagram" class="tool-text-input" style="margin-bottom:0" placeholder="اسم حسابك على إنستغرام" oninput="updateVcardPreview()" />
 </div>
 
-<h2 id="preview">4. المعاينة</h2>
+<h2 id="preview">5. المعاينة</h2>
 <div class="tool-box">
   <div style="border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.15);background:#fff;max-height:520px;overflow-y:auto">
     <iframe id="vcardPreviewFrame" style="width:100%;height:520px;border:none;display:block"></iframe>
   </div>
 </div>
 
-<h2 id="download">5. تحميل البطاقة</h2>
+<h2 id="download">6. تحميل البطاقة</h2>
 <div class="tool-box">
   <form id="vcardDownloadForm" onsubmit="submitVcardDownloadForm(event)">
     <input type="hidden" name="access_key" value="6e7d793e-45ae-4f37-879d-184f5fedb92d" />
@@ -441,9 +465,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </form>
 </div>
 
-<div class="note-box">💡 بياناتك ما بترفعش لأي سيرفر إلا بيانات التواصل اللي بتكتبها في فورم التحميل (عشان نقدر نساعدك لو محتاج). البطاقة والـ QR بيتولّدوا بالكامل جوه متصفحك. هتحمّل 3 ملفات: صفحة البطاقة (HTML)، ملف جهة الاتصال (vCard) لحفظه يدويًا، وصورة QR بتحمل بياناتك جواها مباشرة (مش محتاج استضافة عشان يشتغل).</div>
+<div class="note-box">💡 بياناتك ما بترفعش لأي سيرفر إلا بيانات التواصل اللي بتكتبها في فورم التحميل (عشان نقدر نساعدك لو محتاج). البطاقة والـ QR بيتولّدوا بالكامل جوه متصفحك. هتحمّل 3 ملفات: صفحة البطاقة (HTML) — والـ QR متضمّن جوّا تصميمها نفسه، ملف جهة الاتصال (vCard) لحفظه يدويًا، وصورة QR منفصلة لو عايز تطبعها على كارت حقيقي.</div>
 
-<h2 id="hosting">6. عايز نستضيفها ليك إحنا؟</h2>
+<h2 id="hosting">7. عايز نستضيفها ليك إحنا؟</h2>
 <p>فريق نيو سول يقدر يستضيف بطاقتك على رابط دائم بأجر رمزي، ويشمل ده:</p>
 <ul style="color:var(--gray);line-height:2;margin-bottom:20px;padding-right:20px">
   <li>استضافة البطاقة على دومين فرعي من موقعنا</li>
@@ -516,6 +540,21 @@ document.addEventListener('DOMContentLoaded', function(){
 var vcardPhotoDataUrl = null;
 var vcardQrInstance = null;
 
+var vcardIndustryColors = {
+  ecommerce: '#FF6B35', realestate: '#1B3A5C', clinics: '#0EA5A5', restaurants: '#C1272D',
+  education: '#2563EB', automotive: '#1A1A2E', tourism: '#00A8CC', fashion: '#0A0A0A',
+  tech: '#6366F1', finance: '#0B3954', beauty: '#C08497', construction: '#F77F00',
+  manufacturing: '#3A506B', fitness: '#39FF14', luxury: '#C9A96E', kids: '#FF6B9D',
+  general: '#8B2FC9'
+};
+
+function onVcardIndustryChange(){
+  var industry = document.getElementById('vcardIndustry').value;
+  var color = vcardIndustryColors[industry];
+  if (color) document.getElementById('vcardColor').value = color;
+  updateVcardPreview();
+}
+
 function onVcardPhotoSelected(e){
   var file = e.target.files[0];
   if (!file) return;
@@ -554,7 +593,7 @@ function buildVcardText(){
   return lines.join('\n');
 }
 
-function buildVcardPageHtml(){
+function buildVcardPageHtml(qrDataUrl){
   var name = document.getElementById('vcardName').value.trim() || 'اسمك هنا';
   var title = document.getElementById('vcardTitle').value.trim();
   var company = document.getElementById('vcardCompany').value.trim();
@@ -582,6 +621,8 @@ function buildVcardPageHtml(){
 
   var vcardBase64 = btoa(unescape(encodeURIComponent(buildVcardText())));
 
+  var qrHtml = qrDataUrl ? '<div class="vc-qr-box"><img src="' + qrDataUrl + '" alt="QR - احفظني في جهات الاتصال" class="vc-qr-img" /><p class="vc-qr-label">امسح الكود لحفظي في جهات اتصالك</p></div>' : '';
+
   return '<!DOCTYPE html>\n<html lang="ar" dir="rtl">\n<head>\n<meta charset="UTF-8" />\n<meta name="viewport" content="width=device-width, initial-scale=1.0" />\n<title>' + escapeHtmlVcard(name) + (company ? ' - ' + escapeHtmlVcard(company) : '') + '</title>\n<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet" />\n<style>\n' +
     '*{margin:0;padding:0;box-sizing:border-box}\n' +
     'body{font-family:"Tajawal",Tahoma,Arial,sans-serif;background:linear-gradient(160deg,' + color + '22,#0a0a12 60%);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}\n' +
@@ -597,6 +638,9 @@ function buildVcardPageHtml(){
     '.vc-address{color:#888;font-size:.85rem;margin-bottom:16px}\n' +
     '.vc-social-row{display:flex;justify-content:center;gap:10px;margin-bottom:20px}\n' +
     '.vc-social{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.08);color:#fff;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:.8rem;font-weight:700}\n' +
+    '.vc-qr-box{background:#fff;border-radius:16px;padding:16px;margin-bottom:20px}\n' +
+    '.vc-qr-img{width:100%;max-width:180px;display:block;margin:0 auto}\n' +
+    '.vc-qr-label{color:#333;font-size:.75rem;font-weight:700;margin-top:8px}\n' +
     '.vc-save{display:inline-block;background:' + color + ';color:#fff;padding:14px 28px;border-radius:50px;text-decoration:none;font-weight:900;cursor:pointer;border:none;font-size:.95rem;font-family:inherit}\n' +
     '.vc-credit{color:#555;font-size:.7rem;margin-top:24px}\n' +
     '.vc-credit a{color:' + color + ';text-decoration:none}\n' +
@@ -608,21 +652,22 @@ function buildVcardPageHtml(){
     '<div class="vc-buttons">' + buttons + '</div>' +
     (address ? '<p class="vc-address">📍 ' + escapeHtmlVcard(address) + '</p>' : '') +
     (socialHtml ? '<div class="vc-social-row">' + socialHtml + '</div>' : '') +
+    qrHtml +
     '<a class="vc-save" download="' + escapeHtmlVcard(name).replace(/\s+/g,'-') + '.vcf" href="data:text/vcard;base64,' + vcardBase64 + '">💾 احفظني في جهات الاتصال</a>' +
     '<p class="vc-credit">بطاقة رقمية بواسطة <a href="https://newsouladv.com" target="_blank" rel="noopener">New Soul Advertising</a></p>' +
     '</div>\n</body>\n</html>';
 }
 
 function updateVcardPreview(){
-  var html = buildVcardPageHtml();
+  var qrDataUrl = renderVcardQr();
+  var html = buildVcardPageHtml(qrDataUrl);
   var frame = document.getElementById('vcardPreviewFrame');
   frame.srcdoc = html;
-  renderVcardQr();
 }
 
 function renderVcardQr(){
   var container = document.getElementById('vcardQrHidden');
-  if (!container) return;
+  if (!container) return null;
   container.innerHTML = '';
   var color = document.getElementById('vcardColor').value || '#8B2FC9';
   vcardQrInstance = new QRCode(container, {
@@ -633,6 +678,8 @@ function renderVcardQr(){
     colorLight: '#FFFFFF',
     correctLevel: QRCode.CorrectLevel.M
   });
+  var canvas = container.querySelector('canvas');
+  return canvas ? canvas.toDataURL('image/png') : null;
 }
 
 function submitVcardDownloadForm(e){
@@ -659,9 +706,10 @@ function submitVcardDownloadForm(e){
 
 function triggerVcardDownloads(){
   var vname = (document.getElementById('vcardName').value.trim() || 'card').replace(/\s+/g, '-');
+  var qrDataUrl = renderVcardQr();
 
-  // 1. HTML page
-  var htmlBlob = new Blob([buildVcardPageHtml()], { type: 'text/html' });
+  // 1. HTML page (with QR embedded inside the card design)
+  var htmlBlob = new Blob([buildVcardPageHtml(qrDataUrl)], { type: 'text/html' });
   var htmlLink = document.createElement('a');
   htmlLink.download = 'digital-card-' + vname + '.html';
   htmlLink.href = URL.createObjectURL(htmlBlob);
@@ -674,13 +722,12 @@ function triggerVcardDownloads(){
   vcfLink.href = URL.createObjectURL(vcfBlob);
   setTimeout(function(){ vcfLink.click(); }, 300);
 
-  // 3. QR image
+  // 3. QR image (standalone, for printing on physical cards)
   setTimeout(function(){
-    var canvas = document.getElementById('vcardQrHidden').querySelector('canvas');
-    if (canvas){
+    if (qrDataUrl){
       var qrLink = document.createElement('a');
       qrLink.download = 'qr-' + vname + '.png';
-      qrLink.href = canvas.toDataURL('image/png');
+      qrLink.href = qrDataUrl;
       qrLink.click();
     }
   }, 600);
@@ -712,7 +759,7 @@ function submitVcardHostingForm(e){
 }
 
 document.addEventListener('DOMContentLoaded', function(){
-  updateVcardPreview();
+  onVcardIndustryChange();
 });
 </script>
 

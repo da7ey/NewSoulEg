@@ -368,66 +368,106 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header class="article-header"><p class="article-breadcrumb"><a href="https://www.newsouladv.com">نيو سول</a> / <a href="https://newsouladv.com/tools.html">أدوات المصممين</a></p><p class="article-eyebrow">أداة مجانية</p><h1>مولّد البطاقة الرقمية (مجانًا)<br/><span>بطاقة عمل احترافية بـ QR يحفظ بياناتك مباشرة</span></h1><p class="article-lead">مقدّمة خصوصًا لأصحاب الأنشطة الصغيرة والمتوسطة. العميل يمسح الكود، وبياناتك بتتحفظ في جهات اتصاله من غير ما يكتب حرف.</p><div class="article-meta"><span>📇 بطاقة + QR</span><span>💾 حفظ مباشر للجهات</span><span>🆓 مجانية بالكامل</span></div></header>
 
 <div class="article-layout">
-<aside class="toc-wrap"><div class="toc-card"><p class="toc-title">محتويات الصفحة</p><ul class="toc-list" id="tocList"><li><a href="#basics">البيانات الأساسية</a></li><li><a href="#contact">التواصل</a></li><li><a href="#social">سوشيال ميديا</a></li><li><a href="#preview">المعاينة</a></li><li><a href="#download">التحميل</a></li><li><a href="#hosting">طلب استضافة</a></li><li><a href="https://newsouladv.com/tools.html">كل الأدوات</a></li><li><a href="https://wa.me/201090235208?text=مرحباً، عندي سؤال عن أدوات التصميم" target="_blank" rel="noopener">تواصل معنا</a></li></ul><div class="toc-cta"><a href="https://wa.me/201090235208?text=مرحباً، عايز مساعدة في تصميم بصري" target="_blank" rel="noopener">📲 احصل على استشارة مجانية</a></div></div></aside>
+<aside class="toc-wrap"><div class="toc-card"><p class="toc-title">محتويات الصفحة</p><ul class="toc-list" id="tocList"><li><a href="#industry-select">نشاطك</a></li><li><a href="#basics">البيانات الأساسية</a></li><li><a href="#contact">التواصل</a></li><li><a href="#social">سوشيال ميديا</a></li><li><a href="#preview">المعاينة</a></li><li><a href="#download">التحميل</a></li><li><a href="#print">نسخة الطباعة</a></li><li><a href="#hosting">طلب استضافة</a></li><li><a href="https://newsouladv.com/tools.html">كل الأدوات</a></li><li><a href="https://wa.me/201090235208?text=مرحباً، عندي سؤال عن أدوات التصميم" target="_blank" rel="noopener">تواصل معنا</a></li></ul><div class="toc-cta"><a href="https://wa.me/201090235208?text=مرحباً، عايز مساعدة في تصميم بصري" target="_blank" rel="noopener">📲 احصل على استشارة مجانية</a></div></div></aside>
 <div class="article-full-content">
 <article class="article-content">
 
-<h2 id="basics">1. بياناتك الأساسية</h2>
+<h2 id="industry-select">1. نشاطك التجاري</h2>
 <div class="tool-box">
+  <select id="vcardIndustry" class="tool-select" style="width:100%" onchange="onVcardIndustryChange()">
+    <option value="ecommerce">تجارة إلكترونية</option>
+    <option value="realestate">عقارات</option>
+    <option value="clinics">عيادات ورعاية صحية</option>
+    <option value="restaurants">مطاعم وكافيهات</option>
+    <option value="education">تعليم وتدريب</option>
+    <option value="automotive">سيارات وقطع غيار</option>
+    <option value="tourism">سياحة وسفر</option>
+    <option value="fashion">أزياء وموضة</option>
+    <option value="tech">تكنولوجيا وبرمجيات</option>
+    <option value="finance">خدمات مالية</option>
+    <option value="beauty">تجميل وعناية</option>
+    <option value="construction">مقاولات وإنشاءات</option>
+    <option value="manufacturing">صناعة وتصنيع</option>
+    <option value="fitness">رياضة ولياقة</option>
+    <option value="luxury">فخامة</option>
+    <option value="kids">منتجات أطفال</option>
+    <option value="general">عام / خدمات أخرى</option>
+  </select>
+  <p class="tool-hint" style="margin-top:10px;margin-bottom:0">لون بطاقتك هيتحدد تلقائيًا حسب نشاطك، وتقدر تغيّره بنفسك بعد كده لو حابب.</p>
+</div>
+
+<h2 id="basics">2. بياناتك الأساسية</h2>
+<div class="tool-box">
+  <label class="tool-hint" style="display:block;margin-bottom:6px">لغة بيانات الكارت</label>
+  <select id="vcardDirection" class="tool-select" style="width:100%;margin-bottom:20px" onchange="updateVcardPreview()">
+    <option value="rtl">عربي (من اليمين لليسار)</option>
+    <option value="ltr">إنجليزي (من اليسار لليمين)</option>
+  </select>
+
   <label class="tool-hint" style="display:block;margin-bottom:6px">الاسم بالكامل</label>
-  <input type="text" id="vcardName" class="tool-text-input" placeholder="مثال: أحمد محمد" oninput="updateVcardPreview()" />
+  <input type="text" id="vcardName" class="tool-text-input" placeholder="مثال: أحمد محمد" oninput="updateVcardPreviewDebounced()" />
 
   <label class="tool-hint" style="display:block;margin-bottom:6px">المسمى الوظيفي</label>
-  <input type="text" id="vcardTitle" class="tool-text-input" placeholder="مثال: مدير المبيعات" oninput="updateVcardPreview()" />
+  <input type="text" id="vcardTitle" class="tool-text-input" placeholder="مثال: مدير المبيعات" oninput="updateVcardPreviewDebounced()" />
 
   <label class="tool-hint" style="display:block;margin-bottom:6px">اسم الشركة</label>
-  <input type="text" id="vcardCompany" class="tool-text-input" placeholder="مثال: نيو سول للدعاية والإعلان" oninput="updateVcardPreview()" />
+  <input type="text" id="vcardCompany" class="tool-text-input" placeholder="مثال: نيو سول للدعاية والإعلان" oninput="updateVcardPreviewDebounced()" />
 
   <label class="tool-hint" style="display:block;margin-bottom:6px">الصورة الشخصية أو اللوجو (اختياري)</label>
   <input type="file" id="vcardPhotoUpload" accept="image/*" style="display:none" onchange="onVcardPhotoSelected(event)" />
   <label for="vcardPhotoUpload" class="tool-upload-label" style="display:block;text-align:center;padding:20px;border:2px dashed rgba(139,47,201,.4);border-radius:14px;cursor:pointer;color:var(--purple-glow);font-weight:700;margin-bottom:16px">📁 ارفع صورتك أو اللوجو</label>
 
   <label class="tool-hint" style="display:block;margin-bottom:8px">اللون الرئيسي</label>
-  <div style="display:flex;align-items:center;gap:14px;margin-bottom:0">
+  <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px">
     <label style="position:relative;width:44px;height:44px;border-radius:12px;overflow:hidden;cursor:pointer;flex-shrink:0;border:2px solid rgba(255,255,255,.2)">
-      <input type="color" id="vcardColor" value="#8B2FC9" style="position:absolute;top:-8px;left:-8px;width:70px;height:70px;cursor:pointer" oninput="updateVcardPreview()" />
+      <input type="color" id="vcardColor" value="#8B2FC9" style="position:absolute;top:-8px;left:-8px;width:70px;height:70px;cursor:pointer" oninput="updateVcardPreviewDebounced()" />
     </label>
     <span style="color:var(--gray);font-size:.85rem">اختار لون هويتك</span>
   </div>
+
+  <label class="tool-hint" style="display:block;margin-bottom:6px">خط البطاقة</label>
+  <select id="vcardFont" class="tool-select" style="width:100%" onchange="updateVcardPreview()">
+    <option value="Tajawal">Tajawal (عصري وواضح)</option>
+    <option value="Cairo">Cairo (جريء)</option>
+    <option value="Almarai">Almarai (بسيط)</option>
+    <option value="El Messiri">El Messiri (فخم)</option>
+    <option value="Changa">Changa (حديث)</option>
+    <option value="Markazi Text">Markazi Text (كلاسيك)</option>
+  </select>
 </div>
 
-<h2 id="contact">2. بيانات التواصل</h2>
+<h2 id="contact">3. بيانات التواصل</h2>
 <div class="tool-box">
   <label class="tool-hint" style="display:block;margin-bottom:6px">رقم الموبايل (بالكود الدولي)</label>
-  <input type="tel" id="vcardPhone" class="tool-text-input" placeholder="201001234567" oninput="updateVcardPreview()" />
+  <input type="tel" id="vcardPhone" class="tool-text-input" placeholder="201001234567" oninput="updateVcardPreviewDebounced()" />
 
   <label class="tool-hint" style="display:block;margin-bottom:6px">البريد الإلكتروني</label>
-  <input type="email" id="vcardEmail" class="tool-text-input" placeholder="example@email.com" oninput="updateVcardPreview()" />
+  <input type="email" id="vcardEmail" class="tool-text-input" placeholder="example@email.com" oninput="updateVcardPreviewDebounced()" />
 
   <label class="tool-hint" style="display:block;margin-bottom:6px">الموقع الإلكتروني (اختياري)</label>
-  <input type="text" id="vcardWebsite" class="tool-text-input" placeholder="https://example.com" oninput="updateVcardPreview()" />
+  <input type="text" id="vcardWebsite" class="tool-text-input" placeholder="https://example.com" oninput="updateVcardPreviewDebounced()" />
 
   <label class="tool-hint" style="display:block;margin-bottom:6px">العنوان (اختياري)</label>
-  <input type="text" id="vcardAddress" class="tool-text-input" style="margin-bottom:0" placeholder="مثال: القاهرة، مصر" oninput="updateVcardPreview()" />
+  <input type="text" id="vcardAddress" class="tool-text-input" style="margin-bottom:0" placeholder="مثال: القاهرة، مصر" oninput="updateVcardPreviewDebounced()" />
 </div>
 
-<h2 id="social">3. وسائل التواصل الاجتماعي (اختياري)</h2>
+<h2 id="social">4. وسائل التواصل الاجتماعي (اختياري)</h2>
 <div class="tool-box">
   <label class="tool-hint" style="display:block;margin-bottom:6px">فيسبوك</label>
-  <input type="text" id="vcardFacebook" class="tool-text-input" placeholder="اسم صفحتك على فيسبوك" oninput="updateVcardPreview()" />
+  <input type="text" id="vcardFacebook" class="tool-text-input" placeholder="اسم صفحتك على فيسبوك" oninput="updateVcardPreviewDebounced()" />
 
   <label class="tool-hint" style="display:block;margin-bottom:6px">إنستغرام</label>
-  <input type="text" id="vcardInstagram" class="tool-text-input" style="margin-bottom:0" placeholder="اسم حسابك على إنستغرام" oninput="updateVcardPreview()" />
+  <input type="text" id="vcardInstagram" class="tool-text-input" style="margin-bottom:0" placeholder="اسم حسابك على إنستغرام" oninput="updateVcardPreviewDebounced()" />
 </div>
 
-<h2 id="preview">4. المعاينة</h2>
+<h2 id="preview">5. المعاينة</h2>
 <div class="tool-box">
   <div style="border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.15);background:#fff;max-height:520px;overflow-y:auto">
     <iframe id="vcardPreviewFrame" style="width:100%;height:520px;border:none;display:block"></iframe>
   </div>
 </div>
 
-<h2 id="download">5. تحميل البطاقة</h2>
+<h2 id="download">6. تحميل البطاقة</h2>
 <div class="tool-box">
   <form id="vcardDownloadForm" onsubmit="submitVcardDownloadForm(event)">
     <input type="hidden" name="access_key" value="6e7d793e-45ae-4f37-879d-184f5fedb92d" />
@@ -441,9 +481,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </form>
 </div>
 
-<div class="note-box">💡 بياناتك ما بترفعش لأي سيرفر إلا بيانات التواصل اللي بتكتبها في فورم التحميل (عشان نقدر نساعدك لو محتاج). البطاقة والـ QR بيتولّدوا بالكامل جوه متصفحك. هتحمّل 3 ملفات: صفحة البطاقة (HTML)، ملف جهة الاتصال (vCard) لحفظه يدويًا، وصورة QR بتحمل بياناتك جواها مباشرة (مش محتاج استضافة عشان يشتغل).</div>
+<div class="note-box">💡 بياناتك ما بترفعش لأي سيرفر إلا بيانات التواصل اللي بتكتبها في فورم التحميل (عشان نقدر نساعدك لو محتاج). البطاقة والـ QR بيتولّدوا بالكامل جوه متصفحك. هتحمّل 3 ملفات: صفحة البطاقة (HTML) — والـ QR متضمّن جوّا تصميمها نفسه، ملف جهة الاتصال (vCard) لحفظه يدويًا، وصورة QR منفصلة لو عايز تطبعها على كارت حقيقي.</div>
 
-<h2 id="hosting">6. عايز نستضيفها ليك إحنا؟</h2>
+<h2 id="print">7. نسخة جاهزة للطباعة (كارت 9×5 سم)</h2>
+<p>لو عايز تطبع بطاقتك ككارت شخصي حقيقي، حمّل نسخة بجودة طباعة احترافية (300 DPI) بمقاس 9×5 سم القياسي، بصيغة PDF جاهزة للمطبعة.</p>
+<div class="tool-box">
+  <canvas id="vcardPrintCanvas" style="display:none"></canvas>
+  <button type="button" class="btn-secondary" style="justify-content:center;width:100%" onclick="downloadVcardPrintPng()">🖨️ حمّل نسخة الطباعة PDF (9×5 سم)</button>
+</div>
+
+<div class="project-callout">
+  <span class="project-callout-badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> عايز تصميم مخصص؟</span>
+  <h3>تصميم كارت احترافي بالكامل</h3>
+  <p>لو عايز تصميم كارت شخصي مخصص تمامًا بهويتك البصرية (مش قالب جاهز)، فريق التصميم عندنا يقدر يعملّك تصميم احترافي من الصفر.</p>
+  <a href="https://wa.me/201090235208?text=مرحباً، عايز تصميم كارت شخصي احترافي مخصص" target="_blank" rel="noopener" class="project-callout-link">اطلب تصميم احترافي الآن ←</a>
+</div>
+
+<h2 id="hosting">8. عايز نستضيفها ليك إحنا؟</h2>
 <p>فريق نيو سول يقدر يستضيف بطاقتك على رابط دائم بأجر رمزي، ويشمل ده:</p>
 <ul style="color:var(--gray);line-height:2;margin-bottom:20px;padding-right:20px">
   <li>استضافة البطاقة على دومين فرعي من موقعنا</li>
@@ -470,7 +524,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <a href="https://wa.me/201090235208?text=مرحباً، عملت بطاقة رقمية وعايز أطبع كروت شخصية بالـ QR بتاعها" target="_blank" rel="noopener" class="project-callout-link">اطلب كروت مطبوعة الآن ←</a>
 </div>
 
-<div id="vcardQrHidden" style="display:none"></div>
+<div class="project-callout">
+  <span class="project-callout-badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 4a6 6 0 110 12 6 6 0 010-12zm0 3a3 3 0 100 6 3 3 0 000-6z"/></svg> عجبتك الأداة؟</span>
+  <h3>تابعنا عشان توصلك كل أداة جديدة أول بأول</h3>
+  <p>لو الخدمة عجبتك، اعمل لايك لصفحتنا على فيسبوك وتابعنا على باقي وسائل التواصل الاجتماعي.</p>
+  <div class="icon-circle-row" style="margin-top:14px">
+    <a href="https://www.facebook.com/newsouladv/" class="icon-circle-btn" target="_blank" rel="noopener" aria-label="فيسبوك" title="اعمل لايك لصفحتنا"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94z"/></svg></a>
+    <a href="https://www.instagram.com/newsouladv/" class="icon-circle-btn" target="_blank" rel="noopener" aria-label="انستاجرام" title="تابعنا على انستاجرام"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c2.72 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.21.6 1.76 1.15.55.55.89 1.1 1.15 1.76.25.64.42 1.37.47 2.43.05 1.06.06 1.4.06 4.12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.47 2.43-.26.66-.6 1.21-1.15 1.76-.55.55-1.1.89-1.76 1.15-.64.25-1.37.42-2.43.47-1.06.05-1.4.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.47-.66-.26-1.21-.6-1.76-1.15-.55-.55-.89-1.1-1.15-1.76-.25-.64-.42-1.37-.47-2.43C2.01 15.06 2 14.72 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.21 1.15-1.76.55-.55 1.1-.89 1.76-1.15.64-.25 1.37-.42 2.43-.47C8.94 2.01 9.28 2 12 2zm0 1.8c-2.67 0-2.99.01-4.04.06-.97.04-1.5.2-1.85.34-.46.18-.79.39-1.14.74-.35.35-.56.68-.74 1.14-.14.35-.3.88-.34 1.85-.05 1.05-.06 1.37-.06 4.04s.01 2.99.06 4.04c.04.97.2 1.5.34 1.85.18.46.39.79.74 1.14.35.35.68.56 1.14.74.35.14.88.3 1.85.34 1.05.05 1.37.06 4.04.06s2.99-.01 4.04-.06c.97-.04 1.5-.2 1.85-.34.46-.18.79-.39 1.14-.74.35-.35.56-.68.74-1.14.14-.35.3-.88.34-1.85.05-1.05.06-1.37.06-4.04s-.01-2.99-.06-4.04c-.04-.97-.2-1.5-.34-1.85-.18-.46-.39-.79-.74-1.14-.35-.35-.68-.56-1.14-.74-.35-.14-.88-.3-1.85-.34C14.99 3.81 14.67 3.8 12 3.8zm0 3.05a5.15 5.15 0 100 10.3 5.15 5.15 0 000-10.3zm0 8.5a3.35 3.35 0 110-6.7 3.35 3.35 0 010 6.7zm5.35-8.7a1.2 1.2 0 11-2.4 0 1.2 1.2 0 012.4 0z"/></svg></a>
+    <a href="https://www.tiktok.com/@newsouladv" class="icon-circle-btn" target="_blank" rel="noopener" aria-label="تيكتوك" title="تابعنا على تيك توك"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82c-1.01-.88-1.65-2.15-1.65-3.57h-3.09v12.4c0 1.4-1.13 2.55-2.54 2.55-1.4 0-2.55-1.15-2.55-2.55 0-1.68 1.62-2.96 3.3-2.44V9.13c-3.39-.45-6.35 2.18-6.35 5.53 0 3.27 2.71 5.59 5.58 5.59 3.08 0 5.58-2.5 5.58-5.59V9.4a7.2 7.2 0 0 0 4.22 1.35V7.68a4.19 4.19 0 0 1-2.5-1.86z"/></svg></a>
+    <a href="https://youtube.com/@newsouladv" class="icon-circle-btn" target="_blank" rel="noopener" aria-label="يوتيوب" title="اشترك في قناتنا"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2c-.3-1-1-1.8-2-2C19.7 3.7 12 3.7 12 3.7s-7.7 0-9.5.5c-1 .3-1.7 1-2 2C0 8 0 12 0 12s0 4 .5 5.8c.3 1 1 1.8 2 2 1.8.5 9.5.5 9.5.5s7.7 0 9.5-.5c1-.3 1.7-1 2-2 .5-1.8.5-5.8.5-5.8s0-4-.5-5.8zM9.5 15.5v-7l6.5 3.5-6.5 3.5z"/></svg></a>
+    <a href="https://whatsapp.com/channel/0029VbCXRU8545uvfCtWPl2W" class="icon-circle-btn" target="_blank" rel="noopener" aria-label="قناة واتساب" title="تابع قناتنا على واتساب"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3 10v4a1 1 0 0 0 1 1h2l1 5h2l-1-5h1l9 4V6L9 10H4a1 1 0 0 0-1 1z"/><path d="M20 9a3 3 0 0 1 0 6V9z"/></svg></a>
+  </div>
+</div>
+
 </article>
 </div>
 
@@ -478,18 +544,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <section id="related" style="background:var(--surface)"><div class="section-inner"><p class="section-label">أدوات وخدمات ذات صلة</p><h2 class="section-title">أكمل تصميمك</h2><div class="related-grid"><a class="related-card" href="https://newsouladv.com/qr-code-generator.html"><svg class="related-card-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <rect x="10" y="14" width="28" height="28" rx="4" fill="none" stroke="#AA44F0" stroke-width="6"/>
-  <rect x="60" y="14" width="28" height="28" rx="4" fill="none" stroke="#AA44F0" stroke-width="6"/>
+  <rect x="12" y="12" width="28" height="28" rx="4" fill="none" stroke="#AA44F0" stroke-width="6"/>
+  <rect x="60" y="12" width="28" height="28" rx="4" fill="none" stroke="#AA44F0" stroke-width="6"/>
+  <rect x="12" y="60" width="28" height="28" rx="4" fill="none" stroke="#AA44F0" stroke-width="6"/>
   <rect x="22" y="22" width="8" height="8" fill="#C66EFF"/>
   <rect x="70" y="22" width="8" height="8" fill="#C66EFF"/>
+  <rect x="22" y="70" width="8" height="8" fill="#C66EFF"/>
+  <rect x="60" y="60" width="10" height="10" fill="#8B2FC9"/>
+  <rect x="78" y="60" width="10" height="10" fill="#C66EFF"/>
+  <rect x="60" y="78" width="10" height="10" fill="#C66EFF"/>
+  <rect x="78" y="78" width="10" height="10" fill="#8B2FC9"/>
 </svg><div class="related-card-body"><h4>مولّد QR Code</h4><p>اعمل QR منفصل لأي رابط تاني</p></div></a><a class="related-card" href="https://newsouladv.com/landing-page-maker.html"><svg class="related-card-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <rect x="10" y="14" width="80" height="72" rx="8" fill="#160D2E" stroke="#AA44F0" stroke-width="2.5"/>
   <rect x="20" y="24" width="30" height="8" rx="2" fill="#C66EFF"/>
+  <rect x="20" y="40" width="60" height="6" rx="2" fill="rgba(170,68,240,.4)"/>
+  <rect x="20" y="52" width="45" height="6" rx="2" fill="rgba(170,68,240,.4)"/>
+  <rect x="20" y="68" width="24" height="10" rx="5" fill="#8B2FC9"/>
 </svg><div class="related-card-body"><h4>صانع الصفحات الاحترافية</h4><p>صفحة هبوط كاملة لنشاطك</p></div></a><a class="related-card" href="https://newsouladv.com/color-palette-tool.html"><svg class="related-card-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <rect x="6" y="46" width="19" height="46" rx="6" fill="#E94F8A"/>
   <rect x="27" y="32" width="19" height="60" rx="6" fill="#F2C230"/>
   <rect x="48" y="18" width="19" height="74" rx="6" fill="#2FC9A8"/>
-</svg><div class="related-card-body"><h4>مولّد لوحات الألوان</h4><p>حدّد لون هويتك الأساسية</p></div></a><a class="related-card" href="https://newsouladv.com/tools.html"><picture><source srcset="images/exhibitions-guide-cover.webp" type="image/webp" /><img src="images/exhibitions-guide-cover.jpg" alt="كل أدوات المصممين" loading="lazy" /></picture><div class="related-card-body"><h4>كل أدوات المصممين</h4><p>شوف باقي الأدوات المجانية</p></div></a></div></div></section>
+  <rect x="69" y="30" width="19" height="62" rx="6" fill="#8B2FC9"/>
+  <circle cx="78" cy="16" r="10" fill="#160D2E" stroke="#AA44F0" stroke-width="2.5"/>
+  <circle cx="78" cy="16" r="4" fill="#C66EFF"/>
+</svg><div class="related-card-body"><h4>مولّد لوحات الألوان</h4><p>حدّد لون هويتك الأساسية</p></div></a><a class="related-card" href="https://newsouladv.com/tools.html"><svg class="related-card-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect x="12" y="12" width="34" height="34" rx="8" fill="#8B2FC9"/>
+  <rect x="54" y="12" width="34" height="34" rx="8" fill="#C66EFF" opacity=".8"/>
+  <rect x="12" y="54" width="34" height="34" rx="8" fill="#C66EFF" opacity=".8"/>
+  <rect x="54" y="54" width="34" height="34" rx="8" fill="#8B2FC9"/>
+  <circle cx="29" cy="29" r="6" fill="#0E0820"/>
+  <circle cx="71" cy="71" r="6" fill="#0E0820"/>
+</svg><div class="related-card-body"><h4>كل أدوات المصممين</h4><p>شوف باقي الأدوات المجانية</p></div></a></div></div></section>
 
 <section id="faq" style="background:var(--dark)"><div class="section-inner"><p class="section-label">الأسئلة الشائعة</p><h2 class="section-title">أسئلة متكررة عن البطاقة الرقمية</h2><div style="display:flex;flex-direction:column;gap:24px;max-width:820px;margin-top:32px"><div><h3 style="font-size:1.05rem;margin-bottom:8px;color:var(--white)">إزاي العميل يحفظ بياناتي؟</h3><p style="color:var(--gray);line-height:1.9;font-size:.95rem">يمسح الـ QR بكاميرا موبايله، يفتح ملف جهة الاتصال، ويحفظه في جهات اتصاله زي أي رقم عادي.</p></div><div><h3 style="font-size:1.05rem;margin-bottom:8px;color:var(--white)">لازم أرفعها على موقعي علشان الـ QR يشتغل؟</h3><p style="color:var(--gray);line-height:1.9;font-size:.95rem">لأ، الـ QR بيحمل بياناتك جواه مباشرة ويحفظها في جهات الاتصال من غير أي استضافة. الاستضافة بس لو عايز صفحة ويب كاملة بأزرار تواصل جاهزة.</p></div><div><h3 style="font-size:1.05rem;margin-bottom:8px;color:var(--white)">أقدر أغيّر بياناتي بعدين؟</h3><p style="color:var(--gray);line-height:1.9;font-size:.95rem">لو استضفناها احنا، تقدر تطلب تحديث في أي وقت من غير ما تعيد طباعة الـ QR.</p></div></div></div></section>
 
@@ -511,10 +596,25 @@ document.addEventListener('DOMContentLoaded', function(){
 <button type="button" id="backToTopBtn" class="back-to-top-fab" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="ارجع لأعلى الصفحة" style="display:none">
 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
 </button>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode/1.5.0/qrcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script>
 var vcardPhotoDataUrl = null;
-var vcardQrInstance = null;
+
+var vcardIndustryColors = {
+  ecommerce: '#FF6B35', realestate: '#1B3A5C', clinics: '#0EA5A5', restaurants: '#C1272D',
+  education: '#2563EB', automotive: '#1A1A2E', tourism: '#00A8CC', fashion: '#0A0A0A',
+  tech: '#6366F1', finance: '#0B3954', beauty: '#C08497', construction: '#F77F00',
+  manufacturing: '#3A506B', fitness: '#39FF14', luxury: '#C9A96E', kids: '#FF6B9D',
+  general: '#8B2FC9'
+};
+
+function onVcardIndustryChange(){
+  var industry = document.getElementById('vcardIndustry').value;
+  var color = vcardIndustryColors[industry];
+  if (color) document.getElementById('vcardColor').value = color;
+  updateVcardPreview();
+}
 
 function onVcardPhotoSelected(e){
   var file = e.target.files[0];
@@ -554,7 +654,7 @@ function buildVcardText(){
   return lines.join('\n');
 }
 
-function buildVcardPageHtml(){
+function buildVcardPageHtml(qrDataUrl){
   var name = document.getElementById('vcardName').value.trim() || 'اسمك هنا';
   var title = document.getElementById('vcardTitle').value.trim();
   var company = document.getElementById('vcardCompany').value.trim();
@@ -565,6 +665,9 @@ function buildVcardPageHtml(){
   var color = document.getElementById('vcardColor').value || '#8B2FC9';
   var facebook = document.getElementById('vcardFacebook').value.trim().replace(/^@/, '');
   var instagram = document.getElementById('vcardInstagram').value.trim().replace(/^@/, '');
+  var font = document.getElementById('vcardFont').value || 'Tajawal';
+  var dir = document.getElementById('vcardDirection').value || 'rtl';
+  var fontUrl = 'https://fonts.googleapis.com/css2?family=' + font.replace(/ /g, '+') + ':wght@400;700;900&display=swap';
 
   var photoHtml = vcardPhotoDataUrl
     ? '<img src="' + vcardPhotoDataUrl + '" alt="' + escapeHtmlVcard(name) + '" class="vc-photo" />'
@@ -582,12 +685,14 @@ function buildVcardPageHtml(){
 
   var vcardBase64 = btoa(unescape(encodeURIComponent(buildVcardText())));
 
-  return '<!DOCTYPE html>\n<html lang="ar" dir="rtl">\n<head>\n<meta charset="UTF-8" />\n<meta name="viewport" content="width=device-width, initial-scale=1.0" />\n<title>' + escapeHtmlVcard(name) + (company ? ' - ' + escapeHtmlVcard(company) : '') + '</title>\n<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet" />\n<style>\n' +
+  var qrHtml = qrDataUrl ? '<div class="vc-qr-box"><img src="' + qrDataUrl + '" alt="QR - احفظني في جهات الاتصال" class="vc-qr-img" /><p class="vc-qr-label">امسح الكود لحفظي في جهات اتصالك</p></div>' : '';
+
+  return '<!DOCTYPE html>\n<html lang="' + (dir === "ltr" ? "en" : "ar") + '" dir="' + dir + '">\n<head>\n<meta charset="UTF-8" />\n<meta name="viewport" content="width=device-width, initial-scale=1.0" />\n<title>' + escapeHtmlVcard(name) + (company ? ' - ' + escapeHtmlVcard(company) : '') + '</title>\n<link href="' + fontUrl + '" rel="stylesheet" />\n<style>\n' +
     '*{margin:0;padding:0;box-sizing:border-box}\n' +
-    'body{font-family:"Tajawal",Tahoma,Arial,sans-serif;background:linear-gradient(160deg,' + color + '22,#0a0a12 60%);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}\n' +
+    'body{font-family:"' + font + '",Tahoma,Arial,sans-serif;background:linear-gradient(160deg,' + color + '22,#0a0a12 60%);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}\n' +
     '.vc-card{background:#14101f;border:1px solid ' + color + '55;border-radius:24px;padding:40px 28px;max-width:380px;width:100%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.4)}\n' +
-    '.vc-photo{width:110px;height:110px;border-radius:50%;object-fit:cover;margin:0 auto 20px;border:3px solid ' + color + '}\n' +
-    '.vc-photo-placeholder{display:flex;align-items:center;justify-content:center;background:' + color + ';color:#fff;font-size:2.5rem;font-weight:900}\n' +
+    '.vc-photo{max-width:150px;max-height:110px;width:auto;height:auto;object-fit:contain;margin:0 auto 20px;display:block}\n' +
+    '.vc-photo-placeholder{width:110px;height:110px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:' + color + ';color:#fff;font-size:2.5rem;font-weight:900;margin:0 auto 20px}\n' +
     '.vc-name{color:#fff;font-size:1.5rem;font-weight:900;margin-bottom:6px}\n' +
     '.vc-title{color:' + color + ';font-weight:700;font-size:1rem;margin-bottom:2px}\n' +
     '.vc-company{color:#aaa;font-size:.9rem;margin-bottom:24px}\n' +
@@ -597,6 +702,9 @@ function buildVcardPageHtml(){
     '.vc-address{color:#888;font-size:.85rem;margin-bottom:16px}\n' +
     '.vc-social-row{display:flex;justify-content:center;gap:10px;margin-bottom:20px}\n' +
     '.vc-social{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.08);color:#fff;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:.8rem;font-weight:700}\n' +
+    '.vc-qr-box{background:#fff;border-radius:16px;padding:16px;margin-bottom:20px}\n' +
+    '.vc-qr-img{width:100%;max-width:180px;display:block;margin:0 auto}\n' +
+    '.vc-qr-label{color:#333;font-size:.75rem;font-weight:700;margin-top:8px}\n' +
     '.vc-save{display:inline-block;background:' + color + ';color:#fff;padding:14px 28px;border-radius:50px;text-decoration:none;font-weight:900;cursor:pointer;border:none;font-size:.95rem;font-family:inherit}\n' +
     '.vc-credit{color:#555;font-size:.7rem;margin-top:24px}\n' +
     '.vc-credit a{color:' + color + ';text-decoration:none}\n' +
@@ -608,31 +716,55 @@ function buildVcardPageHtml(){
     '<div class="vc-buttons">' + buttons + '</div>' +
     (address ? '<p class="vc-address">📍 ' + escapeHtmlVcard(address) + '</p>' : '') +
     (socialHtml ? '<div class="vc-social-row">' + socialHtml + '</div>' : '') +
+    qrHtml +
     '<a class="vc-save" download="' + escapeHtmlVcard(name).replace(/\s+/g,'-') + '.vcf" href="data:text/vcard;base64,' + vcardBase64 + '">💾 احفظني في جهات الاتصال</a>' +
     '<p class="vc-credit">بطاقة رقمية بواسطة <a href="https://newsouladv.com" target="_blank" rel="noopener">New Soul Advertising</a></p>' +
     '</div>\n</body>\n</html>';
 }
 
-function updateVcardPreview(){
-  var html = buildVcardPageHtml();
-  var frame = document.getElementById('vcardPreviewFrame');
-  frame.srcdoc = html;
-  renderVcardQr();
+var vcardPreviewDebounceTimer = null;
+function updateVcardPreviewDebounced(){
+  clearTimeout(vcardPreviewDebounceTimer);
+  vcardPreviewDebounceTimer = setTimeout(updateVcardPreview, 350);
 }
 
-function renderVcardQr(){
-  var container = document.getElementById('vcardQrHidden');
-  if (!container) return;
-  container.innerHTML = '';
-  var color = document.getElementById('vcardColor').value || '#8B2FC9';
-  vcardQrInstance = new QRCode(container, {
-    text: buildVcardText(),
-    width: 500,
-    height: 500,
-    colorDark: color,
-    colorLight: '#FFFFFF',
-    correctLevel: QRCode.CorrectLevel.M
+function updateVcardPreview(){
+  renderVcardQrAsync(function(qrDataUrl){
+    var html = buildVcardPageHtml(qrDataUrl);
+    var frame = document.getElementById('vcardPreviewFrame');
+    frame.srcdoc = html;
   });
+}
+
+var vcardQrRequestId = 0;
+
+function renderVcardQrAsync(callback){
+  if (typeof QRCode === 'undefined' || !QRCode.toDataURL){
+    callback(null);
+    return;
+  }
+  var myRequestId = ++vcardQrRequestId;
+  var color = document.getElementById('vcardColor').value || '#8B2FC9';
+  try {
+    QRCode.toDataURL(buildVcardText(), {
+      width: 500,
+      margin: 1,
+      errorCorrectionLevel: 'M',
+      color: { dark: color, light: '#FFFFFF' }
+    }, function(err, url){
+      // If a newer request started while we were waiting, this result is stale — ignore it
+      if (myRequestId !== vcardQrRequestId) return;
+      if (err){
+        console.warn('QR generation failed:', err);
+        callback(null);
+        return;
+      }
+      callback(url);
+    });
+  } catch (err) {
+    console.warn('QR generation failed:', err);
+    callback(null);
+  }
 }
 
 function submitVcardDownloadForm(e){
@@ -660,30 +792,354 @@ function submitVcardDownloadForm(e){
 function triggerVcardDownloads(){
   var vname = (document.getElementById('vcardName').value.trim() || 'card').replace(/\s+/g, '-');
 
-  // 1. HTML page
-  var htmlBlob = new Blob([buildVcardPageHtml()], { type: 'text/html' });
-  var htmlLink = document.createElement('a');
-  htmlLink.download = 'digital-card-' + vname + '.html';
-  htmlLink.href = URL.createObjectURL(htmlBlob);
-  htmlLink.click();
+  renderVcardQrAsync(function(qrDataUrl){
+    // 1. HTML page (with QR embedded inside the card design)
+    var htmlBlob = new Blob([buildVcardPageHtml(qrDataUrl)], { type: 'text/html' });
+    var htmlLink = document.createElement('a');
+    htmlLink.download = 'digital-card-' + vname + '.html';
+    htmlLink.href = URL.createObjectURL(htmlBlob);
+    htmlLink.click();
 
-  // 2. vCard file
-  var vcfBlob = new Blob([buildVcardText()], { type: 'text/vcard' });
-  var vcfLink = document.createElement('a');
-  vcfLink.download = vname + '.vcf';
-  vcfLink.href = URL.createObjectURL(vcfBlob);
-  setTimeout(function(){ vcfLink.click(); }, 300);
+    // 2. vCard file
+    var vcfBlob = new Blob([buildVcardText()], { type: 'text/vcard' });
+    var vcfLink = document.createElement('a');
+    vcfLink.download = vname + '.vcf';
+    vcfLink.href = URL.createObjectURL(vcfBlob);
+    setTimeout(function(){ vcfLink.click(); }, 300);
 
-  // 3. QR image
-  setTimeout(function(){
-    var canvas = document.getElementById('vcardQrHidden').querySelector('canvas');
-    if (canvas){
-      var qrLink = document.createElement('a');
-      qrLink.download = 'qr-' + vname + '.png';
-      qrLink.href = canvas.toDataURL('image/png');
-      qrLink.click();
+    // 3. QR image (standalone, for printing on physical cards)
+    setTimeout(function(){
+      if (qrDataUrl){
+        var qrLink = document.createElement('a');
+        qrLink.download = 'qr-' + vname + '.png';
+        qrLink.href = qrDataUrl;
+        qrLink.click();
+      }
+    }, 600);
+  });
+}
+
+function drawVcardIcon(ctx, type, x, y, size, accentColor){
+  ctx.save();
+  ctx.translate(x, y);
+  var s = size;
+
+  ctx.fillStyle = accentColor;
+  ctx.strokeStyle = '#fff';
+  ctx.lineWidth = Math.max(1, s * 0.09);
+
+  if (type === 'phone'){
+    ctx.beginPath();
+    ctx.arc(s/2, s/2, s/2, 0, Math.PI*2);
+    ctx.fill();
+    ctx.beginPath();
+    ctx.moveTo(s*0.3, s*0.22);
+    ctx.bezierCurveTo(s*0.22, s*0.3, s*0.3, s*0.5, s*0.45, s*0.6);
+    ctx.bezierCurveTo(s*0.55, s*0.72, s*0.7, s*0.78, s*0.78, s*0.7);
+    ctx.lineTo(s*0.68, s*0.58);
+    ctx.lineTo(s*0.58, s*0.62);
+    ctx.bezierCurveTo(s*0.5, s*0.56, s*0.44, s*0.5, s*0.4, s*0.42);
+    ctx.lineTo(s*0.44, s*0.32);
+    ctx.lineTo(s*0.3, s*0.22);
+    ctx.closePath();
+    ctx.fillStyle = '#fff';
+    ctx.fill();
+  } else if (type === 'email'){
+    ctx.beginPath();
+    ctx.arc(s/2, s/2, s/2, 0, Math.PI*2);
+    ctx.fillStyle = accentColor;
+    ctx.fill();
+    var ex = s*0.22, ey = s*0.34, ew = s*0.56, eh = s*0.34;
+    ctx.strokeStyle = '#fff';
+    ctx.lineWidth = Math.max(1, s*0.07);
+    ctx.strokeRect(ex, ey, ew, eh);
+    ctx.beginPath();
+    ctx.moveTo(ex, ey);
+    ctx.lineTo(ex + ew/2, ey + eh*0.65);
+    ctx.lineTo(ex + ew, ey);
+    ctx.stroke();
+  } else if (type === 'globe'){
+    ctx.beginPath();
+    ctx.arc(s/2, s/2, s/2, 0, Math.PI*2);
+    ctx.fill();
+    ctx.strokeStyle = '#fff';
+    ctx.lineWidth = Math.max(1, s*0.06);
+    ctx.beginPath();
+    ctx.arc(s/2, s/2, s*0.32, 0, Math.PI*2);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.ellipse(s/2, s/2, s*0.14, s*0.32, 0, 0, Math.PI*2);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(s*0.2, s/2); ctx.lineTo(s*0.8, s/2);
+    ctx.stroke();
+  } else if (type === 'facebook'){
+    ctx.beginPath();
+    ctx.arc(s/2, s/2, s/2, 0, Math.PI*2);
+    ctx.fill();
+    ctx.fillStyle = '#fff';
+    ctx.font = '900 ' + Math.round(s*0.6) + 'px Georgia, serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('f', s/2, s/2 + s*0.05);
+  } else if (type === 'instagram'){
+    ctx.beginPath();
+    ctx.arc(s/2, s/2, s/2, 0, Math.PI*2);
+    ctx.fill();
+    ctx.strokeStyle = '#fff';
+    ctx.lineWidth = Math.max(1, s*0.08);
+    if (ctx.roundRect){
+      ctx.beginPath();
+      ctx.roundRect(s*0.22, s*0.22, s*0.56, s*0.56, s*0.14);
+      ctx.stroke();
+    } else {
+      ctx.strokeRect(s*0.22, s*0.22, s*0.56, s*0.56);
     }
-  }, 600);
+    ctx.beginPath();
+    ctx.arc(s/2, s/2, s*0.15, 0, Math.PI*2);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(s*0.66, s*0.34, s*0.045, 0, Math.PI*2);
+    ctx.fillStyle = '#fff';
+    ctx.fill();
+  } else if (type === 'pin'){
+    ctx.beginPath();
+    ctx.arc(s/2, s*0.4, s*0.4, 0, Math.PI*2);
+    ctx.fill();
+    ctx.beginPath();
+    ctx.moveTo(s*0.5, s*0.98);
+    ctx.lineTo(s*0.28, s*0.55);
+    ctx.lineTo(s*0.72, s*0.55);
+    ctx.closePath();
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(s/2, s*0.4, s*0.16, 0, Math.PI*2);
+    ctx.fillStyle = '#fff';
+    ctx.fill();
+  }
+  ctx.restore();
+}
+
+function downloadVcardPrintPng(){
+  var fontName = document.getElementById('vcardFont').value || 'Tajawal';
+  var fontSpec = '900 32px "' + fontName + '"';
+  // Ensure the chosen webfont is actually loaded before we draw text with it
+  if (document.fonts && document.fonts.load){
+    Promise.all([
+      document.fonts.load('900 32px "' + fontName + '"'),
+      document.fonts.load('700 32px "' + fontName + '"'),
+      document.fonts.load('400 32px "' + fontName + '"')
+    ]).then(drawVcardPrintCanvas).catch(drawVcardPrintCanvas);
+  } else {
+    drawVcardPrintCanvas();
+  }
+}
+
+function drawVcardPrintCanvas(){
+  var canvas = document.getElementById('vcardPrintCanvas');
+  var ctx = canvas.getContext('2d');
+
+  var W = 1063, H = 591;
+  canvas.width = W;
+  canvas.height = H;
+
+  var MM = 300 / 25.4;
+  var PT = 300 / 72;
+
+  var color = document.getElementById('vcardColor').value || '#8B2FC9';
+  var font = document.getElementById('vcardFont').value || 'Tajawal';
+  var dir = document.getElementById('vcardDirection').value || 'rtl';
+  var name = document.getElementById('vcardName').value.trim() || 'اسمك هنا';
+  var title = document.getElementById('vcardTitle').value.trim();
+  var company = document.getElementById('vcardCompany').value.trim();
+  var phone = document.getElementById('vcardPhone').value.trim();
+  var email = document.getElementById('vcardEmail').value.trim();
+  var website = document.getElementById('vcardWebsite').value.trim();
+  var address = document.getElementById('vcardAddress').value.trim();
+  var facebook = document.getElementById('vcardFacebook').value.trim();
+  var instagram = document.getElementById('vcardInstagram').value.trim();
+
+  function fontStr(weight, sizePx){ return weight + ' ' + Math.round(sizePx) + 'px "' + font + '", Tajawal, sans-serif'; }
+
+  // Background
+  ctx.fillStyle = '#14101f';
+  ctx.fillRect(0, 0, W, H);
+  var grad = ctx.createLinearGradient(0, 0, W, H);
+  grad.addColorStop(0, color + '22');
+  grad.addColorStop(1, '#14101f');
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, W, H);
+
+  // Accent edge: right side for RTL (leading edge), left side for LTR
+  ctx.fillStyle = color;
+  if (dir === 'rtl'){ ctx.fillRect(W - 10, 0, 10, H); }
+  else { ctx.fillRect(0, 0, 10, H); }
+
+  var outerMargin = 4 * MM;
+  var logoW = 13 * MM;
+  var qrSize = 20 * MM;
+  var qrMargin = 1.5 * MM;
+  var stackGap = 2.5 * MM;
+  var leftColWidth = Math.max(logoW, qrSize + qrMargin * 2);
+
+  // ---- Direction-aware anchors ----
+  // colX = left edge of the logo/QR column; textAnchorX = anchor edge for the text block; textAlign accordingly.
+  var colX = (dir === 'rtl') ? outerMargin : (W - outerMargin - leftColWidth);
+  var textAnchorX = (dir === 'rtl') ? (W - outerMargin) : outerMargin;
+  var textAlign = (dir === 'rtl') ? 'right' : 'left';
+  var dividerX0 = (dir === 'rtl') ? (colX + leftColWidth + (4 * MM)) : textAnchorX;
+  var dividerX1 = (dir === 'rtl') ? textAnchorX : (colX - (4 * MM));
+
+  function drawPrintContent(){
+    var logoDrawX, logoDrawY, logoDrawW, logoDrawH;
+    var logoMaxH = logoW;
+
+    // Pre-calculate logo dimensions first so we can vertically center the whole logo+QR stack
+    var hasRealPhoto = !!(vcardPhotoDataUrl && window.__vcardPrintPhotoImg);
+    if (hasRealPhoto){
+      var img = window.__vcardPrintPhotoImg;
+      var ratio = Math.min(logoW / img.width, logoMaxH / img.height);
+      logoDrawW = img.width * ratio;
+      logoDrawH = img.height * ratio;
+    } else {
+      logoDrawW = logoW;
+      logoDrawH = logoW;
+    }
+
+    var qrBoxSize = qrSize + qrMargin * 2;
+    var stackHeight = logoDrawH + stackGap + qrBoxSize;
+    var stackTop = (H - stackHeight) / 2;
+
+    logoDrawX = colX + (leftColWidth - logoDrawW) / 2;
+    logoDrawY = stackTop;
+
+    if (hasRealPhoto){
+      ctx.drawImage(window.__vcardPrintPhotoImg, logoDrawX, logoDrawY, logoDrawW, logoDrawH);
+    } else {
+      ctx.fillStyle = color;
+      if (ctx.roundRect){
+        ctx.beginPath();
+        ctx.roundRect(logoDrawX, logoDrawY, logoDrawW, logoDrawH, 10);
+        ctx.fill();
+      } else {
+        ctx.fillRect(logoDrawX, logoDrawY, logoDrawW, logoDrawH);
+      }
+      ctx.fillStyle = '#fff';
+      ctx.font = fontStr('900', logoDrawW * 0.45);
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(name.charAt(0) || '?', logoDrawX + logoDrawW / 2, logoDrawY + logoDrawH / 2 + 2);
+    }
+
+    ctx.textAlign = textAlign;
+    ctx.textBaseline = 'alphabetic';
+
+    var nameSizePt = 15;
+    var titleSizePt = 9;
+    var companySizePt = 11;
+
+    var ty = outerMargin + (nameSizePt * PT);
+    ctx.fillStyle = '#fff';
+    ctx.font = fontStr('900', nameSizePt * PT);
+    ctx.fillText(name, textAnchorX, ty);
+
+    if (title){
+      ty += (2.5 * MM) + (titleSizePt * PT);
+      ctx.fillStyle = color;
+      ctx.font = fontStr('700', titleSizePt * PT);
+      ctx.fillText(title, textAnchorX, ty);
+    }
+    if (company){
+      ty += (5 * MM);
+      ctx.fillStyle = '#aaa';
+      ctx.font = fontStr('400', companySizePt * PT);
+      ctx.fillText(company, textAnchorX, ty);
+    }
+
+    var dividerY = ty + (2.5 * MM);
+    ctx.strokeStyle = 'rgba(255,255,255,.15)';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(dividerX0, dividerY);
+    ctx.lineTo(dividerX1, dividerY);
+    ctx.stroke();
+
+    // ---- Contact info block with real drawn icons ----
+    var contactSizePt = 6.5;
+    var iconSize = 3 * MM;
+    var iconTextGap = 1.6 * MM;
+    var cy = dividerY + (2 * MM);
+    var lineGap = Math.max(iconSize, contactSizePt * PT) + (0.7 * MM);
+
+    ctx.font = fontStr('400', contactSizePt * PT);
+
+    function contactLine(iconType, text){
+      if (!text) return;
+      ctx.fillStyle = '#ddd';
+      ctx.textAlign = textAlign;
+      var textBaselineY = cy + iconSize * 0.72;
+      var iconX = (dir === 'rtl') ? (textAnchorX - iconSize) : textAnchorX;
+      var textX = (dir === 'rtl') ? (textAnchorX - iconSize - iconTextGap) : (textAnchorX + iconSize + iconTextGap);
+      ctx.fillText(text, textX, textBaselineY);
+      drawVcardIcon(ctx, iconType, iconX, cy, iconSize, color);
+      cy += lineGap;
+    }
+
+    contactLine('phone', phone);
+    contactLine('email', email);
+    contactLine('globe', website);
+    contactLine('facebook', facebook);
+    contactLine('instagram', instagram);
+    contactLine('pin', address);
+
+    // ---- QR: centered in the logo/QR column ----
+    renderVcardQrAsync(function(qrDataUrl){
+      if (qrDataUrl){
+        var qrImg = new Image();
+        qrImg.onload = function(){
+          var qx = colX + (leftColWidth - qrSize) / 2;
+          var qy = logoDrawY + logoDrawH + stackGap + qrMargin;
+          ctx.fillStyle = '#fff';
+          ctx.fillRect(qx - qrMargin, qy - qrMargin, qrSize + qrMargin * 2, qrSize + qrMargin * 2);
+          ctx.drawImage(qrImg, qx, qy, qrSize, qrSize);
+          finishPrintDownload(canvas, name);
+        };
+        qrImg.src = qrDataUrl;
+      } else {
+        finishPrintDownload(canvas, name);
+      }
+    });
+  }
+
+  if (vcardPhotoDataUrl){
+    var photoImg = new Image();
+    photoImg.onload = function(){
+      window.__vcardPrintPhotoImg = photoImg;
+      drawPrintContent();
+    };
+    photoImg.src = vcardPhotoDataUrl;
+  } else {
+    drawPrintContent();
+  }
+}
+function finishPrintDownload(canvas, name){
+  var fileBase = (name.trim().replace(/\s+/g, '-') || 'card');
+  if (window.jspdf && window.jspdf.jsPDF){
+    try {
+      var jsPDF = window.jspdf.jsPDF;
+      var doc = new jsPDF({ orientation: 'landscape', unit: 'mm', format: [90, 50] });
+      doc.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, 90, 50);
+      doc.save('print-card-' + fileBase + '.pdf');
+      return;
+    } catch (err) {
+      console.warn('PDF export failed, falling back to PNG:', err);
+    }
+  }
+  // Fallback: PNG download if the PDF library didn't load
+  var link = document.createElement('a');
+  link.download = 'print-card-' + fileBase + '.png';
+  link.href = canvas.toDataURL('image/png');
+  link.click();
 }
 
 function submitVcardHostingForm(e){
@@ -712,7 +1168,7 @@ function submitVcardHostingForm(e){
 }
 
 document.addEventListener('DOMContentLoaded', function(){
-  updateVcardPreview();
+  onVcardIndustryChange();
 });
 </script>
 
@@ -799,16 +1255,4 @@ function shareThisPage(){
   </div>
 </div>
 </body>
-</html
-<div class="project-callout">
-  <span class="project-callout-badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 4a6 6 0 110 12 6 6 0 010-12zm0 3a3 3 0 100 6 3 3 0 000-6z"/></svg> عجبتك الأداة؟</span>
-  <h3>تابعنا عشان توصلك كل أداة جديدة أول بأول</h3>
-  <p>لو الخدمة عجبتك، اعمل لايك لصفحتنا على فيسبوك وتابعنا على باقي وسائل التواصل الاجتماعي.</p>
-  <div class="icon-circle-row" style="margin-top:14px">
-    <a href="https://www.facebook.com/newsouladv/" class="icon-circle-btn" target="_blank" rel="noopener" aria-label="فيسبوك" title="اعمل لايك لصفحتنا"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94z"/></svg></a>
-    <a href="https://www.instagram.com/newsouladv/" class="icon-circle-btn" target="_blank" rel="noopener" aria-label="انستاجرام" title="تابعنا على انستاجرام"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c2.72 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.21.6 1.76 1.15.55.55.89 1.1 1.15 1.76.25.64.42 1.37.47 2.43.05 1.06.06 1.4.06 4.12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.47 2.43-.26.66-.6 1.21-1.15 1.76-.55.55-1.1.89-1.76 1.15-.64.25-1.37.42-2.43.47-1.06.05-1.4.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.47-.66-.26-1.21-.6-1.76-1.15-.55-.55-.89-1.1-1.15-1.76-.25-.64-.42-1.37-.47-2.43C2.01 15.06 2 14.72 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.21 1.15-1.76.55-.55 1.1-.89 1.76-1.15.64-.25 1.37-.42 2.43-.47C8.94 2.01 9.28 2 12 2zm0 1.8c-2.67 0-2.99.01-4.04.06-.97.04-1.5.2-1.85.34-.46.18-.79.39-1.14.74-.35.35-.56.68-.74 1.14-.14.35-.3.88-.34 1.85-.05 1.05-.06 1.37-.06 4.04s.01 2.99.06 4.04c.04.97.2 1.5.34 1.85.18.46.39.79.74 1.14.35.35.68.56 1.14.74.35.14.88.3 1.85.34 1.05.05 1.37.06 4.04.06s2.99-.01 4.04-.06c.97-.04 1.5-.2 1.85-.34.46-.18.79-.39 1.14-.74.35-.35.56-.68.74-1.14.14-.35.3-.88.34-1.85.05-1.05.06-1.37.06-4.04s-.01-2.99-.06-4.04c-.04-.97-.2-1.5-.34-1.85-.18-.46-.39-.79-.74-1.14-.35-.35-.68-.56-1.14-.74-.35-.14-.88-.3-1.85-.34C14.99 3.81 14.67 3.8 12 3.8zm0 3.05a5.15 5.15 0 100 10.3 5.15 5.15 0 000-10.3zm0 8.5a3.35 3.35 0 110-6.7 3.35 3.35 0 010 6.7zm5.35-8.7a1.2 1.2 0 11-2.4 0 1.2 1.2 0 012.4 0z"/></svg></a>
-    <a href="https://www.tiktok.com/@newsouladv" class="icon-circle-btn" target="_blank" rel="noopener" aria-label="تيكتوك" title="تابعنا على تيك توك"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82c-1.01-.88-1.65-2.15-1.65-3.57h-3.09v12.4c0 1.4-1.13 2.55-2.54 2.55-1.4 0-2.55-1.15-2.55-2.55 0-1.68 1.62-2.96 3.3-2.44V9.13c-3.39-.45-6.35 2.18-6.35 5.53 0 3.27 2.71 5.59 5.58 5.59 3.08 0 5.58-2.5 5.58-5.59V9.4a7.2 7.2 0 0 0 4.22 1.35V7.68a4.19 4.19 0 0 1-2.5-1.86z"/></svg></a>
-    <a href="https://youtube.com/@newsouladv" class="icon-circle-btn" target="_blank" rel="noopener" aria-label="يوتيوب" title="اشترك في قناتنا"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2c-.3-1-1-1.8-2-2C19.7 3.7 12 3.7 12 3.7s-7.7 0-9.5.5c-1 .3-1.7 1-2 2C0 8 0 12 0 12s0 4 .5 5.8c.3 1 1 1.8 2 2 1.8.5 9.5.5 9.5.5s7.7 0 9.5-.5c1-.3 1.7-1 2-2 .5-1.8.5-5.8.5-5.8s0-4-.5-5.8zM9.5 15.5v-7l6.5 3.5-6.5 3.5z"/></svg></a>
-    <a href="https://whatsapp.com/channel/0029VbCXRU8545uvfCtWPl2W" class="icon-circle-btn" target="_blank" rel="noopener" aria-label="قناة واتساب" title="تابع قناتنا على واتساب"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3 10v4a1 1 0 0 0 1 1h2l1 5h2l-1-5h1l9 4V6L9 10H4a1 1 0 0 0-1 1z"/><path d="M20 9a3 3 0 0 1 0 6V9z"/></svg></a>
-  </div>
-</div>>
+</html>

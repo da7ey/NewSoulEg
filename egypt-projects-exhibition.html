@@ -273,7 +273,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <a href="https://wa.me/201090235208?text=أريد الاستفسار عن تنفيذ جناح في Egypt Projects" class="wa-fab" target="_blank" rel="noopener" aria-label="واتساب"><span class="wa-fab-tooltip">تواصل معنا</span><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="16" fill="#25D366"/><path d="M22.5 9.5A9 9 0 0 0 7.1 20.3L6 26l5.8-1.5a9 9 0 0 0 4.3 1.1 9 9 0 0 0 6.4-15.1z" fill="#fff"/><path d="M20.4 18.8c-.3-.1-1.6-.8-1.8-.9-.2-.1-.4-.1-.6.1-.2.2-.6.9-.8 1-.1.2-.3.2-.6.1-.3-.2-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.3-.5 0-.2 0-.4-.1-.5-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3 1 2.5c.1.2 1.6 2.4 3.8 3.4.5.2 1 .4 1.3.5.5.2 1 .1 1.4.1.4-.1 1.3-.5 1.5-1 .2-.5.2-.9.1-1-.1-.1-.2-.1-.4-.2z" fill="#25D366"/></svg></a>
 <button onclick="shareThisPage()" class="ns-share-btn" aria-label="مشاركة الصفحة"><span class="ns-share-btn-tooltip">مشاركة الصفحة</span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
 <a href="https://wa.me/201090235208?text=مرحباً نيسو، أريد الاستفسار عن خدمات نيو سول" class="niso-fab" target="_blank" rel="noopener" aria-label="تحدث مع نيسو عبر واتساب"><picture><source srcset="images/niso-mascot.webp" type="image/webp" /><img src="images/niso-mascot.png" alt="نيسو" width="56" height="56" loading="lazy" /></picture><span class="niso-fab-tooltip">تحدث مع نيسو</span></a>
-<button type="button" id="backToTopBtn" class="back-to-top-fab" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="ارجع لأعلى الصفحة" style="display:none">
+<button type="button" id="backToTopBtn" class="back-to-top-fab" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="ارجع لأعلى الصفحة" style="display:flex">
 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
 </button>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ExhibitionEvent","name":"Egypt Projects","location":{"@type":"Place","@id":"https://newsouladv.com/entities/eiec","name":"مركز مصر للمعارض الدولية","address":{"@type":"PostalAddress","streetAddress":"محور المشير طنطاوي، الحي العاشر","addressLocality":"مدينة نصر","addressRegion":"القاهرة","postalCode":"4440510","addressCountry":"EG"}},"startDate":"2026-09-05","endDate":"2026-09-07","mentions":{"@type":"Service","@id":"https://newsouladv.com/entities/exhibition-booth","name":"Exhibition Booth Design","provider":{"@id":"https://newsouladv.com/#organization"}},"description":"يُعد Egypt Projects المعرض الدولي لمواد البناء والتشييد، تأسس عام 2016 ويقام سنويًا في مركز مصر للمعارض الدولية، ويقدم مجموعة شاملة من الحلول والمنتجات المناسبة لسوق البناء في مصر والشرق الأوسط.","image":"https://newsouladv.com/images/og-image-exhibitions-generic.jpg","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","url":"https://newsouladv.com/egypt-projects-exhibition.html"}</script>
@@ -380,9 +380,9 @@ document.addEventListener('DOMContentLoaded', updateExhibitCountdown);
 
 function toggleBackToTop(){
   var btn = document.getElementById('backToTopBtn');
-  if (btn) btn.style.display = (window.scrollY > 400) ? 'flex' : 'none';
+  if (btn) btn.style.display = 'flex';
 }
-window.addEventListener('scroll', toggleBackToTop, {passive:true});
+toggleBackToTop();
 
 function shareThisPage(){
   if (navigator.share) {

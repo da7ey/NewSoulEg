@@ -308,6 +308,12 @@ a:not([class]):not(nav a):not(footer a):not(.toc-list a):not(.related-links-row 
 .icon-circle-btn:hover{transform:translateY(-3px);box-shadow:0 8px 26px rgba(170,68,240,.6)}
 .icon-circle-btn svg{fill:#FFFFFF!important;color:#FFFFFF!important}
 .icon-circle-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+.inv-item-input{width:100%;box-sizing:border-box;background:var(--surface);border:1.5px solid rgba(139,47,201,.35);border-radius:10px;padding:10px 12px;color:var(--white);font-family:"Tajawal",sans-serif;font-size:.9rem}
+.inv-field-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.inv-field-grid-3{grid-template-columns:1fr 1fr 1fr}
+@media(max-width:600px){.inv-field-grid{grid-template-columns:1fr}.inv-field-grid-3{grid-template-columns:1fr}}
+.inv-item-row{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:8px;margin-bottom:10px;align-items:center}
+@media(max-width:600px){.inv-item-row{grid-template-columns:1fr 1fr;grid-template-areas:"desc desc" "qty price" "total total"}.inv-item-row input:nth-child(1){grid-area:desc}.inv-item-row input:nth-child(2){grid-area:qty}.inv-item-row input:nth-child(3){grid-area:price}.inv-item-row-header{display:none}.inv-item-row:not(.inv-item-row-header) span{grid-area:total;text-align:center;padding:6px;background:rgba(139,47,201,.08);border-radius:8px}}
 </style>
 <style>
 .tool-box{background:rgba(139,47,201,.06);border:1px solid rgba(139,47,201,.2);border-radius:16px;padding:24px;margin:20px 0}
@@ -382,7 +388,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <h2 id="seller">1. بيانات شركتك (البائع)</h2>
 <div class="tool-box">
   <label for="invSellerName">اسم الشركة *</label>
-  <input type="text" id="invSellerName" placeholder="مثلاً: نيو سول للدعاية والإعلان" oninput="updateInvoicePreviewDebounced()" />
+  <input class="tool-text-input" type="text" id="invSellerName" placeholder="مثلاً: نيو سول للدعاية والإعلان" oninput="updateInvoicePreviewDebounced()" />
 
   <label for="invLogoUpload" style="margin-top:16px">لوجو الشركة</label>
   <input type="file" id="invLogoUpload" accept="image/*" style="display:none" onchange="onInvLogoSelected(event)" />
@@ -390,103 +396,103 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div id="invLogoPreviewWrap" style="display:none;margin-top:10px;text-align:center"><img id="invLogoPreviewImg" style="max-height:70px;border-radius:8px" /></div>
 
   <label for="invSellerAddress" style="margin-top:16px">العنوان</label>
-  <input type="text" id="invSellerAddress" placeholder="مثلاً: فيصل، الجيزة، مصر" oninput="updateInvoicePreviewDebounced()" />
+  <input class="tool-text-input" type="text" id="invSellerAddress" placeholder="مثلاً: فيصل، الجيزة، مصر" oninput="updateInvoicePreviewDebounced()" />
 
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px">
-    <div><label for="invSellerPhone">التليفون</label><input type="text" id="invSellerPhone" placeholder="01xxxxxxxxx" oninput="updateInvoicePreviewDebounced()" /></div>
-    <div><label for="invSellerTax">الرقم الضريبي (اختياري)</label><input type="text" id="invSellerTax" placeholder="مثلاً: 123-456-789" oninput="updateInvoicePreviewDebounced()" /></div>
+  <div class="inv-field-grid" style="margin-top:16px">
+    <div><label for="invSellerPhone">التليفون</label><input class="tool-text-input" type="text" id="invSellerPhone" placeholder="01xxxxxxxxx" oninput="updateInvoicePreviewDebounced()" /></div>
+    <div><label for="invSellerTax">الرقم الضريبي (اختياري)</label><input class="tool-text-input" type="text" id="invSellerTax" placeholder="مثلاً: 123-456-789" oninput="updateInvoicePreviewDebounced()" /></div>
   </div>
 
   <label for="invSellerEmail" style="margin-top:16px">البريد الإلكتروني (اختياري)</label>
-  <input type="text" id="invSellerEmail" placeholder="info@example.com" oninput="updateInvoicePreviewDebounced()" />
+  <input class="tool-text-input" type="text" id="invSellerEmail" placeholder="info@example.com" oninput="updateInvoicePreviewDebounced()" />
 </div>
 
 <h2 id="social">2. تواصل وسوشيال ميديا</h2>
 <div class="tool-box">
   <p class="tool-hint" style="margin-bottom:14px">هتظهر كأيقونات صغيرة في تذييل الفاتورة، واختياريًا تقدر تربط أي واحدة منهم بالـ QR Code تحت.</p>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-    <div><label for="invWhatsapp">واتساب</label><input type="text" id="invWhatsapp" placeholder="01xxxxxxxxx" oninput="updateInvoicePreviewDebounced()" /></div>
-    <div><label for="invWebsite">الموقع الإلكتروني</label><input type="text" id="invWebsite" placeholder="www.example.com" oninput="updateInvoicePreviewDebounced()" /></div>
-    <div><label for="invFacebook">فيسبوك</label><input type="text" id="invFacebook" placeholder="facebook.com/yourpage" oninput="updateInvoicePreviewDebounced()" /></div>
-    <div><label for="invInstagram">إنستجرام</label><input type="text" id="invInstagram" placeholder="instagram.com/yourpage" oninput="updateInvoicePreviewDebounced()" /></div>
+  <div class="inv-field-grid">
+    <div><label for="invWhatsapp">واتساب</label><input class="tool-text-input" type="text" id="invWhatsapp" placeholder="01xxxxxxxxx" oninput="updateInvoicePreviewDebounced()" /></div>
+    <div><label for="invWebsite">الموقع الإلكتروني</label><input class="tool-text-input" type="text" id="invWebsite" placeholder="www.example.com" oninput="updateInvoicePreviewDebounced()" /></div>
+    <div><label for="invFacebook">فيسبوك</label><input class="tool-text-input" type="text" id="invFacebook" placeholder="facebook.com/yourpage" oninput="updateInvoicePreviewDebounced()" /></div>
+    <div><label for="invInstagram">إنستجرام</label><input class="tool-text-input" type="text" id="invInstagram" placeholder="instagram.com/yourpage" oninput="updateInvoicePreviewDebounced()" /></div>
   </div>
 </div>
 
 <h2 id="client">3. بيانات العميل</h2>
 <div class="tool-box">
   <label for="invClientName">اسم العميل *</label>
-  <input type="text" id="invClientName" placeholder="اسم العميل أو الشركة" oninput="updateInvoicePreviewDebounced()" />
+  <input class="tool-text-input" type="text" id="invClientName" placeholder="اسم العميل أو الشركة" oninput="updateInvoicePreviewDebounced()" />
 
   <label for="invClientAddress" style="margin-top:16px">عنوان العميل</label>
-  <input type="text" id="invClientAddress" placeholder="العنوان (اختياري)" oninput="updateInvoicePreviewDebounced()" />
+  <input class="tool-text-input" type="text" id="invClientAddress" placeholder="العنوان (اختياري)" oninput="updateInvoicePreviewDebounced()" />
 
   <label for="invClientContact" style="margin-top:16px">تليفون أو إيميل العميل</label>
-  <input type="text" id="invClientContact" placeholder="اختياري" oninput="updateInvoicePreviewDebounced()" />
+  <input class="tool-text-input" type="text" id="invClientContact" placeholder="اختياري" oninput="updateInvoicePreviewDebounced()" />
 </div>
 
 <h2 id="invoice-meta">4. بيانات الفاتورة</h2>
 <div class="tool-box">
-  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
-    <div><label for="invNumber">رقم الفاتورة</label><input type="text" id="invNumber" placeholder="INV-001" oninput="updateInvoicePreviewDebounced()" /></div>
-    <div><label for="invDate">تاريخ الفاتورة</label><input type="date" id="invDate" oninput="updateInvoicePreviewDebounced()" /></div>
-    <div><label for="invDueDate">تاريخ الاستحقاق</label><input type="date" id="invDueDate" oninput="updateInvoicePreviewDebounced()" /></div>
+  <div class="inv-field-grid inv-field-grid-3">
+    <div><label for="invNumber">رقم الفاتورة</label><input class="tool-text-input" type="text" id="invNumber" placeholder="INV-001" oninput="updateInvoicePreviewDebounced()" /></div>
+    <div><label for="invDate">تاريخ الفاتورة</label><input class="tool-text-input" type="date" id="invDate" oninput="updateInvoicePreviewDebounced()" /></div>
+    <div><label for="invDueDate">تاريخ الاستحقاق</label><input class="tool-text-input" type="date" id="invDueDate" oninput="updateInvoicePreviewDebounced()" /></div>
   </div>
 </div>
 
 <h2 id="items">5. بنود الفاتورة</h2>
 <div class="tool-box">
-  <div style="display:grid;grid-template-columns:2fr 80px 100px 100px;gap:10px;margin-bottom:10px;font-size:.78rem;color:var(--gray);font-weight:700">
+  <div class="inv-item-row inv-item-row-header" style="font-size:.78rem;color:var(--gray);font-weight:700">
     <span>الوصف</span><span>الكمية</span><span>السعر</span><span>الإجمالي</span>
   </div>
-  <div class="inv-item-row" style="display:grid;grid-template-columns:2fr 80px 100px 100px;gap:10px;margin-bottom:10px;align-items:center">
-<input type="text" id="invItemDesc1" placeholder="وصف البند 1" oninput="updateInvoicePreviewDebounced()" />
-<input type="number" id="invItemQty1" placeholder="الكمية" min="0" step="1" oninput="updateInvoicePreviewDebounced()" />
-<input type="number" id="invItemPrice1" placeholder="السعر" min="0" step="0.01" oninput="updateInvoicePreviewDebounced()" />
+  <div class="inv-item-row">
+<input class="inv-item-input" type="text" id="invItemDesc1" placeholder="وصف البند 1" oninput="updateInvoicePreviewDebounced()" />
+<input class="inv-item-input" type="number" id="invItemQty1" placeholder="الكمية" min="0" step="1" oninput="updateInvoicePreviewDebounced()" />
+<input class="inv-item-input" type="number" id="invItemPrice1" placeholder="السعر" min="0" step="0.01" oninput="updateInvoicePreviewDebounced()" />
 <span id="invItemTotal1" style="color:var(--purple-glow);font-weight:700;font-size:.85rem;text-align:center">0.00</span>
-</div><div class="inv-item-row" style="display:grid;grid-template-columns:2fr 80px 100px 100px;gap:10px;margin-bottom:10px;align-items:center">
-<input type="text" id="invItemDesc2" placeholder="وصف البند 2" oninput="updateInvoicePreviewDebounced()" />
-<input type="number" id="invItemQty2" placeholder="الكمية" min="0" step="1" oninput="updateInvoicePreviewDebounced()" />
-<input type="number" id="invItemPrice2" placeholder="السعر" min="0" step="0.01" oninput="updateInvoicePreviewDebounced()" />
+</div><div class="inv-item-row">
+<input class="inv-item-input" type="text" id="invItemDesc2" placeholder="وصف البند 2" oninput="updateInvoicePreviewDebounced()" />
+<input class="inv-item-input" type="number" id="invItemQty2" placeholder="الكمية" min="0" step="1" oninput="updateInvoicePreviewDebounced()" />
+<input class="inv-item-input" type="number" id="invItemPrice2" placeholder="السعر" min="0" step="0.01" oninput="updateInvoicePreviewDebounced()" />
 <span id="invItemTotal2" style="color:var(--purple-glow);font-weight:700;font-size:.85rem;text-align:center">0.00</span>
-</div><div class="inv-item-row" style="display:grid;grid-template-columns:2fr 80px 100px 100px;gap:10px;margin-bottom:10px;align-items:center">
-<input type="text" id="invItemDesc3" placeholder="وصف البند 3" oninput="updateInvoicePreviewDebounced()" />
-<input type="number" id="invItemQty3" placeholder="الكمية" min="0" step="1" oninput="updateInvoicePreviewDebounced()" />
-<input type="number" id="invItemPrice3" placeholder="السعر" min="0" step="0.01" oninput="updateInvoicePreviewDebounced()" />
+</div><div class="inv-item-row">
+<input class="inv-item-input" type="text" id="invItemDesc3" placeholder="وصف البند 3" oninput="updateInvoicePreviewDebounced()" />
+<input class="inv-item-input" type="number" id="invItemQty3" placeholder="الكمية" min="0" step="1" oninput="updateInvoicePreviewDebounced()" />
+<input class="inv-item-input" type="number" id="invItemPrice3" placeholder="السعر" min="0" step="0.01" oninput="updateInvoicePreviewDebounced()" />
 <span id="invItemTotal3" style="color:var(--purple-glow);font-weight:700;font-size:.85rem;text-align:center">0.00</span>
-</div><div class="inv-item-row" style="display:grid;grid-template-columns:2fr 80px 100px 100px;gap:10px;margin-bottom:10px;align-items:center">
-<input type="text" id="invItemDesc4" placeholder="وصف البند 4" oninput="updateInvoicePreviewDebounced()" />
-<input type="number" id="invItemQty4" placeholder="الكمية" min="0" step="1" oninput="updateInvoicePreviewDebounced()" />
-<input type="number" id="invItemPrice4" placeholder="السعر" min="0" step="0.01" oninput="updateInvoicePreviewDebounced()" />
+</div><div class="inv-item-row">
+<input class="inv-item-input" type="text" id="invItemDesc4" placeholder="وصف البند 4" oninput="updateInvoicePreviewDebounced()" />
+<input class="inv-item-input" type="number" id="invItemQty4" placeholder="الكمية" min="0" step="1" oninput="updateInvoicePreviewDebounced()" />
+<input class="inv-item-input" type="number" id="invItemPrice4" placeholder="السعر" min="0" step="0.01" oninput="updateInvoicePreviewDebounced()" />
 <span id="invItemTotal4" style="color:var(--purple-glow);font-weight:700;font-size:.85rem;text-align:center">0.00</span>
-</div><div class="inv-item-row" style="display:grid;grid-template-columns:2fr 80px 100px 100px;gap:10px;margin-bottom:10px;align-items:center">
-<input type="text" id="invItemDesc5" placeholder="وصف البند 5" oninput="updateInvoicePreviewDebounced()" />
-<input type="number" id="invItemQty5" placeholder="الكمية" min="0" step="1" oninput="updateInvoicePreviewDebounced()" />
-<input type="number" id="invItemPrice5" placeholder="السعر" min="0" step="0.01" oninput="updateInvoicePreviewDebounced()" />
+</div><div class="inv-item-row">
+<input class="inv-item-input" type="text" id="invItemDesc5" placeholder="وصف البند 5" oninput="updateInvoicePreviewDebounced()" />
+<input class="inv-item-input" type="number" id="invItemQty5" placeholder="الكمية" min="0" step="1" oninput="updateInvoicePreviewDebounced()" />
+<input class="inv-item-input" type="number" id="invItemPrice5" placeholder="السعر" min="0" step="0.01" oninput="updateInvoicePreviewDebounced()" />
 <span id="invItemTotal5" style="color:var(--purple-glow);font-weight:700;font-size:.85rem;text-align:center">0.00</span>
-</div><div class="inv-item-row" style="display:grid;grid-template-columns:2fr 80px 100px 100px;gap:10px;margin-bottom:10px;align-items:center">
-<input type="text" id="invItemDesc6" placeholder="وصف البند 6" oninput="updateInvoicePreviewDebounced()" />
-<input type="number" id="invItemQty6" placeholder="الكمية" min="0" step="1" oninput="updateInvoicePreviewDebounced()" />
-<input type="number" id="invItemPrice6" placeholder="السعر" min="0" step="0.01" oninput="updateInvoicePreviewDebounced()" />
+</div><div class="inv-item-row">
+<input class="inv-item-input" type="text" id="invItemDesc6" placeholder="وصف البند 6" oninput="updateInvoicePreviewDebounced()" />
+<input class="inv-item-input" type="number" id="invItemQty6" placeholder="الكمية" min="0" step="1" oninput="updateInvoicePreviewDebounced()" />
+<input class="inv-item-input" type="number" id="invItemPrice6" placeholder="السعر" min="0" step="0.01" oninput="updateInvoicePreviewDebounced()" />
 <span id="invItemTotal6" style="color:var(--purple-glow);font-weight:700;font-size:.85rem;text-align:center">0.00</span>
-</div><div class="inv-item-row" style="display:grid;grid-template-columns:2fr 80px 100px 100px;gap:10px;margin-bottom:10px;align-items:center">
-<input type="text" id="invItemDesc7" placeholder="وصف البند 7" oninput="updateInvoicePreviewDebounced()" />
-<input type="number" id="invItemQty7" placeholder="الكمية" min="0" step="1" oninput="updateInvoicePreviewDebounced()" />
-<input type="number" id="invItemPrice7" placeholder="السعر" min="0" step="0.01" oninput="updateInvoicePreviewDebounced()" />
+</div><div class="inv-item-row">
+<input class="inv-item-input" type="text" id="invItemDesc7" placeholder="وصف البند 7" oninput="updateInvoicePreviewDebounced()" />
+<input class="inv-item-input" type="number" id="invItemQty7" placeholder="الكمية" min="0" step="1" oninput="updateInvoicePreviewDebounced()" />
+<input class="inv-item-input" type="number" id="invItemPrice7" placeholder="السعر" min="0" step="0.01" oninput="updateInvoicePreviewDebounced()" />
 <span id="invItemTotal7" style="color:var(--purple-glow);font-weight:700;font-size:.85rem;text-align:center">0.00</span>
-</div><div class="inv-item-row" style="display:grid;grid-template-columns:2fr 80px 100px 100px;gap:10px;margin-bottom:10px;align-items:center">
-<input type="text" id="invItemDesc8" placeholder="وصف البند 8" oninput="updateInvoicePreviewDebounced()" />
-<input type="number" id="invItemQty8" placeholder="الكمية" min="0" step="1" oninput="updateInvoicePreviewDebounced()" />
-<input type="number" id="invItemPrice8" placeholder="السعر" min="0" step="0.01" oninput="updateInvoicePreviewDebounced()" />
+</div><div class="inv-item-row">
+<input class="inv-item-input" type="text" id="invItemDesc8" placeholder="وصف البند 8" oninput="updateInvoicePreviewDebounced()" />
+<input class="inv-item-input" type="number" id="invItemQty8" placeholder="الكمية" min="0" step="1" oninput="updateInvoicePreviewDebounced()" />
+<input class="inv-item-input" type="number" id="invItemPrice8" placeholder="السعر" min="0" step="0.01" oninput="updateInvoicePreviewDebounced()" />
 <span id="invItemTotal8" style="color:var(--purple-glow);font-weight:700;font-size:.85rem;text-align:center">0.00</span>
-</div><div class="inv-item-row" style="display:grid;grid-template-columns:2fr 80px 100px 100px;gap:10px;margin-bottom:10px;align-items:center">
-<input type="text" id="invItemDesc9" placeholder="وصف البند 9" oninput="updateInvoicePreviewDebounced()" />
-<input type="number" id="invItemQty9" placeholder="الكمية" min="0" step="1" oninput="updateInvoicePreviewDebounced()" />
-<input type="number" id="invItemPrice9" placeholder="السعر" min="0" step="0.01" oninput="updateInvoicePreviewDebounced()" />
+</div><div class="inv-item-row">
+<input class="inv-item-input" type="text" id="invItemDesc9" placeholder="وصف البند 9" oninput="updateInvoicePreviewDebounced()" />
+<input class="inv-item-input" type="number" id="invItemQty9" placeholder="الكمية" min="0" step="1" oninput="updateInvoicePreviewDebounced()" />
+<input class="inv-item-input" type="number" id="invItemPrice9" placeholder="السعر" min="0" step="0.01" oninput="updateInvoicePreviewDebounced()" />
 <span id="invItemTotal9" style="color:var(--purple-glow);font-weight:700;font-size:.85rem;text-align:center">0.00</span>
-</div><div class="inv-item-row" style="display:grid;grid-template-columns:2fr 80px 100px 100px;gap:10px;margin-bottom:10px;align-items:center">
-<input type="text" id="invItemDesc10" placeholder="وصف البند 10" oninput="updateInvoicePreviewDebounced()" />
-<input type="number" id="invItemQty10" placeholder="الكمية" min="0" step="1" oninput="updateInvoicePreviewDebounced()" />
-<input type="number" id="invItemPrice10" placeholder="السعر" min="0" step="0.01" oninput="updateInvoicePreviewDebounced()" />
+</div><div class="inv-item-row">
+<input class="inv-item-input" type="text" id="invItemDesc10" placeholder="وصف البند 10" oninput="updateInvoicePreviewDebounced()" />
+<input class="inv-item-input" type="number" id="invItemQty10" placeholder="الكمية" min="0" step="1" oninput="updateInvoicePreviewDebounced()" />
+<input class="inv-item-input" type="number" id="invItemPrice10" placeholder="السعر" min="0" step="0.01" oninput="updateInvoicePreviewDebounced()" />
 <span id="invItemTotal10" style="color:var(--purple-glow);font-weight:700;font-size:.85rem;text-align:center">0.00</span>
 </div>
 </div>
@@ -494,7 +500,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <h2 id="totals">6. الضريبة والملاحظات</h2>
 <div class="tool-box">
   <label for="invTaxRate">نسبة الضريبة % (اختياري)</label>
-  <input type="number" id="invTaxRate" value="14" min="0" max="100" step="0.5" oninput="updateInvoicePreviewDebounced()" style="max-width:150px" />
+  <input class="tool-text-input" type="number" id="invTaxRate" value="14" min="0" max="100" step="0.5" oninput="updateInvoicePreviewDebounced()" style="max-width:150px" />
 
   <label for="invNotes" style="margin-top:16px">ملاحظات إضافية (اختياري)</label>
   <textarea id="invNotes" rows="3" placeholder="مثلاً: شكرًا لتعاملكم معنا، أو شروط الدفع" oninput="updateInvoicePreviewDebounced()"></textarea>
@@ -832,7 +838,7 @@ function shareThisPage(){
 <div class="site-search-overlay" id="siteSearchOverlay">
   <div class="site-search-box">
     <button class="site-search-close" onclick="toggleSiteSearch()" aria-label="إغلاق">×</button>
-    <input type="text" id="siteSearchInput" placeholder="ابحث في الموقع... (مثلاً: أجنحة معارض، الإسكندرية)" autocomplete="off" oninput="runSiteSearch()" />
+    <input class="tool-text-input" type="text" id="siteSearchInput" placeholder="ابحث في الموقع... (مثلاً: أجنحة معارض، الإسكندرية)" autocomplete="off" oninput="runSiteSearch()" />
     <div id="siteSearchResults" class="site-search-results"></div>
   </div>
 </div>

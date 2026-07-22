@@ -406,7 +406,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div>
         <p class="tool-hint" style="text-align:center;margin-bottom:8px;font-weight:700">بعد (Vector SVG)</p>
-        <div id="vecSvgPreviewBox" style="background:#2a2a2a;border-radius:12px;padding:12px;display:flex;align-items:center;justify-content:center;min-height:200px;overflow:hidden"></div>
+        <div id="vecSvgPreviewBox" style="background:#ffffff;border-radius:12px;padding:12px;display:flex;align-items:center;justify-content:center;min-height:200px;overflow:hidden"></div>
       </div>
     </div>
     <p id="vecLoadingStatus" class="tool-hint" style="text-align:center"></p>
@@ -420,7 +420,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <p id="vecDownloadHint" class="tool-hint" style="text-align:center;margin-top:10px">هيتفعّل الزرار بعد رفع صورة ومعالجتها</p>
 </div>
 
-<div class="note-box">💡 الناتج دلوقتي عبارة عن خطوط تفريغية (Outline) بلون بنفسجي وسمك 1 بيكسل، من غير تلوين أو تعبئة داخلية. الأداة دي بتعمل أفضل مع اللوجوهات والرسومات البسيطة ذات الألوان الواضحة (مش الصور الفوتوغرافية المعقّدة). النتيجة بتعتمد على وضوح الصورة الأصلية - لوجو بجودة كويسة هيدّي نتيجة Vector أنضف.</div>
+<div class="note-box">💡 الناتج بيحافظ على ألوان اللوجو الأصلية وتعبئته الكاملة. الأداة دي بتديك أفضل نتيجة مع اللوجوهات والشعارات البسيطة الواضحة الألوان (مش الصور الفوتوغرافية المعقّدة أو التدرجات الكتير). لو الصورة الأصلية جودتها عالية وخلفيتها نضيفة (من غير ضوضاء أو تشويش)، هتاخد نتيجة Vector أنضف بكتير. لو اللوجو معقّد جدًا أو محتاج دقة احترافية 100%، ابعتلنا الملف على واتساب وفريقنا هيجهزلك نسخة Vector يدوية مضبوطة.</div>
 
 <div class="project-callout">
   <span class="project-callout-badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> النتيجة مش نضيفة كفاية؟</span>
@@ -503,12 +503,12 @@ var vecInitPromise = init().then(function(){ vecPotraceReady = true; }).catch(fu
 // turdsize: suppresses speckle noise smaller than this many pixels (fixes speckle around shapes/text).
 // alphamax + opticurve/opttolerance: Potrace's native curve-smoothing math (fixes jagged/noisy curves).
 var vecOptionSets = {
-  'clean':     { turdsize: 8,  turnpolicy: 4, alphamax: 1.2,  opticurve: 1, opttolerance: 0.4, extractcolors: true,  posterizelevel: 4, posterizationalgorithm: 0 },
-  'sharp':     { turdsize: 5,  turnpolicy: 4, alphamax: 0.3,  opticurve: 1, opttolerance: 0.2, extractcolors: true,  posterizelevel: 6, posterizationalgorithm: 0 },
-  'smoothed':  { turdsize: 12, turnpolicy: 4, alphamax: 1.33, opticurve: 1, opttolerance: 0.6, extractcolors: true,  posterizelevel: 3, posterizationalgorithm: 0 },
-  'detailed':  { turdsize: 3,  turnpolicy: 4, alphamax: 1.15, opticurve: 1, opttolerance: 0.2, extractcolors: true,  posterizelevel: 8, posterizationalgorithm: 0 },
-  'fewcolors': { turdsize: 10, turnpolicy: 4, alphamax: 1.25, opticurve: 1, opttolerance: 0.4, extractcolors: true,  posterizelevel: 2, posterizationalgorithm: 0 },
-  'grayscale': { turdsize: 8,  turnpolicy: 4, alphamax: 1.25, opticurve: 1, opttolerance: 0.4, extractcolors: false, posterizelevel: 4, posterizationalgorithm: 0 }
+  'clean':     { turdsize: 4,  turnpolicy: 4, alphamax: 1,    opticurve: 1, opttolerance: 0.2, extractcolors: true,  posterizelevel: 5, posterizationalgorithm: 1 },
+  'sharp':     { turdsize: 3,  turnpolicy: 4, alphamax: 0.4,  opticurve: 1, opttolerance: 0.15,extractcolors: true,  posterizelevel: 6, posterizationalgorithm: 1 },
+  'smoothed':  { turdsize: 6,  turnpolicy: 4, alphamax: 1.3,  opticurve: 1, opttolerance: 0.5, extractcolors: true,  posterizelevel: 4, posterizationalgorithm: 1 },
+  'detailed':  { turdsize: 2,  turnpolicy: 4, alphamax: 1,    opticurve: 1, opttolerance: 0.15,extractcolors: true,  posterizelevel: 10,posterizationalgorithm: 1 },
+  'fewcolors': { turdsize: 6,  turnpolicy: 4, alphamax: 1.1,  opticurve: 1, opttolerance: 0.3, extractcolors: true,  posterizelevel: 2, posterizationalgorithm: 1 },
+  'grayscale': { turdsize: 4,  turnpolicy: 4, alphamax: 1,    opticurve: 1, opttolerance: 0.2, extractcolors: false, posterizelevel: 5, posterizationalgorithm: 1 }
 };
 
 window.setVecStyle = function(style, btnEl){
@@ -533,34 +533,6 @@ window.onVecImageSelected = function(e){
   reader.readAsDataURL(file);
 };
 
-function convertSvgToPurpleOutline(svgString){
-  try {
-    var parser = new DOMParser();
-    var doc = parser.parseFromString(svgString, 'image/svg+xml');
-    var svgEl = doc.querySelector('svg');
-    if (!svgEl) return svgString;
-
-    // Strip fill/stroke from any wrapping groups so they don't override our path styling
-    doc.querySelectorAll('g').forEach(function(g){
-      g.removeAttribute('fill');
-      g.removeAttribute('stroke');
-    });
-
-    // Force every traced shape into a 1px purple outline (no fill)
-    doc.querySelectorAll('path').forEach(function(p){
-      p.setAttribute('fill', 'none');
-      p.setAttribute('stroke', '#8B2FC9');
-      p.setAttribute('stroke-width', '1');
-      p.setAttribute('vector-effect', 'non-scaling-stroke');
-    });
-
-    return new XMLSerializer().serializeToString(svgEl);
-  } catch (err) {
-    console.warn('Outline conversion failed, using original SVG:', err);
-    return svgString;
-  }
-}
-
 function runVectorize(){
   if (!vecImageDataUrl) return;
 
@@ -582,8 +554,17 @@ function runVectorize(){
     }
     var img = new Image();
     img.onload = function(){
-      potrace(img, options).then(function(svgString){
-        svgString = convertSvgToPurpleOutline(svgString);
+      // Pre-process: draw to canvas with a very light smoothing pass to reduce
+      // JPEG/pixel-level noise that otherwise gets traced as jagged micro-edges.
+      var preCanvas = document.createElement('canvas');
+      var maxDim = 1200;
+      var scale = Math.min(1, maxDim / Math.max(img.naturalWidth, img.naturalHeight));
+      preCanvas.width = Math.max(1, Math.round(img.naturalWidth * scale));
+      preCanvas.height = Math.max(1, Math.round(img.naturalHeight * scale));
+      var preCtx = preCanvas.getContext('2d');
+      try { preCtx.filter = 'blur(0.5px)'; } catch(e) {}
+      preCtx.drawImage(img, 0, 0, preCanvas.width, preCanvas.height);
+      potrace(preCanvas, options).then(function(svgString){
         vecLastSvgString = svgString;
         svgBox.innerHTML = svgString;
         var svgEl = svgBox.querySelector('svg');

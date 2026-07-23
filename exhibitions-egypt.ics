@@ -1,0 +1,526 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//New Soul Advertising//Exhibitions Calendar Egypt//AR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:أجندة المعارض في مصر - نيو سول
+X-WR-CALDESC:مواعيد أهم المعارض التجارية في مصر (القاهرة والجيزة) - محدّثة باستمرار من نيو سول للدعاية والإعلان
+X-WR-TIMEZONE:Africa/Cairo
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:newsouladv-exh-20260728-0@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20260728
+DTEND;VALUE=DATE:20260731
+SUMMARY:EDUGATE
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/edugate-egypt.html
+URL:https://newsouladv.com/edugate-egypt.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20260811-1@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20260811
+DTEND;VALUE=DATE:20260813
+SUMMARY:Solar & Storage Live Egypt
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/solar-storage-live-egypt.ht
+ ml
+URL:https://newsouladv.com/solar-storage-live-egypt.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20260820-2@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20260820
+DTEND;VALUE=DATE:20260823
+SUMMARY:Smart Tech Expo
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/smart-tech-expo-egypt.html
+URL:https://newsouladv.com/smart-tech-expo-egypt.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20260820-3@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20260820
+DTEND;VALUE=DATE:20260823
+SUMMARY:Middle East Lighting Expo
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/middle-east-lighting-expo.h
+ tml
+URL:https://newsouladv.com/middle-east-lighting-expo.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20260901-4@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20260901
+DTEND;VALUE=DATE:20260904
+SUMMARY:Pharmaconex
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/pharmaconex-egypt.html
+URL:https://newsouladv.com/pharmaconex-egypt.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20260903-5@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20260903
+DTEND;VALUE=DATE:20260906
+SUMMARY:Cairo Fashion & Tex
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/cairo-fashion-tex.html
+URL:https://newsouladv.com/cairo-fashion-tex.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20260905-6@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20260905
+DTEND;VALUE=DATE:20260908
+SUMMARY:Egypt Projects
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/egypt-projects-exhibition.h
+ tml
+URL:https://newsouladv.com/egypt-projects-exhibition.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20260915-7@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20260915
+DTEND;VALUE=DATE:20260918
+SUMMARY:معارض Paper ME - Tissue ME - Print2Pack
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/paper-me-print2pack-egypt.h
+ tml
+URL:https://newsouladv.com/paper-me-print2pack-egypt.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20260922-8@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20260922
+DTEND;VALUE=DATE:20260925
+SUMMARY:Sahara Expo
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/sahara-expo-egypt.html
+URL:https://newsouladv.com/sahara-expo-egypt.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20260928-9@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20260928
+DTEND;VALUE=DATE:20260930
+SUMMARY:Egypt Mining Forum
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/egypt-mining-forum.html
+URL:https://newsouladv.com/egypt-mining-forum.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20260930-10@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20260930
+DTEND;VALUE=DATE:20261004
+SUMMARY:Cityscape Egypt
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/cityscape-egypt.html
+URL:https://newsouladv.com/cityscape-egypt.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20261007-11@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20261007
+DTEND;VALUE=DATE:20261010
+SUMMARY:EgyMedica
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/egymedica-egypt.html
+URL:https://newsouladv.com/egymedica-egypt.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20261009-12@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20261009
+DTEND;VALUE=DATE:20261012
+SUMMARY:Autotech Egypt
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/autotech-egypt.html
+URL:https://newsouladv.com/autotech-egypt.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20261012-13@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20261012
+DTEND;VALUE=DATE:20261015
+SUMMARY:FIREX Egypt
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/firex-egypt.html
+URL:https://newsouladv.com/firex-egypt.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20261012-14@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20261012
+DTEND;VALUE=DATE:20261015
+SUMMARY:Egypt Energy
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/egypt-energy.html
+URL:https://newsouladv.com/egypt-energy.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20261016-15@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20261016
+DTEND;VALUE=DATE:20261019
+SUMMARY:Agrena
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/agrena-egypt.html
+URL:https://newsouladv.com/agrena-egypt.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20261019-16@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20261019
+DTEND;VALUE=DATE:20261022
+SUMMARY:HACE Hotel Expo
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/hace-hotel-expo-egypt.html
+URL:https://newsouladv.com/hace-hotel-expo-egypt.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20261022-17@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20261022
+DTEND;VALUE=DATE:20261026
+SUMMARY:Egypt Fabric & Yarn
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/egypt-fabric-yarn.html
+URL:https://newsouladv.com/egypt-fabric-yarn.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20261029-18@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20261029
+DTEND;VALUE=DATE:20261102
+SUMMARY:Le Marché
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/le-marche-egypt.html
+URL:https://newsouladv.com/le-marche-egypt.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20261108-19@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20261108
+DTEND;VALUE=DATE:20261112
+SUMMARY:Cairo ICT
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/cairo-ict.html
+URL:https://newsouladv.com/cairo-ict.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20261110-20@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20261110
+DTEND;VALUE=DATE:20261112
+SUMMARY:الضيافة والفنادق في مصر
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/hospitality-hotel-show-egyp
+ t.html
+URL:https://newsouladv.com/hospitality-hotel-show-egypt.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20261114-21@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261117
+SUMMARY:NDTX Expo
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/ndtx-expo-egypt.html
+URL:https://newsouladv.com/ndtx-expo-egypt.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20261119-22@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20261119
+DTEND;VALUE=DATE:20261123
+SUMMARY:ICS Exhibition - Ceramica Market & Homex
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/ics-ceramica-market-egypt.h
+ tml
+URL:https://newsouladv.com/ics-ceramica-market-egypt.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20261126-23@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20261126
+DTEND;VALUE=DATE:20261130
+SUMMARY:Cairo WoodShow
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/cairo-woodshow-egypt.html
+URL:https://newsouladv.com/cairo-woodshow-egypt.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20261126-24@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20261126
+DTEND;VALUE=DATE:20261130
+SUMMARY:الأثاث الدولي في مصر (IFAC Cairo)
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/egypt-furniture-show.html
+URL:https://newsouladv.com/egypt-furniture-show.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20261207-25@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20261207
+DTEND;VALUE=DATE:20261211
+SUMMARY:Fresh Africa
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/fresh-africa-egypt.html
+URL:https://newsouladv.com/fresh-africa-egypt.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20261207-26@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20261207
+DTEND;VALUE=DATE:20261211
+SUMMARY:Food Africa
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/food-africa.html
+URL:https://newsouladv.com/food-africa.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20261207-27@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20261207
+DTEND;VALUE=DATE:20261211
+SUMMARY:pacprocess MEA
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/pacprocess-mea-egypt.html
+URL:https://newsouladv.com/pacprocess-mea-egypt.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20261217-28@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20261217
+DTEND;VALUE=DATE:20261221
+SUMMARY:MACTECH Egypt
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/mactech-egypt.html
+URL:https://newsouladv.com/mactech-egypt.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20261217-29@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20261217
+DTEND;VALUE=DATE:20261221
+SUMMARY:AIRTECH
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/airtech-egypt.html
+URL:https://newsouladv.com/airtech-egypt.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20261217-30@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20261217
+DTEND;VALUE=DATE:20261221
+SUMMARY:Handling Expo
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/handling-expo-egypt.html
+URL:https://newsouladv.com/handling-expo-egypt.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20261218-31@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20261218
+DTEND;VALUE=DATE:20261221
+SUMMARY:Cairo Inter Leather
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/cairo-inter-leather.html
+URL:https://newsouladv.com/cairo-inter-leather.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20270329-32@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20270329
+DTEND;VALUE=DATE:20270401
+SUMMARY:EGYPES
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/egypes.html
+URL:https://newsouladv.com/egypes.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20270424-33@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20270424
+DTEND;VALUE=DATE:20270427
+SUMMARY:Egy Beauty Africa
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/egy-beauty-africa.html
+URL:https://newsouladv.com/egy-beauty-africa.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20270506-34@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20270506
+DTEND;VALUE=DATE:20270509
+SUMMARY:WindoorEX Middle East
+LOCATION:مركز مصر الدولي للمؤتمرات
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/windoorex-egypt.html
+URL:https://newsouladv.com/windoorex-egypt.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20270524-35@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20270524
+DTEND;VALUE=DATE:20270527
+SUMMARY:HVAC-R Egypt Expo
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/hvac-r-egypt-expo.html
+URL:https://newsouladv.com/hvac-r-egypt-expo.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20270601-36@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20270601
+DTEND;VALUE=DATE:20270604
+SUMMARY:Fi Africa
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/fi-africa-egypt.html
+URL:https://newsouladv.com/fi-africa-egypt.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20270610-37@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20270610
+DTEND;VALUE=DATE:20270613
+SUMMARY:Workspace Expo
+LOCATION:مركز مصر الدولي للمؤتمرات
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/workspace-expo-egypt.html
+URL:https://newsouladv.com/workspace-expo-egypt.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20270610-38@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20270610
+DTEND;VALUE=DATE:20270613
+SUMMARY:The Design Show
+LOCATION:مركز مصر الدولي للمؤتمرات
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/the-design-show-egypt.html
+URL:https://newsouladv.com/the-design-show-egypt.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20270614-39@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20270614
+DTEND;VALUE=DATE:20270617
+SUMMARY:Egypt Infrastructure & Water Expo
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/egypt-infrastructure-water-
+ expo.html
+URL:https://newsouladv.com/egypt-infrastructure-water-expo.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20270614-40@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20270614
+DTEND;VALUE=DATE:20270617
+SUMMARY:Big 5 Construct Egypt
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/new-soul-big5-construct-egy
+ pt.html
+URL:https://newsouladv.com/new-soul-big5-construct-egypt.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20270614-41@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20270614
+DTEND;VALUE=DATE:20270618
+SUMMARY:Africa Health ExCon
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/africa-health-excon.html
+URL:https://newsouladv.com/africa-health-excon.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20270720-42@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20270720
+DTEND;VALUE=DATE:20270722
+SUMMARY:Seamless North Africa
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/seamless-north-africa-egypt
+ .html
+URL:https://newsouladv.com/seamless-north-africa-egypt.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20270904-43@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20270904
+DTEND;VALUE=DATE:20270907
+SUMMARY:Metal & Steel Egypt
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/metal-steel-egypt.html
+URL:https://newsouladv.com/metal-steel-egypt.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20271206-44@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20271206
+DTEND;VALUE=DATE:20271210
+SUMMARY:EDEX Egypt Defence Expo
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/edex.html
+URL:https://newsouladv.com/edex.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20280109-45@newsouladv.com
+DTSTAMP:20260723T152423Z
+DTSTART;VALUE=DATE:20280109
+DTEND;VALUE=DATE:20280113
+SUMMARY:Plastex
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:تفاصيل أكتر على موقع نيو سول للدعا
+ ية والإعلان: https://newsouladv.com/plastex-egypt.html
+URL:https://newsouladv.com/plastex-egypt.html
+END:VEVENT
+END:VCALENDAR

@@ -1158,6 +1158,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<section id="gallery-work" style="background:var(--surface)"><div class="section-inner"><h2 class="section-title" style="text-align:center">جناح Fischer × PILLARS - Big 5 Construct Egypt</h2>
+<p style="color:var(--gray);margin-bottom:24px;text-align:center">نموذج حقيقي من تنفيذ نيو سول لجناح معرض متكامل. اضغط على أي صورة لمعاينتها بحجم أكبر.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px">
+<div onclick="openNsegLightbox(0)" style="cursor:pointer;display:block;border-radius:12px;overflow:hidden;aspect-ratio:1/1"><picture><source srcset="images/extracted-new-soul-exhibitions-59.webp" type="image/webp" /><img src="images/extracted-new-soul-exhibitions-59.jpg" alt="الجناح الكامل - تعاون فيشر و PILLARS" loading="lazy" style="width:100%;height:100%;object-fit:cover" /></picture></div>
+<div onclick="openNsegLightbox(1)" style="cursor:pointer;display:block;border-radius:12px;overflow:hidden;aspect-ratio:1/1"><picture><source srcset="images/extracted-new-soul-exhibitions-56.webp" type="image/webp" /><img src="images/extracted-new-soul-exhibitions-56.jpg" alt="مدخل جناح فيشر - معرض Big 5 Construct Egypt 2026" loading="lazy" style="width:100%;height:100%;object-fit:cover" /></picture></div>
+<div onclick="openNsegLightbox(2)" style="cursor:pointer;display:block;border-radius:12px;overflow:hidden;aspect-ratio:1/1"><picture><source srcset="images/extracted-new-soul-exhibitions-60.webp" type="image/webp" /><img src="images/extracted-new-soul-exhibitions-60.jpg" alt="مدخل جناح فيشر من زاوية أخرى - Big 5 Construct Egypt 2026" loading="lazy" style="width:100%;height:100%;object-fit:cover" /></picture></div>
+<div onclick="openNsegLightbox(3)" style="cursor:pointer;display:block;border-radius:12px;overflow:hidden;aspect-ratio:1/1"><picture><source srcset="images/extracted-new-soul-exhibitions-58.webp" type="image/webp" /><img src="images/extracted-new-soul-exhibitions-58.jpg" alt="محطات العرض التفاعلية - جناح فيشر" loading="lazy" style="width:100%;height:100%;object-fit:cover" /></picture></div>
+<div onclick="openNsegLightbox(4)" style="cursor:pointer;display:block;border-radius:12px;overflow:hidden;aspect-ratio:1/1"><picture><source srcset="images/extracted-new-soul-exhibitions-57.webp" type="image/webp" /><img src="images/extracted-new-soul-exhibitions-57.jpg" alt="منطقة عرض منتجات FireStop - فيشر" loading="lazy" style="width:100%;height:100%;object-fit:cover" /></picture></div>
+</div>
+</div></section>
+
 <!-- WHY US -->
 <section class="why-bg" id="why-us" aria-labelledby="why-heading">
   <div class="section-inner">
@@ -1354,5 +1365,62 @@ var siteSearchIndex = [{"t": "معرض PETZOO Africa 2027 | دليل نيو سو
     <div id="siteSearchResults" class="site-search-results"></div>
   </div>
 </div>
+<style>
+.nseglb-box{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.92);align-items:center;justify-content:center;flex-direction:column}
+.nseglb-box.open{display:flex}
+.nseglb-box img{max-width:90vw;max-height:78vh;border-radius:12px;box-shadow:0 0 60px rgba(139,47,201,.4);object-fit:contain}
+.nseglb-cap{color:var(--purple-glow,#AA44F0);font-size:.92rem;margin-top:14px;text-align:center;padding:0 20px}
+.nseglb-close{position:absolute;top:20px;left:24px;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer;z-index:2}
+.nseglb-prev,.nseglb-next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(14,8,32,.7);border:1px solid rgba(170,68,240,.4);color:#fff;font-size:1.8rem;width:50px;height:64px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.nseglb-prev{right:20px}.nseglb-next{left:20px}
+</style>
+<div class="nseglb-box" id="nseglbBox" role="dialog" aria-modal="true">
+<button class="nseglb-close" onclick="closeNsegLightbox()" aria-label="إغلاق">×</button>
+<button class="nseglb-prev" onclick="shiftNsegLightbox(1)" aria-label="السابق">&#8250;</button>
+<img id="nseglb-img" src="" alt="" />
+<p class="nseglb-cap" id="nseglb-cap"></p>
+<button class="nseglb-next" onclick="shiftNsegLightbox(-1)" aria-label="التالي">&#8249;</button>
+</div>
+<script>
+var nsegGalleryImages = [
+  {src:'images/extracted-new-soul-exhibitions-59.jpg', caption:'الجناح الكامل - تعاون فيشر و PILLARS'},
+  {src:'images/extracted-new-soul-exhibitions-56.jpg', caption:'مدخل جناح فيشر - معرض Big 5 Construct Egypt 2026'},
+  {src:'images/extracted-new-soul-exhibitions-60.jpg', caption:'مدخل جناح فيشر من زاوية أخرى - Big 5 Construct Egypt 2026'},
+  {src:'images/extracted-new-soul-exhibitions-58.jpg', caption:'محطات العرض التفاعلية - جناح فيشر'},
+  {src:'images/extracted-new-soul-exhibitions-57.jpg', caption:'منطقة عرض منتجات FireStop - فيشر'},
+];
+
+var nseglbCurrentIndex = 0;
+function updateNsegLightbox(){
+  var item = nsegGalleryImages[nseglbCurrentIndex];
+  document.getElementById('nseglb-img').src = item.src;
+  document.getElementById('nseglb-img').alt = item.caption;
+  document.getElementById('nseglb-cap').textContent = item.caption;
+}
+function openNsegLightbox(index){
+  nseglbCurrentIndex = index;
+  updateNsegLightbox();
+  document.getElementById('nseglbBox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeNsegLightbox(){
+  document.getElementById('nseglbBox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function shiftNsegLightbox(dir){
+  nseglbCurrentIndex = (nseglbCurrentIndex + dir + nsegGalleryImages.length) % nsegGalleryImages.length;
+  updateNsegLightbox();
+}
+document.addEventListener('keydown', function(e){
+  var box = document.getElementById('nseglbBox');
+  if(!box || !box.classList.contains('open')) return;
+  if(e.key === 'Escape') closeNsegLightbox();
+  if(e.key === 'ArrowRight') shiftNsegLightbox(1);
+  if(e.key === 'ArrowLeft') shiftNsegLightbox(-1);
+});
+document.getElementById('nseglbBox') && document.getElementById('nseglbBox').addEventListener('click', function(e){
+  if(e.target === this) closeNsegLightbox();
+});
+</script>
 </body>
 </html>

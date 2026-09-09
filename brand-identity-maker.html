@@ -393,7 +393,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <label for="invLogoUpload" style="margin-top:16px">لوجو الشركة</label>
   <input type="file" id="invLogoUpload" accept="image/*" style="display:none" onchange="onInvLogoSelected(event)" />
   <label for="invLogoUpload" class="tool-upload-label" style="display:block;text-align:center;padding:20px;border:2px dashed rgba(139,47,201,.4);border-radius:14px;cursor:pointer;color:var(--purple-glow);font-weight:700;margin-top:8px">📁 ارفع لوجو شركتك (اختياري)</label>
-  <div id="invLogoPreviewWrap" style="display:none;margin-top:10px;text-align:center"><img id="invLogoPreviewImg" style="max-height:70px;border-radius:8px" /></div>
+  <div id="invLogoPreviewWrap" style="display:none;margin-top:10px;text-align:center"><img id="invLogoPreviewImg" alt="معاينة شعار الشركة" style="max-height:70px;border-radius:8px" /></div>
 
   <label for="invSellerAddress" style="margin-top:16px">العنوان</label>
   <input class="tool-text-input" type="text" id="invSellerAddress" placeholder="مثلاً: فيصل، الجيزة، مصر" oninput="updateInvoicePreviewDebounced()" />
@@ -588,7 +588,7 @@ function getBrandSocialIconsHtml(d, color){
 
 function buildCardHtml(d){
   var social = getBrandSocialIconsHtml(d, d.color);
-  var logo = d.logo ? '<img src="' + d.logo + '" style="max-height:32px;max-width:110px" />' : '';
+  var logo = d.logo ? '<img src="' + d.logo + '" alt="شعار العلامة التجارية" style="max-height:32px;max-width:110px" />' : '';
   if (currentBrandStyle === 'modern'){
     return '<!DOCTYPE html><html dir="rtl"><head><meta charset="UTF-8"/><style>@page{size:85mm 55mm;margin:0}body{margin:0;font-family:Tajawal,Arial,sans-serif}.wrap{width:85mm;height:55mm;box-sizing:border-box;display:flex}.side{width:8mm;background:' + d.color + '}.main{flex:1;padding:5mm;display:flex;flex-direction:column;justify-content:space-between}</style></head><body><div class="wrap"><div class="side"></div><div class="main"><div>' + logo + '<div style="font-weight:900;font-size:13px;margin-top:4px">' + d.name + '</div></div><div style="font-size:8px;color:#555;line-height:1.6">' + (d.phone?'☎ '+d.phone+'<br/>':'') + (d.email?d.email+'<br/>':'') + (d.address?d.address:'') + '<div style="margin-top:4px">' + social + '</div></div></div></div></body></html>';
   }
@@ -597,13 +597,13 @@ function buildCardHtml(d){
 
 function buildLetterheadHtml(d){
   var social = getBrandSocialIconsHtml(d, d.color);
-  var logo = d.logo ? '<img src="' + d.logo + '" style="max-height:60px;max-width:160px" />' : '';
+  var logo = d.logo ? '<img src="' + d.logo + '" alt="شعار العلامة التجارية" style="max-height:60px;max-width:160px" />' : '';
   return '<!DOCTYPE html><html dir="rtl"><head><meta charset="UTF-8"/><style>@page{size:A4;margin:0}body{margin:0;font-family:Tajawal,Arial,sans-serif}.wrap{width:210mm;height:297mm;box-sizing:border-box;position:relative}.top{padding:15mm 15mm 8mm;border-bottom:3px solid ' + d.color + ';display:flex;justify-content:space-between;align-items:center}.bottom{position:absolute;bottom:0;width:100%;box-sizing:border-box;padding:8mm 15mm;border-top:1px solid #eee;font-size:9px;color:#888;display:flex;justify-content:space-between}</style></head><body><div class="wrap"><div class="top"><div>' + logo + '<div style="font-weight:900;font-size:16px;color:' + d.color + ';margin-top:4px">' + d.name + '</div></div><div style="font-size:9px;color:#666;text-align:left">' + (d.phone?d.phone+'<br/>':'') + (d.email?d.email:'') + '</div></div><div class="bottom"><span>' + (d.address||'') + '</span><span>' + social + '</span></div></div></body></html>';
 }
 
 function buildEnvelopeHtml(d, size){
   var social = getBrandSocialIconsHtml(d, d.color);
-  var logo = d.logo ? '<img src="' + d.logo + '" style="max-height:30px;max-width:100px" />' : '';
+  var logo = d.logo ? '<img src="' + d.logo + '" alt="شعار العلامة التجارية" style="max-height:30px;max-width:100px" />' : '';
   var w = size === 'c4' ? '229mm' : '241mm';
   var h = size === 'c4' ? '324mm' : '105mm';
   return '<!DOCTYPE html><html dir="rtl"><head><meta charset="UTF-8"/><style>@page{size:' + w + ' ' + h + ';margin:0}body{margin:0;font-family:Tajawal,Arial,sans-serif}.wrap{width:' + w + ';height:' + h + ';box-sizing:border-box;padding:10mm;position:relative}.sender{position:absolute;top:10mm;right:10mm;text-align:right}</style></head><body><div class="wrap"><div class="sender">' + logo + '<div style="font-weight:900;font-size:12px;color:' + d.color + ';margin-top:3px">' + d.name + '</div><div style="font-size:8px;color:#666;margin-top:2px">' + (d.address||'') + (d.phone?' · '+d.phone:'') + '</div><div style="margin-top:4px">' + social + '</div></div></div></body></html>';
@@ -611,7 +611,7 @@ function buildEnvelopeHtml(d, size){
 
 function buildReceiptHtml(d, isIncoming){
   var color = d.color;
-  var logo = d.logo ? '<img src="' + d.logo + '" style="max-height:40px;max-width:110px" />' : '';
+  var logo = d.logo ? '<img src="' + d.logo + '" alt="شعار العلامة التجارية" style="max-height:40px;max-width:110px" />' : '';
   var title = isIncoming ? 'إيصال استلام نقدية' : 'إيصال صرف نقدية';
   var social = getBrandSocialIconsHtml(d, color);
   return '<!DOCTYPE html><html dir="rtl"><head><meta charset="UTF-8"/><style>@page{size:200mm 140mm;margin:0}body{margin:0;font-family:Tajawal,Arial,sans-serif}.wrap{width:200mm;height:140mm;box-sizing:border-box;padding:10mm}.top{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:2px solid ' + color + ';padding-bottom:8px}.title{font-size:16px;font-weight:900;color:' + color + '}table{width:100%;margin-top:14px;border-collapse:collapse}td{padding:8px 4px;border-bottom:1px dashed #ccc;font-size:11px}.label{color:#888;width:35%}.amount-box{margin-top:16px;border:2px solid ' + color + ';border-radius:8px;padding:10px 14px;display:flex;justify-content:space-between;font-weight:900;font-size:13px}.sign{margin-top:20px;display:flex;justify-content:space-between;font-size:10px;color:#888}.sign div{border-top:1px solid #aaa;padding-top:4px;width:120px;text-align:center}</style></head><body><div class="wrap"><div class="top"><div>' + logo + '<div style="font-weight:900;font-size:13px;margin-top:4px">' + d.name + '</div></div><div class="title">' + title + '</div></div><table><tr><td class="label">التاريخ</td><td>....................................</td></tr><tr><td class="label">استلمنا/صرفنا من/إلى</td><td>....................................</td></tr><tr><td class="label">مبلغ وقدره</td><td>....................................</td></tr><tr><td class="label">وذلك مقابل</td><td>....................................</td></tr></table><div class="amount-box"><span>الإجمالي</span><span>.................. جنيه</span></div><div class="sign"><div>توقيع المستلم</div><div>توقيع المُحاسب</div></div></div></body></html>';
@@ -619,7 +619,7 @@ function buildReceiptHtml(d, isIncoming){
 
 function buildCoasterHtml(d, isRound){
   var color = d.color;
-  var logo = d.logo ? '<img src="' + d.logo + '" style="max-height:40px;max-width:90%" />' : '';
+  var logo = d.logo ? '<img src="' + d.logo + '" alt="شعار العلامة التجارية" style="max-height:40px;max-width:90%" />' : '';
   var shapeCss = isRound ? 'border-radius:50%' : 'border-radius:8px';
   return '<!DOCTYPE html><html dir="rtl"><head><meta charset="UTF-8"/><style>@page{size:100mm 100mm;margin:0}body{margin:0;font-family:Tajawal,Arial,sans-serif;display:flex;align-items:center;justify-content:center;height:100mm}.wrap{width:95mm;height:95mm;' + shapeCss + ';border:3px solid ' + color + ';display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-sizing:border-box;padding:8mm}</style></head><body><div class="wrap">' + logo + '<div style="font-weight:900;font-size:13px;color:' + color + ';margin-top:6px">' + d.name + '</div></div></body></html>';
 }

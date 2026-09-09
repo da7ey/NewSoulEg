@@ -394,7 +394,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <label for="invLogoUpload" style="margin-top:16px">لوجو الشركة</label>
   <input type="file" id="invLogoUpload" accept="image/*" style="display:none" onchange="onInvLogoSelected(event)" />
   <label for="invLogoUpload" class="tool-upload-label" style="display:block;text-align:center;padding:20px;border:2px dashed rgba(139,47,201,.4);border-radius:14px;cursor:pointer;color:var(--purple-glow);font-weight:700;margin-top:8px">📁 ارفع لوجو شركتك (اختياري)</label>
-  <div id="invLogoPreviewWrap" style="display:none;margin-top:10px;text-align:center"><img id="invLogoPreviewImg" style="max-height:70px;border-radius:8px" /></div>
+  <div id="invLogoPreviewWrap" style="display:none;margin-top:10px;text-align:center"><img id="invLogoPreviewImg" alt="معاينة شعار الشركة" style="max-height:70px;border-radius:8px" /></div>
 
   <label for="invSellerAddress" style="margin-top:16px">العنوان</label>
   <input class="tool-text-input" type="text" id="invSellerAddress" placeholder="مثلاً: فيصل، الجيزة، مصر" oninput="updateInvoicePreviewDebounced()" />
@@ -710,8 +710,8 @@ function buildInvoiceHtml(){
   }).join('');
   if (!itemsRowsHtml) itemsRowsHtml = '<tr><td colspan="4" style="text-align:center;color:#999">أضف بنود الفاتورة</td></tr>';
 
-  var logoHtml = invLogoDataUrl ? '<img src="' + invLogoDataUrl + '" style="max-height:70px;max-width:180px" />' : '';
-  var qrHtml = invQrDataUrl ? '<img src="' + invQrDataUrl + '" style="width:90px;height:90px" />' : '';
+  var logoHtml = invLogoDataUrl ? '<img src="' + invLogoDataUrl + '" alt="شعار الشركة" style="max-height:70px;max-width:180px" />' : '';
+  var qrHtml = invQrDataUrl ? '<img src="' + invQrDataUrl + '" alt="رمز QR للدفع" style="width:90px;height:90px" />' : '';
 
   var socialIcons = {
     whatsapp: '<path d="M12 3a9 9 0 00-7.8 13.5L3 21l4.6-1.2A9 9 0 1012 3z"/><path d="M8.5 9.5c.3 2.5 2.5 4.7 5 5 .8.1 1.5-.5 1.5-1.2v-.4l-2-1-.7.7a5 5 0 01-2.4-2.4l.7-.7-1-2h-.4c-.7 0-1.3.7-1.2 1.5z"/>',

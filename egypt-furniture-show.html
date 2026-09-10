@@ -406,7 +406,7 @@ function updateExhibitCountdown(){
   var diffMs = target - now;
   var days = Math.ceil(diffMs / (1000*60*60*24));
   if (now > endTarget) { el.textContent = '—'; document.querySelector('.exhibit-countdown-sub').textContent = 'انتهى المعرض'; }
-  else if (now >= target) { el.textContent = '0'; document.querySelector('.exhibit-countdown-sub').textContent = 'المعرض جارِ الآن!'; }
+  else if (now >= target) { el.textContent = '0'; document.querySelector('.exhibit-countdown-sub').textContent = 'المعرض يحدث الآن!'; }
   else if (days === 0) { el.textContent = '0'; document.querySelector('.exhibit-countdown-sub').textContent = 'المعرض يبدأ اليوم!'; }
   else { el.textContent = days; }
 }

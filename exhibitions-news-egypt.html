@@ -265,7 +265,16 @@ a:not([class]):not(nav a):not(footer a):not(.toc-list a):not(.related-links-row 
 </head>
 <body>
 <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ar_AR/sdk.js#xfbml=1&version=v19.0"></script>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId: '1036635113375336',
+      xfbml: true,
+      version: 'v19.0'
+    });
+  };
+</script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ar_AR/sdk.js"></script>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WDQHCFN9"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>

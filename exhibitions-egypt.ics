@@ -57,18 +57,6 @@ DESCRIPTION:دليل المعارض:
 URL:https://newsouladv.com/egypt-stitch-tex.html
 END:VEVENT
 BEGIN:VEVENT
-UID:newsouladv-exh-20260924-8@newsouladv.com
-DTSTAMP:20260911T141404Z
-DTSTART;VALUE=DATE:20260924
-DTEND;VALUE=DATE:20260928
-SUMMARY:Egy Aesthetic 2026
-LOCATION:مركز القاهرة الدولي للمؤتمرات
-DESCRIPTION:دليل المعارض: 
- https://newsouladv.com/exhibitions-guide-egypt.html — صفحة المع
- رض: https://newsouladv.com/egy-aesthetic-egypt.html
-URL:https://newsouladv.com/egy-aesthetic-egypt.html
-END:VEVENT
-BEGIN:VEVENT
 UID:newsouladv-exh-20260928-9@newsouladv.com
 DTSTAMP:20260911T141404Z
 DTSTART;VALUE=DATE:20260928

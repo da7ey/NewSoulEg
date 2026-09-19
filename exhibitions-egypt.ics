@@ -130,10 +130,10 @@ DESCRIPTION:دليل المعارض:
 URL:https://newsouladv.com/firex-egypt.html
 END:VEVENT
 BEGIN:VEVENT
-UID:newsouladv-exh-20261016-16@newsouladv.com
+UID:newsouladv-exh-20261015-16@newsouladv.com
 DTSTAMP:20260911T141404Z
-DTSTART;VALUE=DATE:20261016
-DTEND;VALUE=DATE:20261019
+DTSTART;VALUE=DATE:20261015
+DTEND;VALUE=DATE:20261018
 SUMMARY:Agrena 2026
 LOCATION:مركز مؤتمرات القاهرة الدولي
 DESCRIPTION:دليل المعارض: 

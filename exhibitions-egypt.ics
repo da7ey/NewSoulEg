@@ -118,18 +118,6 @@ DESCRIPTION:دليل المعارض:
 URL:https://newsouladv.com/autotech-egypt.html
 END:VEVENT
 BEGIN:VEVENT
-UID:newsouladv-exh-20261009-13@newsouladv.com
-DTSTAMP:20260911T141404Z
-DTSTART;VALUE=DATE:20261009
-DTEND;VALUE=DATE:20261012
-SUMMARY:Automech Formula
-LOCATION:مركز مصر للمعارض الدولية
-DESCRIPTION:دليل المعارض: 
- https://newsouladv.com/exhibitions-guide-egypt.html — صفحة المع
- رض: https://newsouladv.com/automech-formula-egypt.html
-URL:https://newsouladv.com/automech-formula-egypt.html
-END:VEVENT
-BEGIN:VEVENT
 UID:newsouladv-exh-20261012-14@newsouladv.com
 DTSTAMP:20260911T141404Z
 DTSTART;VALUE=DATE:20261012

@@ -231,7 +231,7 @@ DTSTAMP:20260911T141404Z
 DTSTART;VALUE=DATE:20261110
 DTEND;VALUE=DATE:20261112
 SUMMARY:الضيافة والفنادق في مصر
-LOCATION:مركز مصر للمعارض الدولية
+LOCATION:فندق سوفيتيل داون تاون القاهرة نايل
 DESCRIPTION:دليل المعارض: 
  https://newsouladv.com/exhibitions-guide-egypt.html — صفحة المع
  رض: https://newsouladv.com/hospitality-hotel-show-egypt.html
@@ -442,10 +442,10 @@ DESCRIPTION:دليل المعارض:
 URL:https://newsouladv.com/egypt-boat-show.html
 END:VEVENT
 BEGIN:VEVENT
-UID:newsouladv-exh-20270329-42@newsouladv.com
+UID:newsouladv-exh-20270330-42@newsouladv.com
 DTSTAMP:20260911T141404Z
-DTSTART;VALUE=DATE:20270329
-DTEND;VALUE=DATE:20270401
+DTSTART;VALUE=DATE:20270330
+DTEND;VALUE=DATE:20270402
 SUMMARY:EGYPES
 LOCATION:مركز مصر للمعارض الدولية
 DESCRIPTION:دليل المعارض: 

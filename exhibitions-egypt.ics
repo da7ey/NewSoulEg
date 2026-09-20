@@ -9,18 +9,6 @@ X-WR-TIMEZONE:Africa/Cairo
 REFRESH-INTERVAL;VALUE=DURATION:P1D
 X-PUBLISHED-TTL:P1D
 BEGIN:VEVENT
-UID:newsouladv-exh-20260917-4@newsouladv.com
-DTSTAMP:20260911T141404Z
-DTSTART;VALUE=DATE:20260917
-DTEND;VALUE=DATE:20260920
-SUMMARY:Cairo Kids & Mother
-LOCATION:مركز القاهرة الدولي للمؤتمرات
-DESCRIPTION:دليل المعارض: 
- https://newsouladv.com/exhibitions-guide-egypt.html — صفحة المع
- رض: https://newsouladv.com/cairo-kids-mother.html
-URL:https://newsouladv.com/cairo-kids-mother.html
-END:VEVENT
-BEGIN:VEVENT
 UID:newsouladv-exh-20260922-5@newsouladv.com
 DTSTAMP:20260911T141404Z
 DTSTART;VALUE=DATE:20260922

@@ -202,10 +202,10 @@ DESCRIPTION:دليل المعارض:
 URL:https://newsouladv.com/le-marche-egypt.html
 END:VEVENT
 BEGIN:VEVENT
-UID:newsouladv-exh-20261108-22@newsouladv.com
+UID:newsouladv-exh-20261107-22@newsouladv.com
 DTSTAMP:20260911T141404Z
-DTSTART;VALUE=DATE:20261108
-DTEND;VALUE=DATE:20261112
+DTSTART;VALUE=DATE:20261107
+DTEND;VALUE=DATE:20261111
 SUMMARY:Cairo ICT
 LOCATION:مركز مصر للمعارض الدولية
 DESCRIPTION:دليل المعارض: 

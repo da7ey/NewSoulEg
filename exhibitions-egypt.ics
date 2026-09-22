@@ -130,6 +130,18 @@ DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-gu
 URL:https://newsouladv.com/agrena-egypt.html
 END:VEVENT
 BEGIN:VEVENT
+UID:newsouladv-exh-20261017-109@newsouladv.com
+DTSTAMP:20260911T141404Z
+DTSTART;VALUE=DATE:20261017
+DTEND;VALUE=DATE:20261025
+SUMMARY:معرض تراثنا
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-gu
+ ide-egypt.html — صفحة المعرض: https://newsouladv.com/turathna
+ -egypt.html
+URL:https://newsouladv.com/turathna-egypt.html
+END:VEVENT
+BEGIN:VEVENT
 UID:newsouladv-exh-20261019-17@newsouladv.com
 DTSTAMP:20260911T141404Z
 DTSTART;VALUE=DATE:20261019
@@ -260,6 +272,18 @@ DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-gu
  ide-egypt.html — صفحة المعرض: https://newsouladv.com/ndtx-exp
  o-egypt.html
 URL:https://newsouladv.com/ndtx-expo-egypt.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20261114-110@newsouladv.com
+DTSTAMP:20260911T141404Z
+DTSTART;VALUE=DATE:20261114
+DTEND;VALUE=DATE:20261116
+SUMMARY:Destination Africa
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-gu
+ ide-egypt.html — صفحة المعرض: https://newsouladv.com/destinat
+ ion-africa-egypt.html
+URL:https://newsouladv.com/destination-africa-egypt.html
 END:VEVENT
 BEGIN:VEVENT
 UID:newsouladv-exh-20261119-27@newsouladv.com

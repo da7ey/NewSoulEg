@@ -334,18 +334,6 @@ DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-gu
 URL:https://newsouladv.com/egypt-furniture-show.html
 END:VEVENT
 BEGIN:VEVENT
-UID:newsouladv-exh-20261127-108@newsouladv.com
-DTSTAMP:20260911T141404Z
-DTSTART;VALUE=DATE:20261127
-DTEND;VALUE=DATE:20261130
-SUMMARY:Nelly Kids Fashion
-LOCATION:مركز مصر للمعارض الدولية
-DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-gu
- ide-egypt.html — صفحة المعرض: https://newsouladv.com/nelly-ki
- ds-fashion-egypt.html
-URL:https://newsouladv.com/nelly-kids-fashion-egypt.html
-END:VEVENT
-BEGIN:VEVENT
 UID:newsouladv-exh-20261203-30@newsouladv.com
 DTSTAMP:20260911T141404Z
 DTSTART;VALUE=DATE:20261203

@@ -346,6 +346,18 @@ DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-gu
 URL:https://newsouladv.com/africa-event-show-egypt.html
 END:VEVENT
 BEGIN:VEVENT
+UID:newsouladv-exh-20261218-37@newsouladv.com
+DTSTAMP:20260911T141404Z
+DTSTART;VALUE=DATE:20261204
+DTEND;VALUE=DATE:20261207
+SUMMARY:Cairo Inter Leather
+LOCATION:مركز القاهرة الدولي للمؤتمرات
+DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-gu
+ ide-egypt.html — صفحة المعرض: https://newsouladv.com/cairo-in
+ ter-leather.html
+URL:https://newsouladv.com/cairo-inter-leather.html
+END:VEVENT
+BEGIN:VEVENT
 UID:newsouladv-exh-20261207-31@newsouladv.com
 DTSTAMP:20260911T141404Z
 DTSTART;VALUE=DATE:20261207
@@ -453,18 +465,6 @@ DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-gu
  ide-egypt.html — صفحة المعرض: https://newsouladv.com/airtech-
  egypt.html
 URL:https://newsouladv.com/airtech-egypt.html
-END:VEVENT
-BEGIN:VEVENT
-UID:newsouladv-exh-20261218-37@newsouladv.com
-DTSTAMP:20260911T141404Z
-DTSTART;VALUE=DATE:20261218
-DTEND;VALUE=DATE:20261221
-SUMMARY:Cairo Inter Leather
-LOCATION:مركز القاهرة الدولي للمؤتمرات
-DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-gu
- ide-egypt.html — صفحة المعرض: https://newsouladv.com/cairo-in
- ter-leather.html
-URL:https://newsouladv.com/cairo-inter-leather.html
 END:VEVENT
 BEGIN:VEVENT
 UID:newsouladv-exh-20261225-38@newsouladv.com

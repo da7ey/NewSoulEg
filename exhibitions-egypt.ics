@@ -539,6 +539,30 @@ DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-gu
 URL:https://newsouladv.com/egypes.html
 END:VEVENT
 BEGIN:VEVENT
+UID:newsouladv-exh-20270418-111@newsouladv.com
+DTSTAMP:20260911T141404Z
+DTSTART;VALUE=DATE:20270418
+DTEND;VALUE=DATE:20270420
+SUMMARY:Solar & Storage Live Egypt
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-gu
+ ide-egypt.html — صفحة المعرض: https://newsouladv.com/solar-st
+ orage-live-egypt.html
+URL:https://newsouladv.com/solar-storage-live-egypt.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20270418-112@newsouladv.com
+DTSTAMP:20260911T141404Z
+DTSTART;VALUE=DATE:20270418
+DTEND;VALUE=DATE:20270421
+SUMMARY:Watrex Expo
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-gu
+ ide-egypt.html — صفحة المعرض: https://newsouladv.com/watrex-e
+ xpo-egypt.html
+URL:https://newsouladv.com/watrex-expo-egypt.html
+END:VEVENT
+BEGIN:VEVENT
 UID:newsouladv-exh-20270421-43@newsouladv.com
 DTSTAMP:20260911T141404Z
 DTSTART;VALUE=DATE:20270421

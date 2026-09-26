@@ -551,18 +551,6 @@ DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-gu
 URL:https://newsouladv.com/petzoo-africa-egypt.html
 END:VEVENT
 BEGIN:VEVENT
-UID:newsouladv-exh-20270422-106@newsouladv.com
-DTSTAMP:20260911T141404Z
-DTSTART;VALUE=DATE:20270422
-DTEND;VALUE=DATE:20270425
-SUMMARY:Design & Tex Expo 2027
-LOCATION:مركز القاهرة الدولي للمؤتمرات
-DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-gu
- ide-egypt.html — صفحة المعرض: https://newsouladv.com/design-t
- ex-expo-egypt.html
-URL:https://newsouladv.com/design-tex-expo-egypt.html
-END:VEVENT
-BEGIN:VEVENT
 UID:newsouladv-exh-20270424-44@newsouladv.com
 DTSTAMP:20260911T141404Z
 DTSTART;VALUE=DATE:20270424
@@ -580,7 +568,7 @@ DTSTAMP:20260911T141404Z
 DTSTART;VALUE=DATE:20270506
 DTEND;VALUE=DATE:20270509
 SUMMARY:WindoorEX Middle East
-LOCATION:مركز القاهرة الدولي للمؤتمرات
+LOCATION:مركز مصر للمعارض الدولية
 DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-gu
  ide-egypt.html — صفحة المعرض: https://newsouladv.com/windoore
  x-egypt.html
@@ -597,18 +585,6 @@ DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-gu
  ide-egypt.html — صفحة المعرض: https://newsouladv.com/hvac-r-e
  gypt-expo.html
 URL:https://newsouladv.com/hvac-r-egypt-expo.html
-END:VEVENT
-BEGIN:VEVENT
-UID:newsouladv-exh-20270526-107@newsouladv.com
-DTSTAMP:20260911T141404Z
-DTSTART;VALUE=DATE:20270526
-DTEND;VALUE=DATE:20270529
-SUMMARY:المعرض العربي الأفريقي لذوي الإعاقة
-LOCATION:مركز القاهرة الدولي للمؤتمرات
-DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-gu
- ide-egypt.html — صفحة المعرض: https://newsouladv.com/disabili
- ties-expo-arab-african-egypt.html
-URL:https://newsouladv.com/disabilities-expo-arab-african-egypt.html
 END:VEVENT
 BEGIN:VEVENT
 UID:newsouladv-exh-20270601-47@newsouladv.com

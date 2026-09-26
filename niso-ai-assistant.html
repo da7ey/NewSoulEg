@@ -393,12 +393,18 @@ function toggleSiteSearch(){
     document.getElementById('siteSearchResults').innerHTML = '';
   }
 }
+function normalizeArabic(s){
+  return s.replace(/[آأإٱ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي').replace(/[ً-ْ]/g, '');
+}
 function runSiteSearch(){
-  var q = document.getElementById('siteSearchInput').value.trim().toLowerCase();
+  var qRaw = document.getElementById('siteSearchInput').value.trim().toLowerCase();
+  var q = normalizeArabic(qRaw);
   var results = document.getElementById('siteSearchResults');
   if(q.length < 2){ results.innerHTML = ''; return; }
   var matches = siteSearchIndex.filter(function(item){
-    return item.t.toLowerCase().indexOf(q) !== -1 || item.d.toLowerCase().indexOf(q) !== -1;
+    var t = normalizeArabic(item.t.toLowerCase());
+    var d = normalizeArabic(item.d.toLowerCase());
+    return t.indexOf(q) !== -1 || d.indexOf(q) !== -1;
   }).slice(0, 8);
   if(matches.length === 0){
     results.innerHTML = '<p class="site-search-empty">مفيش نتائج، جرب كلمة تانية</p>';

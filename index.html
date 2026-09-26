@@ -606,19 +606,23 @@ document.addEventListener('keydown', function(e){
     if(overlay && overlay.classList.contains('open')) toggleSiteSearch();
   }
 });
-(function(){
-  var params = new URLSearchParams(window.location.search);
-  var q = params.get('q');
-  if(q){
-    var overlay = document.getElementById('siteSearchOverlay');
-    var input = document.getElementById('siteSearchInput');
-    if(overlay && input){
-      overlay.classList.add('open');
-      input.value = q;
-      runSiteSearch();
+window.addEventListener('load', function(){
+  try {
+    var params = new URLSearchParams(window.location.search);
+    var q = params.get('q');
+    if(q){
+      var overlay = document.getElementById('siteSearchOverlay');
+      var input = document.getElementById('siteSearchInput');
+      if(overlay && input){
+        overlay.classList.add('open');
+        input.value = q;
+        if(typeof runSiteSearch === 'function'){ runSiteSearch(); }
+      }
     }
+  } catch(e) {
+    console.error('site search auto-open failed:', e);
   }
-})();
+});
 function updateCountdowns(){
   var els = document.querySelectorAll('.countdown-days');
   var now = new Date();

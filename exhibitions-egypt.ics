@@ -9,30 +9,6 @@ X-WR-TIMEZONE:Africa/Cairo
 REFRESH-INTERVAL;VALUE=DURATION:P1D
 X-PUBLISHED-TTL:P1D
 BEGIN:VEVENT
-UID:newsouladv-exh-20260922-5@newsouladv.com
-DTSTAMP:20260911T141404Z
-DTSTART;VALUE=DATE:20260922
-DTEND;VALUE=DATE:20260925
-SUMMARY:Sahara Expo 2026
-LOCATION:مركز مصر للمعارض الدولية
-DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-gu
- ide-egypt.html — صفحة المعرض: https://newsouladv.com/sahara-e
- xpo-egypt.html
-URL:https://newsouladv.com/sahara-expo-egypt.html
-END:VEVENT
-BEGIN:VEVENT
-UID:newsouladv-exh-20260922-6@newsouladv.com
-DTSTAMP:20260911T141404Z
-DTSTART;VALUE=DATE:20260922
-DTEND;VALUE=DATE:20260925
-SUMMARY:FDC Summit 2026
-LOCATION:مركز مصر للمعارض الدولية (EIEC)
-DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-gu
- ide-egypt.html — صفحة المعرض: https://newsouladv.com/fdc-summ
- it-egypt.html
-URL:https://newsouladv.com/fdc-summit-egypt.html
-END:VEVENT
-BEGIN:VEVENT
 UID:newsouladv-exh-20260924-7@newsouladv.com
 DTSTAMP:20260911T141404Z
 DTSTART;VALUE=DATE:20260924

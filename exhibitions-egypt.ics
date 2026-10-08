@@ -229,12 +229,12 @@ UID:newsouladv-exh-20261114-113@newsouladv.com
 DTSTAMP:20260911T141404Z
 DTSTART;VALUE=DATE:20261114
 DTEND;VALUE=DATE:20261117
-SUMMARY:معرض ومؤتمر الروبوتات الصناعية 2026
+SUMMARY:معرض Robotex Expo للروبوتات الصناعية 2026
 LOCATION:مركز مصر للمعارض الدولية
 DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-gu
  ide-egypt.html — صفحة المعرض: https://newsouladv.com/industri
  al-robotics-expo-egypt.html
-URL:https://newsouladv.com/industrial-robotics-expo-egypt.html
+URL:https://newsouladv.com/robotex-expo-egypt.html
 END:VEVENT
 BEGIN:VEVENT
 UID:newsouladv-exh-20261119-27@newsouladv.com

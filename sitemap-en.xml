@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://newsouladv.com/about-us-en.html</loc>
     <lastmod>2026-07-19</lastmod>
@@ -8,9 +8,27 @@
   </url>
   <url>
     <loc>https://newsouladv.com/acrylic-stainless-signs-en.html</loc>
-    <lastmod>2026-07-19</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/extracted-acrylic-stainless-signs-9.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/extracted-acrylic-stainless-signs-13.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/extracted-acrylic-stainless-signs-8.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/extracted-acrylic-stainless-signs-2.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/extracted-acrylic-stainless-signs-7.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/barbershop-neon-sign-hamdy-elsagheer.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/index-en.html</loc>
@@ -20,9 +38,27 @@
   </url>
   <url>
     <loc>https://newsouladv.com/new-soul-exhibitions-en.html</loc>
-    <lastmod>2026-07-19</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/shell-scheme-temar-wall-panels.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/quick-expo-tamrtna-booth-wide.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/royal-ceramica-entrance.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/extracted-new-soul-exhibitions-56.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/extracted-new-soul-exhibitions-57.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/extracted-new-soul-exhibitions-59.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/niso-ai-assistant-en.html</loc>
@@ -32,9 +68,18 @@
   </url>
   <url>
     <loc>https://newsouladv.com/scale-models-maquettes-egypt-en.html</loc>
-    <lastmod>2026-07-19</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/maquette-precast-concrete-factory-wide.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/maquette-precast-concrete-silos-closeup.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/maquette-precast-concrete-crane-detail.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/services-en.html</loc>

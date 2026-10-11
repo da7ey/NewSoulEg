@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://newsouladv.com/new-soul-big5-construct-egypt.html</loc>
     <lastmod>2026-07-19</lastmod>
@@ -20,9 +20,24 @@
   </url>
   <url>
     <loc>https://newsouladv.com/new-soul-exhibitions.html</loc>
-    <lastmod>2026-07-19</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/extracted-new-soul-exhibitions-59.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/extracted-new-soul-exhibitions-56.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/extracted-new-soul-exhibitions-60.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/extracted-new-soul-exhibitions-58.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/extracted-new-soul-exhibitions-57.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/new-soul-orascom-academy.html</loc>

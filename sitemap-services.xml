@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://newsouladv.com/</loc>
     <lastmod>2026-07-19</lastmod>
@@ -50,9 +50,66 @@
   </url>
   <url>
     <loc>https://newsouladv.com/event-backdrops-photo-frames-egypt.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/backdrop-orascom-academy-hubs.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/orascom-academy-hubs-outdoor-billboard-b.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/backdrop-orascom-excellence-award.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/backdrop-ajp-fabmisr-collage.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/backdrop-kos-championship-stand.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/ho-group-championship-backdrop-player.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/ho-group-championship-backdrop-speaker.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/aug-macro-pharma-tournament-floor-banner.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/photoframe-sportify-ministry.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/school-spaceship-corridor-door-backdrop.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/ramadan-iftar-group-photo-backdrop.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/ramadan-iftar-outdoor-backdrop-empty.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/quick-expo-tamrtna-booth-wide.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/quick-expo-tamrtna-entrance.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/photobooth-beach-pupp-venture-sokhna.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/backdrop-china-gate-badr-university.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/backdrop-auc-pdpc-forum-front.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/backdrop-auc-pdpc-forum-angle.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/backdrop-auc-pdpc-forum-post.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/exhibition-booth-price-egypt.html</loc>

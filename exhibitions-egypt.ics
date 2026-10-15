@@ -9,30 +9,6 @@ X-WR-TIMEZONE:Africa/Cairo
 REFRESH-INTERVAL;VALUE=DURATION:P1D
 X-PUBLISHED-TTL:P1D
 BEGIN:VEVENT
-UID:newsouladv-exh-20261012-14@newsouladv.com
-DTSTAMP:20260911T141404Z
-DTSTART;VALUE=DATE:20261012
-DTEND;VALUE=DATE:20261015
-SUMMARY:Egypt Energy 2026
-LOCATION:مركز مصر للمعارض الدولية
-DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-gu
- ide-egypt.html — صفحة المعرض: https://newsouladv.com/egypt-en
- ergy.html
-URL:https://newsouladv.com/egypt-energy.html
-END:VEVENT
-BEGIN:VEVENT
-UID:newsouladv-exh-20261012-15@newsouladv.com
-DTSTAMP:20260911T141404Z
-DTSTART;VALUE=DATE:20261012
-DTEND;VALUE=DATE:20261015
-SUMMARY:FIREX Egypt 2026
-LOCATION:مركز مصر للمعارض الدولية
-DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-gu
- ide-egypt.html — صفحة المعرض: https://newsouladv.com/firex-eg
- ypt.html
-URL:https://newsouladv.com/firex-egypt.html
-END:VEVENT
-BEGIN:VEVENT
 UID:newsouladv-exh-20261015-16@newsouladv.com
 DTSTAMP:20260911T141404Z
 DTSTART;VALUE=DATE:20261015

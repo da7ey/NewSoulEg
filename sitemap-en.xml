@@ -35,6 +35,12 @@
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/showroom-fischer-shelving-desk.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/acrylic-panel-fischer-strength.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/new-soul-exhibitions-en.html</loc>
@@ -65,6 +71,9 @@
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/extracted-index-36.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/scale-models-maquettes-egypt-en.html</loc>
@@ -86,5 +95,26 @@
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/fischer-booth-stations.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/royal-ceramica-corridor.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/backdrop-orascom-academy-hubs.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/ajp-hall-setup.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/extracted-acrylic-stainless-signs-13.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/extracted-acrylic-stainless-signs-2.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/extracted-acrylic-stainless-signs-7.jpg</image:loc>
+    </image:image>
   </url>
 </urlset>

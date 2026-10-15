@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://newsouladv.com/africa-health-excon.html</loc>
     <lastmod>2026-09-26</lastmod>
@@ -17,6 +17,30 @@
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/backdrop-fruitkarnaval-sign.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/counter-fruit-wrap-wide.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/backdrop-castle-closeup.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/counter-catering-fruit-wrap.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/backdrop-fruitkarnaval-full.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/backdrop-grass-castles-runway.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/backdrop-grass-castles-angle.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/counter-fruit-wrap-flags.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/automorrow-egypt.html</loc>
@@ -35,12 +59,18 @@
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/extracted-best-exhibition-companies-egypt-newsoul-68.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/best-exhibition-companies-egypt.html</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/extracted-best-exhibition-companies-egypt-69.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/cafex-egypt.html</loc>
@@ -53,12 +83,18 @@
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/promo-cairo-book-fair-full.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/cairo-convention-center.html</loc>
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/promo-cairo-convention-full.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/cairo-fashion-tex.html</loc>
@@ -77,6 +113,9 @@
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/royal-ceramica-corridor.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/cairo-inter-leather.html</loc>
@@ -113,6 +152,9 @@
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/promo-edex-full.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/edugate-egypt.html</loc>
@@ -137,6 +179,9 @@
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/fischer-booth-stations.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/egypt-boat-show.html</loc>
@@ -161,12 +206,27 @@
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/showroom-fischer-shelving-desk.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/egypt-international-exhibition-center.html</loc>
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/promo-eiec-full.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/fischer-booth-stations.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/royal-ceramica-sign.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/royal-ceramica-corridor.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/egypt-mining-forum.html</loc>
@@ -191,60 +251,90 @@
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/hero-6october-branch.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/exhibition-company-alexandria.html</loc>
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/hero-alexandria-branch.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/exhibition-company-cairo.html</loc>
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/hero-cairo-branch.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/exhibition-company-faisal.html</loc>
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/hero-faisal-branch.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/exhibition-company-giza.html</loc>
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/hero-giza-branch.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/exhibition-company-haram.html</loc>
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/hero-haram-branch.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/exhibition-company-new-cairo.html</loc>
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/hero-new-cairo-branch.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/exhibition-company-new-capital.html</loc>
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/hero-new-capital-branch.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/exhibition-company-sheikh-zayed.html</loc>
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/hero-sheikh-zayed-branch.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/exhibitions-calendar.html</loc>
     <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/promo-exhibitions-calendar-full.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/exhibitions-construction-egypt.html</loc>
@@ -275,6 +365,9 @@
     <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/exhibitions-guide-cover.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/exhibitions-industry-egypt.html</loc>
@@ -305,6 +398,9 @@
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/fischer-booth-stations.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/franex-egypt.html</loc>
@@ -335,6 +431,9 @@
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/royal-ceramica-corridor.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/hvac-r-egypt-expo.html</loc>
@@ -347,6 +446,18 @@
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/royal-ceramica-corridor.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/royal-ceramica-sign.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/extracted-service-areas-47.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/extracted-new-soul-royal-ceramica-67.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/le-marche-egypt.html</loc>
@@ -413,6 +524,9 @@
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/acrylic-panel-fischer-infrastructure.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/sahara-expo-egypt.html</loc>
@@ -425,6 +539,27 @@
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/entrance-royal-cutouts.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/welcome-banner-royals.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/bolivar-fort-decor.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/xo-club-rooftop-fort.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/collage-xo-club-decor.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/flags-and-mural-display.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/collage-decor-elements.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/smart-tech-expo-egypt.html</loc>
@@ -437,6 +572,15 @@
     <lastmod>2026-09-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/mres-solar-model-full-setup.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/mres-solar-model-podium-angle.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/mres-podium-fast-charging-detail.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/the-design-show-egypt.html</loc>
@@ -461,6 +605,9 @@
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/fischer-booth-stations.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/airtech-egypt.html</loc>
@@ -473,6 +620,9 @@
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/counter-pharmashop.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/workspace-expo-egypt.html</loc>
@@ -503,6 +653,12 @@
     <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/promo-big5-full.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/fischer-booth-stations.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/apiex-egypt.html</loc>
@@ -551,18 +707,27 @@
     <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/acrylic-panel-fischer-infrastructure.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/fdc-summit-egypt.html</loc>
     <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/royal-ceramica-corridor.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/almanara-conference-hall.html</loc>
     <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/promo-almanara-full.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/iwwi-egypt.html</loc>
@@ -581,6 +746,12 @@
     <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/extracted-acrylic-stainless-signs-2.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/barbershop-neon-sign-hamdy-elsagheer.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/stone-africa-egypt.html</loc>
@@ -641,6 +812,9 @@
     <lastmod>2026-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/promo-exhibitions-calendar-full.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/mena-power-expo-egypt.html</loc>

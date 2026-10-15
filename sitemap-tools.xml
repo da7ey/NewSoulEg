@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://newsouladv.com/ad-budget-calculator.html</loc>
     <lastmod>2026-07-19</lastmod>
@@ -11,6 +11,15 @@
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/promo-booth-quiz-full.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/backdrop-fruitkarnaval-full.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/extracted-new-soul-enpal-egypt-16.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/color-palette-tool.html</loc>
@@ -77,6 +86,15 @@
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/maquette-precast-concrete-factory-wide.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/maquette-precast-concrete-silos-closeup.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://newsouladv.com/images/maquette-precast-concrete-crane-detail.jpg</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://newsouladv.com/tools.html</loc>

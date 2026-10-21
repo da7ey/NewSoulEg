@@ -392,7 +392,7 @@ function initStars(){stars=[];for(let i=0;i<160;i++)stars.push({x:Math.random()*
 function drawStars(t){ctx.clearRect(0,0,canvas.width,canvas.height);stars.forEach(s=>{const o=0.2+0.5*Math.abs(Math.sin(t*s.speed+s.phase));ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fillStyle="rgba(198,110,255,"+o+")";ctx.fill()});requestAnimationFrame(drawStars)}
 resize();initStars();requestAnimationFrame(drawStars);
 window.addEventListener("resize",function(){resize();initStars()});
-const tocLinks=document.querySelectorAll("#tocList a");const headings=Array.from(tocLinks).map(function(a){var href=a.getAttribute("href");return (href&&href.charAt(0)==="#")?document.querySelector(href):null});
+const tocLinks=document.querySelectorAll("#tocList a");const headings=Array.from(tocLinks).map(function(a){var href=a.getAttribute("href");return (href&&href.length>1&&href.charAt(0)==="#")?document.querySelector(href):null});
 function updateToc(){let idx=0;headings.forEach(function(h,i){if(h&&h.getBoundingClientRect().top<140)idx=i});tocLinks.forEach(function(a,i){a.classList.toggle("active",i===idx)})}
 window.addEventListener("scroll",updateToc,{passive:true});updateToc();
 

@@ -459,7 +459,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script>
 document.addEventListener('DOMContentLoaded', function(){
-  generateIndustryPalette();
+  if(document.getElementById('industrySelect')&&typeof generateIndustryPalette==='function'){generateIndustryPalette();}
 });
 </script>
 

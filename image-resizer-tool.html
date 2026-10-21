@@ -616,7 +616,7 @@ function extractColorsFromImage(e){
 }
 
 document.addEventListener('DOMContentLoaded', function(){
-  generateIndustryPalette();
+  if(document.getElementById('industrySelect')&&typeof generateIndustryPalette==='function'){generateIndustryPalette();}
 });
 </script>
 

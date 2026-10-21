@@ -552,6 +552,11 @@ function setBrandItem(item, btnEl){
   updateBrandPreview();
 }
 
+function escapeHtmlInv(str){
+  if (!str) return '';
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
 function getBrandData(){
   return {
     name: escapeHtmlInv(document.getElementById('invSellerName').value.trim() || 'اسم شركتك'),
@@ -591,7 +596,7 @@ function buildCardHtml(d){
   var social = getBrandSocialIconsHtml(d, d.color);
   var logo = d.logo ? '<img src="' + d.logo + '" alt="شعار العلامة التجارية" style="max-height:32px;max-width:110px" />' : '';
   if (currentBrandStyle === 'modern'){
-    return '<!DOCTYPE html><html dir="rtl"><head><meta charset="UTF-8"/><style>@page{size:85mm 55mm;margin:0}body{margin:0;font-family:Tajawal,Arial,sans-serif}.wrap{width:85mm;height:55mm;box-sizing:border-box;display:flex}.side{width:8mm;background:' + d.color + '}.main{flex:1;padding:5mm;display:flex;flex-direction:column;justify-content:space-between}</style></head><body><div class="wrap"><div class="side"></div><div class="main"><div>' + logo + '<div style="font-weight:900;font-size:13px;margin-top:4px">' + d.name + '</div></div><div style="font-size:8px;color:#555;line-height:1.6">' + (d.phone?'☎ '+d.phone+'<br/>':'') + (d.email?d.email+'<br/>':'') + (d.address?d.address:'') + '<div style="margin-top:4px">' + social + '</div></div></div></div><!--wa-track--><script>document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[href*='wa.me'],a[href^='tel:']");if(a&&typeof gtag==="function"){gtag("event",a.href.indexOf("tel:")===0?"phone_click":"whatsapp_click",{page_path:location.pathname,link_source:a.getAttribute("data-wa-src")||"page"});}});</script><!--/wa-track--></body></html>';
+    return '<!DOCTYPE html><html dir="rtl"><head><meta charset="UTF-8"/><style>@page{size:85mm 55mm;margin:0}body{margin:0;font-family:Tajawal,Arial,sans-serif}.wrap{width:85mm;height:55mm;box-sizing:border-box;display:flex}.side{width:8mm;background:' + d.color + '}.main{flex:1;padding:5mm;display:flex;flex-direction:column;justify-content:space-between}</style></head><body><div class="wrap"><div class="side"></div><div class="main"><div>' + logo + '<div style="font-weight:900;font-size:13px;margin-top:4px">' + d.name + '</div></div><div style="font-size:8px;color:#555;line-height:1.6">' + (d.phone?'☎ '+d.phone+'<br/>':'') + (d.email?d.email+'<br/>':'') + (d.address?d.address:'') + '<div style="margin-top:4px">' + social + '</div></div></div></div></body></html>';
   }
   return '<!DOCTYPE html><html dir="rtl"><head><meta charset="UTF-8"/><style>@page{size:85mm 55mm;margin:0}body{margin:0;font-family:Tajawal,Arial,sans-serif}.wrap{width:85mm;height:55mm;box-sizing:border-box;padding:5mm;text-align:center;border-bottom:2px solid ' + d.color + '}</style></head><body><div class="wrap">' + logo + '<div style="font-weight:900;font-size:14px;margin-top:6px;color:' + d.color + '">' + d.name + '</div><div style="font-size:8px;color:#555;margin-top:8px;line-height:1.7">' + (d.phone?'☎ '+d.phone+'  ':'') + (d.email?d.email:'') + '<br/>' + (d.address?d.address:'') + '</div><div style="margin-top:6px">' + social + '</div></div></body></html>';
 }
@@ -722,5 +727,5 @@ function shareThisPage(){
     <div id="siteSearchResults" class="site-search-results"></div>
   </div>
 </div>
-</body>
+<!--wa-track--><script>document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[href*='wa.me'],a[href^='tel:']");if(a&&typeof gtag==="function"){gtag("event",a.href.indexOf("tel:")===0?"phone_click":"whatsapp_click",{page_path:location.pathname,link_source:a.getAttribute("data-wa-src")||"page"});}});</script><!--/wa-track--></body>
 </html>

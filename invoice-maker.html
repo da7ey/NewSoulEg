@@ -771,7 +771,7 @@ function buildInvoiceHtml(){
       '<div class="inv-notes">' + (notes ? notes + '<br/>' : '') + '<div class="inv-social">' + socialHtml + '</div></div>' +
       (qrHtml ? '<div style="text-align:center">' + qrHtml + '<div style="font-size:.65rem;color:#999;margin-top:4px">امسح للتواصل</div></div>' : '') +
     '</div>' +
-    '<!--wa-track--><script>document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[href*='wa.me'],a[href^='tel:']");if(a&&typeof gtag==="function"){gtag("event",a.href.indexOf("tel:")===0?"phone_click":"whatsapp_click",{page_path:location.pathname,link_source:a.getAttribute("data-wa-src")||"page"});}});</script><!--/wa-track--></body></html>';
+    '</body></html>';
 }
 
 function updateInvoicePreview(){
@@ -879,5 +879,5 @@ function shareThisPage(){
     <div id="siteSearchResults" class="site-search-results"></div>
   </div>
 </div>
-</body>
+<!--wa-track--><script>document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[href*='wa.me'],a[href^='tel:']");if(a&&typeof gtag==="function"){gtag("event",a.href.indexOf("tel:")===0?"phone_click":"whatsapp_click",{page_path:location.pathname,link_source:a.getAttribute("data-wa-src")||"page"});}});</script><!--/wa-track--></body>
 </html>

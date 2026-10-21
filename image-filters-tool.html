@@ -636,8 +636,8 @@ function updateFontPreview(){
 }
 
 document.addEventListener('DOMContentLoaded', function(){
-  generateIndustryPalette();
-  updateFontPreview();
+  if(document.getElementById('industrySelect')&&typeof generateIndustryPalette==='function'){generateIndustryPalette();}
+  if(document.getElementById('fontPreviewText')){updateFontPreview();}
 });
 </script>
 

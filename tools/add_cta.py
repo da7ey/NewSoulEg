@@ -26,5 +26,5 @@ for f in glob.glob('*.html'):
     t=open(f,encoding='utf8').read()
     if 'gtag(' not in t or '</body>' not in t: continue
     t=re.sub(r'<!--wa-track-->.*?<!--/wa-track-->','',t,flags=re.S)
-    t=t.replace('</body>',TR+'</body>',1); open(f,'w',encoding='utf8').write(t); m+=1
+    i=t.rindex('</body>');t=t[:i]+TR+t[i:]; open(f,'w',encoding='utf8').write(t); m+=1
 print(m)

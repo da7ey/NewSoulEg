@@ -103,6 +103,7 @@ Last updated: 2026-10-11
 - [AFROPLAST 2027](https://newsouladv.com/afroplast-egypt.html): 9 يناير 2027
 - [Egypt International Boat Show](https://newsouladv.com/egypt-boat-show.html): 14 يناير 2027
 - [Agri Expo](https://newsouladv.com/agri-expo-egypt.html): 1 فبراير 2027
+- [EDUGATE](https://newsouladv.com/edugate-egypt.html): 1 فبراير 2027
 - [EGYPES](https://newsouladv.com/egypes.html): 30 مارس 2027
 - [Lift City Expo Egypt](https://newsouladv.com/lift-city-expo-egypt.html): 8 أبريل 2027
 - [Solar & Storage Live Egypt](https://newsouladv.com/solar-storage-live-egypt.html): 18 أبريل 2027
@@ -122,10 +123,10 @@ Last updated: 2026-10-11
 - [Middle East Lighting Expo](https://newsouladv.com/middle-east-lighting-expo.html): 5 أغسطس 2027
 - [Metal & Steel Egypt](https://newsouladv.com/metal-steel-egypt.html): 4 سبتمبر 2027
 - [Pharmaconex](https://newsouladv.com/pharmaconex-egypt.html): 6 سبتمبر 2027
+- [معارض Paper ME - Tissue ME - Print2Pack](https://newsouladv.com/paper-me-print2pack-egypt.html): 11 سبتمبر 2027
 - [Cityscape Egypt](https://newsouladv.com/cityscape-egypt.html): 29 سبتمبر 2027
 - [EDEX](https://newsouladv.com/edex.html): 6 ديسمبر 2027
 - [Plastex](https://newsouladv.com/plastex-egypt.html): 9 يناير 2028
-- [EDUGATE](https://newsouladv.com/edugate-egypt.html): موعد الدورة القادمة لسه ما اتعلنش
 - [Smart Tech Expo](https://newsouladv.com/smart-tech-expo-egypt.html): موعد الدورة القادمة لسه ما اتعلنش
 - [IMRCE](https://newsouladv.com/imrce-egypt.html): موعد الدورة القادمة لسه ما اتعلنش
 - [Egypt Stitch & Tex](https://newsouladv.com/egypt-stitch-tex.html): موعد الدورة القادمة لسه ما اتعلنش
@@ -133,7 +134,6 @@ Last updated: 2026-10-11
 - [New Défilé Kids](https://newsouladv.com/new-defile-kids-egypt.html): موعد الدورة القادمة لسه ما اتعلنش
 - [Cairo Fashion & Tex](https://newsouladv.com/cairo-fashion-tex.html): موعد الدورة القادمة لسه ما اتعلنش
 - [Egypt Projects](https://newsouladv.com/egypt-projects-exhibition.html): موعد الدورة القادمة لسه ما اتعلنش
-- [معارض Paper ME - Tissue ME - Print2Pack](https://newsouladv.com/paper-me-print2pack-egypt.html): موعد الدورة القادمة لسه ما اتعلنش
 - [Sahara Expo](https://newsouladv.com/sahara-expo-egypt.html): موعد الدورة القادمة لسه ما اتعلنش
 - [Egypt Mining Forum](https://newsouladv.com/egypt-mining-forum.html): موعد الدورة القادمة لسه ما اتعلنش
 - [EgyMedica](https://newsouladv.com/egymedica-egypt.html): موعد الدورة القادمة لسه ما اتعلنش

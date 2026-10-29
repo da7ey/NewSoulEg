@@ -27,35 +27,13 @@
     "page": "export-smart-egypt.html",
     "name": "EXPORT SMART",
     "category": "economy",
-    "status": "confirmed",
-    "start": "2026-10-26",
-    "end": "2026-10-26",
-    "cal_title": "EXPORT SMART 2026",
-    "date_text": "26 أكتوبر 2026",
-    "venue": "فندق إنتركونتيننتال سيتي ستارز",
-    "blurb": "مؤتمر التصدير الذكي، الدورة الرابعة",
-    "gcal_title": "EXPORT SMART 2026",
-    "gcal_venue": "فندق إنتركونتيننتال سيتي ستارز، القاهرة",
-    "ics_uid": "newsouladv-exh-20261026-20",
-    "ics_summary": "EXPORT SMART 2026",
-    "ics_location": "فندق إنتركونتيننتال سيتي ستارز"
+    "status": "tbd"
   },
   {
     "page": "iwwi-egypt.html",
     "name": "IWWI",
     "category": "construction",
-    "status": "confirmed",
-    "start": "2026-10-26",
-    "end": "2026-10-28",
-    "cal_title": "IWWI 2026",
-    "date_text": "26-28 أكتوبر 2026",
-    "venue": "مركز القاهرة الدولي للمؤتمرات",
-    "blurb": "معرض دولي للمياه والصرف الصحي وإدارة المخلفات والبنية التحتية",
-    "gcal_title": "IWWI 2026",
-    "gcal_venue": "مركز القاهرة الدولي للمؤتمرات، القاهرة",
-    "ics_uid": "newsouladv-exh-20261026-19",
-    "ics_summary": "IWWI 2026",
-    "ics_location": "مركز القاهرة الدولي للمؤتمرات"
+    "status": "tbd"
   },
   {
     "page": "le-marche-egypt.html",

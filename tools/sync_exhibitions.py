@@ -150,7 +150,9 @@ def gen_home(c, conf, today):
         cards += f'<a href="{SITE}{e["page"]}" class="countdown-card"><span class="countdown-days" data-date="{e["start"]}" data-end-date="{e["end"]}">-- يوم</span><h3>{title}</h3><p>{sub}</p></a>\n'
     pat = re.compile(r'(?:<a href="https://newsouladv\.com/[^"]+" class="countdown-card"><span class="countdown-days"[^>]*>[^<]*</span><h3>.*?</h3><p>.*?</p></a>\n){5}', re.S)
     assert pat.search(c), 'homepage cards block not found'
-    return pat.sub(lambda m: cards, c, count=1)
+    c = pat.sub(lambda m: cards, c, count=1)
+    y, mo = int(today[:4]), int(today[5:7])
+    return re.sub(r'القائمة الكاملة لمعارض [^\s<]+ \d{4} في صفحة واحدة', f'القائمة الكاملة لمعارض {AR[mo-1]} {y} في صفحة واحدة', c)
 
 # ---------------- llms ----------------
 def gen_llms(t, data, conf, tbd):

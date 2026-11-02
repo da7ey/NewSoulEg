@@ -39,35 +39,13 @@
     "page": "le-marche-egypt.html",
     "name": "Le Marché",
     "category": "furniture",
-    "status": "confirmed",
-    "start": "2026-10-29",
-    "end": "2026-11-01",
-    "cal_title": "Le Marché 2026",
-    "date_text": "29 أكتوبر - 1 نوفمبر 2026",
-    "venue": "مركز مصر للمعارض الدولية",
-    "blurb": "أول وأكبر معرض متكامل للأثاث والديكور في المنطقة",
-    "gcal_title": "Le Marché 2026",
-    "gcal_venue": "مركز مصر للمعارض الدولية، القاهرة",
-    "ics_uid": "newsouladv-exh-20261029-21",
-    "ics_summary": "Le Marché",
-    "ics_location": "مركز مصر للمعارض الدولية"
+    "status": "tbd"
   },
   {
     "page": "cairo-vision-egypt.html",
     "name": "Cairo Vision",
     "category": "medical",
-    "status": "confirmed",
-    "start": "2026-10-30",
-    "end": "2026-11-01",
-    "cal_title": "Cairo Vision Exhibition",
-    "date_text": "30 أكتوبر - 1 نوفمبر 2026",
-    "venue": "مركز القاهرة الدولي للمؤتمرات",
-    "blurb": "معرض متخصص في البصريات والنظارات الطبية والشمسية",
-    "gcal_title": "Cairo Vision Exhibition",
-    "gcal_venue": "مركز القاهرة الدولي للمؤتمرات، القاهرة",
-    "ics_uid": "newsouladv-exh-20261030-101",
-    "ics_summary": "Cairo Vision Exhibition",
-    "ics_location": "مركز القاهرة الدولي للمؤتمرات"
+    "status": "tbd"
   },
   {
     "page": "cairo-ict.html",

@@ -9,30 +9,6 @@ X-WR-TIMEZONE:Africa/Cairo
 REFRESH-INTERVAL;VALUE=DURATION:P1D
 X-PUBLISHED-TTL:P1D
 BEGIN:VEVENT
-UID:newsouladv-exh-20261029-21@newsouladv.com
-DTSTAMP:20260911T141404Z
-DTSTART;VALUE=DATE:20261029
-DTEND;VALUE=DATE:20261102
-SUMMARY:Le Marché
-LOCATION:مركز مصر للمعارض الدولية
-DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-
- guide-egypt.html — صفحة المعرض: https://newsouladv.com/le-m
- arche-egypt.html
-URL:https://newsouladv.com/le-marche-egypt.html
-END:VEVENT
-BEGIN:VEVENT
-UID:newsouladv-exh-20261030-101@newsouladv.com
-DTSTAMP:20260911T141404Z
-DTSTART;VALUE=DATE:20261030
-DTEND;VALUE=DATE:20261102
-SUMMARY:Cairo Vision Exhibition
-LOCATION:مركز القاهرة الدولي للمؤتمرات
-DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-
- guide-egypt.html — صفحة المعرض: https://newsouladv.com/cair
- o-vision-egypt.html
-URL:https://newsouladv.com/cairo-vision-egypt.html
-END:VEVENT
-BEGIN:VEVENT
 UID:newsouladv-exh-20261107-22@newsouladv.com
 DTSTAMP:20260911T141404Z
 DTSTART;VALUE=DATE:20261108

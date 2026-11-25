@@ -1018,6 +1018,23 @@
     "status": "tbd"
   },
   {
+    "page": "denimsandjeans-egypt.html",
+    "name": "Denimsandjeans Egypt",
+    "category": "fashion",
+    "status": "confirmed",
+    "start": "2027-01-13",
+    "end": "2027-01-14",
+    "cal_title": "Denimsandjeans Egypt 2027",
+    "date_text": "13-14 يناير 2027",
+    "venue": "إنتركونتيننتال سيتي ستارز القاهرة",
+    "blurb": "معرض دولي متخصص في سلسلة توريد الدنيم والجينز",
+    "gcal_title": "Denimsandjeans Egypt 2027",
+    "gcal_venue": "إنتركونتيننتال سيتي ستارز، مدينة نصر، القاهرة",
+    "ics_uid": "newsouladv-exh-20270113-denimsandjeans",
+    "ics_summary": "Denimsandjeans Egypt",
+    "ics_location": "إنتركونتيننتال سيتي ستارز القاهرة"
+  },
+  {
     "page": "sahara-expo-egypt.html",
     "name": "Sahara Expo",
     "category": "food",

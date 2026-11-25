@@ -9,115 +9,6 @@ X-WR-TIMEZONE:Africa/Cairo
 REFRESH-INTERVAL;VALUE=DURATION:P1D
 X-PUBLISHED-TTL:P1D
 BEGIN:VEVENT
-UID:newsouladv-exh-20261107-22@newsouladv.com
-DTSTAMP:20260911T141404Z
-DTSTART;VALUE=DATE:20261108
-DTEND;VALUE=DATE:20261112
-SUMMARY:Cairo ICT
-LOCATION:مركز مصر للمعارض الدولية
-DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-
- guide-egypt.html — صفحة المعرض: https://newsouladv.com/cair
- o-ict.html
-URL:https://newsouladv.com/cairo-ict.html
-END:VEVENT
-BEGIN:VEVENT
-UID:newsouladv-exh-20261109-23@newsouladv.com
-DTSTAMP:20260911T141404Z
-DTSTART;VALUE=DATE:20261109
-DTEND;VALUE=DATE:20261112
-SUMMARY:APIEX 2026
-LOCATION:فندق هيلتون جرين بلازا
-DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-
- guide-egypt.html — صفحة المعرض: https://newsouladv.com/apie
- x-egypt.html
-URL:https://newsouladv.com/apiex-egypt.html
-END:VEVENT
-BEGIN:VEVENT
-UID:newsouladv-exh-20261110-24@newsouladv.com
-DTSTAMP:20260911T141404Z
-DTSTART;VALUE=DATE:20261110
-DTEND;VALUE=DATE:20261112
-SUMMARY:الضيافة والفنادق في مصر
-LOCATION:فندق سوفيتيل داون تاون القاهرة ناي
- ل
-DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-
- guide-egypt.html — صفحة المعرض: https://newsouladv.com/hosp
- itality-hotel-show-egypt.html
-URL:https://newsouladv.com/hospitality-hotel-show-egypt.html
-END:VEVENT
-BEGIN:VEVENT
-UID:newsouladv-exh-20261112-25@newsouladv.com
-DTSTAMP:20260911T141404Z
-DTSTART;VALUE=DATE:20261112
-DTEND;VALUE=DATE:20261116
-SUMMARY:Stone Africa 2026
-LOCATION:مركز القاهرة الدولي للمؤتمرات
-DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-
- guide-egypt.html — صفحة المعرض: https://newsouladv.com/ston
- e-africa-egypt.html
-URL:https://newsouladv.com/stone-africa-egypt.html
-END:VEVENT
-BEGIN:VEVENT
-UID:newsouladv-exh-20261114-110@newsouladv.com
-DTSTAMP:20260911T141404Z
-DTSTART;VALUE=DATE:20261114
-DTEND;VALUE=DATE:20261116
-SUMMARY:Destination Africa
-LOCATION:مركز مصر للمعارض الدولية
-DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-
- guide-egypt.html — صفحة المعرض: https://newsouladv.com/dest
- ination-africa-egypt.html
-URL:https://newsouladv.com/destination-africa-egypt.html
-END:VEVENT
-BEGIN:VEVENT
-UID:newsouladv-exh-20261114-26@newsouladv.com
-DTSTAMP:20260911T141404Z
-DTSTART;VALUE=DATE:20261114
-DTEND;VALUE=DATE:20261117
-SUMMARY:NDTX Expo
-LOCATION:مركز مصر للمعارض الدولية
-DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-
- guide-egypt.html — صفحة المعرض: https://newsouladv.com/ndtx
- -expo-egypt.html
-URL:https://newsouladv.com/ndtx-expo-egypt.html
-END:VEVENT
-BEGIN:VEVENT
-UID:newsouladv-exh-20261114-113@newsouladv.com
-DTSTAMP:20260911T141404Z
-DTSTART;VALUE=DATE:20261114
-DTEND;VALUE=DATE:20261117
-SUMMARY:معرض Robotex Expo للروبوتات الصناعية 2026
-LOCATION:مركز مصر للمعارض الدولية
-DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-
- guide-egypt.html — صفحة المعرض: https://newsouladv.com/robo
- tex-expo-egypt.html
-URL:https://newsouladv.com/robotex-expo-egypt.html
-END:VEVENT
-BEGIN:VEVENT
-UID:newsouladv-exh-20261119-27@newsouladv.com
-DTSTAMP:20260911T141404Z
-DTSTART;VALUE=DATE:20261119
-DTEND;VALUE=DATE:20261123
-SUMMARY:ICS Exhibition - Ceramica Market & Homex
-LOCATION:مركز مصر للمعارض الدولية
-DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-
- guide-egypt.html — صفحة المعرض: https://newsouladv.com/ics-
- ceramica-market-egypt.html
-URL:https://newsouladv.com/ics-ceramica-market-egypt.html
-END:VEVENT
-BEGIN:VEVENT
-UID:newsouladv-exh-20261119-102@newsouladv.com
-DTSTAMP:20260911T141404Z
-DTSTART;VALUE=DATE:20261119
-DTEND;VALUE=DATE:20261122
-SUMMARY:Private Label Egypt Expo
-LOCATION:مركز القاهرة الدولي للمؤتمرات
-DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-
- guide-egypt.html — صفحة المعرض: https://newsouladv.com/priv
- ate-label-egypt-expo.html
-URL:https://newsouladv.com/private-label-egypt-expo.html
-END:VEVENT
-BEGIN:VEVENT
 UID:newsouladv-exh-20261126-28@newsouladv.com
 DTSTAMP:20260911T141404Z
 DTSTART;VALUE=DATE:20261126
@@ -335,6 +226,18 @@ DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-
 URL:https://newsouladv.com/egypt-boat-show.html
 END:VEVENT
 BEGIN:VEVENT
+UID:newsouladv-exh-20270120-bookfair@newsouladv.com
+DTSTAMP:20260911T141404Z
+DTSTART;VALUE=DATE:20270120
+DTEND;VALUE=DATE:20270203
+SUMMARY:معرض القاهرة الدولي للكتاب
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-
+ guide-egypt.html — صفحة المعرض: https://newsouladv.com/cair
+ o-book-fair.html
+URL:https://newsouladv.com/cairo-book-fair.html
+END:VEVENT
+BEGIN:VEVENT
 UID:newsouladv-exh-20270201-agri@newsouladv.com
 DTSTAMP:20260911T141404Z
 DTSTART;VALUE=DATE:20270201
@@ -361,8 +264,8 @@ END:VEVENT
 BEGIN:VEVENT
 UID:newsouladv-exh-20270330-42@newsouladv.com
 DTSTAMP:20260911T141404Z
-DTSTART;VALUE=DATE:20270330
-DTEND;VALUE=DATE:20270402
+DTSTART;VALUE=DATE:20270329
+DTEND;VALUE=DATE:20270401
 SUMMARY:EGYPES
 LOCATION:مركز مصر للمعارض الدولية
 DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-
@@ -429,6 +332,18 @@ DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-
  guide-egypt.html — صفحة المعرض: https://newsouladv.com/egy-
  beauty-africa.html
 URL:https://newsouladv.com/egy-beauty-africa.html
+END:VEVENT
+BEGIN:VEVENT
+UID:newsouladv-exh-20270506-glass@newsouladv.com
+DTSTAMP:20260911T141404Z
+DTSTART;VALUE=DATE:20270506
+DTEND;VALUE=DATE:20270509
+SUMMARY:Glass & Aluminium Expo
+LOCATION:مركز مصر للمعارض الدولية
+DESCRIPTION:دليل المعارض: https://newsouladv.com/exhibitions-
+ guide-egypt.html — صفحة المعرض: https://newsouladv.com/glas
+ s-aluminium-expo-egypt.html
+URL:https://newsouladv.com/glass-aluminium-expo-egypt.html
 END:VEVENT
 BEGIN:VEVENT
 UID:newsouladv-exh-20270506-45@newsouladv.com

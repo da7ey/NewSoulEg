@@ -70,15 +70,6 @@ Last updated: 2026-10-11
 
 ### القائمة الكاملة (97 معرض ومؤتمر، مرتبة زمنيًا)
 
-- [Cairo ICT](https://newsouladv.com/cairo-ict.html): 8 نوفمبر 2026
-- [APIEX 2026](https://newsouladv.com/apiex-egypt.html): 9 نوفمبر 2026
-- [الضيافة والفنادق في مصر](https://newsouladv.com/hospitality-hotel-show-egypt.html): 10 نوفمبر 2026
-- [Stone Africa](https://newsouladv.com/stone-africa-egypt.html): 12 نوفمبر 2026
-- [Destination Africa](https://newsouladv.com/destination-africa-egypt.html): 14 نوفمبر 2026
-- [NDTX Expo](https://newsouladv.com/ndtx-expo-egypt.html): 14 نوفمبر 2026
-- [معرض Robotex Expo للروبوتات الصناعية](https://newsouladv.com/robotex-expo-egypt.html): 14 نوفمبر 2026
-- [ICS Exhibition - Ceramica Market & Homex](https://newsouladv.com/ics-ceramica-market-egypt.html): 19 نوفمبر 2026
-- [Private Label Egypt Expo](https://newsouladv.com/private-label-egypt-expo.html): 19 نوفمبر 2026
 - [Cairo WoodShow](https://newsouladv.com/cairo-woodshow-egypt.html): 26 نوفمبر 2026
 - [الأثاث الدولي في مصر (IFAC Cairo)](https://newsouladv.com/egypt-furniture-show.html): 26 نوفمبر 2026
 - [Africa Event Show](https://newsouladv.com/africa-event-show-egypt.html): 3 ديسمبر 2026
@@ -97,14 +88,16 @@ Last updated: 2026-10-11
 - [معرض تعميق التصنيع المحلي](https://newsouladv.com/local-manufacturing-deepening-egypt.html): 2 يناير 2027
 - [AFROPLAST 2027](https://newsouladv.com/afroplast-egypt.html): 9 يناير 2027
 - [Egypt International Boat Show](https://newsouladv.com/egypt-boat-show.html): 14 يناير 2027
+- [معرض القاهرة الدولي للكتاب](https://newsouladv.com/cairo-book-fair.html): 20 يناير 2027
 - [Agri Expo](https://newsouladv.com/agri-expo-egypt.html): 1 فبراير 2027
 - [EDUGATE](https://newsouladv.com/edugate-egypt.html): 1 فبراير 2027
-- [EGYPES](https://newsouladv.com/egypes.html): 30 مارس 2027
+- [EGYPES](https://newsouladv.com/egypes.html): 29 مارس 2027
 - [Lift City Expo Egypt](https://newsouladv.com/lift-city-expo-egypt.html): 8 أبريل 2027
 - [Solar & Storage Live Egypt](https://newsouladv.com/solar-storage-live-egypt.html): 18 أبريل 2027
 - [Watrex Expo](https://newsouladv.com/watrex-expo-egypt.html): 18 أبريل 2027
 - [PETZOO Africa](https://newsouladv.com/petzoo-africa-egypt.html): 21 أبريل 2027
 - [Egy Beauty Africa](https://newsouladv.com/egy-beauty-africa.html): 24 أبريل 2027
+- [Glass & Aluminium Expo](https://newsouladv.com/glass-aluminium-expo-egypt.html): 6 مايو 2027
 - [WinDoorEx](https://newsouladv.com/windoorex-egypt.html): 6 مايو 2027
 - [HVAC-R Egypt Expo](https://newsouladv.com/hvac-r-egypt-expo.html): 24 مايو 2027
 - [Fi Africa](https://newsouladv.com/fi-africa-egypt.html): 1 يونيو 2027
@@ -130,6 +123,15 @@ Last updated: 2026-10-11
 - [IWWI](https://newsouladv.com/iwwi-egypt.html): موعد الدورة القادمة لسه ما اتعلنش
 - [Le Marché](https://newsouladv.com/le-marche-egypt.html): موعد الدورة القادمة لسه ما اتعلنش
 - [Cairo Vision](https://newsouladv.com/cairo-vision-egypt.html): موعد الدورة القادمة لسه ما اتعلنش
+- [Cairo ICT](https://newsouladv.com/cairo-ict.html): موعد الدورة القادمة لسه ما اتعلنش
+- [APIEX 2026](https://newsouladv.com/apiex-egypt.html): موعد الدورة القادمة لسه ما اتعلنش
+- [الضيافة والفنادق في مصر](https://newsouladv.com/hospitality-hotel-show-egypt.html): موعد الدورة القادمة لسه ما اتعلنش
+- [Stone Africa](https://newsouladv.com/stone-africa-egypt.html): موعد الدورة القادمة لسه ما اتعلنش
+- [Destination Africa](https://newsouladv.com/destination-africa-egypt.html): موعد الدورة القادمة لسه ما اتعلنش
+- [NDTX Expo](https://newsouladv.com/ndtx-expo-egypt.html): موعد الدورة القادمة لسه ما اتعلنش
+- [معرض Robotex Expo للروبوتات الصناعية](https://newsouladv.com/robotex-expo-egypt.html): موعد الدورة القادمة لسه ما اتعلنش
+- [ICS Exhibition - Ceramica Market & Homex](https://newsouladv.com/ics-ceramica-market-egypt.html): موعد الدورة القادمة لسه ما اتعلنش
+- [Private Label Egypt Expo](https://newsouladv.com/private-label-egypt-expo.html): موعد الدورة القادمة لسه ما اتعلنش
 - [Agrena](https://newsouladv.com/agrena-egypt.html): موعد الدورة القادمة لسه ما اتعلنش
 - [Aqua Energy Expo](https://newsouladv.com/aqua-energy-expo-egypt.html): موعد الدورة القادمة لسه ما اتعلنش
 - [Automorrow](https://newsouladv.com/automorrow-egypt.html): موعد الدورة القادمة لسه ما اتعلنش
@@ -152,7 +154,6 @@ Last updated: 2026-10-11
 - [FDC Summit 2026](https://newsouladv.com/fdc-summit-egypt.html): موعد الدورة القادمة لسه ما اتعلنش
 - [FIREX Egypt](https://newsouladv.com/firex-egypt.html): موعد الدورة القادمة لسه ما اتعلنش
 - [Franex - Egyptian Saudi Franchise Expo](https://newsouladv.com/franex-egypt.html): موعد الدورة القادمة لسه ما اتعلنش
-- [Glass & Aluminium Expo](https://newsouladv.com/glass-aluminium-expo-egypt.html): موعد الدورة القادمة لسه ما اتعلنش
 - [IDEX Egypt](https://newsouladv.com/idex-egypt.html): موعد الدورة القادمة لسه ما اتعلنش
 - [IMRCE](https://newsouladv.com/imrce-egypt.html): موعد الدورة القادمة لسه ما اتعلنش
 - [MENA Power Expo](https://newsouladv.com/mena-power-expo-egypt.html): موعد الدورة القادمة لسه ما اتعلنش
@@ -165,7 +166,6 @@ Last updated: 2026-10-11
 - [معرض الأهرام للنقل والمواصلات](https://newsouladv.com/al-ahram-transportation-egypt.html): موعد الدورة القادمة لسه ما اتعلنش
 - [معرض القاهرة الدولي](https://newsouladv.com/cairo-international-fair.html): موعد الدورة القادمة لسه ما اتعلنش
 - [معرض القاهرة الدولي للزهور](https://newsouladv.com/cairo-flower-show.html): موعد الدورة القادمة لسه ما اتعلنش
-- [معرض القاهرة الدولي للكتاب](https://newsouladv.com/cairo-book-fair.html): موعد الدورة القادمة لسه ما اتعلنش
 - [معرض ذوي الإعاقة العربي الأفريقي](https://newsouladv.com/disabilities-expo-arab-african-egypt.html): موعد الدورة القادمة لسه ما اتعلنش
 
 ## مقالات ومصادر (Blog) - القائمة الكاملة

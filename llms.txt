@@ -68,7 +68,7 @@ Last updated: 2026-10-11
 - [أجندة المعارض الزمنية](https://newsouladv.com/exhibitions-calendar.html): مرتبة شهريًا، مع إمكانية الاشتراك في تقويم شخصي (ICS)
 - [مركز مصر للمعارض الدولية (EIEC)](https://newsouladv.com/egypt-international-exhibition-center.html): دليل شامل عن المكان الرئيسي لأغلب المعارض في مصر
 
-### القائمة الكاملة (97 معرض ومؤتمر، مرتبة زمنيًا)
+### القائمة الكاملة (98 معرض ومؤتمر، مرتبة زمنيًا)
 
 - [Cairo WoodShow](https://newsouladv.com/cairo-woodshow-egypt.html): 26 نوفمبر 2026
 - [الأثاث الدولي في مصر (IFAC Cairo)](https://newsouladv.com/egypt-furniture-show.html): 26 نوفمبر 2026
@@ -87,6 +87,7 @@ Last updated: 2026-10-11
 - [Perfume World Expo](https://newsouladv.com/perfume-world-expo-egypt.html): 25 ديسمبر 2026
 - [معرض تعميق التصنيع المحلي](https://newsouladv.com/local-manufacturing-deepening-egypt.html): 2 يناير 2027
 - [AFROPLAST 2027](https://newsouladv.com/afroplast-egypt.html): 9 يناير 2027
+- [Denimsandjeans Egypt](https://newsouladv.com/denimsandjeans-egypt.html): 13 يناير 2027
 - [Egypt International Boat Show](https://newsouladv.com/egypt-boat-show.html): 14 يناير 2027
 - [معرض القاهرة الدولي للكتاب](https://newsouladv.com/cairo-book-fair.html): 20 يناير 2027
 - [Agri Expo](https://newsouladv.com/agri-expo-egypt.html): 1 فبراير 2027
